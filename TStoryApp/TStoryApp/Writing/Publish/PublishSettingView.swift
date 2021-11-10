@@ -9,8 +9,6 @@ import UIKit
 
 class PublishSettingView: UIView {
     
-    var publishSettingFormModel: [PublishSettingFormModel] = []
-    
     lazy var topView: PublishSettingTopView = {
         let topView = PublishSettingTopView()
         topView.translatesAutoresizingMaskIntoConstraints = false
@@ -22,9 +20,7 @@ class PublishSettingView: UIView {
     lazy var headerView: PublishSettingHeaderView = {
         let header = PublishSettingHeaderView()
         header.translatesAutoresizingMaskIntoConstraints = false
-        header.setTitleTextFieldText(title: publishSettingFormModel[0].publishCategoryName)
-        header.setPublishTagText(tag: publishSettingFormModel[0].publishTagText)
-        header.setCategorySelectionButtonText(name: publishSettingFormModel[0].publishCategoryName)
+        header.backgroundColor = .white
         addSubview(header)
         return header
     } ()
@@ -32,7 +28,6 @@ class PublishSettingView: UIView {
     lazy var postingSelectorCellHeaderView: PublishSettingCellHeaderView = {
         let postingSelectorCellHeaderView = PublishSettingCellHeaderView()
         postingSelectorCellHeaderView.translatesAutoresizingMaskIntoConstraints = false
-        postingSelectorCellHeaderView.setPublishSettingIndex(index: publishSettingFormModel[0].publishSettingIndex)
         addSubview(postingSelectorCellHeaderView)
         return postingSelectorCellHeaderView
     } ()
@@ -80,10 +75,22 @@ class PublishSettingView: UIView {
             headerView.topAnchor.constraint(equalTo: seperator.bottomAnchor),
         ])
         
+        let seperator2 = UIView()
+        seperator2.translatesAutoresizingMaskIntoConstraints = false
+        seperator2.backgroundColor = .lightGray.withAlphaComponent(0.5)
+        addSubview(seperator2)
+        
+        NSLayoutConstraint.activate([
+            seperator2.leadingAnchor.constraint(equalTo: leadingAnchor),
+            seperator2.trailingAnchor.constraint(equalTo: trailingAnchor),
+            seperator2.topAnchor.constraint(equalTo: headerView.bottomAnchor),
+            seperator2.heightAnchor.constraint(equalToConstant: 10)
+        ])
+        
         NSLayoutConstraint.activate([
             postingSelectorCellHeaderView.leadingAnchor.constraint(equalTo: leadingAnchor),
             postingSelectorCellHeaderView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            postingSelectorCellHeaderView.topAnchor.constraint(equalTo: headerView.bottomAnchor),
+            postingSelectorCellHeaderView.topAnchor.constraint(equalTo: seperator2.bottomAnchor),
             postingSelectorCellHeaderView.heightAnchor.constraint(equalToConstant: 80)
         ])
         
@@ -95,7 +102,4 @@ class PublishSettingView: UIView {
         ])
     }
     
-    func setPublishSettingFormModel(publishSettingFormModel: [PublishSettingFormModel]){
-        self.publishSettingFormModel = publishSettingFormModel
-    }
 }

@@ -8,13 +8,19 @@
 import UIKit
 
 class PublishSettingHeaderView: UIView {
-    
+
+    var titleText: String = ""
+    var publishTag: String = ""
     var categoryName: String = ""
     
     lazy var titleTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
 //        textField.text = "제목"
+        textField.font = .systemFont(ofSize: 16, weight: .light)
+        textField.textColor = .black
+        textField.borderStyle = .none
+        textField.delegate = self
         addSubview(textField)
         return textField
     } ()
@@ -23,6 +29,8 @@ class PublishSettingHeaderView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
 //        label.text = "#태그 입력"
+        label.font = .systemFont(ofSize: 14, weight: .light)
+        label.textColor = .lightGray
         addSubview(label)
         return label
     } ()
@@ -122,6 +130,7 @@ class PublishSettingHeaderView: UIView {
     
     func setPublishTagText(tag: String) {
         tagLabel.text = tag
+        
     }
     
     func getPublishTagText() -> String {
@@ -130,7 +139,7 @@ class PublishSettingHeaderView: UIView {
     
     func setCategorySelectionButtonText(name: String) {
         let buttonText = name
-        categorySelectionButton.setTitle(buttonText + "  >", for: .normal)
+        categorySelectionButton.setTitle(buttonText + "  〉", for: .normal)
         self.categoryName = buttonText
     }
     

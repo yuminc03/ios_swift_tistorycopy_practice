@@ -36,7 +36,7 @@ extension NoticeViewController: UITableViewDelegate, UITableViewDataSource {
         }
         else {
             let data = noticeModel.noticeCategory[selectedCategoryIndex].noticeCell[indexPath.row]
-            let cell = tableView.dequeueReusableCell(withIdentifier: "feed_cell", for: indexPath) as! FeedTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "feed_cell", for: indexPath) as! NoticeTableViewCell
             cell.commentNoticeLabel.text = data.cellTitle
             cell.commentContentLabel.text = data.cellContent
             cell.commentWritedPersonLabel.text = data.cellFeedSender
@@ -60,7 +60,7 @@ extension NoticeViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == 0 {
-            let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "feed_header") as? FeedTableViewHeader
+            let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "feed_header") as? NoticeTableViewHeader
             header?.setNoticeButton(text: noticeModel.noticeCategory[selectedCategoryIndex].categoryName)
             header?.noticeButton.addTarget(self, action: #selector(noticeTitleDidTapped), for: .touchUpInside)
             return header

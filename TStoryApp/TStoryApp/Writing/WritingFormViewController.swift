@@ -13,11 +13,13 @@ import UIKit
 class WritingFormViewController: UIViewController {
     
     var writeFormModel = WriteFormModel()
+    let titleTextPlaceHolder: String = "제목"
+    let contentsTextPlaceHolder: String = "내용을 입력해주세요."
     var titleText: String = ""
+    var publishSettingIndex: Int = 0
+    var publishDateIndex: Int = 0
     var sortingLabel: String = "왼쪽 정렬"
     var sortingIndex: Int = 0
-    
-    var selectedPublishingDateIndex: Int = 0
     var allowComment: Bool = true
     
     lazy var writingFormView: WritingFormView = {
@@ -25,8 +27,8 @@ class WritingFormViewController: UIViewController {
         writeView.translatesAutoresizingMaskIntoConstraints = false
         writeView.backgroundColor = .white
         writeView.setWriteFormData(writeFormModel: [writeFormModel])
-        writeView.setTitleTextPlace(titleTextPlaceHolder: writeFormModel.writeTitleText)
-        writeView.setContentsTextPlace(contentsTextPlaceHolder: writeFormModel.writeContentText)
+        writeView.setTitleTextPlace(titleTextPlaceHolder: titleTextPlaceHolder)
+        writeView.setContentsTextPlace(contentsTextPlaceHolder: contentsTextPlaceHolder)
         writeView.setTitleText(titleText: writeView.titleTextView.text)
         titleText = writeView.getTitleText()
         
@@ -43,7 +45,6 @@ class WritingFormViewController: UIViewController {
         writeHeaderView.translatesAutoresizingMaskIntoConstraints = false
         writeHeaderView.backgroundColor = .white
         let writeFormBackGesture = UITapGestureRecognizer(target: self, action: #selector(formDismissViewDidTapped))
-        writeHeaderView.isUserInteractionEnabled = true
         writeHeaderView.formDismissLabel.addGestureRecognizer(writeFormBackGesture)
         writeHeaderView.setFormSaveNum(formSaveNum: writeFormModel.formSaveNum)
         writeHeaderView.formCompletionButton.addTarget(self, action: #selector(formCompletionButtonDidTapped), for: .touchUpInside)
@@ -54,8 +55,15 @@ class WritingFormViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         configulation()
         setConstraints()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isTranslucent = true
+        self.tabBarController?.tabBar.isHidden = true
     }
     
     func configulation() {
@@ -82,7 +90,6 @@ class WritingFormViewController: UIViewController {
         )
         
         writeFormModel = model
-
     }
     
     func setConstraints() {
@@ -109,64 +116,66 @@ class WritingFormViewController: UIViewController {
         }
         else {
             let vc = PublishSettingViewController()
-//            vc.setWriteFormData(writeFormModel: [writeFormModel])
-//            vc.delegate = self
-//            let titleText = writingFormView.getTitleText()
-//            vc.setTitleText(titleText: titleText)
-
-//            let categoryText = writeFormModel.publishSettingForm[0].publishCategoryName
-//            vc.setCategoryText(category: categoryText)
-//            let openSettingIndex = writeFormModel.publishSettingForm[0].publishSettingIndex
-//            vc.setOpenSettingIndex(index: openSettingIndex)
-//            let homeSubjectText = writeFormModel.publishSettingForm[0].publishSubject
-//            let publishDateIndex = writeFormModel.publishSettingForm[0].selectedDate
-//            vc.setPublishDateIndex(index: publishDateIndex)
-//            let publishDate = writeFormModel.publishSettingForm[0].publishDate
-//            vc.setPublishDate(date: publishDate)
-//            let allowComments = writeFormModel.publishSettingForm[0].allowComment
-//            vc.setAllowComment(allow: allowComment)
-//            let passWord = writeFormModel.publishSettingForm[0].protectPassWord
-            vc.setPublishSettingFormModel(publishSettingFormModel: writeFormModel.publishSettingForm)
+            vc.setWriteFormModel(writeFormModel: writeFormModel)
+            vc.delegate = self
+            let titleText = writingFormView.getTitleText()
+            vc.setWriteTitle(title: titleText)
+            let homeSubject = getHomeSubject()
+            vc.setHomeSubject(name: homeSubject)
+            let publishSettingIndex = getOpenSettingIndex()
+            vc.setPublishSettingIndex(index: publishSettingIndex)
+            let publishDateIndex = getPublishDateIndex()
+            vc.setPublishDateIndex(index: publishDateIndex)
             vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated: true)
         }
     }
     
     @objc func formDismissViewDidTapped(gesture: UITapGestureRecognizer) {
-        print("tapped!")
-    }
-    @objc func changeSortLabelDidTapped(gesture: UITapGestureRecognizer) {
-        print("tapped!")
+        self.tabBarController?.tabBar.isTranslucent = false
+        self.tabBarController?.tabBar.isHidden = false
+        self.tabBarController?.selectedIndex = (tabBarController as? TabBarViewController)?.lastTabBarIndex ?? 0
+        (tabBarController as? TabBarViewController)?.lastTabBarIndex = self.tabBarController?.selectedIndex
         
     }
+    @objc func changeSortLabelDidTapped(gesture: UITapGestureRecognizer) {
+//        print("tapped!")
+        let sortingLabelArr: [String] = ["왼쪽 정렬", "가운데 정렬", "오른쪽 정렬", "정렬 없음"]
+        sortingIndex = setSorting(index: sortingIndex)
+        if sortingIndex == 0 {
+            writingFormView.contentsTextAlignLeft()
+            writingFormView.setSortingLabel(text: sortingLabelArr[0])
+        }
+        else if sortingIndex == 1 {
+            writingFormView.contentsTextAlignCenter()
+            writingFormView.setSortingLabel(text: sortingLabelArr[1])
+        }
+        else if sortingIndex == 2 {
+            writingFormView.contentsTextAlignRight()
+            writingFormView.setSortingLabel(text: sortingLabelArr[2])
+        }
+        else if sortingIndex == 3 {
+            writingFormView.contentsTextAlignNone()
+            writingFormView.setSortingLabel(text: sortingLabelArr[3])
+        }
+        else {
+            return
+        }
+    }
     
-//    func setSorting() -> Int {
-//        let sortLabelArr: [String] = ["왼쪽 정렬", "가운데 정렬", "오른쪽 정렬", "정렬 없음"]
-//
-//        if sorting < 3 {
-//            sorting = sorting + 1
-//            if sorting == 0 {
-//                writingFormView.contentsTextView.textAlignment = .left
-//                sortingLabel = sortLabelArr[0]
-//            }
-//            else if sorting == 1 {
-//                writingFormView.contentsTextView.textAlignment = .right
-//                sortingLabel = sortLabelArr[1]
-//            }
-//            else if sorting == 2 {
-//                writingFormView.contentsTextView.textAlignment = .center
-//                sortingLabel = sortLabelArr[2]
-//            }
-//            else {
-//                return
-//            }
-//        }
-//        else {
-//            sorting = 0
-//            writingFormView.contentsTextView.textAlignment = .natural
-//            sortingLabel = sortLabelArr[3]
-//        }
-//    }
+    func setSorting(index: Int) -> Int {
+        var num = index
+        if index < 3 {
+            num += 1
+            return num
+        }
+        else if index == 3 {
+            return 0
+        }
+        else {
+            return 0
+        }
+    }
     
     func setDate() -> String {
         let now = Date()
@@ -184,6 +193,11 @@ class WritingFormViewController: UIViewController {
         return dateFormatter.string(from: now)
     }
     
+    func setSortingIndex(index: Int) {
+        self.sortingIndex = index
+        self.writeFormModel.formSorting = index
+    }
+    
     func setPublishTagText(tag: String){
         self.writeFormModel.publishSettingForm[0].publishTagText = tag
     }
@@ -193,12 +207,29 @@ class WritingFormViewController: UIViewController {
     }
     
     func setOpenSettingIndex(index: Int) {
+        self.publishSettingIndex = index
         self.writeFormModel.publishSettingForm[0].publishSettingIndex = index
+    }
+    
+    func getOpenSettingIndex() -> Int {
+        return writeFormModel.publishSettingForm[0].publishSettingIndex
+    }
+    
+    func setHomeSubject(name: String) {
+        self.writeFormModel.publishSettingForm[0].publishSubject = name
+    }
+    
+    func getHomeSubject() -> String {
+        return self.writeFormModel.publishSettingForm[0].publishSubject
     }
 
     func setPublishDateIndex(index: Int) {
-        self.selectedPublishingDateIndex = index
-        self.writeFormModel.publishSettingForm[0].selectedDate = self.selectedPublishingDateIndex
+        self.publishDateIndex = index
+        self.writeFormModel.publishSettingForm[0].selectedDate = index
+    }
+    
+    func getPublishDateIndex() -> Int {
+        return writeFormModel.publishSettingForm[0].selectedDate
     }
     
     func setAllowComment(allow: Bool) {

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FeedTableView: UITableView {
+class NoticeTableView: UITableView {
     
     var noticeModel: [NoticeModel] = []
     var selectedCategoryIndex: Int = 0
@@ -19,8 +19,8 @@ class FeedTableView: UITableView {
         separatorStyle = .none
 //        separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         backgroundColor = .clear
-        register(FeedTableViewHeader.self, forHeaderFooterViewReuseIdentifier: "feed_header")
-        register(FeedTableViewCell.self, forCellReuseIdentifier: "feed_cell")
+        register(NoticeTableViewHeader.self, forHeaderFooterViewReuseIdentifier: "feed_header")
+        register(NoticeTableViewCell.self, forCellReuseIdentifier: "feed_cell")
         register(NoticeIsNullTableViewCell.self, forCellReuseIdentifier: "feed_null_cell")
         
         showsVerticalScrollIndicator = false

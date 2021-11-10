@@ -8,6 +8,7 @@
 import UIKit
 
 class TabBarViewController: UITabBarController {
+    var lastTabBarIndex: Int? = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,6 +16,7 @@ class TabBarViewController: UITabBarController {
         view.tintColor = .none
         tabBar.backgroundColor = .gray
         tabBar.backgroundImage = nil
+//        tabBar.delegate = self
 //        tabBar.isCustomizing = true
 //        tabBar.tintColor = .black
 //        tabBar.unselectedItemTintColor = .white
@@ -29,20 +31,27 @@ class TabBarViewController: UITabBarController {
         
         
         viewControllers = [
-            createTabBarItem(tabBarTitle: "HOME", viewController: vc1),
-            createTabBarItem(tabBarTitle: "FEED", viewController: vc2),
-            createTabBarItem(tabBarTitle: "WRITE", viewController: WritingFormViewController()),
-            createTabBarItem(tabBarTitle: "NOTICE", viewController: NoticeViewController()),
-            createTabBarItem(tabBarTitle: "PROFILE", viewController: ProfileViewController())]
+            createTabBarItem(tabBarTitle: "HOME", viewController: vc1, 0),
+            createTabBarItem(tabBarTitle: "FEED", viewController: vc2, 1),
+            createTabBarItem(tabBarTitle: "WRITE", viewController: WritingFormViewController(), 2),
+            createTabBarItem(tabBarTitle: "NOTICE", viewController: NoticeViewController(), 3),
+            createTabBarItem(tabBarTitle: "PROFILE", viewController: ProfileViewController(), 4)]
     }
     
-    func createTabBarItem(tabBarTitle: String, tabBarImage: String? = nil, viewController: UIViewController) -> UINavigationController {
+    func createTabBarItem(tabBarTitle: String, tabBarImage: String? = nil, viewController: UIViewController, _ tag: Int) -> UINavigationController {
         let navCont = UINavigationController(rootViewController: viewController)
+        navCont.view.tag = tag
         navCont.tabBarItem.title = tabBarTitle
 //        navCont.tabBarItem.image = UIImage(named: tabBarImage)
         navCont.navigationBar.isHidden = true
         
         return navCont
+    }
+    
+    override var selectedViewController: UIViewController? {
+        willSet {
+            lastTabBarIndex = selectedViewController?.view.tag
+        }
     }
 }
 

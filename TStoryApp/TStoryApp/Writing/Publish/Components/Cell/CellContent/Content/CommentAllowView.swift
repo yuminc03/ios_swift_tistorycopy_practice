@@ -9,6 +9,8 @@ import UIKit
 
 class CommentAllowView: UIView {
     
+    var commentAllow: Bool = true
+    
     lazy var topSeperator: UIView = {
         let seperator = UIView()
         seperator.translatesAutoresizingMaskIntoConstraints = false
@@ -80,5 +82,19 @@ class CommentAllowView: UIView {
             bottomSeperator.bottomAnchor.constraint(equalTo: bottomAnchor),
             bottomSeperator.heightAnchor.constraint(equalToConstant: 0.5)
         ])
+    }
+    
+    func setCommentAllow(allow: Bool) {
+        self.commentAllow = allow
+        commentAllowSwitch.isOn = allow
+    }
+    
+    func getCommentAllow() -> Bool {
+        if commentAllowSwitch.isOn {
+            return true
+        }
+        else {
+            return false
+        }
     }
 }

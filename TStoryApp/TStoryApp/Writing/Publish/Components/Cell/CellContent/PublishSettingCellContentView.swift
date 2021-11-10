@@ -15,6 +15,13 @@ protocol PublishSettingCellContentViewDelegate: AnyObject {
 
 class PublishSettingCellContentView: UIView {
     
+    var homeSubject: String = ""
+    var publishDateIndex: Int = 0
+    var publishDate: String = ""
+    var publishHour: String = ""
+    var commentAllow: Bool = true
+    var password: String = ""
+    
     weak var delegate: PublishSettingCellContentViewDelegate?
     lazy var stackView: UIStackView = {
         let stackView = UIStackView()
@@ -28,6 +35,7 @@ class PublishSettingCellContentView: UIView {
         let homeSubjectView = HomeSubjectView()
         homeSubjectView.translatesAutoresizingMaskIntoConstraints = false
         homeSubjectView.backgroundColor = .white
+        homeSubjectView.setHomeSubject(subjectText: homeSubject)
         return homeSubjectView
     } ()
     
@@ -35,6 +43,7 @@ class PublishSettingCellContentView: UIView {
         let passwordView = PasswordSettingView()
         passwordView.translatesAutoresizingMaskIntoConstraints = false
         passwordView.backgroundColor = .white
+        passwordView.setPassword(text: password)
         return passwordView
     } ()
     
@@ -49,6 +58,7 @@ class PublishSettingCellContentView: UIView {
         let currentView = PublishCurrentDateView()
         currentView.translatesAutoresizingMaskIntoConstraints = false
         currentView.backgroundColor = .white
+        currentView.setPublishDateIndex(index: publishDateIndex)
         currentView.publishCurrentDateLabel.isUserInteractionEnabled = true
         let currentGesture = UITapGestureRecognizer(target: self, action: #selector(currentLabelDidTapped))
         currentView.publishCurrentDateLabel.addGestureRecognizer(currentGesture)
@@ -62,6 +72,8 @@ class PublishSettingCellContentView: UIView {
         let reservationView = PublishReservationDateView()
         reservationView.translatesAutoresizingMaskIntoConstraints = false
         reservationView.backgroundColor = .white
+        reservationView.setPublishDate(date: setDate())
+        reservationView.setPublishHour(hour: setHour())
         return reservationView
     } ()
     
@@ -69,6 +81,7 @@ class PublishSettingCellContentView: UIView {
         let commentView = CommentAllowView()
         commentView.translatesAutoresizingMaskIntoConstraints = false
         commentView.backgroundColor = .white
+        commentView.setCommentAllow(allow: commentAllow)
         return commentView
     } ()
 
@@ -88,13 +101,15 @@ class PublishSettingCellContentView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setConstraints()
+//        publishingDateLabelColor(index: publishDateIndex, isSelected: true)
+        publishDateIndex == 0 ? currentLabelClicked() : reservationLabelClicked()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
     
-    func setUI(index: Int, data: String? = nil, hasAdditionalDate: Bool) {
+    func setUI(index: Int, data: String, hasAdditionalDate: Bool) {
         
         for subview in stackView.arrangedSubviews {
             subview.removeFromSuperview()
@@ -107,9 +122,12 @@ class PublishSettingCellContentView: UIView {
         case 0:
             stackView.addArrangedSubview(homeSubjectView)
             homeSubjectView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+            homeSubjectView.setHomeSubject(subjectText: data)
             stackView.addArrangedSubview(publishDateStackView)
             publishDateStackView.addArrangedSubview(publishCurrentDateView)
             publishCurrentDateView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+            publishCurrentDateView.setUI(isSelected: hasAdditionalDate)
+            publishDateIndex == 0 ? currentLabelClicked() : reservationLabelClicked()
             if hasAdditionalDate {
                 publishDateStackView.addArrangedSubview(publishReservationDateView)
                 publishReservationDateView.heightAnchor.constraint(equalToConstant: 50).isActive = true
@@ -122,6 +140,7 @@ class PublishSettingCellContentView: UIView {
             stackView.addArrangedSubview(publishDateStackView)
             publishDateStackView.addArrangedSubview(publishCurrentDateView)
             publishCurrentDateView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+            publishDateIndex == 0 ? currentLabelClicked() : reservationLabelClicked()
             if hasAdditionalDate {
                 publishDateStackView.addArrangedSubview(publishReservationDateView)
                 publishReservationDateView.heightAnchor.constraint(equalToConstant: 50).isActive = true
@@ -183,10 +202,20 @@ class PublishSettingCellContentView: UIView {
     
     @objc private func currentLabelDidTapped(gesture: UITapGestureRecognizer) {
         delegate?.currentDateLabelDidTapped()
+        guard let tag = gesture.view?.tag else { return }
+//        publishingDateLabelColor(index: publishDateIndex, isSelected: false)
+//        publishingDateLabelColor(index: tag, isSelected: true)
+        setPublishDateIndex(index: tag)
+        currentLabelClicked()
     }
     
     @objc private func reservationGestureDidTapped(gesture: UITapGestureRecognizer) {
         delegate?.reservationDateLabelDidTapped()
+        guard let tag = gesture.view?.tag else { return }
+//        publishingDateLabelColor(index: publishDateIndex, isSelected: false)
+//        publishingDateLabelColor(index: tag, isSelected: true)
+        setPublishDateIndex(index: tag)
+        reservationLabelClicked()
     }
     
     private func setConstraints() {
@@ -197,5 +226,64 @@ class PublishSettingCellContentView: UIView {
             stackView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
+    
+    func setHomeSubject(name: String) {
+        self.homeSubject = name
+    }
+    
+    func setPublishDateIndex(index: Int) {
+        self.publishDateIndex = index
+    }
+    
+    func getPublishDateIndex() -> Int {
+        return publishDateIndex
+    }
+    
+    func setPublishDate(date: String) {
+        self.publishDate = date
+    }
+    
+    func setPublishHour(hour: String) {
+        self.publishHour = hour
+    }
+    
+    func setCommentAllow(allow: Bool) {
+        self.commentAllow = allow
+    }
+    
+    func setPassword(text: String) {
+        self.password = text
+    }
+    
+    func setDate() -> String {
+        let now = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy.MM.dd."
+        dateFormatter.timeZone = NSTimeZone(name: "ko_KR") as TimeZone?
+        return dateFormatter.string(from: now)
+    }
+    
+    func setHour() -> String {
+        let now = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "hh:mm"
+        dateFormatter.timeZone = NSTimeZone(name: "ko_KR") as TimeZone?
+        return dateFormatter.string(from: now)
+    }
+    
+    func currentLabelClicked() {
+        publishCurrentDateView.publishCurrentDateLabel.textColor = .black
+        publishCurrentDateView.publishCurrentDateLabel.font = .systemFont(ofSize: 14, weight: .bold)
+        publishCurrentDateView.publishReservationDateLabel.textColor = .lightGray
+        publishCurrentDateView.publishReservationDateLabel.font = .systemFont(ofSize: 14, weight: .light)
+    }
+    
+    func reservationLabelClicked() {
+        publishCurrentDateView.publishCurrentDateLabel.textColor = .lightGray
+        publishCurrentDateView.publishCurrentDateLabel.font = .systemFont(ofSize: 14, weight: .light)
+        publishCurrentDateView.publishReservationDateLabel.textColor = .black
+        publishCurrentDateView.publishReservationDateLabel.font = .systemFont(ofSize: 14, weight: .bold)
+    }
+
     
 }

@@ -9,11 +9,14 @@ import UIKit
 
 class PublishReservationDateView: UIView {
     
+    var publishDate: String = ""
+    var publishHour: String = ""
+    
     lazy var reservationDateButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .white
-        button.setTitle("2021.11.7.", for: .normal)
+//        button.setTitle("2021.11.7.", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 14, weight: .light)
         button.layer.borderColor = UIColor.lightGray.withAlphaComponent(0.5).cgColor
@@ -27,7 +30,7 @@ class PublishReservationDateView: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .white
-        button.setTitle("17:23", for: .normal)
+//        button.setTitle("17:23", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 14, weight: .light)
         button.layer.borderColor = UIColor.lightGray.withAlphaComponent(0.5).cgColor
@@ -59,5 +62,23 @@ class PublishReservationDateView: UIView {
             reservationTimeButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             reservationTimeButton.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
+    }
+    
+    func setPublishDate(date: String) {
+        self.publishDate = date
+        reservationDateButton.setTitle(publishDate, for: .normal)
+    }
+    
+    func setPublishHour(hour: String) {
+        self.publishHour = hour
+        reservationTimeButton.setTitle(publishHour, for: .normal)
+    }
+    
+    func getPublishDate() -> String {
+        return publishDate
+    }
+    
+    func getPublishHour() -> String {
+        return publishHour
     }
 }

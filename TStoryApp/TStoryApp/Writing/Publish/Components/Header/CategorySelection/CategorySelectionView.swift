@@ -64,8 +64,8 @@ class CategorySelectionView: UIView {
             categoryNameLabel.text = categories[i]
             categoryView.addSubview(categoryNameLabel)
             categoryNameLabel.leadingAnchor.constraint(equalTo: categoryView.leadingAnchor, constant: 20).isActive = true
-            categoryNameLabel.topAnchor.constraint(equalTo: topAnchor).isActive = true
-            categoryNameLabel.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+            categoryNameLabel.topAnchor.constraint(equalTo: categoryView.topAnchor).isActive = true
+            categoryNameLabel.bottomAnchor.constraint(equalTo: categoryView.bottomAnchor).isActive = true
             
             let seperator = UIView()
             seperator.translatesAutoresizingMaskIntoConstraints = false

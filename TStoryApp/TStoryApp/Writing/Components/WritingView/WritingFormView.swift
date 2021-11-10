@@ -44,7 +44,7 @@ class WritingFormView: UIView {
     lazy var plusContentsView: UIView = {
         let contentsView = UIView()
         contentsView.translatesAutoresizingMaskIntoConstraints = false
-        contentsView.backgroundColor = .lightGray.withAlphaComponent(0.3)
+        contentsView.backgroundColor = .black.withAlphaComponent(0.3)
         contentsView.layer.cornerRadius = 5
         addSubview(contentsView)
         return contentsView
@@ -53,7 +53,7 @@ class WritingFormView: UIView {
     lazy var plusImagesView: UIView = {
         let imagesView = UIView()
         imagesView.translatesAutoresizingMaskIntoConstraints = false
-        imagesView.backgroundColor = .lightGray.withAlphaComponent(0.4)
+        imagesView.backgroundColor = .black.withAlphaComponent(0.4)
         imagesView.layer.cornerRadius = 5
         addSubview(imagesView)
         return imagesView
@@ -62,7 +62,7 @@ class WritingFormView: UIView {
     lazy var plusVideosView: UIView = {
         let videosView = UIView()
         videosView.translatesAutoresizingMaskIntoConstraints = false
-        videosView.backgroundColor = .lightGray.withAlphaComponent(0.5)
+        videosView.backgroundColor = .black.withAlphaComponent(0.5)
         videosView.layer.cornerRadius = 10
         addSubview(videosView)
         return videosView
@@ -71,7 +71,7 @@ class WritingFormView: UIView {
     lazy var plusEmojisView: UIView = {
         let emojisView = UIView()
         emojisView.translatesAutoresizingMaskIntoConstraints = false
-        emojisView.backgroundColor = .lightGray.withAlphaComponent(0.6)
+        emojisView.backgroundColor = .black.withAlphaComponent(0.6)
         emojisView.layer.cornerRadius = 10
         addSubview(emojisView)
         return emojisView
@@ -80,7 +80,7 @@ class WritingFormView: UIView {
     lazy var changeFontsView: UIView = {
         let changeFontsView = UIView()
         changeFontsView.translatesAutoresizingMaskIntoConstraints = false
-        changeFontsView.backgroundColor = .lightGray.withAlphaComponent(0.7)
+        changeFontsView.backgroundColor = .black.withAlphaComponent(0.7)
         changeFontsView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         changeFontsView.layer.cornerRadius = 10
         addSubview(changeFontsView)
@@ -90,9 +90,9 @@ class WritingFormView: UIView {
     lazy var changeSortLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "왼쪽 정렬"
-        label.font = .systemFont(ofSize: 16)
-        label.textColor = .lightGray
+//        label.text = "왼쪽 정렬"
+        label.font = .systemFont(ofSize: 16, weight: .regular)
+        label.textColor = .black
         addSubview(label)
         return label
     }()
@@ -179,6 +179,7 @@ class WritingFormView: UIView {
     
     func setTitleText(titleText: String) {
 //        self.titleText = titleText
+        writeFormModel[0].writeTitleText = titleText
         writeFormModel[0].publishSettingForm[0].publishTitleText = titleText
     }
 
@@ -194,13 +195,25 @@ class WritingFormView: UIView {
         return contentsTextView.text
     }
     
-//    func getSortingLabel() -> String {
-//        return changeSortLabel.text
-//    }
-    
     func setSortingLabel(text: String) {
         self.sortingLabel = text
         changeSortLabel.text = sortingLabel
+    }
+    
+    func contentsTextAlignLeft() {
+        contentsTextView.textAlignment = .left
+    }
+    
+    func contentsTextAlignCenter() {
+        contentsTextView.textAlignment = .center
+    }
+    
+    func contentsTextAlignRight() {
+        contentsTextView.textAlignment = .right
+    }
+    
+    func contentsTextAlignNone() {
+        contentsTextView.textAlignment = .natural
     }
     
 }

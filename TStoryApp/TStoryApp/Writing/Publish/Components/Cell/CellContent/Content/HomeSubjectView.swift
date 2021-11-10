@@ -9,6 +9,8 @@ import UIKit
 
 class HomeSubjectView: UIView {
     
+    var homeSubject: String = ""
+    
     lazy var homeSubjectTitle: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -66,4 +68,14 @@ class HomeSubjectView: UIView {
             seperator.heightAnchor.constraint(equalToConstant: 0.5)
         ])
     }
+
+    func setHomeSubject(subjectText: String) {
+        self.homeSubject = subjectText
+        homeSubjectButton.setTitle(homeSubject + "  〉", for: .normal)
+    }
+    
+    func getHomeSubject() -> String {
+        return self.homeSubject
+    }
+    
 }

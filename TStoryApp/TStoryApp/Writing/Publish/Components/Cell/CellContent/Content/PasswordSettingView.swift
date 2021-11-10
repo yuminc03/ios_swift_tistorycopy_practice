@@ -9,6 +9,8 @@ import UIKit
 
 class PasswordSettingView: UIView {
     
+    var password: String = ""
+    
     lazy var passwordTitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -22,7 +24,7 @@ class PasswordSettingView: UIView {
     lazy var passwordSettingLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "asdfasdfasd"
+//        label.text = "asdfasdfasd"
         label.textColor = .lightGray
         label.font = .systemFont(ofSize: 14, weight: .light)
         addSubview(label)
@@ -34,7 +36,7 @@ class PasswordSettingView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "복사"
         label.textColor = .black
-        label.font = .systemFont(ofSize: 14, weight: .bold)
+        label.font = .systemFont(ofSize: 14, weight: .regular)
         addSubview(label)
         return label
     } ()
@@ -79,5 +81,14 @@ class PasswordSettingView: UIView {
             seperator.bottomAnchor.constraint(equalTo: bottomAnchor),
             seperator.heightAnchor.constraint(equalToConstant: 0.5)
         ])
+    }
+    
+    func setPassword(text: String) {
+        self.password = text
+        passwordSettingLabel.text = password
+    }
+    
+    func getPassword() -> String {
+        return self.password
     }
 }

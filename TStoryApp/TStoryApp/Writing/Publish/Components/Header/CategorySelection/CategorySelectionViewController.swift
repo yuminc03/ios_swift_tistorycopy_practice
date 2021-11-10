@@ -49,8 +49,8 @@ class CategorySelectionViewController: UIViewController {
         self.publishCategoryName = name
     }
     
-    @objc func backgroundDidTapped(gesture: UITapGestureRecognizer) {
-        print("tapped")
+    @objc private func backgroundDidTapped(gesture: UITapGestureRecognizer) {
+//        print("tapped")
         let locations = gesture.location(in: self.view)
         if categorySelectionView.frame.contains(locations){
             return

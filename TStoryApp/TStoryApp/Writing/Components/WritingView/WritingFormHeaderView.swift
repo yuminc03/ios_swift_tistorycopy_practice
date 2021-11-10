@@ -14,6 +14,7 @@ class WritingFormHeaderView: UIView {
     lazy var formDismissLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.isUserInteractionEnabled = true
         label.text = "✕"
         label.textColor = .black
         label.font = .systemFont(ofSize: 20, weight: .bold)

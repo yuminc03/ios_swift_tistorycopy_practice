@@ -12,8 +12,8 @@ class NoticeViewController: UIViewController {
     var noticeModel = NoticeModel()
     var selectedCategoryIndex: Int = 0
     
-    lazy var feedView: FeedTableView = {
-        let feedView = FeedTableView()
+    lazy var feedView: NoticeTableView = {
+        let feedView = NoticeTableView()
         feedView.translatesAutoresizingMaskIntoConstraints = false
         feedView.delegate = self
         feedView.dataSource = self

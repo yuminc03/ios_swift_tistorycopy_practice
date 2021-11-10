@@ -33,85 +33,31 @@ class PublishSettingCellHeaderView: UIView {
         return label
     } ()
     
-    lazy var publicSelectorView: UIView = {
-        let publicSelectorView = UIView()
-        publicSelectorView.translatesAutoresizingMaskIntoConstraints = false
-        publicSelectorView.backgroundColor = .lightGray
-        publicSelectorView.layer.cornerRadius = 10
-        publicSelectorView.tag = 0
-        publicSelectorView.isUserInteractionEnabled = true
+    private lazy var publicSelectorView: PublishSettingHeaderComponent = {
+        let component = PublishSettingHeaderComponent(text: "공개", tag: 0)
+        component.translatesAutoresizingMaskIntoConstraints = false
         let gesture = UITapGestureRecognizer(target: self, action: #selector(selectorDidTapped))
-        publicSelectorView.addGestureRecognizer(gesture)
-        addSubview(publicSelectorView)
-        return publicSelectorView
+        component.addGestureRecognizer(gesture)
+        addSubview(component)
+        return component
     } ()
     
-    lazy var publicSelectorLabel: UILabel = {
-        let publicSelectorLabel = UILabel()
-        publicSelectorLabel.translatesAutoresizingMaskIntoConstraints = false
-        publicSelectorLabel.text = "공개"
-        publicSelectorLabel.textColor = .lightGray
-        publicSelectorLabel.font = .systemFont(ofSize: 14, weight: .light)
-        publicSelectorLabel.tag = 0
-        publicSelectorLabel.isUserInteractionEnabled = true
+    private lazy var protectSelectorView: PublishSettingHeaderComponent = {
+        let component = PublishSettingHeaderComponent(text: "보호", tag: 1)
+        component.translatesAutoresizingMaskIntoConstraints = false
         let gesture = UITapGestureRecognizer(target: self, action: #selector(selectorDidTapped))
-        publicSelectorLabel.addGestureRecognizer(gesture)
-        addSubview(publicSelectorLabel)
-        return publicSelectorLabel
+        component.addGestureRecognizer(gesture)
+        addSubview(component)
+        return component
     } ()
     
-    lazy var protectSelectorView: UIView = {
-        let protectSelectorView = UIView()
-        protectSelectorView.translatesAutoresizingMaskIntoConstraints = false
-        protectSelectorView.backgroundColor = .lightGray
-        protectSelectorView.layer.cornerRadius = 10
-        protectSelectorView.tag = 1
-        protectSelectorView.isUserInteractionEnabled = true
+    private lazy var privateSelectorView: PublishSettingHeaderComponent = {
+        let component = PublishSettingHeaderComponent(text: "비공개", tag: 2)
+        component.translatesAutoresizingMaskIntoConstraints = false
         let gesture = UITapGestureRecognizer(target: self, action: #selector(selectorDidTapped))
-        protectSelectorView.addGestureRecognizer(gesture)
-        addSubview(protectSelectorView)
-        return protectSelectorView
-    } ()
-    
-    lazy var protectSelectorLabel: UILabel = {
-        let protectSelectorLabel = UILabel()
-        protectSelectorLabel.translatesAutoresizingMaskIntoConstraints = false
-        protectSelectorLabel.text = "보호"
-        protectSelectorLabel.textColor = .lightGray
-        protectSelectorLabel.font = .systemFont(ofSize: 14, weight: .light)
-        protectSelectorLabel.tag = 1
-        protectSelectorLabel.isUserInteractionEnabled = true
-        let gesture = UITapGestureRecognizer(target: self, action: #selector(selectorDidTapped))
-        protectSelectorLabel.addGestureRecognizer(gesture)
-        addSubview(protectSelectorLabel)
-        return protectSelectorLabel
-    } ()
-    
-    lazy var privateSelectorView: UIView = {
-        let privateSelectorView = UIView()
-        privateSelectorView.translatesAutoresizingMaskIntoConstraints = false
-        privateSelectorView.backgroundColor = .lightGray
-        privateSelectorView.layer.cornerRadius = 10
-        privateSelectorView.tag = 2
-        privateSelectorView.isUserInteractionEnabled = true
-        let gesture = UITapGestureRecognizer(target: self, action: #selector(selectorDidTapped))
-        privateSelectorView.addGestureRecognizer(gesture)
-        addSubview(privateSelectorView)
-        return privateSelectorView
-    } ()
-    
-    lazy var privateSelectorLabel: UILabel = {
-        let privateSelectorLabel = UILabel()
-        privateSelectorLabel.translatesAutoresizingMaskIntoConstraints = false
-        privateSelectorLabel.text = "비공개"
-        privateSelectorLabel.textColor = .lightGray
-        privateSelectorLabel.font = .systemFont(ofSize: 14, weight: .light)
-        privateSelectorLabel.tag = 2
-        privateSelectorLabel.isUserInteractionEnabled = true
-        let gesture = UITapGestureRecognizer(target: self, action: #selector(selectorDidTapped))
-        privateSelectorLabel.addGestureRecognizer(gesture)
-        addSubview(privateSelectorLabel)
-        return privateSelectorLabel
+        component.addGestureRecognizer(gesture)
+        addSubview(component)
+        return component
     } ()
     
     private lazy var bottomSeperator: UIView = {
@@ -122,10 +68,11 @@ class PublishSettingCellHeaderView: UIView {
         return view
     } ()
     
+    var selectedTab: PublishSettingHeaderComponent?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setConstraints()
-        publishSettingViewColor(index: publishSettingIndex, isSelected: true)
     }
     
     required init?(coder: NSCoder) {
@@ -133,13 +80,6 @@ class PublishSettingCellHeaderView: UIView {
     }
     
     private func setConstraints() {
-        
-        NSLayoutConstraint.activate([
-            topSeperator.leadingAnchor.constraint(equalTo: leadingAnchor),
-            topSeperator.trailingAnchor.constraint(equalTo: trailingAnchor),
-            topSeperator.topAnchor.constraint(equalTo: topAnchor),
-            topSeperator.heightAnchor.constraint(equalToConstant: 10)
-        ])
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor)
@@ -147,41 +87,18 @@ class PublishSettingCellHeaderView: UIView {
         
         NSLayoutConstraint.activate([
             publicSelectorView.leadingAnchor.constraint(greaterThanOrEqualTo: titleLabel.trailingAnchor, constant: 10),
-            publicSelectorView.trailingAnchor.constraint(equalTo: protectSelectorView.leadingAnchor, constant: -40),
-//            publicSelectorView.topAnchor.constraint(equalTo: topSeperator.bottomAnchor, constant: 20),
-//            publicSelectorView.bottomAnchor.constraint(equalTo: bottomSeperator.topAnchor, constant: -20),
-            publicSelectorView.topAnchor.constraint(equalTo: topAnchor, constant: 25),
-            publicSelectorView.widthAnchor.constraint(equalToConstant: 20),
-            publicSelectorView.heightAnchor.constraint(equalToConstant: 20)
+            publicSelectorView.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
         
         NSLayoutConstraint.activate([
-            publicSelectorLabel.centerXAnchor.constraint(equalTo: publicSelectorView.centerXAnchor),
-            publicSelectorLabel.topAnchor.constraint(equalTo: publicSelectorView.bottomAnchor, constant: 5)
+            protectSelectorView.leadingAnchor.constraint(equalTo: publicSelectorView.trailingAnchor, constant: 40),
+            protectSelectorView.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
         
         NSLayoutConstraint.activate([
-            protectSelectorView.trailingAnchor.constraint(equalTo: privateSelectorView.leadingAnchor, constant: -40),
-            protectSelectorView.centerYAnchor.constraint(equalTo: publicSelectorView.centerYAnchor),
-            protectSelectorView.widthAnchor.constraint(equalToConstant: 20),
-            protectSelectorView.heightAnchor.constraint(equalToConstant: 20)
-        ])
-        
-        NSLayoutConstraint.activate([
-            protectSelectorLabel.centerXAnchor.constraint(equalTo: protectSelectorView.centerXAnchor),
-            protectSelectorLabel.topAnchor.constraint(equalTo: protectSelectorView.bottomAnchor, constant: 5)
-        ])
-        
-        NSLayoutConstraint.activate([
+            privateSelectorView.leadingAnchor.constraint(equalTo: protectSelectorView.trailingAnchor, constant: 40),
             privateSelectorView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            privateSelectorView.centerYAnchor.constraint(equalTo: publicSelectorView.centerYAnchor),
-            privateSelectorView.widthAnchor.constraint(equalToConstant: 20),
-            privateSelectorView.heightAnchor.constraint(equalToConstant: 20)
-        ])
-        
-        NSLayoutConstraint.activate([
-            privateSelectorLabel.centerXAnchor.constraint(equalTo: privateSelectorView.centerXAnchor),
-            privateSelectorLabel.topAnchor.constraint(equalTo: privateSelectorView.bottomAnchor, constant: 5)
+            privateSelectorView.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
         
         NSLayoutConstraint.activate([
@@ -195,25 +112,90 @@ class PublishSettingCellHeaderView: UIView {
     @objc private func selectorDidTapped(gesture: UITapGestureRecognizer) {
         guard let tag = gesture.view?.tag else { return }
         delegate?.segmentControlDidTapped(index: tag)
-        
-        publishSettingViewColor(index: publishSettingIndex, isSelected: false)
-        publishSettingViewColor(index: tag, isSelected: true)
-        publishSettingIndex = tag
-        setPublishSettingIndex(index: publishSettingIndex)
+        setPublishSettingIndex(index: tag)
     }
     
-    func publishSettingViewColor(index: Int, isSelected: Bool) {
-        if let views = self.subviews[index + 3] as? UIView {
-            views.backgroundColor = isSelected ? .black : .lightGray
-        }
-        if let label = self.subviews[index + 3] as? UILabel {
-            label.textColor = isSelected ? .black : .lightGray
-            label.font = .systemFont(ofSize: 14, weight: isSelected ? .bold : .light)
-        }
+    private func initializeSelector() {
+        publicSelectorView.setUI(isSelected: false)
+        privateSelectorView.setUI(isSelected: false)
+        protectSelectorView.setUI(isSelected: false)
     }
     
     func setPublishSettingIndex(index: Int) {
         self.publishSettingIndex = index
+        initializeSelector()
+        
+        if index == 0 {
+            selectedTab = publicSelectorView
+        }
+        else if index == 1 {
+            selectedTab = protectSelectorView
+        }
+        else {
+            selectedTab = privateSelectorView
+        }
+        
+        selectedTab?.setUI(isSelected: true)
     }
     
+    func getPublishSettingIndex() -> Int {
+        return publishSettingIndex
+    }
+    
+}
+
+
+class PublishSettingHeaderComponent: UIView {
+    private var text: String?
+    private lazy var topView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .lightGray
+        view.layer.cornerRadius = 10
+        view.layer.masksToBounds = true
+        addSubview(view)
+        return view
+    } ()
+    
+    private lazy var textLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = text
+        label.font = .systemFont(ofSize: 14)
+        addSubview(label)
+        return label
+    } ()
+    
+    init(text: String, tag: Int) {
+        self.text = text
+        super.init(frame: .zero)
+        setConstraints()
+        self.tag = tag
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
+    func setUI(isSelected: Bool) {
+        topView.backgroundColor = isSelected ? .black : .lightGray
+        textLabel.font = UIFont.systemFont(ofSize: 14, weight: isSelected ? .bold : .regular)
+        textLabel.textColor = isSelected ? .black : .lightGray
+    }
+    
+    private func setConstraints() {
+        NSLayoutConstraint.activate([
+            topView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            topView.topAnchor.constraint(equalTo: topAnchor),
+            topView.widthAnchor.constraint(equalToConstant: 20),
+            topView.heightAnchor.constraint(equalToConstant: 20)
+        ])
+        
+        NSLayoutConstraint.activate([
+            textLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
+            textLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
+            textLabel.topAnchor.constraint(equalTo: topView.bottomAnchor, constant: 10),
+            textLabel.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
+    }
 }

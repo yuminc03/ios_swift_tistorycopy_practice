@@ -9,6 +9,8 @@ import UIKit
 
 class PublishCurrentDateView: UIView {
     
+    var publishDateIndex: Int = 0
+    
     lazy var publishTitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -30,14 +32,6 @@ class PublishCurrentDateView: UIView {
         return label
     } ()
     
-    lazy var dividedView: UIView = {
-        let dividedView = UIView()
-        dividedView.translatesAutoresizingMaskIntoConstraints = false
-        dividedView.backgroundColor = .lightGray
-        addSubview(dividedView)
-        return dividedView
-    } ()
-    
     lazy var publishReservationDateLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -49,6 +43,15 @@ class PublishCurrentDateView: UIView {
         return label
     } ()
     
+    lazy var dividedView: UIView = {
+        let dividedView = UIView()
+        dividedView.translatesAutoresizingMaskIntoConstraints = false
+        dividedView.backgroundColor = .lightGray
+        addSubview(dividedView)
+        return dividedView
+    } ()
+
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setConstraints()
@@ -56,6 +59,10 @@ class PublishCurrentDateView: UIView {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+    }
+    
+    func setUI(isSelected: Bool) {
+        print("set ui")
     }
     
     private func setConstraints() {
@@ -69,7 +76,7 @@ class PublishCurrentDateView: UIView {
             publishCurrentDateLabel.trailingAnchor.constraint(equalTo: dividedView.leadingAnchor, constant: -15),
             publishCurrentDateLabel.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
-        
+    
         NSLayoutConstraint.activate([
             dividedView.widthAnchor.constraint(equalToConstant: 1),
             dividedView.heightAnchor.constraint(equalToConstant: 12),
@@ -81,6 +88,14 @@ class PublishCurrentDateView: UIView {
             publishReservationDateLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             publishReservationDateLabel.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
+    }
+    
+    func setPublishDateIndex(index: Int) {
+        self.publishDateIndex = index
+    }
+    
+    func getPublishDateIndex() -> Int {
+        return publishDateIndex
     }
     
 }

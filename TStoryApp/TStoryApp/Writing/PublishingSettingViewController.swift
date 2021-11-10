@@ -198,7 +198,7 @@ class PublishingSettingViewController: UIViewController {
     }
     
     func setTitleText(titleText: String) {
-        self.writeFormModel[0].writeTitleText = titleText
+//        self.writeFormModel[0].writeTitleText = titleText
         self.writeFormModel[0].publishSettingForm[0].publishTitleText = titleText
     }
     
