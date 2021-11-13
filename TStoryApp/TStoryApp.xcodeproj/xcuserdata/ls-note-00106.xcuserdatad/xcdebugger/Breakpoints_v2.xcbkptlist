@@ -20,5 +20,113 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "565ED0DC-9135-46AA-9E23-DD3CFD7CDB1B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TStoryApp/Writing/Publish/Components/Cell/CellContent/PublishSettingCellContentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "PublishSettingCellContentView"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "565ED0DC-9135-46AA-9E23-DD3CFD7CDB1B - 466906efe5cf373f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TStoryApp.PublishSettingCellContentView.publishDateIndex.getter : Swift.Int"
+                  moduleName = "TStoryApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ls-note-00106/Desktop/lifesemantics_ios_study/TStoryApp/TStoryApp/Writing/Publish/Components/Cell/CellContent/PublishSettingCellContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "85">
+               </Location>
+               <Location
+                  uuid = "565ED0DC-9135-46AA-9E23-DD3CFD7CDB1B - ae03f3acd68e6b2b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TStoryApp.PublishSettingCellContentView.publishDateIndex.setter : Swift.Int"
+                  moduleName = "TStoryApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ls-note-00106/Desktop/lifesemantics_ios_study/TStoryApp/TStoryApp/Writing/Publish/Components/Cell/CellContent/PublishSettingCellContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "97">
+               </Location>
+               <Location
+                  uuid = "565ED0DC-9135-46AA-9E23-DD3CFD7CDB1B - 713fffbbee24efaf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TStoryApp.PublishSettingCellContentView.publishDateIndex.modify : Swift.Int"
+                  moduleName = "TStoryApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ls-note-00106/Desktop/lifesemantics_ios_study/TStoryApp/TStoryApp/Writing/Publish/Components/Cell/CellContent/PublishSettingCellContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "27">
+               </Location>
+               <Location
+                  uuid = "565ED0DC-9135-46AA-9E23-DD3CFD7CDB1B - 4c99077817b63cfa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TStoryApp.PublishSettingCellContentView.publishDateIndex.modify : Swift.Int with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "TStoryApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ls-note-00106/Desktop/lifesemantics_ios_study/TStoryApp/TStoryApp/Writing/Publish/Components/Cell/CellContent/PublishSettingCellContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "15">
+               </Location>
+               <Location
+                  uuid = "565ED0DC-9135-46AA-9E23-DD3CFD7CDB1B - 805fdc818bdaa56c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TStoryApp.PublishSettingCellContentView.init(frame: __C.CGRect) -&gt; TStoryApp.PublishSettingCellContentView"
+                  moduleName = "TStoryApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ls-note-00106/Desktop/lifesemantics_ios_study/TStoryApp/TStoryApp/Writing/Publish/Components/Cell/CellContent/PublishSettingCellContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "330">
+               </Location>
+               <Location
+                  uuid = "565ED0DC-9135-46AA-9E23-DD3CFD7CDB1B - 8b3cb3bf1f632424"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TStoryApp.PublishSettingCellContentView.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;TStoryApp.PublishSettingCellContentView&gt;"
+                  moduleName = "TStoryApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ls-note-00106/Desktop/lifesemantics_ios_study/TStoryApp/TStoryApp/Writing/Publish/Components/Cell/CellContent/PublishSettingCellContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "244">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
