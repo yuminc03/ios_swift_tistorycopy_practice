@@ -63,25 +63,25 @@ class ProfileViewController: UIViewController {
                     isSelected: true,
                     categoryCell: [
                         ProfileCategoryCell(
-                            cellTitle: "이번 생은 틀렸다고 느껴질 때",
+                            cellTitle: "이번 생은 틀렸다고 느껴질 때를 읽어보았습니다",
                             cellImageName: "image1.png",
                             cellLikeNum: 1,
                             cellCommentNum: 0,
                             cellDate: "2021.9.20"),
                         ProfileCategoryCell(
-                            cellTitle: "코로나 1차, 2차 백신 접종 완료!",
+                            cellTitle: "코로나 백신 1차, 2차 접종완료했습니다",
                             cellImageName: "image2.png",
                             cellLikeNum: 0,
                             cellCommentNum: 0,
                             cellDate: "2021.8.14."),
                         ProfileCategoryCell(
-                            cellTitle: "일의 기쁨과 슬픔",
+                            cellTitle: "일의 기쁨과 슬픔을 읽어보았습니다",
                             cellImageName: "image3.png",
                             cellLikeNum: 1,
                             cellCommentNum: 2,
                             cellDate: "2021.8.9."),
                         ProfileCategoryCell(
-                            cellTitle: "Photoshop으로 우주의 소녀 그리기",
+                            cellTitle: "Photoshop으로 우주의 소녀 그림 그리기",
                             cellImageName: "image4.png",
                             cellLikeNum: 1,
                             cellCommentNum: 0,
@@ -93,7 +93,7 @@ class ProfileViewController: UIViewController {
                             cellCommentNum: 2,
                             cellDate: "2021.7.11."),
                         ProfileCategoryCell(
-                            cellTitle: "화양연화 THE NOTES 1",
+                            cellTitle: "화양연화 THE NOTES 1을 읽어보았습니다",
                             cellImageName: "image6.png",
                             cellLikeNum: 1,
                             cellCommentNum: 0,

@@ -15,6 +15,7 @@ class MyContentTableViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         //label.text = "여기는 게시물의 제목입니다."
         label.textColor = .black
+        label.lineBreakMode = .byTruncatingTail
         label.font = .systemFont(ofSize: 17)
         self.addSubview(label)
         return label
@@ -101,6 +102,7 @@ class MyContentTableViewCell: UITableViewCell {
         
         NSLayoutConstraint.activate([
             myContentTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            myContentTitleLabel.trailingAnchor.constraint(equalTo: myContentImageView.leadingAnchor, constant: -20),
             myContentTitleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 8),
             myContentTitleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -40)
         ])
