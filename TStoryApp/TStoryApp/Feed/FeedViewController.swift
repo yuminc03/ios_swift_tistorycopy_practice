@@ -35,7 +35,7 @@ class FeedViewController: UIViewController {
             feedCell: [
                 FeedCell(
                     feedTitle: "외상 후 스트레스 장애Posttraumatic Stress Disorder(feat. 영화 와일드 카드로 살펴보는 PTSD)",
-                    feedContents: "영화 '와일드카드'에서는 한 형사(장칠순(가 등장한다. 그는 조폭을 검거하려다가 복부에 칼을 맞는 사고를 당한다.",
+                    feedContents: " 1. 현상 영화 '와일드카드'에서는 한 형사(장칠순)가 등장한다. 그는 조폭을 검거하려다가 복부에 칼을 맞는 사고를 당한다.",
                     feedImage: "image1.png",
                     feedLikeNum: 1,
                     feedCommentNum: 0,
@@ -44,7 +44,7 @@ class FeedViewController: UIViewController {
                 ),
                 FeedCell(
                     feedTitle: "휴머니즘 광고, 감성속에 숨겨져 있는 자본의 논리(feat. 삼성생명은 당신의 생명이 아닌 당신의 돈에 관심이 있을 뿐)",
-                    feedContents: "현대사회는 관고의 홍수라 할 수 있다. 자본주의 첨병으로서 관고는 그 역할을 톡톡히 수행하고 있기에 현대 시대의 생활상과 가치관, 문화를 단적으로 반영한다.",
+                    feedContents: "현대사회는 광고의 홍수라 할 수 있다. 자본주의 첨병으로서 광고는 그 역할을 톡톡히 수행하고 있기에 현대 시대의 생활상과 가치관, 문화를 단적으로 반영한다.",
                     feedImage: "image2.png",
                     feedLikeNum: 1,
                     feedCommentNum: 2,

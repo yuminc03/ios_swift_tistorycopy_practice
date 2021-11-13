@@ -23,16 +23,16 @@ class TabBarViewController: UITabBarController {
         tabBar.isTranslucent = false
         // ex
         let vc1 = UIViewController()
-        vc1.view.backgroundColor = .red.withAlphaComponent(0.5)
-        let vc2 = UIViewController()
-        vc2.view.backgroundColor = .green.withAlphaComponent(0.5)
+        vc1.view.backgroundColor = .white
+//        let vc2 = UIViewController()
+//        vc2.view.backgroundColor = .green.withAlphaComponent(0.5)
 //        let vc3 = UIViewController()
 //        vc3.view.backgroundColor = .lightGray.withAlphaComponent(0.5)
         
         
         viewControllers = [
-            createTabBarItem(tabBarTitle: "HOME", viewController: vc1, 0),
-            createTabBarItem(tabBarTitle: "FEED", viewController: vc2, 1),
+            createTabBarItem(tabBarTitle: "HOME", viewController: HomeViewController(), 0),
+            createTabBarItem(tabBarTitle: "FEED", viewController: FeedViewController(), 1),
             createTabBarItem(tabBarTitle: "WRITE", viewController: WritingFormViewController(), 2),
             createTabBarItem(tabBarTitle: "NOTICE", viewController: NoticeViewController(), 3),
             createTabBarItem(tabBarTitle: "PROFILE", viewController: ProfileViewController(), 4)]

@@ -8,17 +8,16 @@
 import UIKit
 
 class FeedTableViewCell: UITableViewCell {
-    
-    var likeNumLabel: Int = 0
-    var commentNumLabel: Int = 0
+
     
     lazy var feedTitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
-        label.font = .systemFont(ofSize: 20)
+        label.font = .systemFont(ofSize: 18, weight: .light)
         label.numberOfLines = 2
-        label.lineBreakMode = .byCharWrapping
+        label.lineBreakStrategy = .hangulWordPriority
+        label.lineBreakMode = .byTruncatingTail
         addSubview(label)
         return label
     } ()
@@ -27,8 +26,9 @@ class FeedTableViewCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .lightGray
-        label.font = .systemFont(ofSize: 12, weight: .light)
-        label.lineBreakMode = .byCharWrapping
+        label.font = .systemFont(ofSize: 15, weight: .light)
+        label.lineBreakStrategy = .hangulWordPriority
+        label.lineBreakMode = .byTruncatingTail
         label.numberOfLines = 2
         addSubview(label)
         return label
@@ -37,30 +37,46 @@ class FeedTableViewCell: UITableViewCell {
     lazy var feedImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.backgroundColor = .purple.withAlphaComponent(0.5)
+        imageView.backgroundColor = .blue.withAlphaComponent(0.5)
+        imageView.layer.borderColor = UIColor.lightGray.withAlphaComponent(0.5).cgColor
+        imageView.layer.borderWidth = 0.5
         addSubview(imageView)
         return imageView
     } ()
     
     lazy var likeComponents: FeedCommentsCompotentsView = {
-        let likeComponents = FeedCommentsCompotentsView(numText: likeNumLabel, cornerRadiusValue: 10)
+        let likeComponents = FeedCommentsCompotentsView(numText: 0, cornerRadiusValue: 6)
         likeComponents.translatesAutoresizingMaskIntoConstraints = false
         addSubview(likeComponents)
         return likeComponents
     } ()
     
+    lazy var componentsBetweenView: FeedComponentsBetweenView = {
+        let componentsBetweenView = FeedComponentsBetweenView()
+        componentsBetweenView.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(componentsBetweenView)
+        return componentsBetweenView
+    } ()
+    
     lazy var commentComponents: FeedCommentsCompotentsView = {
-        let commentComponents = FeedCommentsCompotentsView(numText: commentNumLabel, cornerRadiusValue: 5)
+        let commentComponents = FeedCommentsCompotentsView(numText: 0, cornerRadiusValue: 3)
         commentComponents.translatesAutoresizingMaskIntoConstraints = false
         addSubview(commentComponents)
         return commentComponents
+    } ()
+    
+    lazy var componentsBetweenView2: FeedComponentsBetweenView = {
+        let componentsBetweenView = FeedComponentsBetweenView()
+        componentsBetweenView.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(componentsBetweenView)
+        return componentsBetweenView
     } ()
     
     lazy var feedDateLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .lightGray
-        label.font = .systemFont(ofSize: 10, weight: .light)
+        label.font = .systemFont(ofSize: 12, weight: .light)
         addSubview(label)
         return label
     } ()
@@ -69,6 +85,7 @@ class FeedTableViewCell: UITableViewCell {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.backgroundColor = .blue.withAlphaComponent(0.8)
+        imageView.layer.cornerRadius = 5
         addSubview(imageView)
         return imageView
     } ()
@@ -77,7 +94,7 @@ class FeedTableViewCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .lightGray
-        label.font = .systemFont(ofSize: 10, weight: .light)
+        label.font = .systemFont(ofSize: 12, weight: .light)
         addSubview(label)
         return label
     } ()
@@ -103,14 +120,13 @@ class FeedTableViewCell: UITableViewCell {
         NSLayoutConstraint.activate([
             feedTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             feedTitleLabel.trailingAnchor.constraint(equalTo: feedImageView.leadingAnchor, constant: -20),
-            feedTitleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 30),
-            feedTitleLabel.bottomAnchor.constraint(equalTo: feedContentsLabel.topAnchor, constant: -15)
+            feedTitleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 25)
         ])
         
         NSLayoutConstraint.activate([
             feedContentsLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             feedContentsLabel.trailingAnchor.constraint(equalTo: feedImageView.leadingAnchor, constant: -20),
-            feedContentsLabel.bottomAnchor.constraint(equalTo: likeComponents.topAnchor, constant: -15)
+            feedContentsLabel.topAnchor.constraint(equalTo: feedTitleLabel.bottomAnchor, constant: 15)
         ])
         
         NSLayoutConstraint.activate([
@@ -122,23 +138,35 @@ class FeedTableViewCell: UITableViewCell {
         
         NSLayoutConstraint.activate([
             likeComponents.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            likeComponents.bottomAnchor.constraint(equalTo: subscribingProfileImageView.topAnchor, constant: -20)
+            likeComponents.topAnchor.constraint(equalTo: feedContentsLabel.bottomAnchor, constant: 15)
         ])
         
         NSLayoutConstraint.activate([
-            commentComponents.leadingAnchor.constraint(equalTo: likeComponents.trailingAnchor, constant: 15),
-            commentComponents.bottomAnchor.constraint(equalTo: subscribingProfileImageView.topAnchor, constant: -20)
+            componentsBetweenView.leadingAnchor.constraint(equalTo: likeComponents.trailingAnchor, constant: 6),
+            componentsBetweenView.centerYAnchor.constraint(equalTo: likeComponents.centerYAnchor)
         ])
         
         NSLayoutConstraint.activate([
-            feedDateLabel.leadingAnchor.constraint(equalTo: commentComponents.trailingAnchor, constant: 15),
+            commentComponents.leadingAnchor.constraint(equalTo: componentsBetweenView.trailingAnchor, constant: 6),
+            commentComponents.bottomAnchor.constraint(equalTo: subscribingProfileImageView.topAnchor, constant: -15)
+        ])
+        
+        NSLayoutConstraint.activate([
+            componentsBetweenView2.leadingAnchor.constraint(equalTo: commentComponents.trailingAnchor, constant: 6),
+            componentsBetweenView2.centerYAnchor.constraint(equalTo: likeComponents.centerYAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            feedDateLabel.leadingAnchor.constraint(equalTo: componentsBetweenView2.trailingAnchor, constant: 12),
             feedDateLabel.centerYAnchor.constraint(equalTo: likeComponents.centerYAnchor)
         ])
         
         NSLayoutConstraint.activate([
-            subscribingProfileImageView.widthAnchor.constraint(equalToConstant: 30),
-            subscribingProfileImageView.heightAnchor.constraint(equalToConstant: 30),
-            subscribingProfileImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20)
+            subscribingProfileImageView.widthAnchor.constraint(equalToConstant: 20),
+            subscribingProfileImageView.heightAnchor.constraint(equalToConstant: 20),
+            subscribingProfileImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            subscribingProfileImageView.topAnchor.constraint(equalTo: likeComponents.bottomAnchor, constant: 15),
+            subscribingProfileImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -25)
         ])
         
         NSLayoutConstraint.activate([
@@ -154,12 +182,15 @@ class FeedTableViewCell: UITableViewCell {
         ])
     }
     
-    func setFeedTableViewCellData(title: String, contents: String, likeNum: Int, commentNum: Int, date: String, name: String) {
+    func setFeedTableViewCellData(title: String, contents: String, date: String, name: String) {
         feedTitleLabel.text = title
         feedContentsLabel.text = contents
-        self.likeNumLabel = likeNum
-        self.commentNumLabel = commentNum
         feedDateLabel.text = date
         subscribingBloggerName.text = name
+    }
+    
+    func setNumberComponentText(likeNum: Int, commentNum: Int) {
+        likeComponents.setNumberText(num: likeNum)
+        commentComponents.setNumberText(num: commentNum)
     }
 }

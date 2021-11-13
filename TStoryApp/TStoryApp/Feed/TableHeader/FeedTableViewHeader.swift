@@ -8,10 +8,7 @@
 import UIKit
 
 class FeedTableViewHeader: UITableViewHeaderFooterView {
-    
-    var subscribingNum: String = ""
-    var subscriberNum: String = ""
-    
+ 
     lazy var feedTitle: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -23,14 +20,14 @@ class FeedTableViewHeader: UITableViewHeaderFooterView {
     } ()
     
     private lazy var subscribingView: FeedSubscribeComponentsView = {
-        let components = FeedSubscribeComponentsView(label: "구독중", num: subscribingNum)
+        let components = FeedSubscribeComponentsView(label: "구독중", num: 0)
         components.translatesAutoresizingMaskIntoConstraints = false
         addSubview(components)
         return components
     } ()
     
     private lazy var subscriberView: FeedSubscribeComponentsView = {
-        let components = FeedSubscribeComponentsView(label: "구독자", num: subscriberNum)
+        let components = FeedSubscribeComponentsView(label: "구독자", num: 0)
         components.translatesAutoresizingMaskIntoConstraints = false
         addSubview(components)
         return components
@@ -52,19 +49,19 @@ class FeedTableViewHeader: UITableViewHeaderFooterView {
         ])
         
         NSLayoutConstraint.activate([
-            subscribingView.trailingAnchor.constraint(equalTo: subscriberView.leadingAnchor, constant: -30),
+            subscribingView.trailingAnchor.constraint(equalTo: subscriberView.leadingAnchor, constant: -25),
             subscribingView.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
         
         NSLayoutConstraint.activate([
-            subscriberView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            subscriberView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             subscriberView.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
     }
     
     func setSubscribeNumData(subscribingNum: Int, subscriberNum: Int) {
-        self.subscribingNum = String(subscribingNum)
-        self.subscriberNum = String(subscriberNum)
+        subscribingView.setNumLabelText(num: subscribingNum)
+        subscriberView.setNumLabelText(num: subscriberNum)
     }
 }
 

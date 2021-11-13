@@ -10,7 +10,7 @@ import UIKit
 class FeedSubscribeComponentsView: UIView {
     
     private var subscribeLabelComponent : String = ""
-    private var subscribeNumComponent : String = ""
+    private var subscribeNumComponent : Int = 0
     
     private lazy var topLabel: UILabel = {
         let label = UILabel()
@@ -26,13 +26,13 @@ class FeedSubscribeComponentsView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
-        label.text = subscribeNumComponent
+        label.text = String(subscribeNumComponent)
         label.font = .systemFont(ofSize: 13)
         addSubview(label)
         return label
     } ()
     
-    init(label: String, num: String) {
+    init(label: String, num: Int) {
         super.init(frame: .zero)
         self.subscribeLabelComponent = label
         self.subscribeNumComponent = num
@@ -44,20 +44,23 @@ class FeedSubscribeComponentsView: UIView {
     }
     
     private func setConstraints() {
+        
         NSLayoutConstraint.activate([
-            topLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            topLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
             topLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
-            topLabel.topAnchor.constraint(equalTo: topAnchor),
-            topLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -25)
+            topLabel.topAnchor.constraint(equalTo: topAnchor)
         ])
         
         NSLayoutConstraint.activate([
-            numLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
+            numLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),
             numLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
-            numLabel.topAnchor.constraint(equalTo: topLabel.bottomAnchor, constant: 5),
+            numLabel.topAnchor.constraint(equalTo: topLabel.bottomAnchor, constant: 2),
             numLabel.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
     
+    func setNumLabelText(num: Int) {
+        numLabel.text = String(num)
+    }
 }
 

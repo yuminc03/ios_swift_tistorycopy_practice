@@ -9,8 +9,8 @@ import UIKit
 
 class FeedCommentsCompotentsView: UIView {
 
-    var numText: Int = 0
-    var cornerRadiusValue: Int = 0
+    private var numText: Int = 0
+    private var cornerRadiusValue: Int = 0
     
     lazy var leftIconView: UIView = {
         let leftIconView = UIView()
@@ -25,7 +25,7 @@ class FeedCommentsCompotentsView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .lightGray
-        label.font = .systemFont(ofSize: 10, weight: .light)
+        label.font = .systemFont(ofSize: 12, weight: .light)
         label.text = String(numText)
         addSubview(label)
         return label
@@ -43,16 +43,23 @@ class FeedCommentsCompotentsView: UIView {
     }
     
     private func setConstraints() {
+       
         NSLayoutConstraint.activate([
-            leftIconView.widthAnchor.constraint(equalToConstant: 20),
-            leftIconView.heightAnchor.constraint(equalToConstant: 20),
-            leftIconView.trailingAnchor.constraint(equalTo: rightNumberLabel.leadingAnchor, constant: 5),
+            leftIconView.widthAnchor.constraint(equalToConstant: 12),
+            leftIconView.heightAnchor.constraint(equalToConstant: 12),
+            leftIconView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            leftIconView.topAnchor.constraint(equalTo: topAnchor),
             leftIconView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
         
         NSLayoutConstraint.activate([
+            rightNumberLabel.leadingAnchor.constraint(equalTo: leftIconView.trailingAnchor, constant: 5),
             rightNumberLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
             rightNumberLabel.centerYAnchor.constraint(equalTo: leftIconView.centerYAnchor)
         ])
+    }
+    
+    func setNumberText(num: Int) {
+        rightNumberLabel.text = String(num)
     }
 }
