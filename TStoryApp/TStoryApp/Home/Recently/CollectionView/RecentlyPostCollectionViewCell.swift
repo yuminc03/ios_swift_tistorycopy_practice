@@ -9,6 +9,8 @@ import UIKit
 
 class RecentlyPostCollectionViewCell: UICollectionViewCell {
     
+    var postUrl: String = ""
+    
     lazy var postImage: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -78,9 +80,10 @@ class RecentlyPostCollectionViewCell: UICollectionViewCell {
         ])
     }
     
-    func setCommentNumLabel(title: String, likeNum: Int, commentNum: Int) {
+    func setCommentNumLabel(title: String, likeNum: Int, commentNum: Int, postUrl: String) {
         postTitle.text = title
         likeComponentView.commentNumLabel.text = String(likeNum)
         commentComponentView.commentNumLabel.text = String(commentNum)
+        self.postUrl = postUrl
     }
 }

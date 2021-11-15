@@ -29,10 +29,18 @@ extension RecentlyTableViewCell: UICollectionViewDelegateFlowLayout, UICollectio
         cell.layer.shadowOffset = CGSize(width: 0, height: 2)
         cell.layer.shadowRadius = 4
         cell.layer.shadowOpacity = 0.8
-        
-        cell.setCommentNumLabel(title: data.postName, likeNum: data.likeNum, commentNum: data.commentNum)
+        cell.setCommentNumLabel(title: data.postName, likeNum: data.likeNum, commentNum: data.commentNum, postUrl: data.postUrl)
         cell.postImage.backgroundColor = .systemBlue.withAlphaComponent(CGFloat(indexPath.row + 1) * 0.1)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? RecentlyPostCollectionViewCell else { return }
+        let postUrl = cell.postUrl
+        let vc = PostWebViewController()
+        vc.setPostUrl(url: postUrl)
+        vc.modalPresentationStyle = .fullScreen
+        self.window?.rootViewController!.present(vc, animated: true, completion: nil)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

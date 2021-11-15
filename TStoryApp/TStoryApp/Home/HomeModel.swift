@@ -21,8 +21,14 @@ struct VisitModel {
 }
 
 struct VisitCell {
+    var todayVisitNumber: [VisitNumber] = []
     var visitInfo: [VisitInformation] = []
     var visitKeyWords: [VisitKeyWords] = []
+}
+
+struct VisitNumber {
+    var visitNum: Int = 0
+    var visitIncrement: Int = 0
 }
 
 struct VisitInformation {

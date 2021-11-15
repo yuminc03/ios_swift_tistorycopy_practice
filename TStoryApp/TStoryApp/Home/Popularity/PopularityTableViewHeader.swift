@@ -25,7 +25,6 @@ class PopularityTableViewHeader: UITableViewHeaderFooterView {
         button.setTitle("모두보기", for: .normal)
         button.setTitleColor(UIColor.lightGray, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 14)
-        button.addTarget(self, action: #selector(seeAllButtonDidTapped), for: .touchUpInside)
         addSubview(button)
         return button
     } ()
@@ -52,7 +51,4 @@ class PopularityTableViewHeader: UITableViewHeaderFooterView {
         ])
     }
     
-    @objc func seeAllButtonDidTapped(button: UIButton) {
-        print("tapped")
-    }
 }

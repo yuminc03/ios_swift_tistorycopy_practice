@@ -1,13 +1,13 @@
 //
-//  PopularityPostTableViewCell.swift
+//  PopularityPostSeeAllTableViewCell.swift
 //  TStoryApp
 //
-//  Created by Chu Yu Min on 2021/11/13.
+//  Created by Chu Yu Min on 2021/11/14.
 //
 
 import UIKit
 
-class PopularityPostTableViewCell: UITableViewCell {
+class PopularityPostSeeAllTableViewCell: UITableViewCell {
     
     lazy var rankingNumLabel: UILabel = {
         let label = UILabel()
@@ -53,7 +53,6 @@ class PopularityPostTableViewCell: UITableViewCell {
         return separator
     } ()
     
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setConstraints()
@@ -63,7 +62,7 @@ class PopularityPostTableViewCell: UITableViewCell {
         super.init(coder: coder)
     }
     
-    private func setConstraints() {
+    private func setConstraints(){
         NSLayoutConstraint.activate([
             rankingNumLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             rankingNumLabel.topAnchor.constraint(equalTo: topAnchor, constant: 18)
@@ -96,7 +95,7 @@ class PopularityPostTableViewCell: UITableViewCell {
         ])
     }
     
-    func setPopularityPost(rank: Int, title: String, views: Int) {
+    func setPopularityPostSeeAll(rank: Int, title: String, views: Int) {
         rankingNumLabel.text = String(rank)
         if title.count > 21 {
             let nsString = title as NSString

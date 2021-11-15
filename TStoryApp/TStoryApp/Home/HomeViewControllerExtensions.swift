@@ -72,6 +72,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         }
         else if section == 3 {
             let popularityHeader = tableView.dequeueReusableHeaderFooterView(withIdentifier: "popularity_header") as! PopularityTableViewHeader
+            popularityHeader.seeAllButton.addTarget(self, action: #selector(seeAllButtonDidTapped), for: .touchUpInside)
             return popularityHeader
         }
         else if section == 4 {
@@ -100,5 +101,13 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         else {
             return 0
         }
+    }
+    
+    @objc func seeAllButtonDidTapped(button: UIButton) {
+//        print("tapped")
+        let vc = PoopularityPostSeeAllViewController()
+        vc.modalPresentationStyle = .fullScreen
+        vc.setPopularityModel(model: homeModel.popularityModel)
+        self.present(vc, animated: true, completion: nil)
     }
 }

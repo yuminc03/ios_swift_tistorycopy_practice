@@ -35,11 +35,85 @@ class HomeViewController: UIViewController {
                     blogUrl: "dpffldk.tistory.com",
                     visitCell: [
                         VisitCell(
+                            todayVisitNumber: [
+                                VisitNumber(
+                                    visitNum: 2,
+                                    visitIncrement: 0
+                                )
+                            ],
                             visitInfo: [
                                 VisitInformation(
                                     visitUrl: "https://search.daum.net/search?w=tot&DA=UME&t__nil_searchbox=suggest&sug=&sugo=15&sq=%EC%9D%BC%EC%9D%99+&o=1&q=%EC%9D%BC%EC%9D%98+%EA%B8%B0%EC%81%A8%EA%B3%BC+%EC%8A%AC%ED%94%94",
-                                    visitDate: "11. 10. 08:47"
-                                )
+                                    visitDate: "11. 15. 10:05"
+                                ),
+                                VisitInformation(
+                                    visitUrl: "https://search.daum.net/search?w=tot&DA=UME&t__nil_searchbox=suggest&sug=&sugo=15&sq=%EC%9D%BC%EC%9D%99+&o=1&q=%EC%9D%BC%EC%9D%98+%EA%B8%B0%EC%81%A8%EA%B3%BC+%EC%8A%AC%ED%94%94",
+                                    visitDate: "11. 15. 09:55"
+                                ),
+                                VisitInformation(
+                                    visitUrl: "https://dpffldk.tistory.com/",
+                                    visitDate: "11. 14. 22:58"
+                                ),
+                                VisitInformation(
+                                    visitUrl: "https://dpffldk.tistory.com/",
+                                    visitDate: "11. 14. 22:58"
+                                ),
+                                VisitInformation(
+                                    visitUrl: "https://dpffldk.tistory.com/",
+                                    visitDate: "11. 14. 22:58"
+                                ),
+                                VisitInformation(
+                                    visitUrl: "https://dpffldk.tistory.com/",
+                                    visitDate: "11. 14. 22:58"
+                                ),
+                                VisitInformation(
+                                    visitUrl: "https://dpffldk.tistory.com/",
+                                    visitDate: "11. 14. 22:58"
+                                ),
+                                VisitInformation(
+                                    visitUrl: "https://dpffldk.tistory.com/",
+                                    visitDate: "11. 14. 22:58"
+                                ),
+                                VisitInformation(
+                                    visitUrl: "https://dpffldk.tistory.com/",
+                                    visitDate: "11. 14. 22:57"
+                                ),
+                                VisitInformation(
+                                    visitUrl: "https://dpffldk.tistory.com/",
+                                    visitDate: "11. 14. 22:56"
+                                ),
+                                VisitInformation(
+                                    visitUrl: "https://dpffldk.tistory.com/",
+                                    visitDate: "11. 14. 22:56"
+                                ),
+                                VisitInformation(
+                                    visitUrl: "https://dpffldk.tistory.com/7",
+                                    visitDate: "11. 14. 22:56"
+                                ),
+                                VisitInformation(
+                                    visitUrl: "https://dpffldk.tistory.com/7",
+                                    visitDate: "11. 14. 22:55"
+                                ),
+                                VisitInformation(
+                                    visitUrl: "https://search.daum.net/search?w=tot&DA=UME&t__nil_searchbox=suggest&sug=&sugo=1&sq=%EC%9D%B4%EB%B2%88+%EC%83%9D%EC%9D%80+%ED%8B%80%EB%A0%B8%EB%8B%A4%EA%B3%A0+&o=1&q=%EC%9D%B4%EB%B2%88+%EC%83%9D%EC%9D%80+%ED%8B%80%EB%A0%B8%EB%8B%A4%EA%B3%A0+%EB%8A%90%EA%BB%B4%EC%A7%88+%EB%95%8C",
+                                    visitDate: "11. 14. 22:55"
+                                ),
+                                VisitInformation(
+                                    visitUrl: "https://search.daum.net/search?nil_suggest=btn&w=tot&DA=SBC&q=photoshop+%EA%B7%B8%EB%A6%BC",
+                                    visitDate: "11. 14. 22:55"
+                                ),
+                                VisitInformation(
+                                    visitUrl: "https://search.daum.net/search?nil_suggest=btn&w=tot&DA=SBC&q=photoshop+%EA%B7%B8%EB%A6%BC",
+                                    visitDate: "11. 14. 22:54"
+                                ),
+                                VisitInformation(
+                                    visitUrl: "https://dpffldk.tistory.com/5",
+                                    visitDate: "11. 14. 22:42"
+                                ),
+                                VisitInformation(
+                                    visitUrl: "https://search.daum.net/search?nil_suggest=btn&w=tot&DA=SBC&q=%EC%9D%BC%EC%9D%98+%EA%B8%B0%EC%81%A8%EA%B3%BC+%EC%8A%AC%ED%94%94",
+                                    visitDate: "11. 14. 22:41"
+                                ),
                             ],
                             visitKeyWords: [
                                 VisitKeyWords(
