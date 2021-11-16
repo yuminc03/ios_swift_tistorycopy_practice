@@ -14,13 +14,16 @@ extension VisitLogViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return visitInfo.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let data = visitInfo[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "full_screen_visit_cell", for: indexPath) as! FullScreenVisitLogTableViewCell
         cell.setComponentData(url: data.visitUrl, date: data.visitDate)
+        cell.visitLogIcon.backgroundColor = .systemBlue.withAlphaComponent(CGFloat(indexPath.row + 1) * 0.1)
+        cell.selectionStyle = .none
+        cell.separator.isHidden = ( indexPath.row == visitInfo.count - 1 )
         return cell
     }
     
@@ -29,8 +32,9 @@ extension VisitLogViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "full_screen_visit_header") as! FullScreenVisitLogTableHeaderView
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "full_screen_visit_header") as! FullScreenVisitLogTableViewHeader
         header.backToControllerButton.addTarget(self, action: #selector(backToControllerButtonDidTapped), for: .touchUpInside)
+        header.logSortButton.addTarget(self, action: #selector(logSortButtonDidTapped), for: .touchUpInside)
         return header
     }
     
@@ -38,4 +42,22 @@ extension VisitLogViewController: UITableViewDelegate, UITableViewDataSource {
         self.dismiss(animated: true, completion: nil)
     }
     
+    @objc private func logSortButtonDidTapped(button: UIButton) {
+        tabBarController?.tabBar.isHidden = true
+        let vc = LogSortViewController()
+        vc.delegate = self
+        vc.modalPresentationStyle = .overCurrentContext
+        self.present(vc, animated: false)
+    }
+    
+}
+
+extension VisitLogViewController: LogSortViewControllerDelegate {
+    func LogSortViewDidTapped(_ viewController: LogSortViewController, at: Int?) {
+        tabBarController?.tabBar.isHidden = false
+        viewController.dismiss(animated: true)
+        guard let at = at else { return }
+        selectedLogSortIndex = at
+        visitInfoTableView.reloadData()
+    }
 }

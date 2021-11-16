@@ -47,6 +47,7 @@ class FullScreenVisitLogTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -58,12 +59,12 @@ class FullScreenVisitLogTableViewCell: UITableViewCell {
             visitLogIcon.widthAnchor.constraint(equalToConstant: 10),
             visitLogIcon.heightAnchor.constraint(equalToConstant: 10),
             visitLogIcon.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            visitLogIcon.topAnchor.constraint(equalTo: topAnchor, constant: 8),
-            visitLogIcon.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8)
+            visitLogIcon.topAnchor.constraint(equalTo: topAnchor, constant: 20),
+            visitLogIcon.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20)
         ])
         
         NSLayoutConstraint.activate([
-            visitLogUrl.leadingAnchor.constraint(equalTo: visitLogIcon.trailingAnchor, constant: 8),
+            visitLogUrl.leadingAnchor.constraint(equalTo: visitLogIcon.trailingAnchor, constant: 5),
             visitLogUrl.trailingAnchor.constraint(equalTo: visitDate.leadingAnchor, constant: -10),
             visitLogUrl.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])

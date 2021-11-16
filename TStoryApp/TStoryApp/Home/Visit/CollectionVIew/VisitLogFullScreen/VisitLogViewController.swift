@@ -10,6 +10,7 @@ import UIKit
 class VisitLogViewController: UIViewController {
     
     var visitInfo: [VisitInformation] = []
+    var selectedLogSortIndex: Int = 0
     
     lazy var visitInfoTableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
@@ -19,7 +20,7 @@ class VisitLogViewController: UIViewController {
         tableView.showsVerticalScrollIndicator = false
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(FullScreenVisitLogTableHeaderView.self, forHeaderFooterViewReuseIdentifier: "full_screen_visit_header")
+        tableView.register(FullScreenVisitLogTableViewHeader.self, forHeaderFooterViewReuseIdentifier: "full_screen_visit_header")
         tableView.register(FullScreenVisitLogTableViewCell.self, forCellReuseIdentifier: "full_screen_visit_cell")
         view.addSubview(tableView)
         return tableView
@@ -36,7 +37,7 @@ class VisitLogViewController: UIViewController {
             visitInfoTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             visitInfoTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             visitInfoTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            visitInfoTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            visitInfoTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
         
     }

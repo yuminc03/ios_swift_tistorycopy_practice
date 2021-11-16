@@ -24,4 +24,9 @@ class VisitHeaderComponentsView: UIView {
             self.heightAnchor.constraint(equalToConstant: 6)
         ])
     }
+    
+    func setUI(isSelected: Bool) {
+        self.backgroundColor = isSelected ? .gray : .lightGray.withAlphaComponent(0.5)
+    }
+    
 }

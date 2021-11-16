@@ -53,4 +53,8 @@ class VisitTableViewCell: UITableViewCell {
     func setVisitModel(model: [VisitModel]) {
         self.visitModel = model
     }
+    
+    func getCurrentPage() -> Int {
+        return Int(self.currentPageIndex)
+    }
 }

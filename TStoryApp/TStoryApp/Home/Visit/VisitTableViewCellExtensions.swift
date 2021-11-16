@@ -20,7 +20,10 @@ extension VisitTableViewCell: UICollectionViewDelegateFlowLayout, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.row == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "visit_num_collection_cell", for: indexPath) as! VisitNumGraphCollectionViewCell
-            cell.setVisitNumberComponents(number: visitModel[0].visitCell[0].todayVisitNumber[0].visitNum, increment: visitModel[0].visitCell[0].todayVisitNumber[0].visitIncrement)
+            cell.setVisitNumWeek(model: visitModel[0].visitCell[0].todayVisitNumber[0].visitNumWeek)
+            cell.setVisitNumberComponents()
+            cell.visitGraphView.setSubVisitNumWeek(arr: visitModel[0].visitCell[0].todayVisitNumber[0].visitNumWeek)
+            cell.visitGraphView.graphBottomLineDraw()
             cell.setCellStyle()
             return cell
         }
@@ -39,14 +42,17 @@ extension VisitTableViewCell: UICollectionViewDelegateFlowLayout, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.row == 1 {
+        if indexPath.row == 1 { //유입 로그 모두 보기
             let vc = VisitLogViewController()
             vc.modalPresentationStyle = .fullScreen
             vc.setVisitInfo(model: visitModel[0].visitCell[0].visitInfo)
             self.window?.rootViewController!.present(vc, animated: true)
         }
-        else if indexPath.row == 2 {
-            
+        else if indexPath.row == 2 { //유입 키워드 모두 보기
+            let vc = VisitKeyWordViewController()
+            vc.modalPresentationStyle = .fullScreen
+            vc.setVisitKeyWords(model: visitModel[0].visitCell[0].visitKeyWords)
+            self.window?.rootViewController!.present(vc, animated: true)
         }
     }
     
@@ -69,6 +75,8 @@ extension VisitTableViewCell: UICollectionViewDelegateFlowLayout, UICollectionVi
                     currentPageIndex -= 1
                 }
             }
+            print(Int(currentPageIndex))
+            
             offset = CGPoint(x: currentPageIndex * collectionCellWidth - cv.contentInset.left, y: 0)
             targetContentOffset.pointee = offset
         }

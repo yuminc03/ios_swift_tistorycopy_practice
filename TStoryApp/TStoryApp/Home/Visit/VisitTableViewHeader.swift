@@ -9,6 +9,8 @@ import UIKit
 
 class VisitTableViewHeader: UITableViewHeaderFooterView {
     
+    var currentPageIndex: Int = 0
+    
     lazy var myBlogNameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -32,6 +34,7 @@ class VisitTableViewHeader: UITableViewHeaderFooterView {
         currentPageView.translatesAutoresizingMaskIntoConstraints = false
         currentPageView.layer.cornerRadius = 3
         currentPageView.backgroundColor = .lightGray.withAlphaComponent(0.5)
+        currentPageView.tag = 0
         addSubview(currentPageView)
         return currentPageView
     } ()
@@ -41,6 +44,7 @@ class VisitTableViewHeader: UITableViewHeaderFooterView {
         currentPageView.translatesAutoresizingMaskIntoConstraints = false
         currentPageView.layer.cornerRadius = 3
         currentPageView.backgroundColor = .lightGray.withAlphaComponent(0.5)
+        currentPageView.tag = 1
         addSubview(currentPageView)
         return currentPageView
     } ()
@@ -50,10 +54,34 @@ class VisitTableViewHeader: UITableViewHeaderFooterView {
         currentPageView.translatesAutoresizingMaskIntoConstraints = false
         currentPageView.layer.cornerRadius = 3
         currentPageView.backgroundColor = .lightGray.withAlphaComponent(0.5)
+        currentPageView.tag = 2
         addSubview(currentPageView)
         return currentPageView
     } ()
     
+    var selectedView: VisitHeaderComponentsView?
+    
+    func initalizeComponent() {
+        currentPageViewFirst.setUI(isSelected: false)
+        currentPageViewSecond.setUI(isSelected: false)
+        currentPageViewThird.setUI(isSelected: false)
+    }
+    
+    func currentPageViewSetting(index: Int) {
+        self.currentPageIndex = index
+        initalizeComponent()
+        
+        if index == 0 {
+            selectedView = currentPageViewFirst
+        }
+        else if index == 1 {
+            selectedView = currentPageViewSecond
+        }
+        else {
+            selectedView = currentPageViewThird
+        }
+        selectedView?.setUI(isSelected: true)
+    }
     
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
@@ -64,6 +92,7 @@ class VisitTableViewHeader: UITableViewHeaderFooterView {
         super.init(coder: coder)
     }
     
+
     private func setConstraints() {
         NSLayoutConstraint.activate([
             myBlogNameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),

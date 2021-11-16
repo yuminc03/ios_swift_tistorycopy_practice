@@ -27,8 +27,13 @@ struct VisitCell {
 }
 
 struct VisitNumber {
+    var visitNumWeek: [VisitNumberWeek] = []
     var visitNum: Int = 0
     var visitIncrement: Int = 0
+}
+
+struct VisitNumberWeek {
+    var todayVisitCount: Int = 0
 }
 
 struct VisitInformation {

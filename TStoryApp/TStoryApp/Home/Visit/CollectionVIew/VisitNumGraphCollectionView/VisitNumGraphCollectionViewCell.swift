@@ -9,6 +9,8 @@ import UIKit
 
 class VisitNumGraphCollectionViewCell: UICollectionViewCell {
     
+    var visitNumWeek: [VisitNumberWeek] = []
+    
     lazy var visitGraphView: VisitGraphView = {
         let visitView = VisitGraphView()
         visitView.translatesAutoresizingMaskIntoConstraints = false
@@ -102,11 +104,20 @@ class VisitNumGraphCollectionViewCell: UICollectionViewCell {
         layer.shadowRadius = 4
     }
 
-    func setVisitNumberComponents(number: Int, increment: Int) {
-        todayVisitNumLabel.text = "\(number)"
-        todayVisitNumIncrement.text = "▼ \(increment)"
+    func setVisitNumberComponents() {
+        let visitNumWeekLen = self.visitNumWeek.count
+        let visitNumberWeekLastNum = visitNumWeek[visitNumWeekLen - 1].todayVisitCount
+        let visitNumberWeekSecondLast = visitNumWeek[visitNumWeekLen - 2].todayVisitCount
+        let visitNumberIncrement = abs(visitNumberWeekLastNum - visitNumberWeekSecondLast)
+        todayVisitNumIncrement.textColor = visitNumberWeekLastNum >= visitNumberWeekSecondLast ? .systemRed : .systemBlue
+        todayVisitNumIncrement.text = visitNumberWeekLastNum >= visitNumberWeekSecondLast ? "▲ \(visitNumberIncrement)" : "▼ \(visitNumberIncrement)"
+        todayVisitNumLabel.text = "\(visitNumberWeekLastNum)"
     }
     
+    func setVisitNumWeek(model: [VisitNumberWeek]){
+        self.visitNumWeek = model
+    }
+
     func setCurrentTime() -> String {
         let now = Date()
         let dateFormatter = DateFormatter()
@@ -114,6 +125,6 @@ class VisitNumGraphCollectionViewCell: UICollectionViewCell {
         dateFormatter.timeZone = NSTimeZone(name: "ko_KR") as TimeZone?
         return dateFormatter.string(from: now)
     }
-
+    
 }
 

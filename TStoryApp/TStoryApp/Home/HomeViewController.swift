@@ -10,6 +10,7 @@ import UIKit
 class HomeViewController: UIViewController {
     
     var homeModel = HomeModel()
+    var currentPageIndex: Int = 0
     
     lazy var homeTableView: HomeTableView = {
         let tableView = HomeTableView()
@@ -37,6 +38,53 @@ class HomeViewController: UIViewController {
                         VisitCell(
                             todayVisitNumber: [
                                 VisitNumber(
+                                    visitNumWeek: [
+                                        VisitNumberWeek(
+                                            todayVisitCount: 1
+                                        ),
+                                        VisitNumberWeek(
+                                            todayVisitCount: 1
+                                        ),
+                                        VisitNumberWeek(
+                                            todayVisitCount: 10
+                                        ),
+                                        VisitNumberWeek(
+                                            todayVisitCount: 14
+                                        ),
+                                        VisitNumberWeek(
+                                            todayVisitCount: 1
+                                        ),
+                                        VisitNumberWeek(
+                                            todayVisitCount: 2
+                                        ),
+                                        VisitNumberWeek(
+                                            todayVisitCount: 1
+                                        ),
+                                        VisitNumberWeek(
+                                            todayVisitCount: 0
+                                        ),
+                                        VisitNumberWeek(
+                                            todayVisitCount: 1
+                                        ),
+                                        VisitNumberWeek(
+                                            todayVisitCount: 1
+                                        ),
+                                        VisitNumberWeek(
+                                            todayVisitCount: 0
+                                        ),
+                                        VisitNumberWeek(
+                                            todayVisitCount: 0
+                                        ),
+                                        VisitNumberWeek(
+                                            todayVisitCount: 16
+                                        ),
+                                        VisitNumberWeek(
+                                            todayVisitCount: 3
+                                        ),
+                                        VisitNumberWeek(
+                                            todayVisitCount: 1
+                                        )
+                                    ],
                                     visitNum: 2,
                                     visitIncrement: 0
                                 )
