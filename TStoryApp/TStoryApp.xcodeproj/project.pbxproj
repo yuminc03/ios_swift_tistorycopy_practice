@@ -49,7 +49,7 @@
 		054FE86627421380001A0AD2 /* VisitLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054FE86527421380001A0AD2 /* VisitLogViewController.swift */; };
 		054FE86827421565001A0AD2 /* VisitLogViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054FE86727421565001A0AD2 /* VisitLogViewControllerExtensions.swift */; };
 		054FE86B2742164B001A0AD2 /* FullScreenVisitLogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054FE86A2742164B001A0AD2 /* FullScreenVisitLogTableViewCell.swift */; };
-		054FE86D27421658001A0AD2 /* FullScreenVisitLogTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054FE86C27421658001A0AD2 /* FullScreenVisitLogTableHeaderView.swift */; };
+		054FE86D27421658001A0AD2 /* FullScreenVisitLogTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054FE86C27421658001A0AD2 /* FullScreenVisitLogTableViewHeader.swift */; };
 		054FE87127424229001A0AD2 /* VisitGraphDotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054FE87027424229001A0AD2 /* VisitGraphDotView.swift */; };
 		054FE87427425567001A0AD2 /* PostWebViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054FE87327425567001A0AD2 /* PostWebViewHeader.swift */; };
 		05590E16273B5216006B65A9 /* HomeSubjectHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05590E15273B5216006B65A9 /* HomeSubjectHeaderView.swift */; };
@@ -59,6 +59,14 @@
 		05590E1F273BB00E006B65A9 /* FeedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05590E1E273BB00E006B65A9 /* FeedTableView.swift */; };
 		05590E23273BB377006B65A9 /* FeedTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05590E22273BB377006B65A9 /* FeedTableViewHeader.swift */; };
 		05590E25273BB38E006B65A9 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05590E24273BB38E006B65A9 /* FeedTableViewCell.swift */; };
+		055EFFEC2743252400B97614 /* VisitKeyWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055EFFEB2743252400B97614 /* VisitKeyWordViewController.swift */; };
+		055EFFEE2743281100B97614 /* VisitKeyWordViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055EFFED2743281100B97614 /* VisitKeyWordViewControllerExtensions.swift */; };
+		055EFFF127432BF900B97614 /* FullScreenVisitKeyWordsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055EFFF027432BF900B97614 /* FullScreenVisitKeyWordsTableViewCell.swift */; };
+		055EFFF32743323000B97614 /* FullScreenVisitKeyWordsTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055EFFF22743323000B97614 /* FullScreenVisitKeyWordsTableViewHeader.swift */; };
+		055EFFF8274337C700B97614 /* VisitKeyWordsLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055EFFF7274337C700B97614 /* VisitKeyWordsLabel.swift */; };
+		055EFFFB27439D4700B97614 /* LogSortViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055EFFFA27439D4700B97614 /* LogSortViewController.swift */; };
+		055EFFFD27439DA000B97614 /* LogSortView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055EFFFC27439DA000B97614 /* LogSortView.swift */; };
+		055EFFFF2743A86200B97614 /* LogSortViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055EFFFE2743A86200B97614 /* LogSortViewControllerExtensions.swift */; };
 		057E27AB272A4899009BE550 /* NoticeViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057E27AA272A4899009BE550 /* NoticeViewControllerExtensions.swift */; };
 		057E27AD272A615F009BE550 /* NoticeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057E27AC272A615F009BE550 /* NoticeTableView.swift */; };
 		057E27B1272A6294009BE550 /* NoticeTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057E27B0272A6294009BE550 /* NoticeTableViewHeader.swift */; };
@@ -185,7 +193,7 @@
 		054FE86527421380001A0AD2 /* VisitLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitLogViewController.swift; sourceTree = "<group>"; };
 		054FE86727421565001A0AD2 /* VisitLogViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitLogViewControllerExtensions.swift; sourceTree = "<group>"; };
 		054FE86A2742164B001A0AD2 /* FullScreenVisitLogTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenVisitLogTableViewCell.swift; sourceTree = "<group>"; };
-		054FE86C27421658001A0AD2 /* FullScreenVisitLogTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenVisitLogTableHeaderView.swift; sourceTree = "<group>"; };
+		054FE86C27421658001A0AD2 /* FullScreenVisitLogTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenVisitLogTableViewHeader.swift; sourceTree = "<group>"; };
 		054FE87027424229001A0AD2 /* VisitGraphDotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitGraphDotView.swift; sourceTree = "<group>"; };
 		054FE87327425567001A0AD2 /* PostWebViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostWebViewHeader.swift; sourceTree = "<group>"; };
 		05590E15273B5216006B65A9 /* HomeSubjectHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSubjectHeaderView.swift; sourceTree = "<group>"; };
@@ -195,6 +203,14 @@
 		05590E1E273BB00E006B65A9 /* FeedTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableView.swift; sourceTree = "<group>"; };
 		05590E22273BB377006B65A9 /* FeedTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewHeader.swift; sourceTree = "<group>"; };
 		05590E24273BB38E006B65A9 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
+		055EFFEB2743252400B97614 /* VisitKeyWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitKeyWordViewController.swift; sourceTree = "<group>"; };
+		055EFFED2743281100B97614 /* VisitKeyWordViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitKeyWordViewControllerExtensions.swift; sourceTree = "<group>"; };
+		055EFFF027432BF900B97614 /* FullScreenVisitKeyWordsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenVisitKeyWordsTableViewCell.swift; sourceTree = "<group>"; };
+		055EFFF22743323000B97614 /* FullScreenVisitKeyWordsTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenVisitKeyWordsTableViewHeader.swift; sourceTree = "<group>"; };
+		055EFFF7274337C700B97614 /* VisitKeyWordsLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitKeyWordsLabel.swift; sourceTree = "<group>"; };
+		055EFFFA27439D4700B97614 /* LogSortViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogSortViewController.swift; sourceTree = "<group>"; };
+		055EFFFC27439DA000B97614 /* LogSortView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogSortView.swift; sourceTree = "<group>"; };
+		055EFFFE2743A86200B97614 /* LogSortViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogSortViewControllerExtensions.swift; sourceTree = "<group>"; };
 		057E27AA272A4899009BE550 /* NoticeViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewControllerExtensions.swift; sourceTree = "<group>"; };
 		057E27AC272A615F009BE550 /* NoticeTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeTableView.swift; sourceTree = "<group>"; };
 		057E27B0272A6294009BE550 /* NoticeTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeTableViewHeader.swift; sourceTree = "<group>"; };
@@ -385,6 +401,7 @@
 				054FE8512741DEDE001A0AD2 /* VisitLogCollectionView */,
 				054FE8522741DEEF001A0AD2 /* VisitKeyWordCollectionView */,
 				054FE86427420FE4001A0AD2 /* VisitLogFullScreen */,
+				055EFFEA274324D300B97614 /* VisitKeyWordFullScreen */,
 			);
 			path = CollectionVIew;
 			sourceTree = "<group>";
@@ -498,8 +515,9 @@
 		054FE86927421635001A0AD2 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
-				054FE86C27421658001A0AD2 /* FullScreenVisitLogTableHeaderView.swift */,
+				054FE86C27421658001A0AD2 /* FullScreenVisitLogTableViewHeader.swift */,
 				054FE86A2742164B001A0AD2 /* FullScreenVisitLogTableViewCell.swift */,
+				055EFFF927439CA300B97614 /* LogSortView */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -529,6 +547,36 @@
 				8D94FEA9273BF8D9005D2F99 /* FeedCommentsComponentsView.swift */,
 			);
 			path = TableCell;
+			sourceTree = "<group>";
+		};
+		055EFFEA274324D300B97614 /* VisitKeyWordFullScreen */ = {
+			isa = PBXGroup;
+			children = (
+				055EFFEB2743252400B97614 /* VisitKeyWordViewController.swift */,
+				055EFFED2743281100B97614 /* VisitKeyWordViewControllerExtensions.swift */,
+				055EFFEF27432BB300B97614 /* TableView */,
+			);
+			path = VisitKeyWordFullScreen;
+			sourceTree = "<group>";
+		};
+		055EFFEF27432BB300B97614 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				055EFFF22743323000B97614 /* FullScreenVisitKeyWordsTableViewHeader.swift */,
+				055EFFF027432BF900B97614 /* FullScreenVisitKeyWordsTableViewCell.swift */,
+				055EFFF7274337C700B97614 /* VisitKeyWordsLabel.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		055EFFF927439CA300B97614 /* LogSortView */ = {
+			isa = PBXGroup;
+			children = (
+				055EFFFA27439D4700B97614 /* LogSortViewController.swift */,
+				055EFFFC27439DA000B97614 /* LogSortView.swift */,
+				055EFFFE2743A86200B97614 /* LogSortViewControllerExtensions.swift */,
+			);
+			path = LogSortView;
 			sourceTree = "<group>";
 		};
 		057E27A0272A2489009BE550 /* Category */ = {
@@ -1032,12 +1080,14 @@
 				05C3866B272797EA0090FDDC /* MyContentTableViewHeader.swift in Sources */,
 				057E27B3272A629E009BE550 /* NoticeTableViewCell.swift in Sources */,
 				8D15208027412F1600510781 /* PostWebViewController.swift in Sources */,
+				055EFFF8274337C700B97614 /* VisitKeyWordsLabel.swift in Sources */,
 				053445102738BB1800171188 /* ContentTagInputView.swift in Sources */,
 				05328DAC272F80E900C6BE17 /* PostContentsSettingView.swift in Sources */,
 				05EB320D273CFE2D0035E45C /* SubscriberTableViewHeader.swift in Sources */,
 				05EB31F2273CBCA00035E45C /* FeedComponentsBetweenView.swift in Sources */,
 				054FE84B2741DE18001A0AD2 /* VisitNumGraphCollectionViewCell.swift in Sources */,
 				05328DA2272F6D5F00C6BE17 /* WritingFormViewExtension.swift in Sources */,
+				055EFFF127432BF900B97614 /* FullScreenVisitKeyWordsTableViewCell.swift in Sources */,
 				05C3866227278D140090FDDC /* ProfileViewControllerExtensions.swift in Sources */,
 				053445132738BCA300171188 /* TagInputHeaderView.swift in Sources */,
 				8D1520872741573C00510781 /* PopularityPostSeeAllTableViewCell.swift in Sources */,
@@ -1045,6 +1095,7 @@
 				8DC15E402737C89A0071B999 /* PublishCurrentDateView.swift in Sources */,
 				05590E25273BB38E006B65A9 /* FeedTableViewCell.swift in Sources */,
 				05FF7433272BE04100BEE31C /* WritingFormView.swift in Sources */,
+				055EFFEE2743281100B97614 /* VisitKeyWordViewControllerExtensions.swift in Sources */,
 				054FE8592741E802001A0AD2 /* VisitLogTableHeaderView.swift in Sources */,
 				05EB31F5273CD1700035E45C /* HomeViewController.swift in Sources */,
 				057E27B1272A6294009BE550 /* NoticeTableViewHeader.swift in Sources */,
@@ -1081,6 +1132,8 @@
 				05CDF8892734F07B00F02BBA /* OpenSettingPublishDateView.swift in Sources */,
 				8D81F70D27342A4D00F23195 /* OpenSettingCommentIsAllowView.swift in Sources */,
 				054FE85B2741F30B001A0AD2 /* VisitKeyWordCollecitonViewCellExtensions.swift in Sources */,
+				055EFFF32743323000B97614 /* FullScreenVisitKeyWordsTableViewHeader.swift in Sources */,
+				055EFFFD27439DA000B97614 /* LogSortView.swift in Sources */,
 				8D321D652737FA500036F276 /* CategorySelectionView.swift in Sources */,
 				054FE87127424229001A0AD2 /* VisitGraphDotView.swift in Sources */,
 				05F75F5F2730FC5B00BF39D2 /* CategoryChoicePopoverViewControllerExtension.swift in Sources */,
@@ -1106,7 +1159,7 @@
 				05FF7426272BC7F000BEE31C /* CategoryKindViewExtension.swift in Sources */,
 				057E27AB272A4899009BE550 /* NoticeViewControllerExtensions.swift in Sources */,
 				054FE86827421565001A0AD2 /* VisitLogViewControllerExtensions.swift in Sources */,
-				054FE86D27421658001A0AD2 /* FullScreenVisitLogTableHeaderView.swift in Sources */,
+				054FE86D27421658001A0AD2 /* FullScreenVisitLogTableViewHeader.swift in Sources */,
 				05EB3211273D05D50035E45C /* VisitTableViewCell.swift in Sources */,
 				05328DA9272F7CFC00C6BE17 /* PublishingHeaderView.swift in Sources */,
 				05FF742A272BD28000BEE31C /* WritingFormModel.swift in Sources */,
@@ -1126,13 +1179,16 @@
 				05EB31F8273CD3650035E45C /* HomeModel.swift in Sources */,
 				05590E16273B5216006B65A9 /* HomeSubjectHeaderView.swift in Sources */,
 				053F0F9B27327B49007359ED /* PostContentsTagSettingHeaderView.swift in Sources */,
+				055EFFEC2743252400B97614 /* VisitKeyWordViewController.swift in Sources */,
 				0534450E2738BA8800171188 /* ContentTagInputViewController.swift in Sources */,
+				055EFFFB27439D4700B97614 /* LogSortViewController.swift in Sources */,
 				05328DB2272FA0B900C6BE17 /* OpenSettingView.swift in Sources */,
 				8D321D632737F9730036F276 /* CategorySelectionViewController.swift in Sources */,
 				05FF7435272BE61800BEE31C /* WritingFormViewControllerExtension.swift in Sources */,
 				0545AEAB273DE7FC00458A6E /* VisitTableViewCellExtensions.swift in Sources */,
 				8DC15E3A2737A5670071B999 /* HomeSubjectView.swift in Sources */,
 				05EB320F273D00270035E45C /* SubscriberTableViewFooter.swift in Sources */,
+				055EFFFF2743A86200B97614 /* LogSortViewControllerExtensions.swift in Sources */,
 				05C386732727C01C0090FDDC /* NoticeModel.swift in Sources */,
 				8DC15E3E2737A8350071B999 /* CommentAllowView.swift in Sources */,
 				054FE8622741FF61001A0AD2 /* VisitKeyWordLabel.swift in Sources */,
