@@ -12,6 +12,15 @@ class NoticeViewController: UIViewController {
     var noticeModel = NoticeModel()
     var selectedCategoryIndex: Int = 0
     
+    lazy var navigationBarView: NavigationBarView = {
+        let navigationView = NavigationBarView()
+        navigationView.translatesAutoresizingMaskIntoConstraints = false
+        self.navigationItem.titleView = navigationView
+        self.navigationItem.titleView?.tintColor = .white
+        view.addSubview(navigationView)
+        return navigationView
+    } ()
+    
     lazy var feedView: NoticeTableView = {
         let feedView = NoticeTableView()
         feedView.translatesAutoresizingMaskIntoConstraints = false
@@ -116,8 +125,15 @@ class NoticeViewController: UIViewController {
         NSLayoutConstraint.activate([
             feedView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             feedView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            feedView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            feedView.topAnchor.constraint(equalTo: navigationBarView.bottomAnchor),
             feedView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            navigationBarView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            navigationBarView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            navigationBarView.topAnchor.constraint(equalTo: view.topAnchor),
+            navigationBarView.heightAnchor.constraint(equalToConstant: 90)
         ])
     }
     

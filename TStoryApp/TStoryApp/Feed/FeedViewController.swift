@@ -11,6 +11,15 @@ class FeedViewController: UIViewController {
     
     var feedModel = FeedModel()
     
+    lazy var navigationBarView: NavigationBarView = {
+        let navigationView = NavigationBarView()
+        navigationView.translatesAutoresizingMaskIntoConstraints = false
+        self.navigationItem.titleView = navigationView
+        self.navigationItem.titleView?.tintColor = .white
+        view.addSubview(navigationView)
+        return navigationView
+    } ()
+    
     lazy var feedTableView: FeedTableView = {
         let tableView = FeedTableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -95,11 +104,20 @@ class FeedViewController: UIViewController {
     
     private func setConstraints() {
         view.backgroundColor = .white
+        
         NSLayoutConstraint.activate([
             feedTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             feedTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            feedTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            feedTableView.topAnchor.constraint(equalTo: navigationBarView.bottomAnchor),
             feedTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+        
+        NSLayoutConstraint.activate([
+            navigationBarView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            navigationBarView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            navigationBarView.topAnchor.constraint(equalTo: view.topAnchor),
+            navigationBarView.heightAnchor.constraint(equalToConstant: 90)
+        ])
+        
     }
 }

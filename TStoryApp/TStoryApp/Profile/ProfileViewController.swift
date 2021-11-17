@@ -12,6 +12,16 @@ class ProfileViewController: UIViewController {
     var profileModel = ProfileModel()
     var selectedCateogoryIndex: Int = 0
     
+    lazy var navigationBarView: NavigationBarView = {
+        let navigationView = NavigationBarView()
+        navigationView.translatesAutoresizingMaskIntoConstraints = false
+        self.navigationItem.titleView = navigationView
+        self.navigationItem.titleView?.tintColor = .clear
+        navigationView.blogSearchButton.setTitleColor(.white, for: .normal)
+        view.addSubview(navigationView)
+        return navigationView
+    } ()
+    
     lazy var profileView: ProfileView = {
        let profileView = ProfileView()
         profileView.translatesAutoresizingMaskIntoConstraints = false
@@ -180,6 +190,14 @@ class ProfileViewController: UIViewController {
             profileView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             profileView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+        
+        NSLayoutConstraint.activate([
+            navigationBarView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            navigationBarView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            navigationBarView.topAnchor.constraint(equalTo: view.topAnchor),
+            navigationBarView.heightAnchor.constraint(equalToConstant: 90)
+        ])
+        
     }
     
     
