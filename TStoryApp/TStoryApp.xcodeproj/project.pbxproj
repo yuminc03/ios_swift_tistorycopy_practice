@@ -73,6 +73,11 @@
 		057E27B3272A629E009BE550 /* NoticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057E27B2272A629E009BE550 /* NoticeTableViewCell.swift */; };
 		057E27B5272A71C8009BE550 /* CategoryKindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057E27B4272A71C8009BE550 /* CategoryKindViewController.swift */; };
 		057E27B7272A725E009BE550 /* CategoryKindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057E27B6272A725E009BE550 /* CategoryKindView.swift */; };
+		058ECF972744BA830063B215 /* FullScreenVisitLogSortTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058ECF962744BA830063B215 /* FullScreenVisitLogSortTableViewCell.swift */; };
+		058ECF992744DDF70063B215 /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058ECF982744DDF70063B215 /* NavigationBarView.swift */; };
+		058ECF9C2744F2BA0063B215 /* MyBlogOfProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058ECF9B2744F2BA0063B215 /* MyBlogOfProfileViewController.swift */; };
+		058ECF9F2744F6F00063B215 /* MyBlogOfProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058ECF9E2744F6F00063B215 /* MyBlogOfProfileView.swift */; };
+		058ECFA12744F89C0063B215 /* MyBlogOfProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058ECFA02744F89C0063B215 /* MyBlogOfProfileModel.swift */; };
 		05C38646272785DE0090FDDC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C38645272785DE0090FDDC /* AppDelegate.swift */; };
 		05C3864F272785DF0090FDDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05C3864E272785DF0090FDDC /* Assets.xcassets */; };
 		05C38652272785DF0090FDDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05C38650272785DF0090FDDC /* LaunchScreen.storyboard */; };
@@ -101,7 +106,7 @@
 		05EB3201273CECAD0035E45C /* HomeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EB3200273CECAD0035E45C /* HomeTableView.swift */; };
 		05EB3203273CEED10035E45C /* TopHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EB3202273CEED10035E45C /* TopHeaderView.swift */; };
 		05EB3205273CF41F0035E45C /* VisitTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EB3204273CF41F0035E45C /* VisitTableViewHeader.swift */; };
-		05EB3207273CF6AE0035E45C /* VisitHeaderComponentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EB3206273CF6AE0035E45C /* VisitHeaderComponentsView.swift */; };
+		05EB3207273CF6AE0035E45C /* VisitCellComponentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EB3206273CF6AE0035E45C /* VisitCellComponentsView.swift */; };
 		05EB3209273CF9F10035E45C /* RecentlyTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EB3208273CF9F10035E45C /* RecentlyTableViewHeader.swift */; };
 		05EB320B273CFBA90035E45C /* PopularityTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EB320A273CFBA90035E45C /* PopularityTableViewHeader.swift */; };
 		05EB320D273CFE2D0035E45C /* SubscriberTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EB320C273CFE2D0035E45C /* SubscriberTableViewHeader.swift */; };
@@ -217,6 +222,11 @@
 		057E27B2272A629E009BE550 /* NoticeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeTableViewCell.swift; sourceTree = "<group>"; };
 		057E27B4272A71C8009BE550 /* CategoryKindViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryKindViewController.swift; sourceTree = "<group>"; };
 		057E27B6272A725E009BE550 /* CategoryKindView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryKindView.swift; sourceTree = "<group>"; };
+		058ECF962744BA830063B215 /* FullScreenVisitLogSortTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenVisitLogSortTableViewCell.swift; sourceTree = "<group>"; };
+		058ECF982744DDF70063B215 /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
+		058ECF9B2744F2BA0063B215 /* MyBlogOfProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBlogOfProfileViewController.swift; sourceTree = "<group>"; };
+		058ECF9E2744F6F00063B215 /* MyBlogOfProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBlogOfProfileView.swift; sourceTree = "<group>"; };
+		058ECFA02744F89C0063B215 /* MyBlogOfProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBlogOfProfileModel.swift; sourceTree = "<group>"; };
 		05C38642272785DE0090FDDC /* TStoryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TStoryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05C38645272785DE0090FDDC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05C3864E272785DF0090FDDC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -247,7 +257,7 @@
 		05EB3200273CECAD0035E45C /* HomeTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableView.swift; sourceTree = "<group>"; };
 		05EB3202273CEED10035E45C /* TopHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopHeaderView.swift; sourceTree = "<group>"; };
 		05EB3204273CF41F0035E45C /* VisitTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitTableViewHeader.swift; sourceTree = "<group>"; };
-		05EB3206273CF6AE0035E45C /* VisitHeaderComponentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitHeaderComponentsView.swift; sourceTree = "<group>"; };
+		05EB3206273CF6AE0035E45C /* VisitCellComponentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitCellComponentsView.swift; sourceTree = "<group>"; };
 		05EB3208273CF9F10035E45C /* RecentlyTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentlyTableViewHeader.swift; sourceTree = "<group>"; };
 		05EB320A273CFBA90035E45C /* PopularityTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularityTableViewHeader.swift; sourceTree = "<group>"; };
 		05EB320C273CFE2D0035E45C /* SubscriberTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriberTableViewHeader.swift; sourceTree = "<group>"; };
@@ -517,6 +527,7 @@
 			children = (
 				054FE86C27421658001A0AD2 /* FullScreenVisitLogTableViewHeader.swift */,
 				054FE86A2742164B001A0AD2 /* FullScreenVisitLogTableViewCell.swift */,
+				058ECF962744BA830063B215 /* FullScreenVisitLogSortTableViewCell.swift */,
 				055EFFF927439CA300B97614 /* LogSortView */,
 			);
 			path = TableView;
@@ -650,6 +661,24 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		058ECF9A2744DE000063B215 /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				058ECF982744DDF70063B215 /* NavigationBarView.swift */,
+			);
+			path = NavigationBar;
+			sourceTree = "<group>";
+		};
+		058ECF9D2744F3AA0063B215 /* MyBlogOfProfile */ = {
+			isa = PBXGroup;
+			children = (
+				058ECF9B2744F2BA0063B215 /* MyBlogOfProfileViewController.swift */,
+				058ECF9E2744F6F00063B215 /* MyBlogOfProfileView.swift */,
+				058ECFA02744F89C0063B215 /* MyBlogOfProfileModel.swift */,
+			);
+			path = MyBlogOfProfile;
+			sourceTree = "<group>";
+		};
 		05C38639272785DE0090FDDC = {
 			isa = PBXGroup;
 			children = (
@@ -671,6 +700,8 @@
 			children = (
 				05C38645272785DE0090FDDC /* AppDelegate.swift */,
 				05C3865C27278A5A0090FDDC /* TabBar */,
+				058ECF9D2744F3AA0063B215 /* MyBlogOfProfile */,
+				058ECF9A2744DE000063B215 /* NavigationBar */,
 				05EB31F3273CCFED0035E45C /* Home */,
 				05C38667272795E20090FDDC /* Feed */,
 				05C38666272795940090FDDC /* Writing */,
@@ -839,8 +870,8 @@
 			isa = PBXGroup;
 			children = (
 				05EB3204273CF41F0035E45C /* VisitTableViewHeader.swift */,
-				05EB3206273CF6AE0035E45C /* VisitHeaderComponentsView.swift */,
 				05EB3210273D05D50035E45C /* VisitTableViewCell.swift */,
+				05EB3206273CF6AE0035E45C /* VisitCellComponentsView.swift */,
 				0545AEAA273DE7FC00458A6E /* VisitTableViewCellExtensions.swift */,
 				0545AEA9273DE6E300458A6E /* CollectionVIew */,
 			);
@@ -1059,7 +1090,7 @@
 				0525005E273A678B00BE457D /* HomeSubjectSelectorViewControllerExtensions.swift in Sources */,
 				054FE84F2741DE47001A0AD2 /* VisitKeyWordCollectionViewCell.swift in Sources */,
 				8DC15E3727378B700071B999 /* PublishSettingTopView.swift in Sources */,
-				05EB3207273CF6AE0035E45C /* VisitHeaderComponentsView.swift in Sources */,
+				05EB3207273CF6AE0035E45C /* VisitCellComponentsView.swift in Sources */,
 				054FE8542741E2E4001A0AD2 /* VisitLogCollectionViewCellExtensions.swift in Sources */,
 				8D1520892741589600510781 /* PopularityPostSeeAllTableHeaderView.swift in Sources */,
 				050F2FE1273A3CB9007CBC61 /* HomeSubjectSelectorViewContoller.swift in Sources */,
@@ -1076,6 +1107,7 @@
 				05EB3215273D0A160035E45C /* PopularityTableViewCell.swift in Sources */,
 				053F0F94273270C2007359ED /* PostContentsSettingViewExtension.swift in Sources */,
 				0545AEB2273E22F300458A6E /* PopularityTableViewCellExtensions.swift in Sources */,
+				058ECFA12744F89C0063B215 /* MyBlogOfProfileModel.swift in Sources */,
 				0545AEB5273E24B400458A6E /* PopularityPostCollectionViewCell.swift in Sources */,
 				05C3866B272797EA0090FDDC /* MyContentTableViewHeader.swift in Sources */,
 				057E27B3272A629E009BE550 /* NoticeTableViewCell.swift in Sources */,
@@ -1089,11 +1121,13 @@
 				05328DA2272F6D5F00C6BE17 /* WritingFormViewExtension.swift in Sources */,
 				055EFFF127432BF900B97614 /* FullScreenVisitKeyWordsTableViewCell.swift in Sources */,
 				05C3866227278D140090FDDC /* ProfileViewControllerExtensions.swift in Sources */,
+				058ECF972744BA830063B215 /* FullScreenVisitLogSortTableViewCell.swift in Sources */,
 				053445132738BCA300171188 /* TagInputHeaderView.swift in Sources */,
 				8D1520872741573C00510781 /* PopularityPostSeeAllTableViewCell.swift in Sources */,
 				0545AEBA273E2B8A00458A6E /* SubscriberCollectionViewCell.swift in Sources */,
 				8DC15E402737C89A0071B999 /* PublishCurrentDateView.swift in Sources */,
 				05590E25273BB38E006B65A9 /* FeedTableViewCell.swift in Sources */,
+				058ECF992744DDF70063B215 /* NavigationBarView.swift in Sources */,
 				05FF7433272BE04100BEE31C /* WritingFormView.swift in Sources */,
 				055EFFEE2743281100B97614 /* VisitKeyWordViewControllerExtensions.swift in Sources */,
 				054FE8592741E802001A0AD2 /* VisitLogTableHeaderView.swift in Sources */,
@@ -1102,6 +1136,7 @@
 				05EB31FF273CE0950035E45C /* HomeViewControllerExtensions.swift in Sources */,
 				05FF742F272BD61400BEE31C /* PublishingSettingViewController.swift in Sources */,
 				053F0F9927327986007359ED /* PostContentsTagSettingView.swift in Sources */,
+				058ECF9F2744F6F00063B215 /* MyBlogOfProfileView.swift in Sources */,
 				8D321D67273805550036F276 /* CategorySelectionViewControllerExtensions.swift in Sources */,
 				8D81F7082734213800F23195 /* OpenSettingHomeSubjectView.swift in Sources */,
 				8D152085274150A500510781 /* PopularityPostSeeAllViewControllerExtensions.swift in Sources */,
@@ -1173,6 +1208,7 @@
 				05FF7437272BE6AE00BEE31C /* WritingFormHeaderView.swift in Sources */,
 				05C3865A272786950090FDDC /* TabBarViewController.swift in Sources */,
 				05C38646272785DE0090FDDC /* AppDelegate.swift in Sources */,
+				058ECF9C2744F2BA0063B215 /* MyBlogOfProfileViewController.swift in Sources */,
 				053445172738C8B100171188 /* ContentTagInputViewExtensions.swift in Sources */,
 				050F2FED273A56D3007CBC61 /* HomeSubjectSelectorCell.swift in Sources */,
 				057E27AD272A615F009BE550 /* NoticeTableView.swift in Sources */,
