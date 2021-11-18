@@ -12,6 +12,16 @@ class HomeViewController: UIViewController {
     var homeModel = HomeModel()
     var currentPageIndex: Int = 0
     
+    lazy var navigationBarView: NavigationBarView = {
+        let navigationView = NavigationBarView()
+        navigationView.translatesAutoresizingMaskIntoConstraints = false
+        self.navigationItem.titleView = navigationView
+        self.navigationItem.titleView?.tintColor = .white
+        navigationView.blogProfileButton.addTarget(self, action: #selector(blogProfileButtonDidTapped), for: .touchUpInside)
+        view.addSubview(navigationView)
+        return navigationView
+    } ()
+    
     lazy var homeTableView: HomeTableView = {
         let tableView = HomeTableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -33,9 +43,9 @@ class HomeViewController: UIViewController {
             visitModel: [
                 VisitModel(
                     blogName: "천천히 해도 괜찮아",
-                    blogUrl: "dpffldk.tistory.com",
                     visitCell: [
                         VisitCell(
+                            blogUrl: "dpffldk.tistory.com",
                             todayVisitNumber: [
                                 VisitNumber(
                                     visitNumWeek: [
@@ -83,6 +93,9 @@ class HomeViewController: UIViewController {
                                         ),
                                         VisitNumberWeek(
                                             todayVisitCount: 1
+                                        ),
+                                        VisitNumberWeek(
+                                            todayVisitCount: 0
                                         )
                                     ],
                                     visitNum: 2,
@@ -161,7 +174,7 @@ class HomeViewController: UIViewController {
                                 VisitInformation(
                                     visitUrl: "https://search.daum.net/search?nil_suggest=btn&w=tot&DA=SBC&q=%EC%9D%BC%EC%9D%98+%EA%B8%B0%EC%81%A8%EA%B3%BC+%EC%8A%AC%ED%94%94",
                                     visitDate: "11. 14. 22:41"
-                                ),
+                                )
                             ],
                             visitKeyWords: [
                                 VisitKeyWords(
@@ -278,11 +291,25 @@ class HomeViewController: UIViewController {
     
     private func setConstraints() {
         view.backgroundColor = .white
+
         NSLayoutConstraint.activate([
             homeTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             homeTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            homeTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            homeTableView.topAnchor.constraint(equalTo: navigationBarView.bottomAnchor),
             homeTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+        
+        NSLayoutConstraint.activate([
+            navigationBarView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            navigationBarView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            navigationBarView.topAnchor.constraint(equalTo: view.topAnchor),
+            navigationBarView.heightAnchor.constraint(equalToConstant: 90)
+        ])
+    }
+    
+    @objc private func blogProfileButtonDidTapped(button: UIButton) {
+        let vc = MyBlogOfProfileViewController()
+        vc.modalPresentationStyle = .popover
+        self.present(vc, animated: true)
     }
 }

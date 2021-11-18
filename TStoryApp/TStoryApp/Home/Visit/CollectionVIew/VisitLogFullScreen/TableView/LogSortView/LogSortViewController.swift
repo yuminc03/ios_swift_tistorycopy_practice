@@ -17,13 +17,13 @@ class LogSortViewController: UIViewController {
 
     lazy var logSortView: LogSortView = {
         let logSortView = LogSortView()
+        logSortView.setIsSelected(index: isSelected)
         logSortView.translatesAutoresizingMaskIntoConstraints = false
         logSortView.backgroundColor = .white
         logSortView.layer.cornerRadius = 10
         logSortView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         logSortView.setStackView()
         logSortView.delegate = self
-        logSortView.setIsSelected(index: isSelected)
         view.addSubview(logSortView)
         return logSortView
     } ()
@@ -36,11 +36,12 @@ class LogSortViewController: UIViewController {
     }
     
     private func setConstraints() {
-        view.backgroundColor = .black.withAlphaComponent(0.1)
+        view.backgroundColor = .black.withAlphaComponent(0.3)
         NSLayoutConstraint.activate([
             logSortView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             logSortView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            logSortView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            logSortView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            logSortView.heightAnchor.constraint(equalToConstant: 180)
         ])
     }
     
@@ -52,5 +53,9 @@ class LogSortViewController: UIViewController {
         else {
             delegate?.LogSortViewDidTapped(self, at: nil)
         }
+    }
+    
+    func setIsSelected(index: Int) {
+        self.isSelected = index
     }
 }

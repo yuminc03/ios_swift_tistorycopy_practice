@@ -9,8 +9,6 @@ import UIKit
 
 class VisitTableViewHeader: UITableViewHeaderFooterView {
     
-    var currentPageIndex: Int = 0
-    
     lazy var myBlogNameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -19,69 +17,6 @@ class VisitTableViewHeader: UITableViewHeaderFooterView {
         addSubview(label)
         return label
     } ()
-    
-    lazy var myBlogUrlLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 14, weight: .light)
-        label.textColor = .lightGray
-        addSubview(label)
-        return label
-    } ()
-    
-    lazy var currentPageViewFirst: VisitHeaderComponentsView = {
-        let currentPageView = VisitHeaderComponentsView()
-        currentPageView.translatesAutoresizingMaskIntoConstraints = false
-        currentPageView.layer.cornerRadius = 3
-        currentPageView.backgroundColor = .lightGray.withAlphaComponent(0.5)
-        currentPageView.tag = 0
-        addSubview(currentPageView)
-        return currentPageView
-    } ()
-    
-    lazy var currentPageViewSecond: VisitHeaderComponentsView = {
-        let currentPageView = VisitHeaderComponentsView()
-        currentPageView.translatesAutoresizingMaskIntoConstraints = false
-        currentPageView.layer.cornerRadius = 3
-        currentPageView.backgroundColor = .lightGray.withAlphaComponent(0.5)
-        currentPageView.tag = 1
-        addSubview(currentPageView)
-        return currentPageView
-    } ()
-    
-    lazy var currentPageViewThird: VisitHeaderComponentsView = {
-        let currentPageView = VisitHeaderComponentsView()
-        currentPageView.translatesAutoresizingMaskIntoConstraints = false
-        currentPageView.layer.cornerRadius = 3
-        currentPageView.backgroundColor = .lightGray.withAlphaComponent(0.5)
-        currentPageView.tag = 2
-        addSubview(currentPageView)
-        return currentPageView
-    } ()
-    
-    var selectedView: VisitHeaderComponentsView?
-    
-    func initalizeComponent() {
-        currentPageViewFirst.setUI(isSelected: false)
-        currentPageViewSecond.setUI(isSelected: false)
-        currentPageViewThird.setUI(isSelected: false)
-    }
-    
-    func currentPageViewSetting(index: Int) {
-        self.currentPageIndex = index
-        initalizeComponent()
-        
-        if index == 0 {
-            selectedView = currentPageViewFirst
-        }
-        else if index == 1 {
-            selectedView = currentPageViewSecond
-        }
-        else {
-            selectedView = currentPageViewThird
-        }
-        selectedView?.setUI(isSelected: true)
-    }
     
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
@@ -96,33 +31,12 @@ class VisitTableViewHeader: UITableViewHeaderFooterView {
     private func setConstraints() {
         NSLayoutConstraint.activate([
             myBlogNameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            myBlogNameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 15)
-        ])
-        
-        NSLayoutConstraint.activate([
-            myBlogUrlLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            myBlogUrlLabel.topAnchor.constraint(equalTo: myBlogNameLabel.bottomAnchor, constant: 5),
-            myBlogUrlLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5)
-        ])
-        
-        NSLayoutConstraint.activate([
-            currentPageViewFirst.trailingAnchor.constraint(equalTo: currentPageViewSecond.leadingAnchor, constant: -5),
-            currentPageViewFirst.centerYAnchor.constraint(equalTo: myBlogUrlLabel.centerYAnchor)
-        ])
-        
-        NSLayoutConstraint.activate([
-            currentPageViewSecond.trailingAnchor.constraint(equalTo: currentPageViewThird.leadingAnchor, constant: -5),
-            currentPageViewSecond.centerYAnchor.constraint(equalTo: myBlogUrlLabel.centerYAnchor)
-        ])
-        
-        NSLayoutConstraint.activate([
-            currentPageViewThird.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            currentPageViewThird.centerYAnchor.constraint(equalTo: myBlogUrlLabel.centerYAnchor)
+            myBlogNameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 15),
+            myBlogNameLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -3)
         ])
     }
     
-    func setVisitHeaderData(name: String, url: String) {
+    func setVisitHeaderData(name: String) {
         myBlogNameLabel.text = name
-        myBlogUrlLabel.text = url
     }
 }

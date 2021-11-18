@@ -15,8 +15,10 @@ class MyBlogOfProfileView: UIView {
         tableView.backgroundColor = .clear
         tableView.separatorStyle = .none
         tableView.showsVerticalScrollIndicator = false
+        tableView.isScrollEnabled = false
         tableView.register(ProfileInfoTableViewHeader.self, forHeaderFooterViewReuseIdentifier: "profile_info_table_header")
         tableView.register(ProfileInfoTableViewCell.self, forCellReuseIdentifier: "profile_info_table_cell")
+        tableView.register(ProfileInfoTableViewFooter.self, forHeaderFooterViewReuseIdentifier: "profile_info_table_footer")
         addSubview(tableView)
         return tableView
     } ()
@@ -34,8 +36,9 @@ class MyBlogOfProfileView: UIView {
         NSLayoutConstraint.activate([
             myBlogOfProfileTableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             myBlogOfProfileTableView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            myBlogOfProfileTableView.topAnchor.constraint(equalTo: topAnchor, constant: 400),
+            myBlogOfProfileTableView.topAnchor.constraint(equalTo: topAnchor, constant: 10),
             myBlogOfProfileTableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
         ])
     }
+    
 }

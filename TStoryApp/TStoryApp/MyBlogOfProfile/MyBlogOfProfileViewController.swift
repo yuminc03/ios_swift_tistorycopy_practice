@@ -10,10 +10,13 @@ import UIKit
 class MyBlogOfProfileViewController: UIViewController {
     
     var myBlogOfProfileModel = MyBlogOfProfileModel()
+    
     lazy var myBlogOfProfileView: MyBlogOfProfileView = {
         let blogOfProfileView = MyBlogOfProfileView()
         blogOfProfileView.translatesAutoresizingMaskIntoConstraints = false
         blogOfProfileView.backgroundColor = .white
+        blogOfProfileView.layer.cornerRadius = 10
+        blogOfProfileView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         blogOfProfileView.myBlogOfProfileTableView.delegate = self
         blogOfProfileView.myBlogOfProfileTableView.dataSource = self
         view.addSubview(blogOfProfileView)
@@ -79,6 +82,7 @@ class MyBlogOfProfileViewController: UIViewController {
         NSLayoutConstraint.activate([
             myBlogOfProfileView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             myBlogOfProfileView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            myBlogOfProfileView.topAnchor.constraint(equalTo: view.topAnchor, constant: 500),
             myBlogOfProfileView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }

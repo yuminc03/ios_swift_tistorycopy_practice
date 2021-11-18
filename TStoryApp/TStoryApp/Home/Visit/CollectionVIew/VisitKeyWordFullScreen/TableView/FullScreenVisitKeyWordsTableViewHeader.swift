@@ -51,18 +51,19 @@ class FullScreenVisitKeyWordsTableViewHeader: UITableViewHeaderFooterView {
     private func setConstraints() {
         NSLayoutConstraint.activate([
             dismissViewControllerButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            dismissViewControllerButton.topAnchor.constraint(equalTo: topAnchor, constant: 10)
+            dismissViewControllerButton.topAnchor.constraint(equalTo: topAnchor, constant: 5),
+            dismissViewControllerButton.heightAnchor.constraint(equalToConstant: 20)
         ])
         
         NSLayoutConstraint.activate([
             headerTitle.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            headerTitle.topAnchor.constraint(equalTo: dismissViewControllerButton.bottomAnchor, constant: 25),
-            headerTitle.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20)
+            headerTitle.topAnchor.constraint(equalTo: dismissViewControllerButton.bottomAnchor, constant: 30),
+            headerTitle.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10)
         ])
         
         NSLayoutConstraint.activate([
             headerSubTitle.leadingAnchor.constraint(equalTo: headerTitle.trailingAnchor, constant: 5),
-            headerSubTitle.topAnchor.constraint(equalTo: dismissViewControllerButton.bottomAnchor, constant: 25)
+            headerSubTitle.topAnchor.constraint(equalTo: dismissViewControllerButton.bottomAnchor, constant: 32)
         ])
         
     }

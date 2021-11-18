@@ -30,6 +30,10 @@ extension VisitKeyWordViewController: UITableViewDelegate, UITableViewDataSource
         return nil
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 120
+    }
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "full_screen_visit_key_header") as! FullScreenVisitKeyWordsTableViewHeader
         header.dismissViewControllerButton.addTarget(self, action: #selector(dismissViewControllerButtonDidTapped), for: .touchUpInside)

@@ -22,7 +22,7 @@ class NavigationBarView: UIView {
     lazy var blogProfileButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = .systemBlue
+        button.backgroundColor = .systemPurple
         button.setTitle("☕️", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.layer.cornerRadius = 15

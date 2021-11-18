@@ -16,11 +16,11 @@ struct HomeModel {
 
 struct VisitModel {
     var blogName: String = ""
-    var blogUrl: String = ""
     var visitCell: [VisitCell] = []
 }
 
 struct VisitCell {
+    var blogUrl: String = ""
     var todayVisitNumber: [VisitNumber] = []
     var visitInfo: [VisitInformation] = []
     var visitKeyWords: [VisitKeyWords] = []

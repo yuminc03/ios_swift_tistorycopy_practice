@@ -46,6 +46,7 @@ extension VisitTableViewCell: UICollectionViewDelegateFlowLayout, UICollectionVi
             let vc = VisitLogViewController()
             vc.modalPresentationStyle = .fullScreen
             vc.setVisitInfo(model: visitModel[0].visitCell[0].visitInfo)
+//            vc.createUrlArray(url: visitModel[0].visitCell[0].visitInfo)
             self.window?.rootViewController!.present(vc, animated: true)
         }
         else if indexPath.row == 2 { //유입 키워드 모두 보기
@@ -57,7 +58,7 @@ extension VisitTableViewCell: UICollectionViewDelegateFlowLayout, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (self.bounds.width - 40), height: 240) //width = 350.0
+        return CGSize(width: (self.bounds.width - 40), height: 220) //width = 350.0
     }
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {//collectionView paging
@@ -75,8 +76,7 @@ extension VisitTableViewCell: UICollectionViewDelegateFlowLayout, UICollectionVi
                     currentPageIndex -= 1
                 }
             }
-            print(Int(currentPageIndex))
-            
+            setPageNumber(index: currentPageIndex)//view 색깔 바꾸기
             offset = CGPoint(x: currentPageIndex * collectionCellWidth - cv.contentInset.left, y: 0)
             targetContentOffset.pointee = offset
         }

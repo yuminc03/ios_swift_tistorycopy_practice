@@ -22,7 +22,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "visit_cell", for: indexPath) as! VisitTableViewCell
             cell.backgroundColor = .white
             cell.setVisitModel(model: homeModel.visitModel)
-            self.currentPageIndex = cell.getCurrentPage()
+            cell.setBlogUrl(url: homeModel.visitModel[0].visitCell[0].blogUrl)
             cell.selectionStyle = .none
             return cell
         }
@@ -64,9 +64,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         }
         else if section == 1 {
             let visitHeader = tableView.dequeueReusableHeaderFooterView(withIdentifier: "visit_header") as! VisitTableViewHeader
-            visitHeader.setVisitHeaderData(name: homeModel.visitModel[0].blogName, url: homeModel.visitModel[0].blogUrl)
-            visitHeader.currentPageViewSetting(index: self.currentPageIndex)
-            
+            visitHeader.setVisitHeaderData(name: homeModel.visitModel[0].blogName)
             return visitHeader
         }
         else if section == 2 {

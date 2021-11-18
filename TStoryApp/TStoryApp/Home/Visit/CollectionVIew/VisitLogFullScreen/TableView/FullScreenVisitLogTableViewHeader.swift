@@ -14,7 +14,7 @@ class FullScreenVisitLogTableViewHeader: UITableViewHeaderFooterView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("✕", for: .normal)
         button.setTitleColor(.black, for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 25, weight: .light)
+        button.titleLabel?.font = .systemFont(ofSize: 30, weight: .light)
         addSubview(button)
         return button
     } ()
@@ -61,23 +61,25 @@ class FullScreenVisitLogTableViewHeader: UITableViewHeaderFooterView {
     private func setConstraints() {
         NSLayoutConstraint.activate([
             backToControllerButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            backToControllerButton.topAnchor.constraint(equalTo: topAnchor),
-            backToControllerButton.bottomAnchor.constraint(equalTo: headerTitle.topAnchor, constant: -15)
+            backToControllerButton.topAnchor.constraint(equalTo: topAnchor, constant: 5),
+            backToControllerButton.heightAnchor.constraint(equalToConstant: 20)
         ])
         
         NSLayoutConstraint.activate([
             headerTitle.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            headerTitle.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10)
+            headerTitle.topAnchor.constraint(equalTo: backToControllerButton.bottomAnchor, constant: 30)
         ])
         
         NSLayoutConstraint.activate([
             headerSubTitle.leadingAnchor.constraint(equalTo: headerTitle.trailingAnchor, constant: 5),
-            headerSubTitle.topAnchor.constraint(equalTo: backToControllerButton.bottomAnchor, constant: 20)
+            headerSubTitle.topAnchor.constraint(equalTo: backToControllerButton.bottomAnchor, constant: 40)
         ])
         
         NSLayoutConstraint.activate([
+            logSortButton.leadingAnchor.constraint(greaterThanOrEqualTo: headerTitle.trailingAnchor, constant: 40),
             logSortButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            logSortButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20)
+            logSortButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
+            logSortButton.heightAnchor.constraint(equalToConstant: 15)
         ])
     }
     

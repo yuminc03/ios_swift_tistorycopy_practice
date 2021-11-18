@@ -21,7 +21,7 @@ class LogSortView: UIView {
         stackView.backgroundColor = .clear
         stackView.axis = .vertical
         stackView.spacing = 0
-        addSubview(stackView)
+        self.addSubview(stackView)
         return stackView
     } ()
     
@@ -38,16 +38,13 @@ class LogSortView: UIView {
         NSLayoutConstraint.activate([
             logSortStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
             logSortStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            logSortStackView.topAnchor.constraint(equalTo: topAnchor),
-            logSortStackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -10)
+            logSortStackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
         ])
     }
     
     func setStackView() {
         let logSortArr: [String] = ["최신순", "유입순"]
         for i in 0 ..< logSortArr.count {
-            let textStyle = isSelected == i ? UIFont.Weight.bold : UIFont.Weight.light
-            
             let logSortView = UIView()
             logSortView.translatesAutoresizingMaskIntoConstraints = false
             logSortView.backgroundColor = .clear
@@ -60,7 +57,7 @@ class LogSortView: UIView {
             viewText.translatesAutoresizingMaskIntoConstraints = false
             viewText.text = logSortArr[i]
             viewText.textColor = .black
-            viewText.font = .systemFont(ofSize: 16, weight: textStyle)
+            viewText.font = .systemFont(ofSize: 16, weight: isSelected == i ? UIFont.Weight.bold : UIFont.Weight.light)
             logSortView.addSubview(viewText)
             viewText.leadingAnchor.constraint(equalTo: logSortView.leadingAnchor, constant: 20).isActive = true
             viewText.topAnchor.constraint(equalTo: logSortView.topAnchor, constant: 25).isActive = true
@@ -83,4 +80,5 @@ class LogSortView: UIView {
     func setIsSelected(index: Int) {
         self.isSelected = index
     }
+
 }

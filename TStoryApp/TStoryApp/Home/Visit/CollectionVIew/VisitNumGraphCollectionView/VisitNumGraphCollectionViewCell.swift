@@ -73,22 +73,22 @@ class VisitNumGraphCollectionViewCell: UICollectionViewCell {
         
         NSLayoutConstraint.activate([
             todayVisitLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            todayVisitLabel.topAnchor.constraint(equalTo: visitGraphView.bottomAnchor, constant: 10)
+            todayVisitLabel.topAnchor.constraint(equalTo: visitGraphView.bottomAnchor, constant: 5)
         ])
         
         NSLayoutConstraint.activate([
             todayVisitNumLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            todayVisitNumLabel.topAnchor.constraint(equalTo: todayVisitLabel.bottomAnchor, constant: 8)
+            todayVisitNumLabel.topAnchor.constraint(equalTo: todayVisitLabel.bottomAnchor, constant: 5)
         ])
         
         NSLayoutConstraint.activate([
             todayVisitNumIncrement.leadingAnchor.constraint(equalTo: todayVisitNumLabel.trailingAnchor, constant: 5),
-            todayVisitNumIncrement.topAnchor.constraint(equalTo: todayVisitLabel.bottomAnchor, constant: 10)
+            todayVisitNumIncrement.topAnchor.constraint(equalTo: todayVisitLabel.bottomAnchor, constant: 5)
         ])
         
         NSLayoutConstraint.activate([
             currentTime.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            currentTime.topAnchor.constraint(equalTo: visitGraphView.bottomAnchor, constant: 10)
+            currentTime.topAnchor.constraint(equalTo: visitGraphView.bottomAnchor, constant: 5)
         ])
     }
     

@@ -37,6 +37,14 @@ class ProfileInfoTableViewCell: UITableViewCell {
         return checkView
     } ()
     
+    lazy var separator: UIView = {
+        let separator = UIView()
+        separator.translatesAutoresizingMaskIntoConstraints = false
+        separator.backgroundColor = .lightGray.withAlphaComponent(0.5)
+        addSubview(separator)
+        return separator
+    } ()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setConstraints()
@@ -50,14 +58,14 @@ class ProfileInfoTableViewCell: UITableViewCell {
         NSLayoutConstraint.activate([
             myBlogBackgroundImageView.widthAnchor.constraint(equalToConstant: 25),
             myBlogBackgroundImageView.heightAnchor.constraint(equalToConstant: 25),
-            myBlogBackgroundImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            myBlogBackgroundImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40),
             myBlogBackgroundImageView.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
         
         NSLayoutConstraint.activate([
-            myBlogNameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),
-            myBlogNameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 20),
-            myBlogNameLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20)
+            myBlogNameLabel.leadingAnchor.constraint(equalTo: myBlogBackgroundImageView.trailingAnchor, constant: 15),
+            myBlogNameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 25),
+            myBlogNameLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -25)
         ])
         
         NSLayoutConstraint.activate([
@@ -67,5 +75,15 @@ class ProfileInfoTableViewCell: UITableViewCell {
             myRepBlogCheckView.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
         
+        NSLayoutConstraint.activate([
+            separator.leadingAnchor.constraint(equalTo: leadingAnchor),
+            separator.trailingAnchor.constraint(equalTo: trailingAnchor),
+            separator.bottomAnchor.constraint(equalTo: bottomAnchor),
+            separator.heightAnchor.constraint(equalToConstant: 0.5)
+        ])
+    }
+    
+    func setProfileInfoTableViewCell(name: String) {
+        myBlogNameLabel.text = name
     }
 }

@@ -11,6 +11,9 @@ class VisitLogViewController: UIViewController {
     
     var visitInfo: [VisitInformation] = []
     var selectedLogSortIndex: Int = 0
+    var visitLogOverlapDeleteArr: [String] = [] //url중복을 제거한 array
+    var visitLogArr: [String] = [] //url만 있는 array
+    var logCount: [Int] = [] //url중복을 세는 array
     
     lazy var visitInfoTableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
@@ -22,6 +25,7 @@ class VisitLogViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(FullScreenVisitLogTableViewHeader.self, forHeaderFooterViewReuseIdentifier: "full_screen_visit_header")
         tableView.register(FullScreenVisitLogTableViewCell.self, forCellReuseIdentifier: "full_screen_visit_cell")
+        tableView.register(FullScreenVisitLogSortTableViewCell.self, forCellReuseIdentifier: "full_screen_visit_sort_cell")
         view.addSubview(tableView)
         return tableView
     } ()
@@ -44,5 +48,21 @@ class VisitLogViewController: UIViewController {
     
     func setVisitInfo(model: [VisitInformation]) {
         self.visitInfo = model
+    }
+    
+    func createUrlArray(url: [String]){
+        let urlSet = Set(url)
+        self.visitLogOverlapDeleteArr = Array(urlSet)
+    }
+    
+    func logCount(arr1: [String], arr2: [String]) {
+        self.logCount = Array(repeating: 0, count: visitLogOverlapDeleteArr.count)
+        for i in 0 ..< arr1.count {
+            for j in 0 ..< arr2.count {
+                if arr1[i] == arr2[j] {
+                    self.logCount[i] += 1
+                }
+            }
+        }
     }
 }

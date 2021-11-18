@@ -1,13 +1,13 @@
 //
-//  VisitLogTableViewCell.swift
+//  FullScreenVisitLogSortTableViewCell.swift
 //  TStoryApp
 //
-//  Created by LS-NOTE-00106 on 2021/11/15.
+//  Created by LS-NOTE-00106 on 2021/11/17.
 //
 
 import UIKit
 
-class FullScreenVisitLogTableViewCell: UITableViewCell {
+class FullScreenVisitLogSortTableViewCell: UITableViewCell {
     
     lazy var visitLogIcon: UIImageView = {
         let imageView = UIImageView()
@@ -28,7 +28,7 @@ class FullScreenVisitLogTableViewCell: UITableViewCell {
         return label
     } ()
     
-    lazy var visitDate: UILabel = {
+    lazy var visitCount: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .lightGray
@@ -64,14 +64,14 @@ class FullScreenVisitLogTableViewCell: UITableViewCell {
         
         NSLayoutConstraint.activate([
             visitLogUrl.leadingAnchor.constraint(equalTo: visitLogIcon.trailingAnchor, constant: 5),
-            visitLogUrl.trailingAnchor.constraint(lessThanOrEqualTo: visitDate.leadingAnchor, constant: -15),
+            visitLogUrl.trailingAnchor.constraint(lessThanOrEqualTo: visitCount.leadingAnchor, constant: -10),
             visitLogUrl.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
         
         NSLayoutConstraint.activate([
-            visitDate.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            visitDate.topAnchor.constraint(equalTo: topAnchor, constant: 20),
-            visitDate.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20)
+            visitCount.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            visitCount.topAnchor.constraint(equalTo: topAnchor, constant: 20),
+            visitCount.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20)
         ])
         
         NSLayoutConstraint.activate([
@@ -82,9 +82,8 @@ class FullScreenVisitLogTableViewCell: UITableViewCell {
         ])
     }
     
-    func setComponentData(url: String, date: String) {
-        visitLogUrl.text = url
-        visitDate.text = date
+    func setVisitLogSortData(url: String, count: Int) {
+        self.visitLogUrl.text = url
+        self.visitCount.text = String(count)
     }
-    
 }
