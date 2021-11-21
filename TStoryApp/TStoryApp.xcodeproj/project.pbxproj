@@ -14,7 +14,7 @@
 		050F2FE9273A4988007CBC61 /* HomeSubjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050F2FE8273A4988007CBC61 /* HomeSubjectModel.swift */; };
 		050F2FED273A56D3007CBC61 /* HomeSubjectSelectorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050F2FEC273A56D3007CBC61 /* HomeSubjectSelectorCell.swift */; };
 		0525005E273A678B00BE457D /* HomeSubjectSelectorViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0525005D273A678B00BE457D /* HomeSubjectSelectorViewControllerExtensions.swift */; };
-		052BBC602745C8C100310EF1 /* ProfileInfoTableViewFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052BBC5F2745C8C100310EF1 /* ProfileInfoTableViewFooter.swift */; };
+		052BBC602745C8C100310EF1 /* ProfileInfoStackViewFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052BBC5F2745C8C100310EF1 /* ProfileInfoStackViewFooter.swift */; };
 		052BBC632745DE0200310EF1 /* AccountSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052BBC622745DE0200310EF1 /* AccountSettingViewController.swift */; };
 		052BBC652745DF2E00310EF1 /* AccountSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052BBC642745DF2E00310EF1 /* AccountSettingView.swift */; };
 		052BBC672745E18000310EF1 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052BBC662745E18000310EF1 /* TopView.swift */; };
@@ -91,6 +91,15 @@
 		058ECF9C2744F2BA0063B215 /* MyBlogOfProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058ECF9B2744F2BA0063B215 /* MyBlogOfProfileViewController.swift */; };
 		058ECF9F2744F6F00063B215 /* MyBlogOfProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058ECF9E2744F6F00063B215 /* MyBlogOfProfileView.swift */; };
 		058ECFA12744F89C0063B215 /* MyBlogOfProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058ECFA02744F89C0063B215 /* MyBlogOfProfileModel.swift */; };
+		05AB8D7727473277005D72E0 /* MyBlogOfProflieViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AB8D7627473277005D72E0 /* MyBlogOfProflieViewControllerExtensions.swift */; };
+		05AB8D7B27475FF9005D72E0 /* ChangeNicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AB8D7A27475FF9005D72E0 /* ChangeNicknameViewController.swift */; };
+		05AB8D7E27476147005D72E0 /* ChangeNicknameTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AB8D7D27476147005D72E0 /* ChangeNicknameTopView.swift */; };
+		05AB8D83274771CD005D72E0 /* ChangeNaicknameViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AB8D82274771CD005D72E0 /* ChangeNaicknameViewControllerExtensions.swift */; };
+		05AB8D8627478E5F005D72E0 /* RepBlogSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AB8D8527478E5F005D72E0 /* RepBlogSettingViewController.swift */; };
+		05AB8D8927478FCF005D72E0 /* RepBlogSettingViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AB8D8827478FCF005D72E0 /* RepBlogSettingViewControllerExtensions.swift */; };
+		05AB8D8B2747903F005D72E0 /* RepBlogSettingTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AB8D8A2747903F005D72E0 /* RepBlogSettingTableViewHeader.swift */; };
+		05AB8D8D2747904B005D72E0 /* RepBlogSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AB8D8C2747904B005D72E0 /* RepBlogSettingTableViewCell.swift */; };
+		05AB8D9027479B72005D72E0 /* SettingViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AB8D8F27479B72005D72E0 /* SettingViewControllerExtensions.swift */; };
 		05C38646272785DE0090FDDC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C38645272785DE0090FDDC /* AppDelegate.swift */; };
 		05C3864F272785DF0090FDDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05C3864E272785DF0090FDDC /* Assets.xcassets */; };
 		05C38652272785DF0090FDDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05C38650272785DF0090FDDC /* LaunchScreen.storyboard */; };
@@ -155,7 +164,12 @@
 		8D321D69273812230036F276 /* PublishSettingHeaderViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D321D68273812230036F276 /* PublishSettingHeaderViewExtensions.swift */; };
 		8D3C6726273FA00700260ED4 /* PopularityPostCollectionViewCellExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3C6725273FA00700260ED4 /* PopularityPostCollectionViewCellExtensions.swift */; };
 		8D3C6728273FA11000260ED4 /* PopularityPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3C6727273FA11000260ED4 /* PopularityPostTableViewCell.swift */; };
-		8D7321192745385D0029D558 /* ProfileInfoTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7321182745385D0029D558 /* ProfileInfoTableViewHeader.swift */; };
+		8D65BDAE274A720300D0A678 /* RepMarkLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D65BDAD274A720300D0A678 /* RepMarkLabel.swift */; };
+		8D65BDB1274A755500D0A678 /* NotificationSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D65BDB0274A755500D0A678 /* NotificationSettingViewController.swift */; };
+		8D65BDB4274A7A0800D0A678 /* NotificationSettingViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D65BDB3274A7A0800D0A678 /* NotificationSettingViewControllerExtensions.swift */; };
+		8D65BDB6274A7B5500D0A678 /* NotificationSettingTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D65BDB5274A7B5500D0A678 /* NotificationSettingTableViewHeader.swift */; };
+		8D65BDB8274A7B6400D0A678 /* NotificationSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D65BDB7274A7B6400D0A678 /* NotificationSettingTableViewCell.swift */; };
+		8D7321192745385D0029D558 /* ProfileInfoStackViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7321182745385D0029D558 /* ProfileInfoStackViewHeader.swift */; };
 		8D81F7082734213800F23195 /* OpenSettingHomeSubjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D81F7072734213800F23195 /* OpenSettingHomeSubjectView.swift */; };
 		8D81F70B2734241900F23195 /* OpenSettingPublishDateStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D81F70A2734241900F23195 /* OpenSettingPublishDateStackView.swift */; };
 		8D81F70D27342A4D00F23195 /* OpenSettingCommentIsAllowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D81F70C27342A4D00F23195 /* OpenSettingCommentIsAllowView.swift */; };
@@ -167,8 +181,7 @@
 		8DC15E3E2737A8350071B999 /* CommentAllowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC15E3D2737A8350071B999 /* CommentAllowView.swift */; };
 		8DC15E402737C89A0071B999 /* PublishCurrentDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC15E3F2737C89A0071B999 /* PublishCurrentDateView.swift */; };
 		8DC15E422737C8AC0071B999 /* PublishReservationDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC15E412737C8AC0071B999 /* PublishReservationDateView.swift */; };
-		8DFB6D96274543FC00C5533A /* MyBlogOfProfileViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFB6D95274543FC00C5533A /* MyBlogOfProfileViewControllerExtensions.swift */; };
-		8DFB6D98274544C400C5533A /* ProfileInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFB6D97274544C400C5533A /* ProfileInfoTableViewCell.swift */; };
+		8DFB6D98274544C400C5533A /* ProfileInfoStackViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFB6D97274544C400C5533A /* ProfileInfoStackViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -179,7 +192,7 @@
 		050F2FE8273A4988007CBC61 /* HomeSubjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSubjectModel.swift; sourceTree = "<group>"; };
 		050F2FEC273A56D3007CBC61 /* HomeSubjectSelectorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSubjectSelectorCell.swift; sourceTree = "<group>"; };
 		0525005D273A678B00BE457D /* HomeSubjectSelectorViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSubjectSelectorViewControllerExtensions.swift; sourceTree = "<group>"; };
-		052BBC5F2745C8C100310EF1 /* ProfileInfoTableViewFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoTableViewFooter.swift; sourceTree = "<group>"; };
+		052BBC5F2745C8C100310EF1 /* ProfileInfoStackViewFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoStackViewFooter.swift; sourceTree = "<group>"; };
 		052BBC622745DE0200310EF1 /* AccountSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingViewController.swift; sourceTree = "<group>"; };
 		052BBC642745DF2E00310EF1 /* AccountSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingView.swift; sourceTree = "<group>"; };
 		052BBC662745E18000310EF1 /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
@@ -256,6 +269,15 @@
 		058ECF9B2744F2BA0063B215 /* MyBlogOfProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBlogOfProfileViewController.swift; sourceTree = "<group>"; };
 		058ECF9E2744F6F00063B215 /* MyBlogOfProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBlogOfProfileView.swift; sourceTree = "<group>"; };
 		058ECFA02744F89C0063B215 /* MyBlogOfProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBlogOfProfileModel.swift; sourceTree = "<group>"; };
+		05AB8D7627473277005D72E0 /* MyBlogOfProflieViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBlogOfProflieViewControllerExtensions.swift; sourceTree = "<group>"; };
+		05AB8D7A27475FF9005D72E0 /* ChangeNicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNicknameViewController.swift; sourceTree = "<group>"; };
+		05AB8D7D27476147005D72E0 /* ChangeNicknameTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNicknameTopView.swift; sourceTree = "<group>"; };
+		05AB8D82274771CD005D72E0 /* ChangeNaicknameViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNaicknameViewControllerExtensions.swift; sourceTree = "<group>"; };
+		05AB8D8527478E5F005D72E0 /* RepBlogSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepBlogSettingViewController.swift; sourceTree = "<group>"; };
+		05AB8D8827478FCF005D72E0 /* RepBlogSettingViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepBlogSettingViewControllerExtensions.swift; sourceTree = "<group>"; };
+		05AB8D8A2747903F005D72E0 /* RepBlogSettingTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepBlogSettingTableViewHeader.swift; sourceTree = "<group>"; };
+		05AB8D8C2747904B005D72E0 /* RepBlogSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepBlogSettingTableViewCell.swift; sourceTree = "<group>"; };
+		05AB8D8F27479B72005D72E0 /* SettingViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewControllerExtensions.swift; sourceTree = "<group>"; };
 		05C38642272785DE0090FDDC /* TStoryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TStoryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05C38645272785DE0090FDDC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05C3864E272785DF0090FDDC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -322,7 +344,12 @@
 		8D321D68273812230036F276 /* PublishSettingHeaderViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishSettingHeaderViewExtensions.swift; sourceTree = "<group>"; };
 		8D3C6725273FA00700260ED4 /* PopularityPostCollectionViewCellExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularityPostCollectionViewCellExtensions.swift; sourceTree = "<group>"; };
 		8D3C6727273FA11000260ED4 /* PopularityPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularityPostTableViewCell.swift; sourceTree = "<group>"; };
-		8D7321182745385D0029D558 /* ProfileInfoTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoTableViewHeader.swift; sourceTree = "<group>"; };
+		8D65BDAD274A720300D0A678 /* RepMarkLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepMarkLabel.swift; sourceTree = "<group>"; };
+		8D65BDB0274A755500D0A678 /* NotificationSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingViewController.swift; sourceTree = "<group>"; };
+		8D65BDB3274A7A0800D0A678 /* NotificationSettingViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingViewControllerExtensions.swift; sourceTree = "<group>"; };
+		8D65BDB5274A7B5500D0A678 /* NotificationSettingTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingTableViewHeader.swift; sourceTree = "<group>"; };
+		8D65BDB7274A7B6400D0A678 /* NotificationSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingTableViewCell.swift; sourceTree = "<group>"; };
+		8D7321182745385D0029D558 /* ProfileInfoStackViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoStackViewHeader.swift; sourceTree = "<group>"; };
 		8D81F7072734213800F23195 /* OpenSettingHomeSubjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSettingHomeSubjectView.swift; sourceTree = "<group>"; };
 		8D81F70A2734241900F23195 /* OpenSettingPublishDateStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSettingPublishDateStackView.swift; sourceTree = "<group>"; };
 		8D81F70C27342A4D00F23195 /* OpenSettingCommentIsAllowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSettingCommentIsAllowView.swift; sourceTree = "<group>"; };
@@ -334,8 +361,7 @@
 		8DC15E3D2737A8350071B999 /* CommentAllowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentAllowView.swift; sourceTree = "<group>"; };
 		8DC15E3F2737C89A0071B999 /* PublishCurrentDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishCurrentDateView.swift; sourceTree = "<group>"; };
 		8DC15E412737C8AC0071B999 /* PublishReservationDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishReservationDateView.swift; sourceTree = "<group>"; };
-		8DFB6D95274543FC00C5533A /* MyBlogOfProfileViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBlogOfProfileViewControllerExtensions.swift; sourceTree = "<group>"; };
-		8DFB6D97274544C400C5533A /* ProfileInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoTableViewCell.swift; sourceTree = "<group>"; };
+		8DFB6D97274544C400C5533A /* ProfileInfoStackViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoStackViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -376,6 +402,7 @@
 				052BBC622745DE0200310EF1 /* AccountSettingViewController.swift */,
 				052BBC642745DF2E00310EF1 /* AccountSettingView.swift */,
 				052BBC682745E18400310EF1 /* View */,
+				05AB8D7C2747611F005D72E0 /* ChageNickname */,
 			);
 			path = AccountSetting;
 			sourceTree = "<group>";
@@ -394,8 +421,10 @@
 			isa = PBXGroup;
 			children = (
 				052BBC6E274612E900310EF1 /* SettingViewController.swift */,
+				05AB8D8F27479B72005D72E0 /* SettingViewControllerExtensions.swift */,
 				052BBC702746137100310EF1 /* Top */,
 				052BBC7527461CC200310EF1 /* StackView */,
+				05AB8D8427478BBB005D72E0 /* DetailedSettings */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -763,14 +792,61 @@
 			isa = PBXGroup;
 			children = (
 				058ECF9B2744F2BA0063B215 /* MyBlogOfProfileViewController.swift */,
-				8DFB6D95274543FC00C5533A /* MyBlogOfProfileViewControllerExtensions.swift */,
+				05AB8D7627473277005D72E0 /* MyBlogOfProflieViewControllerExtensions.swift */,
 				058ECF9E2744F6F00063B215 /* MyBlogOfProfileView.swift */,
 				058ECFA02744F89C0063B215 /* MyBlogOfProfileModel.swift */,
-				8D732117274537E10029D558 /* TableView */,
+				8D732117274537E10029D558 /* StackView */,
 				052BBC612745DDE600310EF1 /* AccountSetting */,
 				052BBC6D274612C700310EF1 /* Setting */,
 			);
 			path = MyBlogOfProfile;
+			sourceTree = "<group>";
+		};
+		05AB8D7C2747611F005D72E0 /* ChageNickname */ = {
+			isa = PBXGroup;
+			children = (
+				05AB8D7A27475FF9005D72E0 /* ChangeNicknameViewController.swift */,
+				05AB8D82274771CD005D72E0 /* ChangeNaicknameViewControllerExtensions.swift */,
+				05AB8D8127476164005D72E0 /* View */,
+			);
+			path = ChageNickname;
+			sourceTree = "<group>";
+		};
+		05AB8D8127476164005D72E0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				05AB8D7D27476147005D72E0 /* ChangeNicknameTopView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		05AB8D8427478BBB005D72E0 /* DetailedSettings */ = {
+			isa = PBXGroup;
+			children = (
+				05AB8D8727478FA9005D72E0 /* RepBlogSetting */,
+				8D65BDAF274A751200D0A678 /* NotificationSetting */,
+			);
+			path = DetailedSettings;
+			sourceTree = "<group>";
+		};
+		05AB8D8727478FA9005D72E0 /* RepBlogSetting */ = {
+			isa = PBXGroup;
+			children = (
+				05AB8D8527478E5F005D72E0 /* RepBlogSettingViewController.swift */,
+				05AB8D8827478FCF005D72E0 /* RepBlogSettingViewControllerExtensions.swift */,
+				05AB8D8E2747904E005D72E0 /* TableView */,
+			);
+			path = RepBlogSetting;
+			sourceTree = "<group>";
+		};
+		05AB8D8E2747904E005D72E0 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				05AB8D8A2747903F005D72E0 /* RepBlogSettingTableViewHeader.swift */,
+				05AB8D8C2747904B005D72E0 /* RepBlogSettingTableViewCell.swift */,
+				8D65BDAD274A720300D0A678 /* RepMarkLabel.swift */,
+			);
+			path = TableView;
 			sourceTree = "<group>";
 		};
 		05C38639272785DE0090FDDC = {
@@ -1076,14 +1152,33 @@
 			path = TableViewCell;
 			sourceTree = "<group>";
 		};
-		8D732117274537E10029D558 /* TableView */ = {
+		8D65BDAF274A751200D0A678 /* NotificationSetting */ = {
 			isa = PBXGroup;
 			children = (
-				8D7321182745385D0029D558 /* ProfileInfoTableViewHeader.swift */,
-				8DFB6D97274544C400C5533A /* ProfileInfoTableViewCell.swift */,
-				052BBC5F2745C8C100310EF1 /* ProfileInfoTableViewFooter.swift */,
+				8D65BDB0274A755500D0A678 /* NotificationSettingViewController.swift */,
+				8D65BDB3274A7A0800D0A678 /* NotificationSettingViewControllerExtensions.swift */,
+				8D65BDB2274A79F000D0A678 /* TableView */,
+			);
+			path = NotificationSetting;
+			sourceTree = "<group>";
+		};
+		8D65BDB2274A79F000D0A678 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				8D65BDB5274A7B5500D0A678 /* NotificationSettingTableViewHeader.swift */,
+				8D65BDB7274A7B6400D0A678 /* NotificationSettingTableViewCell.swift */,
 			);
 			path = TableView;
+			sourceTree = "<group>";
+		};
+		8D732117274537E10029D558 /* StackView */ = {
+			isa = PBXGroup;
+			children = (
+				8D7321182745385D0029D558 /* ProfileInfoStackViewHeader.swift */,
+				8DFB6D97274544C400C5533A /* ProfileInfoStackViewCell.swift */,
+				052BBC5F2745C8C100310EF1 /* ProfileInfoStackViewFooter.swift */,
+			);
+			path = StackView;
 			sourceTree = "<group>";
 		};
 		8D81F7092734227000F23195 /* View */ = {
@@ -1193,6 +1288,7 @@
 				054FE87427425567001A0AD2 /* PostWebViewHeader.swift in Sources */,
 				0525005E273A678B00BE457D /* HomeSubjectSelectorViewControllerExtensions.swift in Sources */,
 				052BBC7C2746246E00310EF1 /* SettingProfileImageView.swift in Sources */,
+				05AB8D8927478FCF005D72E0 /* RepBlogSettingViewControllerExtensions.swift in Sources */,
 				054FE84F2741DE47001A0AD2 /* VisitKeyWordCollectionViewCell.swift in Sources */,
 				8DC15E3727378B700071B999 /* PublishSettingTopView.swift in Sources */,
 				05EB3207273CF6AE0035E45C /* VisitCellComponentsView.swift in Sources */,
@@ -1208,7 +1304,9 @@
 				8D94FEA8273BF7A4005D2F99 /* FeedSubscribeComponentsView.swift in Sources */,
 				0545AEC1273E58D700458A6E /* PostComponentView.swift in Sources */,
 				050F2FE9273A4988007CBC61 /* HomeSubjectModel.swift in Sources */,
+				05AB8D8D2747904B005D72E0 /* RepBlogSettingTableViewCell.swift in Sources */,
 				8D15208227414BEC00510781 /* PopularityPostSeeAllViewController.swift in Sources */,
+				05AB8D7E27476147005D72E0 /* ChangeNicknameTopView.swift in Sources */,
 				05EB3209273CF9F10035E45C /* RecentlyTableViewHeader.swift in Sources */,
 				05EB3215273D0A160035E45C /* PopularityTableViewCell.swift in Sources */,
 				053F0F94273270C2007359ED /* PostContentsSettingViewExtension.swift in Sources */,
@@ -1231,14 +1329,17 @@
 				058ECF972744BA830063B215 /* FullScreenVisitLogSortTableViewCell.swift in Sources */,
 				053445132738BCA300171188 /* TagInputHeaderView.swift in Sources */,
 				8D1520872741573C00510781 /* PopularityPostSeeAllTableViewCell.swift in Sources */,
+				8D65BDAE274A720300D0A678 /* RepMarkLabel.swift in Sources */,
 				0545AEBA273E2B8A00458A6E /* SubscriberCollectionViewCell.swift in Sources */,
 				8DC15E402737C89A0071B999 /* PublishCurrentDateView.swift in Sources */,
 				05590E25273BB38E006B65A9 /* FeedTableViewCell.swift in Sources */,
+				05AB8D8B2747903F005D72E0 /* RepBlogSettingTableViewHeader.swift in Sources */,
 				058ECF992744DDF70063B215 /* NavigationBarView.swift in Sources */,
 				05FF7433272BE04100BEE31C /* WritingFormView.swift in Sources */,
 				055EFFEE2743281100B97614 /* VisitKeyWordViewControllerExtensions.swift in Sources */,
-				8D7321192745385D0029D558 /* ProfileInfoTableViewHeader.swift in Sources */,
+				8D7321192745385D0029D558 /* ProfileInfoStackViewHeader.swift in Sources */,
 				054FE8592741E802001A0AD2 /* VisitLogTableHeaderView.swift in Sources */,
+				05AB8D83274771CD005D72E0 /* ChangeNaicknameViewControllerExtensions.swift in Sources */,
 				05EB31F5273CD1700035E45C /* HomeViewController.swift in Sources */,
 				057E27B1272A6294009BE550 /* NoticeTableViewHeader.swift in Sources */,
 				05EB31FF273CE0950035E45C /* HomeViewControllerExtensions.swift in Sources */,
@@ -1250,6 +1351,7 @@
 				8D152085274150A500510781 /* PopularityPostSeeAllViewControllerExtensions.swift in Sources */,
 				8D321D69273812230036F276 /* PublishSettingHeaderViewExtensions.swift in Sources */,
 				05EB3217273D0A670035E45C /* SubscriberTableViewCell.swift in Sources */,
+				8D65BDB4274A7A0800D0A678 /* NotificationSettingViewControllerExtensions.swift in Sources */,
 				05590E23273BB377006B65A9 /* FeedTableViewHeader.swift in Sources */,
 				8D94FEAA273BF8D9005D2F99 /* FeedCommentsComponentsView.swift in Sources */,
 				05F75F5D2730D78400BF39D2 /* CategoryChoicePopoverView.swift in Sources */,
@@ -1269,6 +1371,7 @@
 				054FE86B2742164B001A0AD2 /* FullScreenVisitLogTableViewCell.swift in Sources */,
 				05590E1F273BB00E006B65A9 /* FeedTableView.swift in Sources */,
 				053F0F9727327843007359ED /* PostContentsTagSettingViewController.swift in Sources */,
+				05AB8D9027479B72005D72E0 /* SettingViewControllerExtensions.swift in Sources */,
 				0545AEBC273E44BE00458A6E /* VisitGraphView.swift in Sources */,
 				050F2FE3273A3D0B007CBC61 /* HomeSubjectSelectorView.swift in Sources */,
 				05C3866427278DE60090FDDC /* ProfileModel.swift in Sources */,
@@ -1288,11 +1391,11 @@
 				05590E19273BA876006B65A9 /* FeedViewController.swift in Sources */,
 				054FE84D2741DE2D001A0AD2 /* VisitLogCollectionViewCell.swift in Sources */,
 				052BBC722746138600310EF1 /* SettingTopView.swift in Sources */,
-				052BBC602745C8C100310EF1 /* ProfileInfoTableViewFooter.swift in Sources */,
+				052BBC602745C8C100310EF1 /* ProfileInfoStackViewFooter.swift in Sources */,
 				05FF7424272BC75600BEE31C /* CategoryViewExtension.swift in Sources */,
 				05F75F612731236B00BF39D2 /* PublishingSettingViewControllerExtension.swift in Sources */,
 				8D321D5F2737F1830036F276 /* PasswordSettingView.swift in Sources */,
-				8DFB6D96274543FC00C5533A /* MyBlogOfProfileViewControllerExtensions.swift in Sources */,
+				05AB8D7727473277005D72E0 /* MyBlogOfProflieViewControllerExtensions.swift in Sources */,
 				05EB320B273CFBA90035E45C /* PopularityTableViewHeader.swift in Sources */,
 				0545AEAE273DFC9500458A6E /* RecentlyPostCollectionViewCell.swift in Sources */,
 				05590E1B273BA887006B65A9 /* FeedDataModel.swift in Sources */,
@@ -1309,11 +1412,13 @@
 				05FF7426272BC7F000BEE31C /* CategoryKindViewExtension.swift in Sources */,
 				057E27AB272A4899009BE550 /* NoticeViewControllerExtensions.swift in Sources */,
 				052BBC742746175000310EF1 /* SettingStackView.swift in Sources */,
+				05AB8D7B27475FF9005D72E0 /* ChangeNicknameViewController.swift in Sources */,
 				054FE86827421565001A0AD2 /* VisitLogViewControllerExtensions.swift in Sources */,
 				054FE86D27421658001A0AD2 /* FullScreenVisitLogTableViewHeader.swift in Sources */,
 				05EB3211273D05D50035E45C /* VisitTableViewCell.swift in Sources */,
 				05328DA9272F7CFC00C6BE17 /* PublishingHeaderView.swift in Sources */,
 				05FF742A272BD28000BEE31C /* WritingFormModel.swift in Sources */,
+				8D65BDB8274A7B6400D0A678 /* NotificationSettingTableViewCell.swift in Sources */,
 				05FF742C272BD2B100BEE31C /* WritingFormViewController.swift in Sources */,
 				0502C01927293DDD00C15D1B /* CategoryView.swift in Sources */,
 				052BBC6C2745ED0600310EF1 /* NicknameUpdateView.swift in Sources */,
@@ -1327,10 +1432,11 @@
 				052BBC672745E18000310EF1 /* TopView.swift in Sources */,
 				05C38646272785DE0090FDDC /* AppDelegate.swift in Sources */,
 				058ECF9C2744F2BA0063B215 /* MyBlogOfProfileViewController.swift in Sources */,
-				8DFB6D98274544C400C5533A /* ProfileInfoTableViewCell.swift in Sources */,
+				8DFB6D98274544C400C5533A /* ProfileInfoStackViewCell.swift in Sources */,
 				053445172738C8B100171188 /* ContentTagInputViewExtensions.swift in Sources */,
 				050F2FED273A56D3007CBC61 /* HomeSubjectSelectorCell.swift in Sources */,
 				057E27AD272A615F009BE550 /* NoticeTableView.swift in Sources */,
+				05AB8D8627478E5F005D72E0 /* RepBlogSettingViewController.swift in Sources */,
 				05EB31F8273CD3650035E45C /* HomeModel.swift in Sources */,
 				05590E16273B5216006B65A9 /* HomeSubjectHeaderView.swift in Sources */,
 				053F0F9B27327B49007359ED /* PostContentsTagSettingHeaderView.swift in Sources */,
@@ -1347,7 +1453,9 @@
 				055EFFFF2743A86200B97614 /* LogSortViewControllerExtensions.swift in Sources */,
 				05C386732727C01C0090FDDC /* NoticeModel.swift in Sources */,
 				8DC15E3E2737A8350071B999 /* CommentAllowView.swift in Sources */,
+				8D65BDB6274A7B5500D0A678 /* NotificationSettingTableViewHeader.swift in Sources */,
 				054FE8622741FF61001A0AD2 /* VisitKeyWordLabel.swift in Sources */,
+				8D65BDB1274A755500D0A678 /* NotificationSettingViewController.swift in Sources */,
 				05EB3205273CF41F0035E45C /* VisitTableViewHeader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
