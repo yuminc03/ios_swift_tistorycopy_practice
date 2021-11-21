@@ -7,8 +7,12 @@
 
 import UIKit
 
+protocol SettingStackViewDelegate: AnyObject {
+    func stackViewCellDidTapped(at: Int)
+}
 class SettingStackView: UIStackView {
     
+    weak var delegate: SettingStackViewDelegate?
     var myBlogOfProfileModel = MyBlogOfProfileModel()
     private var profileName: String = ""
     private var repBlogName: String = ""
@@ -29,17 +33,21 @@ class SettingStackView: UIStackView {
         for i in 0 ..< settingStackCellNameArr.count {
             let settingCellView = SettingStackCellView(name: settingStackCellNameArr[i])
             settingCellView.translatesAutoresizingMaskIntoConstraints = false
+            settingCellView.tag = i
             settingCellView.backgroundColor = .white
+            let gesture = UITapGestureRecognizer(target: self, action: #selector(settingCellViewDidTapped))
+            settingCellView.addGestureRecognizer(gesture)
             addArrangedSubview(settingCellView)
             settingCellView.heightAnchor.constraint(equalToConstant: 50).isActive = true
             if i <= 1  {
-                let settingProfileImageView = SettingProfileImageView(imageRadius: i == 0 ? 10 : 3, colorNum: i)
+                let settingProfileImageView = SettingProfileImageView(imageRadius: i == 0 ? 10 : 4, colorNum: i)
                 settingProfileImageView.translatesAutoresizingMaskIntoConstraints = false
                 settingCellView.addSubview(settingProfileImageView)
                 settingProfileImageView.trailingAnchor.constraint(equalTo: settingCellView.trailingAnchor, constant: -40).isActive = true
                 settingProfileImageView.centerYAnchor.constraint(equalTo: settingCellView.centerYAnchor).isActive = true
-                
-                
+                settingProfileImageView.widthAnchor.constraint(equalToConstant: 20).isActive = true
+                settingProfileImageView.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        
                 let settingCurrentTextLabel = SettingCurrentTextLabel(text: i == 0 ? subText(text: self.profileName) : subText(text: self.repBlogName))
                 settingCurrentTextLabel.translatesAutoresizingMaskIntoConstraints = false
                 settingCellView.addSubview(settingCurrentTextLabel)
@@ -60,6 +68,9 @@ class SettingStackView: UIStackView {
                 settingCellSeparator.heightAnchor.constraint(equalToConstant: 10).isActive = true
             }
             else {
+                if i == settingStackCellNameArr.count - 1 {
+                    settingCellSeparator.isHidden = true
+                }
                 settingCellSeparator.heightAnchor.constraint(equalToConstant: 0.5).isActive = true
             }
            
@@ -73,8 +84,9 @@ class SettingStackView: UIStackView {
     func subText(text: String) -> String {
         var subString = text
         if subString.count > 8 {
-            subString = String(subString[subString.startIndex ..< subString.endIndex])
-            subString += "..."
+            let endIndex : String.Index = subString.index(subString.startIndex, offsetBy: 8)
+            subString = String(subString[subString.startIndex ..< endIndex])
+            subString += "・・・"
         }
         return subString
     }
@@ -94,5 +106,10 @@ class SettingStackView: UIStackView {
     
     func setAppInfoSetting() {
         self.appIsNewVersion = "최신 버전 사용 중"
+    }
+    
+    @objc private func settingCellViewDidTapped(gesture: UITapGestureRecognizer) {
+        guard let index = gesture.view?.tag else { return }
+        delegate?.stackViewCellDidTapped(at: index)
     }
 }

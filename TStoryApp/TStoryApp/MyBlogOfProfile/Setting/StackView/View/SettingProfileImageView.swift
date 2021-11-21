@@ -24,7 +24,7 @@ class SettingProfileImageView: UIImageView {
     }
     
     private func setConstraints() {
-        self.backgroundColor = imageColorNum == 0 ? .systemPurple.withAlphaComponent(0.8) : .systemBlue.withAlphaComponent(0.5)
+        self.backgroundColor = imageColorNum == 0 ? .systemPurple.withAlphaComponent(0.8) : .systemBlue.withAlphaComponent(0.8)
         self.layer.cornerRadius = CGFloat(imageRadius)
     }
 }

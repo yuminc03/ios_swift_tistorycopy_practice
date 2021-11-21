@@ -16,6 +16,8 @@ class AccountSettingViewController: UIViewController {
         settingView.translatesAutoresizingMaskIntoConstraints = false
         settingView.backgroundColor = .white
         settingView.topView.dismissAccountSettingViewButton.addTarget(self, action: #selector(dismissAccountSettingViewButtonDidTapped), for: .touchUpInside)
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(nicknameUpdateViewDidTapped))
+        settingView.profileSettingView.nicknameUpdateView.addGestureRecognizer(gesture)
         view.addSubview(settingView)
         settingView.setMyBlogOfProfileModel(model: self.myBlogOfProfileModel)
         settingView.profileSettingView.setProfileSetting(name: myBlogOfProfileModel.profileName, email: myBlogOfProfileModel.profileEmail)
@@ -48,5 +50,11 @@ class AccountSettingViewController: UIViewController {
     
     @objc private func dismissAccountSettingViewButtonDidTapped(button: UIButton) {
         self.dismiss(animated: false, completion: nil)
+    }
+    
+    @objc private func nicknameUpdateViewDidTapped(gesture: UITapGestureRecognizer){
+        let vc = ChangeNicknameViewController(myBlogOfProfileModel: self.myBlogOfProfileModel)
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true)
     }
 }

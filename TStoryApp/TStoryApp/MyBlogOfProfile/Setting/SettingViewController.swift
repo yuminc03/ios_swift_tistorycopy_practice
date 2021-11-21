@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class SettingViewController: UIViewController {
     
     var myBlogOfProfileModel = MyBlogOfProfileModel()
@@ -15,6 +16,7 @@ class SettingViewController: UIViewController {
         let topView = SettingTopView()
         topView.translatesAutoresizingMaskIntoConstraints = false
         topView.backgroundColor = .white
+        topView.dismissSettingViewButton.addTarget(self, action: #selector(dismissSettingViewButtonDidTapped), for: .touchUpInside)
         view.addSubview(topView)
         return topView
     } ()
@@ -31,8 +33,17 @@ class SettingViewController: UIViewController {
         stackView.setAlarmSetting()
         stackView.setAppInfoSetting()
         stackView.setStackView()
+        stackView.delegate = self
         view.addSubview(stackView)
         return stackView
+    } ()
+    
+    lazy var lightGrayColorView: UIView = {
+        let lightGrayView = UIView()
+        lightGrayView.translatesAutoresizingMaskIntoConstraints = false
+        lightGrayView.backgroundColor = .lightGray.withAlphaComponent(0.3)
+        view.addSubview(lightGrayView)
+        return lightGrayView
     } ()
     
     init(myBlogOfProfileModel: MyBlogOfProfileModel) {
@@ -62,6 +73,13 @@ class SettingViewController: UIViewController {
             settingStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             settingStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             settingStackView.topAnchor.constraint(equalTo: settingTopView.bottomAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            lightGrayColorView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            lightGrayColorView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            lightGrayColorView.topAnchor.constraint(equalTo: settingStackView.bottomAnchor),
+            lightGrayColorView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
     

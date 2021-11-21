@@ -7,9 +7,13 @@
 
 import UIKit
 
+protocol MyBlogOfProfileViewControllerDelegate: AnyObject {
+    func profileStackViewDidTapped(viewController: MyBlogOfProfileViewController, at: Int?)
+}
 class MyBlogOfProfileViewController: UIViewController {
     
     var myBlogOfProfileModel = MyBlogOfProfileModel()
+    weak var delegate: MyBlogOfProfileViewControllerDelegate?
     
     lazy var myBlogOfProfileView: MyBlogOfProfileView = {
         let blogOfProfileView = MyBlogOfProfileView()
@@ -17,16 +21,17 @@ class MyBlogOfProfileViewController: UIViewController {
         blogOfProfileView.backgroundColor = .white
         blogOfProfileView.layer.cornerRadius = 10
         blogOfProfileView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        blogOfProfileView.myBlogOfProfileTableView.delegate = self
-        blogOfProfileView.myBlogOfProfileTableView.dataSource = self
+        blogOfProfileView.setMyBlogOfProfileModel(model: self.myBlogOfProfileModel)
+        blogOfProfileView.setStackView()
+        blogOfProfileView.delegate = self
         view.addSubview(blogOfProfileView)
         return blogOfProfileView
     } ()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setConstriants()
         configulations()
+        setConstriants()
     }
     
     func configulations() {
@@ -78,12 +83,23 @@ class MyBlogOfProfileViewController: UIViewController {
     }
     
     private func setConstriants() {
-        view.backgroundColor = .black.withAlphaComponent(0.3)
         NSLayoutConstraint.activate([
             myBlogOfProfileView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             myBlogOfProfileView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            myBlogOfProfileView.topAnchor.constraint(equalTo: view.topAnchor, constant: 500),
             myBlogOfProfileView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+        view.backgroundColor = .black.withAlphaComponent(0.3)
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(backgroundDidTapped))
+        view.addGestureRecognizer(gesture)
+    }
+    
+    @objc private func backgroundDidTapped(gesture: UITapGestureRecognizer) {
+        let locations = gesture.location(in: self.view)
+        if myBlogOfProfileView.frame.contains(locations) {
+            return
+        }
+        else {
+            delegate?.profileStackViewDidTapped(viewController: self, at: nil)
+        }
     }
 }

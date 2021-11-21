@@ -11,6 +11,7 @@ class HomeViewController: UIViewController {
     
     var homeModel = HomeModel()
     var currentPageIndex: Int = 0
+    var myBlogOfProfileModel = MyBlogOfProfileModel()
     
     lazy var navigationBarView: NavigationBarView = {
         let navigationView = NavigationBarView()
@@ -96,6 +97,18 @@ class HomeViewController: UIViewController {
                                         ),
                                         VisitNumberWeek(
                                             todayVisitCount: 0
+                                        ),
+                                        VisitNumberWeek(
+                                            todayVisitCount: 6
+                                        ),
+                                        VisitNumberWeek(
+                                            todayVisitCount: 1
+                                        ),
+                                        VisitNumberWeek(
+                                            todayVisitCount: 2
+                                        ),
+                                        VisitNumberWeek(
+                                            todayVisitCount: 1
                                         )
                                     ],
                                     visitNum: 2,
@@ -308,8 +321,11 @@ class HomeViewController: UIViewController {
     }
     
     @objc private func blogProfileButtonDidTapped(button: UIButton) {
+        tabBarController?.tabBar.isHidden = true
         let vc = MyBlogOfProfileViewController()
-        vc.modalPresentationStyle = .popover
-        self.present(vc, animated: true)
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.delegate = self
+        self.present(vc, animated: false)
+        self.myBlogOfProfileModel = vc.myBlogOfProfileModel
     }
 }
