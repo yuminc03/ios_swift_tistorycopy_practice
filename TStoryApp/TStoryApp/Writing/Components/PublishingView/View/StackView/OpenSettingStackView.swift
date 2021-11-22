@@ -100,7 +100,7 @@ class OpenSettingStackView: UIStackView {
             subview.removeFromSuperview()//view에서 모든 요소 지우기
         }
         
-        var viewCount = tag == 4 ? 1 : 3
+        let viewCount = tag == 4 ? 1 : 3
         for i in 0 ..< viewCount {
 //            if i == 0 {
 //                addArrangedSubview(extendable)

@@ -10,12 +10,14 @@ import UIKit
 class FeedViewController: UIViewController {
     
     var feedModel = FeedModel()
+    var myBlogOfProfileModel = MyBlogOfProfileModel()
     
     lazy var navigationBarView: NavigationBarView = {
         let navigationView = NavigationBarView()
         navigationView.translatesAutoresizingMaskIntoConstraints = false
         self.navigationItem.titleView = navigationView
         self.navigationItem.titleView?.tintColor = .white
+        navigationView.blogProfileButton.addTarget(self, action: #selector(blogProfileButtonDidTapped), for: .touchUpInside)
         view.addSubview(navigationView)
         return navigationView
     } ()
@@ -119,5 +121,14 @@ class FeedViewController: UIViewController {
             navigationBarView.heightAnchor.constraint(equalToConstant: 90)
         ])
         
+    }
+    
+    @objc private func blogProfileButtonDidTapped(button: UIButton) {
+        tabBarController?.tabBar.isHidden = true
+        let vc = MyBlogOfProfileViewController()
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.delegate = self
+        self.present(vc, animated: false)
+        self.myBlogOfProfileModel = vc.myBlogOfProfileModel
     }
 }
