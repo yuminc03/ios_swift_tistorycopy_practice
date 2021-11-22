@@ -103,15 +103,15 @@ class VisitGraphView: UIView {
         for i in 0 ..< subVisitNumWeek.count {
             let weekData: Int = subVisitNumWeek[i].todayVisitCount
             if i == 0 {
-                let from = CGPoint(x: origin.x, y: origin.y + CGFloat(120 - (subVisitNumWeek[0].todayVisitCount * 5)))
-                origin.y = origin.y + CGFloat(120 - (weekData * 5))
+                let from = CGPoint(x: origin.x, y: origin.y + CGFloat(120 - (subVisitNumWeek[0].todayVisitCount * 10)))
+                origin.y = origin.y + CGFloat(120 - (weekData * 10))
                 linePath.move(to: from)
             }
             else if i == 1 {
                 origin.y = 120
                 linesDistance = 310 / 7 / 2
                 origin.x = origin.x + CGFloat(linesDistance)
-                origin.y = origin.y - CGFloat(weekData * 5)
+                origin.y = origin.y - CGFloat(weekData * 10)
                 linePos = CGPoint(x: origin.x, y: origin.y)
                 linePath.addLine(to: linePos)
                 dotPosArr.append(linePos)
@@ -120,7 +120,7 @@ class VisitGraphView: UIView {
                 origin.y = 120
                 linesDistance = 310 / 7
                 origin.x = origin.x + CGFloat(linesDistance)
-                origin.y = origin.y - CGFloat(weekData * 5)
+                origin.y = origin.y - CGFloat(weekData * 10)
                 linePos = CGPoint(x: origin.x, y: origin.y)
                 linePath.addLine(to: linePos)
                 dotPosArr.append(linePos)

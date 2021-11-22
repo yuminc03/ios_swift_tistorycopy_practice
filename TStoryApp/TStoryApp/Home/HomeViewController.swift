@@ -18,6 +18,7 @@ class HomeViewController: UIViewController {
         navigationView.translatesAutoresizingMaskIntoConstraints = false
         self.navigationItem.titleView = navigationView
         self.navigationItem.titleView?.tintColor = .white
+        navigationView.blogSearchButton.addTarget(self, action: #selector(blogSearchButtonDidTapped), for: .touchUpInside)
         navigationView.blogProfileButton.addTarget(self, action: #selector(blogProfileButtonDidTapped), for: .touchUpInside)
         view.addSubview(navigationView)
         return navigationView
@@ -109,6 +110,9 @@ class HomeViewController: UIViewController {
                                         ),
                                         VisitNumberWeek(
                                             todayVisitCount: 1
+                                        ),
+                                        VisitNumberWeek(
+                                            todayVisitCount: 6
                                         )
                                     ],
                                     visitNum: 2,
@@ -327,5 +331,11 @@ class HomeViewController: UIViewController {
         vc.delegate = self
         self.present(vc, animated: false)
         self.myBlogOfProfileModel = vc.myBlogOfProfileModel
+    }
+    
+    @objc private func blogSearchButtonDidTapped(button: UIButton) {
+        let vc = BlogSearchViewController()
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: false)
     }
 }
