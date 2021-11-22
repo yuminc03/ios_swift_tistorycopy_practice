@@ -94,7 +94,7 @@ class ProfileSettingView: UIView {
     private func setConstraints() {
         NSLayoutConstraint.activate([
             profileSetingTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            profileSetingTitleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 30)
+            profileSetingTitleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10)
         ])
         
         NSLayoutConstraint.activate([

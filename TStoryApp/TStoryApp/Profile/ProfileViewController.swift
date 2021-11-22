@@ -9,8 +9,10 @@ import UIKit
 
 
 class ProfileViewController: UIViewController {
+    
     var profileModel = ProfileModel()
     var selectedCateogoryIndex: Int = 0
+    var myBlogOfProfileModel = MyBlogOfProfileModel()
     
     lazy var navigationBarView: NavigationBarView = {
         let navigationView = NavigationBarView()
@@ -18,6 +20,7 @@ class ProfileViewController: UIViewController {
         self.navigationItem.titleView = navigationView
         self.navigationItem.titleView?.tintColor = .clear
         navigationView.blogSearchButton.setTitleColor(.white, for: .normal)
+        navigationView.blogProfileButton.addTarget(self, action: #selector(blogProfileButtonDidTapped), for: .touchUpInside)
         view.addSubview(navigationView)
         return navigationView
     } ()
@@ -197,9 +200,16 @@ class ProfileViewController: UIViewController {
             navigationBarView.topAnchor.constraint(equalTo: view.topAnchor),
             navigationBarView.heightAnchor.constraint(equalToConstant: 90)
         ])
-        
     }
     
+    @objc private func blogProfileButtonDidTapped(button: UIButton) {
+        tabBarController?.tabBar.isHidden = true
+        let vc = MyBlogOfProfileViewController()
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.delegate = self
+        self.present(vc, animated: false)
+        self.myBlogOfProfileModel = vc.myBlogOfProfileModel
+    }
     
 }
 

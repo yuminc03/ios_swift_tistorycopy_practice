@@ -87,3 +87,25 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
 
 }
 
+extension ProfileViewController: MyBlogOfProfileViewControllerDelegate {
+    func profileStackViewDidTapped(viewController: MyBlogOfProfileViewController, at: Int?) {
+        tabBarController?.tabBar.isHidden = false
+        viewController.dismiss(animated: false, completion: {
+            if at == 0 {
+                let accountSettingViewController = AccountSettingViewController(myBlogOfProfileModel: self.myBlogOfProfileModel)
+                accountSettingViewController.modalPresentationStyle = .fullScreen
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                appDelegate.window?.rootViewController?.present(accountSettingViewController, animated: true, completion: nil)
+            }
+            else if at == 1 {
+                let settingViewController = SettingViewController(myBlogOfProfileModel: self.myBlogOfProfileModel)
+                settingViewController.modalPresentationStyle = .fullScreen
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                appDelegate.window?.rootViewController?.present(settingViewController, animated: true, completion: nil)
+            }
+            else {
+                return
+            }
+        })
+    }
+}

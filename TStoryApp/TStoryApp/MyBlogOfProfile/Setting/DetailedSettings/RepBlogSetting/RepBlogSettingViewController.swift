@@ -48,5 +48,5 @@ class RepBlogSettingViewController: UIViewController {
             repBlogSettingTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
-
+    
 }

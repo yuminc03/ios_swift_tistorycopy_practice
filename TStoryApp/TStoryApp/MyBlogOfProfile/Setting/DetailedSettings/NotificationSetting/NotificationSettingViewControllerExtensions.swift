@@ -18,7 +18,8 @@ extension NotificationSettingViewController: UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "notification_setting_cell") as! NotificationSettingTableViewCell
+        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -30,7 +31,8 @@ extension NotificationSettingViewController: UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return UIView()
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "notification_setting_header") as! NotificationSettingTableViewHeader
+        return header
     }
     
     

@@ -9,8 +9,9 @@ struct MyBlogOfProfileModel {//프로필 정보
     var profileName: String = "" //프로필 이름
     var profileEmail: String = "" //프로필 이메일
     var repBlogName: String = "" //대표 블로그 이름
+    var appVersion: String = ""
     var myBlogsModel: [MyBlogsModel] = []
-    var notificationModel: [NotificationModel] = []
+    var notificationModel = NotificationModel()
     var announcementModel: [AnnouncementModel] = []
 }
 

@@ -8,7 +8,7 @@
 import UIKit
 
 protocol SettingStackViewDelegate: AnyObject {
-    func stackViewCellDidTapped(at: Int)
+    func stackViewCellDidTapped(at: Int, pageTitle: String)
 }
 class SettingStackView: UIStackView {
     
@@ -18,7 +18,7 @@ class SettingStackView: UIStackView {
     private var repBlogName: String = ""
     private var pushAlarmOn: String = ""
     private var appIsNewVersion: String = ""
-
+    private let settingStackCellNameArr: [String] = ["계정 설정", "대표 블로그 설정", "알림 설정", "공지사항", "앱 정보", "이용약관", "개인정보처리방침", "오픈소스 라이선스", "도움말", "문의하기"]
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,7 +29,7 @@ class SettingStackView: UIStackView {
     }
     
     func setStackView() {
-        let settingStackCellNameArr: [String] = ["계정 설정", "대표 블로그 설정", "알림 설정", "공지사항", "앱 정보", "이용약관", "개인정보처리방침", "오픈소스 라이선스", "도움말", "문의하기"]
+        
         for i in 0 ..< settingStackCellNameArr.count {
             let settingCellView = SettingStackCellView(name: settingStackCellNameArr[i])
             settingCellView.translatesAutoresizingMaskIntoConstraints = false
@@ -100,7 +100,7 @@ class SettingStackView: UIStackView {
     }
     
     func setAlarmSetting() {
-        let alarmText = myBlogOfProfileModel.notificationModel[0].pushAlarm == true ? "on" : "off"
+        let alarmText = myBlogOfProfileModel.notificationModel.pushAlarm == true ? "on" : "off"
         self.pushAlarmOn = "푸시 알림 \(alarmText)"
     }
     
@@ -110,6 +110,6 @@ class SettingStackView: UIStackView {
     
     @objc private func settingCellViewDidTapped(gesture: UITapGestureRecognizer) {
         guard let index = gesture.view?.tag else { return }
-        delegate?.stackViewCellDidTapped(at: index)
+        delegate?.stackViewCellDidTapped(at: index, pageTitle: settingStackCellNameArr[index])
     }
 }
