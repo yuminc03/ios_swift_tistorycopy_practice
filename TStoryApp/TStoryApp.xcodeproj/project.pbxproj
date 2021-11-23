@@ -13,6 +13,13 @@
 		050F2FE3273A3D0B007CBC61 /* HomeSubjectSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050F2FE2273A3D0B007CBC61 /* HomeSubjectSelectorView.swift */; };
 		050F2FE9273A4988007CBC61 /* HomeSubjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050F2FE8273A4988007CBC61 /* HomeSubjectModel.swift */; };
 		050F2FED273A56D3007CBC61 /* HomeSubjectSelectorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050F2FEC273A56D3007CBC61 /* HomeSubjectSelectorCell.swift */; };
+		051598A5274C697B00299668 /* BlogSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051598A4274C697B00299668 /* BlogSearchView.swift */; };
+		051598A7274C6F0400299668 /* BlogSearchBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051598A6274C6F0400299668 /* BlogSearchBottomView.swift */; };
+		051598A9274C76EE00299668 /* BlogSearchWordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051598A8274C76EE00299668 /* BlogSearchWordsView.swift */; };
+		051598AC274C7DD300299668 /* BlogSearchViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051598AB274C7DD300299668 /* BlogSearchViewControllerExtensions.swift */; };
+		051598AF274CC89000299668 /* FullScreenVisitLogWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051598AE274CC89000299668 /* FullScreenVisitLogWebViewController.swift */; };
+		051598B3274CDBEF00299668 /* NotificationSettingPushAlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051598B2274CDBEF00299668 /* NotificationSettingPushAlarmView.swift */; };
+		051598B5274CE47A00299668 /* NotificationSettingSeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051598B4274CE47A00299668 /* NotificationSettingSeparatorView.swift */; };
 		0525005E273A678B00BE457D /* HomeSubjectSelectorViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0525005D273A678B00BE457D /* HomeSubjectSelectorViewControllerExtensions.swift */; };
 		052BBC602745C8C100310EF1 /* ProfileInfoStackViewFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052BBC5F2745C8C100310EF1 /* ProfileInfoStackViewFooter.swift */; };
 		052BBC632745DE0200310EF1 /* AccountSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052BBC622745DE0200310EF1 /* AccountSettingViewController.swift */; };
@@ -198,6 +205,7 @@
 		8DC15E3E2737A8350071B999 /* CommentAllowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC15E3D2737A8350071B999 /* CommentAllowView.swift */; };
 		8DC15E402737C89A0071B999 /* PublishCurrentDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC15E3F2737C89A0071B999 /* PublishCurrentDateView.swift */; };
 		8DC15E422737C8AC0071B999 /* PublishReservationDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC15E412737C8AC0071B999 /* PublishReservationDateView.swift */; };
+		8DF7E884274D28A400D7C03E /* PushAlarmDetailSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF7E883274D28A400D7C03E /* PushAlarmDetailSettingView.swift */; };
 		8DFB6D98274544C400C5533A /* ProfileInfoStackViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFB6D97274544C400C5533A /* ProfileInfoStackViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -208,6 +216,13 @@
 		050F2FE2273A3D0B007CBC61 /* HomeSubjectSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSubjectSelectorView.swift; sourceTree = "<group>"; };
 		050F2FE8273A4988007CBC61 /* HomeSubjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSubjectModel.swift; sourceTree = "<group>"; };
 		050F2FEC273A56D3007CBC61 /* HomeSubjectSelectorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSubjectSelectorCell.swift; sourceTree = "<group>"; };
+		051598A4274C697B00299668 /* BlogSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogSearchView.swift; sourceTree = "<group>"; };
+		051598A6274C6F0400299668 /* BlogSearchBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogSearchBottomView.swift; sourceTree = "<group>"; };
+		051598A8274C76EE00299668 /* BlogSearchWordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogSearchWordsView.swift; sourceTree = "<group>"; };
+		051598AB274C7DD300299668 /* BlogSearchViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogSearchViewControllerExtensions.swift; sourceTree = "<group>"; };
+		051598AE274CC89000299668 /* FullScreenVisitLogWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenVisitLogWebViewController.swift; sourceTree = "<group>"; };
+		051598B2274CDBEF00299668 /* NotificationSettingPushAlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingPushAlarmView.swift; sourceTree = "<group>"; };
+		051598B4274CE47A00299668 /* NotificationSettingSeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingSeparatorView.swift; sourceTree = "<group>"; };
 		0525005D273A678B00BE457D /* HomeSubjectSelectorViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSubjectSelectorViewControllerExtensions.swift; sourceTree = "<group>"; };
 		052BBC5F2745C8C100310EF1 /* ProfileInfoStackViewFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoStackViewFooter.swift; sourceTree = "<group>"; };
 		052BBC622745DE0200310EF1 /* AccountSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingViewController.swift; sourceTree = "<group>"; };
@@ -395,6 +410,7 @@
 		8DC15E3D2737A8350071B999 /* CommentAllowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentAllowView.swift; sourceTree = "<group>"; };
 		8DC15E3F2737C89A0071B999 /* PublishCurrentDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishCurrentDateView.swift; sourceTree = "<group>"; };
 		8DC15E412737C8AC0071B999 /* PublishReservationDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishReservationDateView.swift; sourceTree = "<group>"; };
+		8DF7E883274D28A400D7C03E /* PushAlarmDetailSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushAlarmDetailSettingView.swift; sourceTree = "<group>"; };
 		8DFB6D97274544C400C5533A /* ProfileInfoStackViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoStackViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -419,6 +435,33 @@
 				0525005C273A5B1D00BE457D /* CollectionView */,
 			);
 			path = HomeSubjectCollection;
+			sourceTree = "<group>";
+		};
+		051598A3274C692000299668 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8D580147274BE2E300D04AFE /* BlogSearchTopView.swift */,
+				051598A4274C697B00299668 /* BlogSearchView.swift */,
+				051598A6274C6F0400299668 /* BlogSearchBottomView.swift */,
+				051598AA274C76F300299668 /* View */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		051598AA274C76F300299668 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				051598A8274C76EE00299668 /* BlogSearchWordsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		051598AD274CC7CF00299668 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				051598AE274CC89000299668 /* FullScreenVisitLogWebViewController.swift */,
+			);
+			path = WebView;
 			sourceTree = "<group>";
 		};
 		0525005C273A5B1D00BE457D /* CollectionView */ = {
@@ -717,6 +760,7 @@
 				054FE86527421380001A0AD2 /* VisitLogViewController.swift */,
 				054FE86727421565001A0AD2 /* VisitLogViewControllerExtensions.swift */,
 				054FE86927421635001A0AD2 /* TableView */,
+				051598AD274CC7CF00299668 /* WebView */,
 			);
 			path = VisitLogFullScreen;
 			sourceTree = "<group>";
@@ -1258,8 +1302,9 @@
 			isa = PBXGroup;
 			children = (
 				8D580142274BDFCF00D04AFE /* BlogSearchViewController.swift */,
-				8D580147274BE2E300D04AFE /* BlogSearchTopView.swift */,
+				051598AB274C7DD300299668 /* BlogSearchViewControllerExtensions.swift */,
 				8D580145274BE00F00D04AFE /* BlogSearchModel.swift */,
+				051598A3274C692000299668 /* View */,
 			);
 			path = BlogSearch;
 			sourceTree = "<group>";
@@ -1278,10 +1323,13 @@
 			isa = PBXGroup;
 			children = (
 				054DCFD1274B21A0007CD0F8 /* NotificationSettingStackView.swift */,
+				051598B2274CDBEF00299668 /* NotificationSettingPushAlarmView.swift */,
 				054DCFD8274B39E0007CD0F8 /* NotificationCellView.swift */,
+				8DF7E883274D28A400D7C03E /* PushAlarmDetailSettingView.swift */,
 				054DCFD6274B2A40007CD0F8 /* NotificationSwitchControl.swift */,
 				054DCFDA274B5916007CD0F8 /* DoNotDisturbView.swift */,
 				054DCFDC274B5CFE007CD0F8 /* TimeSelectView.swift */,
+				051598B4274CE47A00299668 /* NotificationSettingSeparatorView.swift */,
 			);
 			path = StackView;
 			sourceTree = "<group>";
@@ -1417,6 +1465,7 @@
 				0545AEB8273E2AE600458A6E /* SubscriberTableViewCellExtensions.swift in Sources */,
 				05C3866027278C460090FDDC /* ProfileView.swift in Sources */,
 				052BBC652745DF2E00310EF1 /* AccountSettingView.swift in Sources */,
+				051598B3274CDBEF00299668 /* NotificationSettingPushAlarmView.swift in Sources */,
 				054FE8572741E7CE001A0AD2 /* VisitLogTableViewCell.swift in Sources */,
 				0545AEB0273DFEAE00458A6E /* RecentlyTableViewCellExtensions.swift in Sources */,
 				05C38669272797630090FDDC /* ProfileTableViewHeader.swift in Sources */,
@@ -1453,6 +1502,7 @@
 				058ECF972744BA830063B215 /* FullScreenVisitLogSortTableViewCell.swift in Sources */,
 				053445132738BCA300171188 /* TagInputHeaderView.swift in Sources */,
 				8D1520872741573C00510781 /* PopularityPostSeeAllTableViewCell.swift in Sources */,
+				051598A5274C697B00299668 /* BlogSearchView.swift in Sources */,
 				8D65BDAE274A720300D0A678 /* RepMarkLabel.swift in Sources */,
 				0545AEBA273E2B8A00458A6E /* SubscriberCollectionViewCell.swift in Sources */,
 				8DC15E402737C89A0071B999 /* PublishCurrentDateView.swift in Sources */,
@@ -1460,6 +1510,7 @@
 				05AB8D8B2747903F005D72E0 /* RepBlogSettingTableViewHeader.swift in Sources */,
 				058ECF992744DDF70063B215 /* NavigationBarView.swift in Sources */,
 				05FF7433272BE04100BEE31C /* WritingFormView.swift in Sources */,
+				051598AC274C7DD300299668 /* BlogSearchViewControllerExtensions.swift in Sources */,
 				055EFFEE2743281100B97614 /* VisitKeyWordViewControllerExtensions.swift in Sources */,
 				8D7321192745385D0029D558 /* ProfileInfoStackViewHeader.swift in Sources */,
 				054FE8592741E802001A0AD2 /* VisitLogTableHeaderView.swift in Sources */,
@@ -1482,17 +1533,21 @@
 				05CDF88F273528E600F02BBA /* PublishSettingView.swift in Sources */,
 				0502C01327292CC600C15D1B /* CategoryKindPopoverViewController.swift in Sources */,
 				8D0A17D3273034DB00D8F4F4 /* OpenSettingStackView.swift in Sources */,
+				051598A9274C76EE00299668 /* BlogSearchWordsView.swift in Sources */,
 				05EB3213273D09B90035E45C /* RecentlyTableViewCell.swift in Sources */,
 				8D81F70B2734241900F23195 /* OpenSettingPublishDateStackView.swift in Sources */,
 				052BBC632745DE0200310EF1 /* AccountSettingViewController.swift in Sources */,
 				052BBC6A2745E41A00310EF1 /* ProfileSettingView.swift in Sources */,
+				051598B5274CE47A00299668 /* NotificationSettingSeparatorView.swift in Sources */,
 				05C3865E27278A6F0090FDDC /* ProfileViewController.swift in Sources */,
 				05C3866D27279C700090FDDC /* MyContentTableViewCell.swift in Sources */,
 				05EB3203273CEED10035E45C /* TopHeaderView.swift in Sources */,
 				05FF7428272BC8D000BEE31C /* NoticeIsNullTableViewCell.swift in Sources */,
 				8D81F70F27342CA200F23195 /* OpenSettingPassWordView.swift in Sources */,
 				054FE86B2742164B001A0AD2 /* FullScreenVisitLogTableViewCell.swift in Sources */,
+				8DF7E884274D28A400D7C03E /* PushAlarmDetailSettingView.swift in Sources */,
 				05590E1F273BB00E006B65A9 /* FeedTableView.swift in Sources */,
+				051598A7274C6F0400299668 /* BlogSearchBottomView.swift in Sources */,
 				054DCFE0274B6BF0007CD0F8 /* AnnouncementViewController.swift in Sources */,
 				053F0F9727327843007359ED /* PostContentsTagSettingViewController.swift in Sources */,
 				05AB8D9027479B72005D72E0 /* SettingViewControllerExtensions.swift in Sources */,
@@ -1550,6 +1605,7 @@
 				05328DA9272F7CFC00C6BE17 /* PublishingHeaderView.swift in Sources */,
 				05FF742A272BD28000BEE31C /* WritingFormModel.swift in Sources */,
 				05FF742C272BD2B100BEE31C /* WritingFormViewController.swift in Sources */,
+				051598AF274CC89000299668 /* FullScreenVisitLogWebViewController.swift in Sources */,
 				0502C01927293DDD00C15D1B /* CategoryView.swift in Sources */,
 				052BBC6C2745ED0600310EF1 /* NicknameUpdateView.swift in Sources */,
 				8D3C6726273FA00700260ED4 /* PopularityPostCollectionViewCellExtensions.swift in Sources */,
