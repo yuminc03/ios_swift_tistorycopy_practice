@@ -22,6 +22,7 @@ class NotificationSwitchControl: UIControl {
     var switchIsOn = true
     var animationDuration: Double = 0.5
     
+    
     private lazy var thumbView = UIView(frame: .zero)//switch 흰색 원
     private var onPoint = CGPoint.zero
     private var offPoint = CGPoint.zero
@@ -83,15 +84,18 @@ class NotificationSwitchControl: UIControl {
             _ in self.isAnimating = false
             self.sendActions(for: UIControl.Event.valueChanged)
         })
+        print(self.isAnimating == true ? true : false)
     }
     
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {//UIControl touch 이벤트를 관리하는 메서드
         super.beginTracking(touch, with: event)
         self.animate()
+        self.switchIsOn ? (switchIsOn = true) : (switchIsOn = false)
         return true
     }
     
     func setSwitchOnColor(switchIsOn: Bool){
         self.thumbView.backgroundColor = switchIsOn ? self.thumbTintColor : self.thumbOffTintColor
     }
+
 }

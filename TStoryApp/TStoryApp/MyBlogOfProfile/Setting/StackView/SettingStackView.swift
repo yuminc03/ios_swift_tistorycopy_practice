@@ -105,7 +105,7 @@ class SettingStackView: UIStackView {
     }
     
     func setAppInfoSetting() {
-        self.appIsNewVersion = "최신 버전 사용 중"
+        self.appIsNewVersion = (myBlogOfProfileModel.appVersion == "2.4.8") ? "촤신 버전 사용 중" : "업데이트"
     }
     
     @objc private func settingCellViewDidTapped(gesture: UITapGestureRecognizer) {

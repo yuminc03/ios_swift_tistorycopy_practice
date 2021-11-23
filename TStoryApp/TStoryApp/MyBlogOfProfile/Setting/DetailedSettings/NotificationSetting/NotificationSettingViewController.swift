@@ -20,6 +20,22 @@ class NotificationSettingViewController: UIViewController{
         return topView
     } ()
     
+    lazy var notificationSettingPushAlarmView: NotificationCellView = {
+        let pushAlarmView = NotificationCellView(cellName: "푸시 알림", switchControlSize: CGRect(x: 330, y: 15, width: 35, height: 15))
+        pushAlarmView.translatesAutoresizingMaskIntoConstraints = false
+        pushAlarmView.backgroundColor = .white
+        view.addSubview(pushAlarmView)
+        return pushAlarmView
+    } ()
+    
+    lazy var pushAlarmViewBottomSeparator: NotificationSettingSeparatorView = {
+        let separator = NotificationSettingSeparatorView()
+        separator.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(separator)
+        return separator
+    } ()
+    
+    
     lazy var notificationSettingStackView: NotificationSettingStackView = {
         let stackView = NotificationSettingStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -64,6 +80,18 @@ class NotificationSettingViewController: UIViewController{
         ])
         
         NSLayoutConstraint.activate([
+            notificationSettingPushAlarmView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            notificationSettingPushAlarmView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            notificationSettingPushAlarmView.topAnchor.constraint(equalTo: notificationSettingTopView.bottomAnchor)
+        ])
+        NSLayoutConstraint.activate([
+            pushAlarmViewBottomSeparator.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            pushAlarmViewBottomSeparator.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            pushAlarmViewBottomSeparator.topAnchor.constraint(equalTo: notificationSettingPushAlarmView.bottomAnchor),
+            pushAlarmViewBottomSeparator.heightAnchor.constraint(equalToConstant: 10)
+        ])
+        
+        NSLayoutConstraint.activate([
             notificationSettingStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             notificationSettingStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             notificationSettingStackView.topAnchor.constraint(equalTo: notificationSettingTopView.bottomAnchor)
@@ -78,6 +106,8 @@ class NotificationSettingViewController: UIViewController{
     }
     
     @objc private func dismissNotificationSettingButtonDidTapped(button: UIButton){
+        self.notificationModel = notificationSettingStackView.getNotificationModel()
+        print(self.notificationModel)
         self.dismiss(animated: false, completion: nil)
     }
 }

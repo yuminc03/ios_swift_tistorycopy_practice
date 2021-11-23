@@ -21,9 +21,10 @@ class NotificationSettingStackView: UIStackView {
     }
     
     func setStackView(){
+        var settingSwitch = NotificationSwitchControl()
         for i in 0 ..< notificationKindArr.count{
             var cellView = UIView()
-            
+            cellView.tag = i
             if i <= 3 {
                 cellView = NotificationCellView(cellName: notificationKindArr[i], switchControlSize: CGRect(x: 200, y: 15, width: 20, height: 10))
                 cellView.translatesAutoresizingMaskIntoConstraints = false
@@ -40,22 +41,16 @@ class NotificationSettingStackView: UIStackView {
                 cellView.heightAnchor.constraint(equalToConstant: 50).isActive = true
                 
             }
-            let settingSwitch = NotificationSwitchControl(frame: CGRect(x: 330, y: 15, width: 35, height: 15))
+            settingSwitch = NotificationSwitchControl(frame: CGRect(x: 330, y: 15, width: 35, height: 15))
             cellView.addSubview(settingSwitch)
             
             switch i {
-            case 0:
-                settingSwitch.switchIsOn = notificationModel.pushAlarm
-                break
-            case 1: settingSwitch.switchIsOn = notificationModel.commentAlarm
-                break
-            case 2: settingSwitch.switchIsOn = notificationModel.teamBlogInviteAlarm
-                break
-            case 3: settingSwitch.switchIsOn = notificationModel.subscibeAlarm
-                break
+            case 0: settingSwitch.switchIsOn = notificationModel.pushAlarm;
+            case 1: settingSwitch.switchIsOn = notificationModel.commentAlarm;
+            case 2: settingSwitch.switchIsOn = notificationModel.teamBlogInviteAlarm;
+            case 3: settingSwitch.switchIsOn = notificationModel.subscibeAlarm;
             case 4: settingSwitch.switchIsOn = notificationModel.doNotdisturbMode
-                settingSwitch.setSwitchOnColor(switchIsOn: settingSwitch.switchIsOn)
-                break
+                settingSwitch.setSwitchOnColor(switchIsOn: settingSwitch.switchIsOn);
             default:
                 return
             }
@@ -73,7 +68,6 @@ class NotificationSettingStackView: UIStackView {
                 self.addArrangedSubview(boldSeparator)
                 boldSeparator.heightAnchor.constraint(equalToConstant: 10).isActive = true
             }
-            
         }
         
     }

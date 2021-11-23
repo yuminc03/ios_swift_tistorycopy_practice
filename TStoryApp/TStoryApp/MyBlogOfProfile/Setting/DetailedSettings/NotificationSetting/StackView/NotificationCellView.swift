@@ -22,6 +22,13 @@ class NotificationCellView: UIView {
         return label
     } ()
     
+    lazy var customUISwitch: NotificationSwitchControl = {
+        let customSwitch = NotificationSwitchControl(frame: CGRect(x: 330, y: 15, width: 35, height: 15))
+        customSwitch.switchIsOn = true
+        addSubview(customSwitch)
+        return customSwitch
+    } ()
+    
     init(cellName: String, switchControlSize: CGRect){
         super.init(frame: .zero)
         self.cellName = cellName

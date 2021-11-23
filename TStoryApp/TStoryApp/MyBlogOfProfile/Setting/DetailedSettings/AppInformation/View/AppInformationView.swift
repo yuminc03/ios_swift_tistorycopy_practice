@@ -55,10 +55,10 @@ class AppInformationView: UIView {
     lazy var appUpdateButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle(self.appVersion == "2.4.7" ? "촤신 버전 사용 중" : "업데이트", for: .normal)
+        button.setTitle(self.appVersion == "2.4.8" ? "촤신 버전 사용 중" : "업데이트", for: .normal)
         button.setTitleColor(.lightGray, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 16, weight: .light)
-        button.backgroundColor = .white
+        button.backgroundColor = self.appVersion == "2.4.8" ? .white : .black
         button.layer.borderWidth = 0.3
         button.layer.borderColor = UIColor.lightGray.withAlphaComponent(0.8).cgColor
         button.layer.cornerRadius = 5
