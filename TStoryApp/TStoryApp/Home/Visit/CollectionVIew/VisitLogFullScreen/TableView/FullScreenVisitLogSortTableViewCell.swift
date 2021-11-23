@@ -64,7 +64,7 @@ class FullScreenVisitLogSortTableViewCell: UITableViewCell {
         
         NSLayoutConstraint.activate([
             visitLogUrl.leadingAnchor.constraint(equalTo: visitLogIcon.trailingAnchor, constant: 5),
-            visitLogUrl.trailingAnchor.constraint(lessThanOrEqualTo: visitCount.leadingAnchor, constant: -10),
+            visitLogUrl.trailingAnchor.constraint(lessThanOrEqualTo: visitCount.leadingAnchor, constant: -20),
             visitLogUrl.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
         
@@ -85,5 +85,15 @@ class FullScreenVisitLogSortTableViewCell: UITableViewCell {
     func setVisitLogSortData(url: String, count: Int) {
         self.visitLogUrl.text = url
         self.visitCount.text = String(count)
+    }
+    
+    func subText(text: String) -> String {
+        var subString = text
+        if subString.count > 50 {
+            let endIndex: String.Index = subString.index(subString.startIndex, offsetBy: 50)
+            subString = String(subString[subString.startIndex ..< endIndex])
+            subString += "・・・"
+        }
+        return subString
     }
 }

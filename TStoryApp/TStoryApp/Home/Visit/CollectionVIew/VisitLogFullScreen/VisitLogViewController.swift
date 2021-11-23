@@ -33,6 +33,16 @@ class VisitLogViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setConstraints()
+        configulations()
+    }
+    
+    init(visitInfo: [VisitInformation]) {
+        super.init(nibName: nil, bundle: nil)
+        self.visitInfo = visitInfo
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
     }
     
     private func setConstraints() {
@@ -46,8 +56,12 @@ class VisitLogViewController: UIViewController {
         
     }
     
-    func setVisitInfo(model: [VisitInformation]) {
-        self.visitInfo = model
+    func configulations() {
+        for i in 0 ..< visitInfo.count {
+            self.visitLogArr.append(visitInfo[i].visitUrl)
+        }
+        createUrlArray(url: visitLogArr)
+        logCount(arr1: self.visitLogOverlapDeleteArr, arr2: self.visitLogArr)
     }
     
     func createUrlArray(url: [String]){

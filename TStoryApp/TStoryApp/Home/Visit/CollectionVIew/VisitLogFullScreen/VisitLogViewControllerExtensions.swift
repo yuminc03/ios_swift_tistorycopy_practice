@@ -20,11 +20,8 @@ extension VisitLogViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if selectedLogSortIndex == 0 {
             let data = visitInfo[indexPath.row]
-            self.visitLogArr.append(data.visitUrl)
-            self.createUrlArray(url: visitLogArr)
-            self.logCount(arr1: visitLogOverlapDeleteArr, arr2: visitLogArr)
             let cell = tableView.dequeueReusableCell(withIdentifier: "full_screen_visit_cell", for: indexPath) as! FullScreenVisitLogTableViewCell
-            cell.setComponentData(url: data.visitUrl, date: data.visitDate)
+            cell.setComponentData(url: cell.subText(text: data.visitUrl), date: data.visitDate)
             cell.visitLogIcon.backgroundColor = .systemBlue.withAlphaComponent(CGFloat(indexPath.row + 1) * 0.1)
             cell.selectionStyle = .none
             cell.separator.isHidden = ( indexPath.row == visitInfo.count - 1 )
@@ -32,13 +29,32 @@ extension VisitLogViewController: UITableViewDelegate, UITableViewDataSource {
         }
         else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "full_screen_visit_sort_cell", for: indexPath) as! FullScreenVisitLogSortTableViewCell
-            cell.setVisitLogSortData(url: self.visitLogOverlapDeleteArr[indexPath.row], count: self.logCount[indexPath.row])
+            cell.setVisitLogSortData(url: cell.subText(text: self.visitLogOverlapDeleteArr[indexPath.row]), count: self.logCount[indexPath.row])
             cell.visitLogIcon.backgroundColor = .systemBlue.withAlphaComponent(CGFloat(indexPath.row + 1) * 0.1)
             cell.selectionStyle = .none
             cell.separator.isHidden = ( indexPath.row == visitInfo.count - 1 )
             return cell
         }
         
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let _ = tableView.cellForRow(at: indexPath) as? FullScreenVisitLogTableViewCell {
+            let cellUrl: String = visitInfo[indexPath.row].visitUrl
+            let vc = FullScreenVisitLogWebViewController(visitLogUrl: cellUrl)
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true)
+        }
+        else if let _ = tableView.cellForRow(at: indexPath) as? FullScreenVisitLogSortTableViewCell {
+            let cellUrl = visitLogOverlapDeleteArr[indexPath.row]
+            let vc = FullScreenVisitLogWebViewController(visitLogUrl: cellUrl)
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true)
+        }
+        else {
+            return
+        }
+       
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {

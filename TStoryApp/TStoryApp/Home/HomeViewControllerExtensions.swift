@@ -135,3 +135,9 @@ extension HomeViewController: MyBlogOfProfileViewControllerDelegate {
         })
     }
 }
+
+extension HomeViewController: BlogSearchViewControllerDelegate {
+    func dismissBlogSearchViewController(model: BlogSearchModel) {
+        self.blogSearchModel = model
+    }
+}

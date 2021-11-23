@@ -43,10 +43,8 @@ extension VisitTableViewCell: UICollectionViewDelegateFlowLayout, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.row == 1 { //유입 로그 모두 보기
-            let vc = VisitLogViewController()
+            let vc = VisitLogViewController(visitInfo: visitModel[0].visitCell[0].visitInfo)
             vc.modalPresentationStyle = .fullScreen
-            vc.setVisitInfo(model: visitModel[0].visitCell[0].visitInfo)
-//            vc.createUrlArray(url: visitModel[0].visitCell[0].visitInfo)
             self.window?.rootViewController!.present(vc, animated: true)
         }
         else if indexPath.row == 2 { //유입 키워드 모두 보기
@@ -81,5 +79,6 @@ extension VisitTableViewCell: UICollectionViewDelegateFlowLayout, UICollectionVi
             targetContentOffset.pointee = offset
         }
     }
-
+    
+    
 }

@@ -82,6 +82,16 @@ class FullScreenVisitLogTableViewCell: UITableViewCell {
         ])
     }
     
+    func subText(text: String) -> String {
+        var subString = text
+        if subString.count > 35 {
+            let endIndex: String.Index = subString.index(subString.startIndex, offsetBy: 35)
+            subString = String(subString[subString.startIndex ..< endIndex])
+            subString += "・・・"
+        }
+        return subString
+    }
+    
     func setComponentData(url: String, date: String) {
         visitLogUrl.text = url
         visitDate.text = date
