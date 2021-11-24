@@ -7,10 +7,14 @@
 
 import UIKit
 
+protocol ChangeNicknameViewControllerDelegate: AnyObject {
+    func getChangeNickname(name: String)
+}
 class ChangeNicknameViewController: UIViewController {
     
     var myBlogOfProfileModel = MyBlogOfProfileModel()
     var isTextSame: Bool = false
+    weak var delegate: ChangeNicknameViewControllerDelegate?
     
     lazy var topView: ChangeNicknameTopView = {
         let topView = ChangeNicknameTopView()
@@ -207,8 +211,9 @@ class ChangeNicknameViewController: UIViewController {
     }
     
     @objc private func saveChangeNicknameButtonDidtapped(button: UIButton) {
-        if newNicknameTextField.text != myBlogOfProfileModel.profileName && newNicknameTextField.text != nil {
-            
+        if let name = newNicknameTextField.text {
+            delegate?.getChangeNickname(name: name)
+            self.dismiss(animated: false, completion: nil)
         }
     }
     

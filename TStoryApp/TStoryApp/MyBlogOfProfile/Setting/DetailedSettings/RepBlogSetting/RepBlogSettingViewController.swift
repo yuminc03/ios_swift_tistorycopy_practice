@@ -48,5 +48,7 @@ class RepBlogSettingViewController: UIViewController {
             repBlogSettingTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
-    
+    func getMyBlogOfProfileModel() -> MyBlogOfProfileModel {
+        return self.myBlogOfProfileModel
+    }
 }

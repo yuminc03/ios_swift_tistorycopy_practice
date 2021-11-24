@@ -59,6 +59,7 @@ class MyBlogOfProfileView: UIView {
             myBlogView.setProfileInfoTableViewCell(name: myBlogOfProfileModel.myBlogsModel[i].blogName)
             myBlogOfProfileStackView.addArrangedSubview(myBlogView)
             myBlogView.heightAnchor.constraint(equalToConstant: 70).isActive = true
+            myBlogView.myRepBlogCheckView.backgroundColor = myBlogOfProfileModel.repBlogName == myBlogOfProfileModel.myBlogsModel[0].blogName ? .black : .clear
         }
         let profileInfoStackViewFooter = ProfileInfoStackViewFooter()
         profileInfoStackViewFooter.translatesAutoresizingMaskIntoConstraints = false

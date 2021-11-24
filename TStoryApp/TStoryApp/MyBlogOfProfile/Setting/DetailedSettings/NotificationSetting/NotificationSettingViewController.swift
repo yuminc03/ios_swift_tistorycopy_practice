@@ -7,9 +7,13 @@
 
 import UIKit
 
+protocol NotificationSettingViewControllerDelegate: AnyObject{
+    func getNotificationSetting(model: NotificationModel)
+}
 class NotificationSettingViewController: UIViewController{
     
     var notificationModel = NotificationModel()
+    weak var delegate: NotificationSettingViewControllerDelegate?
     
     lazy var notificationSettingTopView: NotificationSettingTopView = {
         let topView = NotificationSettingTopView()
@@ -21,9 +25,13 @@ class NotificationSettingViewController: UIViewController{
     } ()
     
     lazy var notificationSettingPushAlarmView: NotificationCellView = {
-        let pushAlarmView = NotificationCellView(cellName: "푸시 알림", switchControlSize: CGRect(x: 330, y: 15, width: 35, height: 15))
+        let pushAlarmView = NotificationCellView(cellName: "푸시 알림")
         pushAlarmView.translatesAutoresizingMaskIntoConstraints = false
         pushAlarmView.backgroundColor = .white
+        let uiSwitch = NotificationSwitchControl(frame: CGRect(x: 330, y: 15, width: 35, height: 15))
+        uiSwitch.switchIsOn = notificationModel.pushAlarm
+        uiSwitch.delegate = self
+        pushAlarmView.addSubview(uiSwitch)
         view.addSubview(pushAlarmView)
         return pushAlarmView
     } ()
@@ -31,21 +39,17 @@ class NotificationSettingViewController: UIViewController{
     lazy var pushAlarmViewBottomSeparator: NotificationSettingSeparatorView = {
         let separator = NotificationSettingSeparatorView()
         separator.translatesAutoresizingMaskIntoConstraints = false
+        separator.backgroundColor = .lightGray.withAlphaComponent(0.3)
         view.addSubview(separator)
         return separator
     } ()
     
-    
-    lazy var notificationSettingStackView: NotificationSettingStackView = {
-        let stackView = NotificationSettingStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.backgroundColor = .clear
-        stackView.axis = .vertical
-        stackView.spacing = 0
-        stackView.setNotificationModel(model: notificationModel)
-        stackView.setStackView()
-        view.addSubview(stackView)
-        return stackView
+    lazy var pushAlarmDetailSettingView: PushAlarmDetailSettingView = {
+        let pushAlarmDetailView = PushAlarmDetailSettingView()
+        pushAlarmDetailView.translatesAutoresizingMaskIntoConstraints = false
+        pushAlarmDetailView.backgroundColor = .white
+        view.addSubview(pushAlarmDetailView)
+        return pushAlarmDetailView
     } ()
     
     lazy var lightGrayColorView: UIView = {
@@ -59,6 +63,8 @@ class NotificationSettingViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         setConstraints()
+        pushAlarmDetailSettingView.setUI(pushOn: notificationModel.pushAlarm, notDisturbOn: notificationModel.doNotdisturbMode)
+        pushAlarmDetailSettingView.setNotificationModel(model: self.notificationModel)
     }
     
     init(notificationModel: NotificationModel){
@@ -92,22 +98,30 @@ class NotificationSettingViewController: UIViewController{
         ])
         
         NSLayoutConstraint.activate([
-            notificationSettingStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            notificationSettingStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            notificationSettingStackView.topAnchor.constraint(equalTo: notificationSettingTopView.bottomAnchor)
+            pushAlarmDetailSettingView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            pushAlarmDetailSettingView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            pushAlarmDetailSettingView.topAnchor.constraint(equalTo: pushAlarmViewBottomSeparator.bottomAnchor)
         ])
-        
+
         NSLayoutConstraint.activate([
             lightGrayColorView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             lightGrayColorView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            lightGrayColorView.topAnchor.constraint(equalTo: notificationSettingStackView.bottomAnchor),
+            lightGrayColorView.topAnchor.constraint(equalTo: pushAlarmDetailSettingView.bottomAnchor),
             lightGrayColorView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
     
     @objc private func dismissNotificationSettingButtonDidTapped(button: UIButton){
-        self.notificationModel = notificationSettingStackView.getNotificationModel()
-        print(self.notificationModel)
+        self.notificationModel = pushAlarmDetailSettingView.getNotificationModel()
+        delegate?.getNotificationSetting(model: self.notificationModel)
         self.dismiss(animated: false, completion: nil)
     }
+}
+
+extension NotificationSettingViewController: NotificationSwitchControlDelegate {
+    func switchIsOnSetUI(index: Int, switchIsOn: Bool) {
+        switchIsOn ? pushAlarmDetailSettingView.setUI(pushOn: true, notDisturbOn: false) : pushAlarmDetailSettingView.setUI(pushOn: false, notDisturbOn: false)
+        notificationModel.pushAlarm = switchIsOn
+    }
+   
 }

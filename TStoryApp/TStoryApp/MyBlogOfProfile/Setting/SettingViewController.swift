@@ -7,11 +7,14 @@
 
 import UIKit
 
-
+protocol SettingViewControllerDelegate: AnyObject {
+    func getMyBlogOfProfileModel(model: MyBlogOfProfileModel)
+}
 class SettingViewController: UIViewController {
     
     var myBlogOfProfileModel = MyBlogOfProfileModel()
-    
+    weak var delegate: SettingViewControllerDelegate?
+   
     lazy var settingTopView: SettingTopView = {
         let topView = SettingTopView()
         topView.translatesAutoresizingMaskIntoConstraints = false
@@ -84,6 +87,8 @@ class SettingViewController: UIViewController {
     }
     
     @objc private func dismissSettingViewButtonDidTapped(button: UIButton) {
+        delegate?.getMyBlogOfProfileModel(model: self.myBlogOfProfileModel)
         self.dismiss(animated: false, completion: nil)
     }
+  
 }

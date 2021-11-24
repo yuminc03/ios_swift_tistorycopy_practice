@@ -29,6 +29,7 @@ class SettingStackView: UIStackView {
     }
     
     func setStackView() {
+        var settingCurrentTextLabel = UILabel()
         
         for i in 0 ..< settingStackCellNameArr.count {
             let settingCellView = SettingStackCellView(name: settingStackCellNameArr[i])
@@ -48,7 +49,7 @@ class SettingStackView: UIStackView {
                 settingProfileImageView.widthAnchor.constraint(equalToConstant: 20).isActive = true
                 settingProfileImageView.heightAnchor.constraint(equalToConstant: 20).isActive = true
         
-                let settingCurrentTextLabel = SettingCurrentTextLabel(text: i == 0 ? subText(text: self.profileName) : subText(text: self.repBlogName))
+                settingCurrentTextLabel = SettingCurrentTextLabel(text: i == 0 ? subText(text: self.profileName) : subText(text: self.repBlogName))
                 settingCurrentTextLabel.translatesAutoresizingMaskIntoConstraints = false
                 settingCellView.addSubview(settingCurrentTextLabel)
                 settingCurrentTextLabel.centerYAnchor.constraint(equalTo: settingCellView.centerYAnchor).isActive = true
@@ -112,4 +113,14 @@ class SettingStackView: UIStackView {
         guard let index = gesture.view?.tag else { return }
         delegate?.stackViewCellDidTapped(at: index, pageTitle: settingStackCellNameArr[index])
     }
+    
+    func setProfileName(name: String) {
+        self.profileName = name
+    }
+    
+    func setNotificationSetting(pushAlarm: Bool) {
+        let alarmText = pushAlarm ? "on" : "off"
+        self.pushAlarmOn = "푸시 알림 \(alarmText)"
+    }
+    
 }

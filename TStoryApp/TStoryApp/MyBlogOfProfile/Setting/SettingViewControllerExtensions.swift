@@ -13,6 +13,7 @@ extension SettingViewController: SettingStackViewDelegate {
         case 0:
             let vc = AccountSettingViewController(myBlogOfProfileModel: self.myBlogOfProfileModel)
             vc.modalPresentationStyle = .fullScreen
+            vc.delegate = self
             self.present(vc, animated: true)
         case 1:
             let vc = RepBlogSettingViewController(myBlogOfProfileModel: self.myBlogOfProfileModel)
@@ -21,6 +22,7 @@ extension SettingViewController: SettingStackViewDelegate {
         case 2:
             let vc = NotificationSettingViewController(notificationModel: self.myBlogOfProfileModel.notificationModel)
             vc.modalPresentationStyle = .fullScreen
+            vc.delegate = self
             self.present(vc, animated: true)
         case 3:
             let vc = AnnouncementViewController(announcementModel: self.myBlogOfProfileModel.announcementModel)
@@ -37,5 +39,20 @@ extension SettingViewController: SettingStackViewDelegate {
         default:
             return
         }
+    }
+}
+
+extension SettingViewController: AccountSettingViewControllerDelegate {
+    func getProflieName(name: String) {
+        self.myBlogOfProfileModel.profileName = name
+        self.settingStackView.setProfileName(name: name)
+    }
+}
+
+extension SettingViewController: NotificationSettingViewControllerDelegate {
+    func getNotificationSetting(model: NotificationModel) {
+        self.myBlogOfProfileModel.notificationModel = model
+//        self.settingStackView.setNotificationSetting(pushAlarm: myBlogOfProfileModel.notificationModel.pushAlarm)
+        print(model)
     }
 }

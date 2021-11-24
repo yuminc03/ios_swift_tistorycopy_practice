@@ -31,6 +31,12 @@ class DoNotDisturbView: UIView {
         return label
     } ()
     
+    lazy var switchControl: NotificationSwitchControl = {
+        let switchControl = NotificationSwitchControl(frame: CGRect(x: 330, y: 15, width: 35, height: 15))
+        addSubview(switchControl)
+        return switchControl
+    } ()
+    
     lazy var timeSelectView: TimeSelectView = {
         let timeView = TimeSelectView(time: "오전 00:00 ~ 오전 07:00")
         timeView.translatesAutoresizingMaskIntoConstraints = false
@@ -38,7 +44,7 @@ class DoNotDisturbView: UIView {
         return timeView
     } ()
     
-    init(cellName: String, isSelected: Bool, switchControlSize: CGRect){
+    init(cellName: String, isSelected: Bool){
         super.init(frame: .zero)
         self.cellName = cellName
         self.isSelected = isSelected
@@ -64,7 +70,7 @@ class DoNotDisturbView: UIView {
                 subview.removeFromSuperview()
             }
             break
-        default: return
+        
         }
     }
     
@@ -74,6 +80,7 @@ class DoNotDisturbView: UIView {
             cellNameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 15),
             cellNameLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -15)
         ])
+        
     }
     
 }

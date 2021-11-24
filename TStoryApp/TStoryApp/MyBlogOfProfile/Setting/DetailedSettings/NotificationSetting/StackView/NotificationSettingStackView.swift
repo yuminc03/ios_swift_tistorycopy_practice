@@ -26,14 +26,14 @@ class NotificationSettingStackView: UIStackView {
             var cellView = UIView()
             cellView.tag = i
             if i <= 3 {
-                cellView = NotificationCellView(cellName: notificationKindArr[i], switchControlSize: CGRect(x: 200, y: 15, width: 20, height: 10))
+                cellView = NotificationCellView(cellName: notificationKindArr[i])
                 cellView.translatesAutoresizingMaskIntoConstraints = false
                 cellView.backgroundColor = .white
                 self.addArrangedSubview(cellView)
                 cellView.heightAnchor.constraint(equalToConstant: 50).isActive = true
             }
             else {
-                cellView = DoNotDisturbView(cellName: notificationKindArr[i], isSelected: notificationModel.doNotdisturbMode, switchControlSize: CGRect(x: 200, y: 15, width: 20, height: 10))
+                cellView = DoNotDisturbView(cellName: notificationKindArr[i], isSelected: notificationModel.doNotdisturbMode)
                 
                 cellView.translatesAutoresizingMaskIntoConstraints = false
                 cellView.backgroundColor = .white
