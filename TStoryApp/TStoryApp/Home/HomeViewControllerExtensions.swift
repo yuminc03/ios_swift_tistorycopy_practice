@@ -119,12 +119,14 @@ extension HomeViewController: MyBlogOfProfileViewControllerDelegate {
         viewController.dismiss(animated: false, completion: {
             if at == 0 {
                 let accountSettingViewController = AccountSettingViewController(myBlogOfProfileModel: self.myBlogOfProfileModel)
+                accountSettingViewController.delegate = self
                 accountSettingViewController.modalPresentationStyle = .fullScreen
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
                 appDelegate.window?.rootViewController?.present(accountSettingViewController, animated: true, completion: nil)
             }
             else if at == 1 {
                 let settingViewController = SettingViewController(myBlogOfProfileModel: self.myBlogOfProfileModel)
+                settingViewController.delegate = self
                 settingViewController.modalPresentationStyle = .fullScreen
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
                 appDelegate.window?.rootViewController?.present(settingViewController, animated: true, completion: nil)
@@ -139,5 +141,17 @@ extension HomeViewController: MyBlogOfProfileViewControllerDelegate {
 extension HomeViewController: BlogSearchViewControllerDelegate {
     func dismissBlogSearchViewController(model: BlogSearchModel) {
         self.blogSearchModel = model
+    }
+}
+
+extension HomeViewController: SettingViewControllerDelegate {
+    func getMyBlogOfProfileModel(model: MyBlogOfProfileModel) {
+        self.myBlogOfProfileModel = model
+    }
+}
+
+extension HomeViewController: AccountSettingViewControllerDelegate {
+    func getProflieName(name: String) {
+        self.myBlogOfProfileModel.profileName = name
     }
 }

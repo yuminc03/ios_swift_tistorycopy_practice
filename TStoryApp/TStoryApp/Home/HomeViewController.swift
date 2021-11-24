@@ -118,6 +118,9 @@ class HomeViewController: UIViewController {
                                         ),
                                         VisitNumberWeek(
                                             todayVisitCount: 5
+                                        ),
+                                        VisitNumberWeek(
+                                            todayVisitCount: 2
                                         )
                                     ],
                                     visitNum: 2,
