@@ -56,11 +56,9 @@
 		0545AEBA273E2B8A00458A6E /* SubscriberCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0545AEB9273E2B8A00458A6E /* SubscriberCollectionViewCell.swift */; };
 		0545AEBC273E44BE00458A6E /* VisitGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0545AEBB273E44BE00458A6E /* VisitGraphView.swift */; };
 		0545AEC1273E58D700458A6E /* PostComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0545AEC0273E58D700458A6E /* PostComponentView.swift */; };
-		054DCFD2274B21A0007CD0F8 /* NotificationSettingStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054DCFD1274B21A0007CD0F8 /* NotificationSettingStackView.swift */; };
 		054DCFD5274B22A7007CD0F8 /* NotificationSettingTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054DCFD4274B22A7007CD0F8 /* NotificationSettingTopView.swift */; };
 		054DCFD7274B2A40007CD0F8 /* NotificationSwitchControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054DCFD6274B2A40007CD0F8 /* NotificationSwitchControl.swift */; };
 		054DCFD9274B39E0007CD0F8 /* NotificationCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054DCFD8274B39E0007CD0F8 /* NotificationCellView.swift */; };
-		054DCFDB274B5916007CD0F8 /* DoNotDisturbView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054DCFDA274B5916007CD0F8 /* DoNotDisturbView.swift */; };
 		054DCFDD274B5CFE007CD0F8 /* TimeSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054DCFDC274B5CFE007CD0F8 /* TimeSelectView.swift */; };
 		054DCFE0274B6BF0007CD0F8 /* AnnouncementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054DCFDF274B6BF0007CD0F8 /* AnnouncementViewController.swift */; };
 		054DCFE2274B6D20007CD0F8 /* AnnouncementViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054DCFE1274B6D20007CD0F8 /* AnnouncementViewControllerExtensions.swift */; };
@@ -259,11 +257,9 @@
 		0545AEB9273E2B8A00458A6E /* SubscriberCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriberCollectionViewCell.swift; sourceTree = "<group>"; };
 		0545AEBB273E44BE00458A6E /* VisitGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitGraphView.swift; sourceTree = "<group>"; };
 		0545AEC0273E58D700458A6E /* PostComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostComponentView.swift; sourceTree = "<group>"; };
-		054DCFD1274B21A0007CD0F8 /* NotificationSettingStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingStackView.swift; sourceTree = "<group>"; };
 		054DCFD4274B22A7007CD0F8 /* NotificationSettingTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingTopView.swift; sourceTree = "<group>"; };
 		054DCFD6274B2A40007CD0F8 /* NotificationSwitchControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSwitchControl.swift; sourceTree = "<group>"; };
 		054DCFD8274B39E0007CD0F8 /* NotificationCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCellView.swift; sourceTree = "<group>"; };
-		054DCFDA274B5916007CD0F8 /* DoNotDisturbView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoNotDisturbView.swift; sourceTree = "<group>"; };
 		054DCFDC274B5CFE007CD0F8 /* TimeSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSelectView.swift; sourceTree = "<group>"; };
 		054DCFDF274B6BF0007CD0F8 /* AnnouncementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementViewController.swift; sourceTree = "<group>"; };
 		054DCFE1274B6D20007CD0F8 /* AnnouncementViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementViewControllerExtensions.swift; sourceTree = "<group>"; };
@@ -532,6 +528,16 @@
 				052BBC7D2746275500310EF1 /* SettingStackCellSeparatorView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		05307341274DCD0D0017672A /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				054DCFD6274B2A40007CD0F8 /* NotificationSwitchControl.swift */,
+				051598B4274CE47A00299668 /* NotificationSettingSeparatorView.swift */,
+				054DCFDC274B5CFE007CD0F8 /* TimeSelectView.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 		05328DA0272F6C6A00C6BE17 /* WritingView */ = {
@@ -1322,14 +1328,10 @@
 		8D65BDB2274A79F000D0A678 /* StackView */ = {
 			isa = PBXGroup;
 			children = (
-				054DCFD1274B21A0007CD0F8 /* NotificationSettingStackView.swift */,
 				051598B2274CDBEF00299668 /* NotificationSettingPushAlarmView.swift */,
-				054DCFD8274B39E0007CD0F8 /* NotificationCellView.swift */,
 				8DF7E883274D28A400D7C03E /* PushAlarmDetailSettingView.swift */,
-				054DCFD6274B2A40007CD0F8 /* NotificationSwitchControl.swift */,
-				054DCFDA274B5916007CD0F8 /* DoNotDisturbView.swift */,
-				054DCFDC274B5CFE007CD0F8 /* TimeSelectView.swift */,
-				051598B4274CE47A00299668 /* NotificationSettingSeparatorView.swift */,
+				054DCFD8274B39E0007CD0F8 /* NotificationCellView.swift */,
+				05307341274DCD0D0017672A /* Component */,
 			);
 			path = StackView;
 			sourceTree = "<group>";
@@ -1493,7 +1495,6 @@
 				05328DAC272F80E900C6BE17 /* PostContentsSettingView.swift in Sources */,
 				05EB320D273CFE2D0035E45C /* SubscriberTableViewHeader.swift in Sources */,
 				05EB31F2273CBCA00035E45C /* FeedComponentsBetweenView.swift in Sources */,
-				054DCFD2274B21A0007CD0F8 /* NotificationSettingStackView.swift in Sources */,
 				054FE84B2741DE18001A0AD2 /* VisitNumGraphCollectionViewCell.swift in Sources */,
 				052BBC7827461D1600310EF1 /* SettingStackCellView.swift in Sources */,
 				05328DA2272F6D5F00C6BE17 /* WritingFormViewExtension.swift in Sources */,
@@ -1628,7 +1629,6 @@
 				05590E16273B5216006B65A9 /* HomeSubjectHeaderView.swift in Sources */,
 				053F0F9B27327B49007359ED /* PostContentsTagSettingHeaderView.swift in Sources */,
 				055EFFEC2743252400B97614 /* VisitKeyWordViewController.swift in Sources */,
-				054DCFDB274B5916007CD0F8 /* DoNotDisturbView.swift in Sources */,
 				0534450E2738BA8800171188 /* ContentTagInputViewController.swift in Sources */,
 				055EFFFB27439D4700B97614 /* LogSortViewController.swift in Sources */,
 				054DCFEE274B8987007CD0F8 /* AppInformationTopView.swift in Sources */,
