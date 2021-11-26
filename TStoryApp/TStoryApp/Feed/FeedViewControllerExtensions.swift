@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import WebKit
 
 extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -50,7 +51,20 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
         cell.seperator.isHidden = indexPath.row == feedModel.feedCell.count - 1
         return cell
     }
-
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let yPosition = scrollView.contentOffset.y
+        navigationBarView.viewTitleLabel.centerYAnchor.constraint(equalTo: navigationBarView.centerYAnchor, constant: 20).isActive = true
+        navigationBarView.viewTitleLabel.centerXAnchor.constraint(equalTo: navigationBarView.centerXAnchor).isActive = true
+        if yPosition >= 80 {
+            navigationBarView.viewTitleLabel.text = "피드"
+            navigationBarView.viewTitleLabel.textColor = .black
+        }
+        else {
+            navigationBarView.viewTitleLabel.textColor = .clear
+        }
+        
+    }
 }
 
 extension FeedViewController: MyBlogOfProfileViewControllerDelegate {
@@ -69,9 +83,24 @@ extension FeedViewController: MyBlogOfProfileViewControllerDelegate {
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
                 appDelegate.window?.rootViewController?.present(settingViewController, animated: true, completion: nil)
             }
-            else {
-                return
-            }
         })
+    }
+}
+
+extension FeedViewController: BlogSearchViewControllerDelegate {
+    func dismissBlogSearchViewController(model: BlogSearchModel) {
+        self.blogSearchModel = model
+    }
+}
+
+extension FeedViewController: SettingViewControllerDelegate {
+    func getMyBlogOfProfileModel(model: MyBlogOfProfileModel) {
+        self.myBlogOfProfileModel = model
+    }
+}
+
+extension FeedViewController: AccountSettingViewControllerDelegate {
+    func getProflieName(name: String) {
+        self.myBlogOfProfileModel.profileName = name
     }
 }

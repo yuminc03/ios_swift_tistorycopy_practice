@@ -9,6 +9,15 @@ import UIKit
 
 class NavigationBarView: UIView {
     
+    lazy var viewTitleLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .clear
+        label.font = .systemFont(ofSize: 20)
+        addSubview(label)
+        return label
+    } ()
+    
     lazy var blogSearchButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false

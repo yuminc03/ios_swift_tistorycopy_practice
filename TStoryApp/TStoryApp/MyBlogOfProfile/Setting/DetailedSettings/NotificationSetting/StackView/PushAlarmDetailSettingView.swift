@@ -26,6 +26,7 @@ class PushAlarmDetailSettingView: UIView {
         commentView.backgroundColor = .white
         let uiSwitch = NotificationSwitchControl(frame: CGRect(x: 330, y: 15, width: 35, height: 15))
         uiSwitch.switchIsOn = notificationModel.commentAlarm
+        uiSwitch.setSwitchOnColor(switchIsOn: uiSwitch.switchIsOn)
         uiSwitch.tag = 1
         uiSwitch.delegate = self
         commentView.addSubview(uiSwitch)
@@ -45,6 +46,7 @@ class PushAlarmDetailSettingView: UIView {
         teamBlogView.backgroundColor = .white
         let uiSwitch = NotificationSwitchControl(frame: CGRect(x: 330, y: 15, width: 35, height: 15))
         uiSwitch.switchIsOn = notificationModel.teamBlogInviteAlarm
+        uiSwitch.setSwitchOnColor(switchIsOn: uiSwitch.switchIsOn)
         uiSwitch.tag = 2
         uiSwitch.delegate = self
         teamBlogView.addSubview(uiSwitch)
@@ -64,6 +66,7 @@ class PushAlarmDetailSettingView: UIView {
         subscribeView.backgroundColor = .white
         let uiSwitch = NotificationSwitchControl(frame: CGRect(x: 330, y: 15, width: 35, height: 15))
         uiSwitch.switchIsOn = notificationModel.subscibeAlarm
+        uiSwitch.setSwitchOnColor(switchIsOn: uiSwitch.switchIsOn)
         uiSwitch.tag = 3
         uiSwitch.delegate = self
         subscribeView.addSubview(uiSwitch)
@@ -180,6 +183,7 @@ class PushAlarmDetailSettingView: UIView {
             stackView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
+
 }
 
 extension PushAlarmDetailSettingView: NotificationSwitchControlDelegate {
@@ -194,7 +198,7 @@ extension PushAlarmDetailSettingView: NotificationSwitchControlDelegate {
             notificationModel.subscibeAlarm = switchIsOn
         }
         else {
-            switchIsOn ? setUI(pushOn: true, notDisturbOn: true) : setUI(pushOn: true, notDisturbOn: false)
+            switchIsOn ? setUI(pushOn: notificationModel.pushAlarm, notDisturbOn: true) : setUI(pushOn: notificationModel.pushAlarm, notDisturbOn: false)
             notificationModel.doNotdisturbMode = switchIsOn
         }
     }

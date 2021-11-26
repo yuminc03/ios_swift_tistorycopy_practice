@@ -66,8 +66,16 @@ class BlogSearchView: UIView {
     
     @objc private func searchDeleteButtonDidTapped(button: UIButton){
         guard let views = button.superview?.tag else { return }
+        if let label = searchWordsStackView.subviews[views].subviews[0] as? UILabel {
+            label.text = ""
+        }
         searchWordsStackView.removeArrangedSubview(button.superview!)
         blogSearchModel.searchResultModal.remove(at: views)
+        //stackView reload
+        for subview in searchWordsStackView.arrangedSubviews {
+            searchWordsStackView.removeArrangedSubview(subview)
+        }
+        self.setStackView()
     }
     
     func setBlogSearchData(model: BlogSearchModel){

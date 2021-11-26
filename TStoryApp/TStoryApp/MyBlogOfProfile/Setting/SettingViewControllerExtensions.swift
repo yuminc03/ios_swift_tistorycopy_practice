@@ -46,13 +46,22 @@ extension SettingViewController: AccountSettingViewControllerDelegate {
     func getProflieName(name: String) {
         self.myBlogOfProfileModel.profileName = name
         self.settingStackView.setProfileName(name: name)
+        //stackView reload
+        for subview in settingStackView.arrangedSubviews {
+            settingStackView.removeArrangedSubview(subview)
+        }
+        settingStackView.setStackView()
     }
 }
 
 extension SettingViewController: NotificationSettingViewControllerDelegate {
     func getNotificationSetting(model: NotificationModel) {
         self.myBlogOfProfileModel.notificationModel = model
-//        self.settingStackView.setNotificationSetting(pushAlarm: myBlogOfProfileModel.notificationModel.pushAlarm)
-        print(model)
+        self.settingStackView.setNotificationSetting(pushAlarm: model.pushAlarm)
+        //stackView reload
+        for subview in settingStackView.arrangedSubviews {
+            settingStackView.removeArrangedSubview(subview)
+        }
+        settingStackView.setStackView()
     }
 }

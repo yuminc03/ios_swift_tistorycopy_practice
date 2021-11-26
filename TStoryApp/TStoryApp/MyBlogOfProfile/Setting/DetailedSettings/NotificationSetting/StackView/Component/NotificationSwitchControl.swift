@@ -77,7 +77,7 @@ class NotificationSwitchControl: UIControl {
         }
     }
     
-    private func animate() {
+    func animate() {
         self.switchIsOn = !self.switchIsOn
         self.isAnimating = true
         

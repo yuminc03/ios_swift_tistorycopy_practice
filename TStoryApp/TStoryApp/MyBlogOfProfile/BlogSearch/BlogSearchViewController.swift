@@ -49,6 +49,7 @@ class BlogSearchViewController: UIViewController {
         setConstraints()
     }
     
+
     init(blogSearchModel: BlogSearchModel) {
         self.blogSearchModel = blogSearchModel
         super.init(nibName: nil, bundle: nil)
@@ -95,8 +96,27 @@ class BlogSearchViewController: UIViewController {
         searchView.backgroundColor = .white
         blogSearchView.searchWordsStackView.insertArrangedSubview(searchView, at: 0)
         searchView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        
+        searchView.searchDeleteButton.addTarget(self, action: #selector(searchDeleteButtonDidTapped), for: .touchUpInside)
         blogSearchView.blogSearchModel.searchResultModal.insert(SearchResultModel(searchWords: searchWords, searchDate: searchDate), at: 0)
+        //stackView reload
+        for subview in blogSearchView.searchWordsStackView.arrangedSubviews {
+            blogSearchView.searchWordsStackView.removeArrangedSubview(subview)
+        }
+        blogSearchView.setStackView()
+    }
+    
+    @objc private func searchDeleteButtonDidTapped(button: UIButton){
+        guard let views = button.superview?.tag else { return }
+        if let label = blogSearchView.searchWordsStackView.subviews[views].subviews[0] as? UILabel {
+            label.text = ""
+        }
+        blogSearchView.searchWordsStackView.removeArrangedSubview(button.superview!)
+        blogSearchModel.searchResultModal.remove(at: views)
+        //stackView reload
+        for subview in blogSearchView.searchWordsStackView.arrangedSubviews {
+            blogSearchView.searchWordsStackView.removeArrangedSubview(subview)
+        }
+        blogSearchView.setStackView()
     }
     
     func getTodayDate() -> String {

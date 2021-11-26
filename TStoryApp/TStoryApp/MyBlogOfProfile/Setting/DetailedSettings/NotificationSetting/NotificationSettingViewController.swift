@@ -30,6 +30,7 @@ class NotificationSettingViewController: UIViewController{
         pushAlarmView.backgroundColor = .white
         let uiSwitch = NotificationSwitchControl(frame: CGRect(x: 330, y: 15, width: 35, height: 15))
         uiSwitch.switchIsOn = notificationModel.pushAlarm
+        uiSwitch.setSwitchOnColor(switchIsOn: uiSwitch.switchIsOn)
         uiSwitch.delegate = self
         pushAlarmView.addSubview(uiSwitch)
         view.addSubview(pushAlarmView)
@@ -43,7 +44,7 @@ class NotificationSettingViewController: UIViewController{
         view.addSubview(separator)
         return separator
     } ()
-    
+
     lazy var pushAlarmDetailSettingView: PushAlarmDetailSettingView = {
         let pushAlarmDetailView = PushAlarmDetailSettingView()
         pushAlarmDetailView.translatesAutoresizingMaskIntoConstraints = false
@@ -60,11 +61,12 @@ class NotificationSettingViewController: UIViewController{
         return colorView
     } ()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setConstraints()
-        pushAlarmDetailSettingView.setUI(pushOn: notificationModel.pushAlarm, notDisturbOn: notificationModel.doNotdisturbMode)
         pushAlarmDetailSettingView.setNotificationModel(model: self.notificationModel)
+        pushAlarmDetailSettingView.setUI(pushOn: notificationModel.pushAlarm, notDisturbOn: notificationModel.doNotdisturbMode)
     }
     
     init(notificationModel: NotificationModel){
@@ -98,17 +100,18 @@ class NotificationSettingViewController: UIViewController{
         ])
         
         NSLayoutConstraint.activate([
+            lightGrayColorView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            lightGrayColorView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            lightGrayColorView.topAnchor.constraint(equalTo: pushAlarmViewBottomSeparator.bottomAnchor),
+            lightGrayColorView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
             pushAlarmDetailSettingView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             pushAlarmDetailSettingView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             pushAlarmDetailSettingView.topAnchor.constraint(equalTo: pushAlarmViewBottomSeparator.bottomAnchor)
         ])
 
-        NSLayoutConstraint.activate([
-            lightGrayColorView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            lightGrayColorView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            lightGrayColorView.topAnchor.constraint(equalTo: pushAlarmDetailSettingView.bottomAnchor),
-            lightGrayColorView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
-        ])
     }
     
     @objc private func dismissNotificationSettingButtonDidTapped(button: UIButton){
@@ -122,6 +125,7 @@ extension NotificationSettingViewController: NotificationSwitchControlDelegate {
     func switchIsOnSetUI(index: Int, switchIsOn: Bool) {
         switchIsOn ? pushAlarmDetailSettingView.setUI(pushOn: true, notDisturbOn: false) : pushAlarmDetailSettingView.setUI(pushOn: false, notDisturbOn: false)
         notificationModel.pushAlarm = switchIsOn
+        pushAlarmDetailSettingView.setNotificationModel(model: self.notificationModel)
     }
    
 }

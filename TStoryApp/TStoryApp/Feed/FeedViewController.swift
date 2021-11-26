@@ -18,6 +18,7 @@ class FeedViewController: UIViewController {
         navigationView.translatesAutoresizingMaskIntoConstraints = false
         self.navigationItem.titleView = navigationView
         self.navigationItem.titleView?.tintColor = .white
+        navigationView.blogSearchButton.addTarget(self, action: #selector(blogSearchButtonDidTapped), for: .touchUpInside)
         navigationView.blogProfileButton.addTarget(self, action: #selector(blogProfileButtonDidTapped), for: .touchUpInside)
         view.addSubview(navigationView)
         return navigationView
@@ -210,8 +211,15 @@ class FeedViewController: UIViewController {
     @objc private func blogProfileButtonDidTapped(button: UIButton) {
         tabBarController?.tabBar.isHidden = true
         let vc = MyBlogOfProfileViewController(myBlogOfProfileModel: self.myBlogOfProfileModel)
-        vc.modalPresentationStyle = .overCurrentContext
         vc.delegate = self
+        vc.modalPresentationStyle = .overCurrentContext
+        self.present(vc, animated: false)
+    }
+    
+    @objc private func blogSearchButtonDidTapped(button: UIButton) {
+        let vc = BlogSearchViewController(blogSearchModel: self.blogSearchModel)
+        vc.delegate = self
+        vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: false)
     }
 }
