@@ -4,6 +4,12 @@
 //
 //  Created by LS-NOTE-00106 on 2021/11/11.
 //
+//앱 수정사항
+//1. home: 그래프 전체화면 dismiss 버튼 액션 (완료!)
+//2. home화면을 제외한 다른 화면에서 프로필 버튼 액션 (완료!)
+//3. scroll을 일정 이상 내리면 페이지 제목 나타나기 (완료!)
+//4. 뒤로가기 버튼 처럼 공통으로 나오는 부분은 tableviewHeader에 넣는 것보다 따로 뻬는게 좋음
+//5. 프로필 데이터가 tabBar이동해도 유지되려면 어디에 따로 저장하면 될까?
 
 import UIKit
 
@@ -44,10 +50,10 @@ class HomeViewController: UIViewController {
 
         let model = HomeModel(
             topContents: "피드에서 \n새 글을 \n확인해보세요",
-            visitModel: [
+            visitModel:
                 VisitModel(
                     blogName: "천천히 해도 괜찮아",
-                    visitCell: [
+                    visitCell:
                         VisitCell(
                             blogUrl: "dpffldk.tistory.com",
                             todayVisitNumber: [
@@ -120,7 +126,13 @@ class HomeViewController: UIViewController {
                                             todayVisitCount: 5
                                         ),
                                         VisitNumberWeek(
+                                            todayVisitCount: 4
+                                        ),
+                                        VisitNumberWeek(
                                             todayVisitCount: 2
+                                        ),
+                                        VisitNumberWeek(
+                                            todayVisitCount: 12
                                         )
                                     ],
                                     visitNum: 2,
@@ -220,9 +232,7 @@ class HomeViewController: UIViewController {
                                 )
                             ]
                         )
-                    ]
-                )
-            ],
+                ),
             recentlyModel: [
                 RecentlyModel(
                     postName: "Naver",

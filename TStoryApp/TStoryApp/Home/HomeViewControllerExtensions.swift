@@ -17,12 +17,25 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return section == 0 ? 0 : 1
     }
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let yPosition = scrollView.contentOffset.y
+        navigationBarView.viewTitleLabel.leadingAnchor.constraint(equalTo: navigationBarView.leadingAnchor, constant: 20).isActive = true
+        navigationBarView.viewTitleLabel.centerYAnchor.constraint(equalTo: navigationBarView.centerYAnchor, constant: 20).isActive = true
+        if yPosition >= 80 {
+            navigationBarView.viewTitleLabel.text = "Tistory"
+            navigationBarView.viewTitleLabel.textColor = .black
+        }
+        else {
+            navigationBarView.viewTitleLabel.textColor = .clear
+        }
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "visit_cell", for: indexPath) as! VisitTableViewCell
             cell.backgroundColor = .white
             cell.setVisitModel(model: homeModel.visitModel)
-            cell.setBlogUrl(url: homeModel.visitModel[0].visitCell[0].blogUrl)
+            cell.setBlogUrl(url: homeModel.visitModel.visitCell.blogUrl)
             cell.selectionStyle = .none
             return cell
         }
@@ -64,7 +77,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         }
         else if section == 1 {
             let visitHeader = tableView.dequeueReusableHeaderFooterView(withIdentifier: "visit_header") as! VisitTableViewHeader
-            visitHeader.setVisitHeaderData(name: homeModel.visitModel[0].blogName)
+            visitHeader.setVisitHeaderData(name: homeModel.visitModel.blogName)
             return visitHeader
         }
         else if section == 2 {

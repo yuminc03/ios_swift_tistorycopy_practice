@@ -12,6 +12,15 @@ class FullScreenVisitLogWebViewController: UIViewController, WKUIDelegate {
     
     var visitLogUrl: String = ""
     
+    lazy var visitLogTopView: FullScreenVisitLogWebTopView = {
+        let topView = FullScreenVisitLogWebTopView()
+        topView.translatesAutoresizingMaskIntoConstraints = false
+        topView.backgroundColor = .white
+        topView.dismissFullScreenVisitLogWebViewButton.addTarget(self, action: #selector(dismissFullScreenVisitLogWebViewButtonDidTapped), for: .touchUpInside)
+        view.addSubview(topView)
+        return topView
+    } ()
+    
     lazy var visitLogWebView: WKWebView = {
         let webConfigulation = WKWebViewConfiguration()
         let webView = WKWebView(frame: .zero, configuration: webConfigulation)
@@ -41,10 +50,21 @@ class FullScreenVisitLogWebViewController: UIViewController, WKUIDelegate {
     private func setConstraints(){
         view.backgroundColor = .white
         NSLayoutConstraint.activate([
+            visitLogTopView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            visitLogTopView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            visitLogTopView.topAnchor.constraint(equalTo: view.topAnchor),
+            visitLogTopView.heightAnchor.constraint(equalToConstant: 80)
+        ])
+        
+        NSLayoutConstraint.activate([
             visitLogWebView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             visitLogWebView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            visitLogWebView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            visitLogWebView.topAnchor.constraint(equalTo: visitLogTopView.bottomAnchor),
             visitLogWebView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
+    }
+    
+    @objc private func dismissFullScreenVisitLogWebViewButtonDidTapped(button: UIButton) {
+        self.dismiss(animated: false, completion: nil)
     }
 }

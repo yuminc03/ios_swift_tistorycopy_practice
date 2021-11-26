@@ -8,7 +8,7 @@
 
 struct HomeModel {
     var topContents: String = ""
-    var visitModel: [VisitModel] = []
+    var visitModel = VisitModel()
     var recentlyModel: [RecentlyModel] = []
     var popularityModel: [PopularityModel] = []
     var subscriberModel: [SubscriberModel] = []
@@ -16,7 +16,7 @@ struct HomeModel {
 
 struct VisitModel {
     var blogName: String = ""
-    var visitCell: [VisitCell] = []
+    var visitCell = VisitCell()
 }
 
 struct VisitCell {

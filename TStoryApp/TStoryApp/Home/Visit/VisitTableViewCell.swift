@@ -9,7 +9,7 @@ import UIKit
 
 class VisitTableViewCell: UITableViewCell {
     
-    var visitModel: [VisitModel] = []
+    var visitModel = VisitModel()
     var currentPageIndex: CGFloat = 0 //보여줄 페이지의 시작
     
     lazy var visitingCollectionView: UICollectionView = {
@@ -145,7 +145,7 @@ class VisitTableViewCell: UITableViewCell {
         self.myBlogUrlLabel.text = url
     }
     
-    func setVisitModel(model: [VisitModel]) {
+    func setVisitModel(model: VisitModel) {
         self.visitModel = model
     }
     

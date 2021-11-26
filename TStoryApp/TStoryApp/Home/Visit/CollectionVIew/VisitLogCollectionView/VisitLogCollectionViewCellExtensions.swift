@@ -14,7 +14,7 @@ extension VisitLogCollectionViewCell: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return visitInfo.count <= 5 ? visitInfo.count : 5
+        return min(visitInfo.count, 5)//값 둘 중에서 더 작은 값 반환
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

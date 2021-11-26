@@ -51,15 +51,11 @@ extension VisitLogViewController: UITableViewDelegate, UITableViewDataSource {
             vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated: true)
         }
-        else {
-            return
-        }
-       
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return nil
-    }
+    }//nil을 넣는 건 약간 위험할 수 있어서 UIView()를 return 하는게 더 나음
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "full_screen_visit_header") as! FullScreenVisitLogTableViewHeader

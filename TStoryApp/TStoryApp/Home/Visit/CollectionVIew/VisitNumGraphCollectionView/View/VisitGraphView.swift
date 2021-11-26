@@ -64,37 +64,7 @@ class VisitGraphView: UIView {
     }
     
     func graphLineDraw() {//그래프의 꺾은선
-//        let origin = CGPoint(x: 0, y: 0)
-//        let lineDistance = 310 / 7
-//        let path = UIBezierPath()
-//        let from = CGPoint(x: origin.x, y: origin.y + CGFloat(120 - (subVisitNumWeek[0].todayVisitCount * 5)))
-//
-//        let toFirst = CGPoint(x: origin.x + CGFloat((lineDistance / 2)), y: origin.y + 110)
-//        let toSecond = CGPoint(x: toFirst.x + CGFloat(lineDistance), y: toFirst.y - 10)
-//        let toThird = CGPoint(x: toSecond.x + CGFloat(lineDistance), y: toSecond.y + 10)
-//        let toFourth = CGPoint(x: toThird.x + CGFloat(lineDistance), y: toThird.y + 10)
-//        let toFifth = CGPoint(x: toFourth.x + CGFloat(lineDistance), y: toFourth.y - 10)
-//        let toSixth = CGPoint(x: toFifth.x + CGFloat(lineDistance), y: toFifth.y)
-//        let toLast = CGPoint(x: toSixth.x + CGFloat(lineDistance), y: toSixth.y + 10)
-//        path.move(to: from)
-//        path.addLine(to: toFirst)
-//        path.addLine(to: toSecond)
-//        path.addLine(to: toThird)
-//        path.addLine(to: toFourth)
-//        path.addLine(to: toFifth)
-//        path.addLine(to: toSixth)
-//        path.addLine(to: toLast)
-//
-//        let shapeLine = CAShapeLayer()
-//        shapeLine.path = path.cgPath
-//        shapeLine.strokeColor = UIColor.systemRed.cgColor
-//        shapeLine.fillColor = .none
-//        shapeLine.lineWidth = 2
-//        self.layer.addSublayer(shapeLine)
-//
-//        graphDotsDraw(firstPos: toFirst, secondPos: toSecond, thirdPos: toThird, fourthPos: toFourth, fifthPos: toFifth, sixthPos: toSixth, lastPos: toLast)
-        
-        
+  
         var origin = CGPoint(x: 0, y: 0)
         let linePath = UIBezierPath()
         var linePos = CGPoint()
@@ -103,15 +73,15 @@ class VisitGraphView: UIView {
         for i in 0 ..< subVisitNumWeek.count {
             let weekData: Int = subVisitNumWeek[i].todayVisitCount
             if i == 0 {
-                let from = CGPoint(x: origin.x, y: origin.y + CGFloat(120 - (subVisitNumWeek[0].todayVisitCount * 15)))
-                origin.y = origin.y + CGFloat(120 - (weekData * 15))
+                let from = CGPoint(x: origin.x, y: origin.y + CGFloat(120 - (subVisitNumWeek[0].todayVisitCount * 8)))
+                origin.y = origin.y + CGFloat(120 - (weekData * 8))
                 linePath.move(to: from)
             }
             else if i == 1 {
                 origin.y = 120
                 linesDistance = 310 / 7 / 2
                 origin.x = origin.x + CGFloat(linesDistance)
-                origin.y = origin.y - CGFloat(weekData * 15)
+                origin.y = origin.y - CGFloat(weekData * 8)
                 linePos = CGPoint(x: origin.x, y: origin.y)
                 linePath.addLine(to: linePos)
                 dotPosArr.append(linePos)
@@ -120,7 +90,7 @@ class VisitGraphView: UIView {
                 origin.y = 120
                 linesDistance = 310 / 7
                 origin.x = origin.x + CGFloat(linesDistance)
-                origin.y = origin.y - CGFloat(weekData * 15)
+                origin.y = origin.y - CGFloat(weekData * 8)
                 linePos = CGPoint(x: origin.x, y: origin.y)
                 linePath.addLine(to: linePos)
                 dotPosArr.append(linePos)
@@ -136,8 +106,6 @@ class VisitGraphView: UIView {
     }
 
     func graphDotsDraw(dots: [CGPoint]) {//그래프의 점
-
-//        let dotPositionArr: [CGPoint] = [firstPos, secondPos, thirdPos, fourthPos, fifthPos, sixthPos, lastPos]
         for i in 0 ..< dots.count {
             let dotStrokePath = UIBezierPath(
                 arcCenter: dots[i],

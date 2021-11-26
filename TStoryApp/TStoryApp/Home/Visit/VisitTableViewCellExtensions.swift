@@ -14,43 +14,48 @@ extension VisitTableViewCell: UICollectionViewDelegateFlowLayout, UICollectionVi
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return visitModel.count
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.row == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "visit_num_collection_cell", for: indexPath) as! VisitNumGraphCollectionViewCell
-            cell.setVisitNumWeek(model: visitModel[0].visitCell[0].todayVisitNumber[0].visitNumWeek)
+            cell.setVisitNumWeek(model: visitModel.visitCell.todayVisitNumber[0].visitNumWeek)
             cell.setVisitNumberComponents()
-            cell.visitGraphView.setSubVisitNumWeek(arr: visitModel[0].visitCell[0].todayVisitNumber[0].visitNumWeek)
+            cell.visitGraphView.setSubVisitNumWeek(arr: visitModel.visitCell.todayVisitNumber[0].visitNumWeek)
             cell.visitGraphView.graphBottomLineDraw()
             cell.setCellStyle()
             return cell
         }
         else if indexPath.row == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "visit_log_collection_cell", for: indexPath) as! VisitLogCollectionViewCell
-            cell.setVisitInfoModel(model: visitModel[0].visitCell[0].visitInfo)
+            cell.setVisitInfoModel(model: visitModel.visitCell.visitInfo)
             cell.setCellStyle()
             return cell
         }
         else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "visit_key_collection_cell", for: indexPath) as! VisitKeyWordCollectionViewCell
-            cell.setVisitKeyWords(model: visitModel[0].visitCell[0].visitKeyWords)
+            cell.setVisitKeyWords(model: visitModel.visitCell.visitKeyWords)
             cell.setCellStyle()
             return cell
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.row == 1 { //유입 로그 모두 보기
-            let vc = VisitLogViewController(visitInfo: visitModel[0].visitCell[0].visitInfo)
+        if indexPath.row == 0 {
+            let vc = VisitNumGraphFullScreenViewController(visitCell: visitModel.visitCell)
+            vc.modalPresentationStyle = .fullScreen
+            self.window?.rootViewController!.present(vc, animated: true)
+        }
+        else if indexPath.row == 1 { //유입 로그 모두 보기
+            let vc = VisitLogViewController(visitInfo: visitModel.visitCell.visitInfo)
             vc.modalPresentationStyle = .fullScreen
             self.window?.rootViewController!.present(vc, animated: true)
         }
         else if indexPath.row == 2 { //유입 키워드 모두 보기
             let vc = VisitKeyWordViewController()
             vc.modalPresentationStyle = .fullScreen
-            vc.setVisitKeyWords(model: visitModel[0].visitCell[0].visitKeyWords)
+            vc.setVisitKeyWords(model: visitModel.visitCell.visitKeyWords)
             self.window?.rootViewController!.present(vc, animated: true)
         }
     }
