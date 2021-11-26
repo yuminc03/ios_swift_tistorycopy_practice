@@ -19,6 +19,7 @@ class NoticeViewController: UIViewController {
         navigationView.translatesAutoresizingMaskIntoConstraints = false
         self.navigationItem.titleView = navigationView
         self.navigationItem.titleView?.tintColor = .white
+        navigationView.blogSearchButton.addTarget(self, action: #selector(blogSearchButtonDidTapped), for: .touchUpInside)
         navigationView.blogProfileButton.addTarget(self, action: #selector(blogProfileButtonDidTapped), for: .touchUpInside)
         view.addSubview(navigationView)
         return navigationView
@@ -53,27 +54,34 @@ class NoticeViewController: UIViewController {
                         NoticeCell(
                             cellTitle: "동사힐님이 엘리아님에게 답글을 남겼습니다.",
                             cellImage: "image1.png",
+                            cellContent: "\"엘리아님! 심리 읽어드립니다 책 혹시 읽고 싶으면 저에게 찾아오세요! 선물로 드릴...\"",
+                            cellFeedSender: "모든 것은 서로 연결되어 있다.",
+                            cellFeedDate: "2021.11.1."
+                        ),
+                        NoticeCell(
+                            cellTitle: "동사힐님이 엘리아님에게 답글을 남겼습니다.",
+                            cellImage: "image2.png",
                             cellContent: "\"고등학교 졸업 전에 자신의 경험을 잘 정리해놓으면,취업을 할 때에도 유용...\"",
                             cellFeedSender: "모든 것은 서로 연결되어 있다.",
                             cellFeedDate: "2021.8.24."
                         ),
                         NoticeCell(
                             cellTitle: "동사힐님이 일의 기쁨과 슬픔을 읽어보았습니다에 댓글을 남겼습니다.",
-                            cellImage: "image2.png",
+                            cellImage: "image3.png",
                             cellContent: "\"엘리아님도 패시브 인컴을 구축해서 적게 일하시고 많이 버세요!\"",
                             cellFeedSender: "천천히 해도 괜찮아",
                             cellFeedDate: "2021.8.10"
                         ),
                         NoticeCell(
                             cellTitle: "동사힐님이 엘리아님에게 답글을 남겼습니다.",
-                            cellImage: "image3.png",
+                            cellImage: "image4.png",
                             cellContent: "\"엘리아님! 댓글 감사합니다! 블로그를 통해 엘리아님 금손 실력에 깜놀합니다!...\"",
                             cellFeedSender: "모든 것은 서로 연결되어 있다.",
                             cellFeedDate: "2021.7.27."
                         ),
                         NoticeCell(
                             cellTitle: "동사힐님이 보석느낌 펜던트만들기에 댓글을 남겼습니다.",
-                            cellImage: "image4.png",
+                            cellImage: "image5.png",
                             cellContent: "\"안녕하세요! 레진아트 잘 보았습니다^^ 이미지 올릴 때 용량을 줄이면 포스팅한...\"",
                             cellFeedSender: "천천히 해도 괜찮아",
                             cellFeedDate: "2021.7.12."
@@ -90,27 +98,34 @@ class NoticeViewController: UIViewController {
                         NoticeCell(
                             cellTitle: "동사힐님이 엘리아님에게 답글을 남겼습니다.",
                             cellImage: "image1.png",
+                            cellContent: "\"엘리아님! 심리 읽어드립니다 책 혹시 읽고 싶으면 저에게 찾아오세요! 선물로 드릴...\"",
+                            cellFeedSender: "모든 것은 서로 연결되어 있다.",
+                            cellFeedDate: "2021.11.1."
+                        ),
+                        NoticeCell(
+                            cellTitle: "동사힐님이 엘리아님에게 답글을 남겼습니다.",
+                            cellImage: "image2.png",
                             cellContent: "\"고등학교 졸업 전에 자신의 경험을 잘 정리해놓으면,취업을 할 때에도 유용...\"",
                             cellFeedSender: "모든 것은 서로 연결되어 있다.",
                             cellFeedDate: "2021.8.24."
                         ),
                         NoticeCell(
                             cellTitle: "동사힐님이 일의 기쁨과 슬픔을 읽어보았습니다에 댓글을 남겼습니다.",
-                            cellImage: "image2.png",
+                            cellImage: "image3.png",
                             cellContent: "\"엘리아님도 패시브 인컴을 구축해서 적게 일하시고 많이 버세요!\"",
                             cellFeedSender: "천천히 해도 괜찮아",
                             cellFeedDate: "2021.8.10"
                         ),
                         NoticeCell(
                             cellTitle: "동사힐님이 엘리아님에게 답글을 남겼습니다.",
-                            cellImage: "image3.png",
+                            cellImage: "image4.png",
                             cellContent: "\"엘리아님! 댓글 감사합니다! 블로그를 통해 엘리아님 금손 실력에 깜놀합니다!...\"",
                             cellFeedSender: "모든 것은 서로 연결되어 있다.",
                             cellFeedDate: "2021.7.27."
                         ),
                         NoticeCell(
                             cellTitle: "동사힐님이 보석느낌 펜던트만들기에 댓글을 남겼습니다.",
-                            cellImage: "image4.png",
+                            cellImage: "image5.png",
                             cellContent: "\"안녕하세요! 레진아트 잘 보았습니다^^ 이미지 올릴 때 용량을 줄이면 포스팅한...\"",
                             cellFeedSender: "천천히 해도 괜찮아",
                             cellFeedDate: "2021.7.12."
@@ -226,24 +241,17 @@ class NoticeViewController: UIViewController {
     @objc private func blogProfileButtonDidTapped(button: UIButton) {
         tabBarController?.tabBar.isHidden = true
         let vc = MyBlogOfProfileViewController(myBlogOfProfileModel: self.myBlogOfProfileModel)
-        vc.modalPresentationStyle = .overCurrentContext
         vc.delegate = self
+        vc.modalPresentationStyle = .overCurrentContext
+        self.present(vc, animated: false)
+    }
+    
+    @objc private func blogSearchButtonDidTapped(button: UIButton) {
+        let vc = BlogSearchViewController(blogSearchModel: self.blogSearchModel)
+        vc.delegate = self
+        vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: false)
     }
     
 }
 
-extension NoticeViewController: CategoryKindViewControllerDelegate {
-    func categoryDidTapped(_ viewController: CategoryKindViewController, at: Int?) {
-        tabBarController?.tabBar.isHidden = false
-        viewController.dismiss(animated: true)
-        
-        guard let at = at else { return }
-        selectedCategoryIndex = at
-        for i in 0 ..< noticeModel.noticeCategory.count {
-            noticeModel.noticeCategory[i].isSelected = false
-        }
-        noticeModel.noticeCategory[at].isSelected = true
-        feedView.reloadData()
-    }
-}

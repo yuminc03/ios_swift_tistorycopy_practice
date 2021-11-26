@@ -27,6 +27,19 @@ extension NoticeViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let yPosition = scrollView.contentOffset.y
+        navigationBarView.viewTitleLabel.centerXAnchor.constraint(equalTo: navigationBarView.centerXAnchor).isActive = true
+        navigationBarView.viewTitleLabel.centerYAnchor.constraint(equalTo: navigationBarView.centerYAnchor, constant: 20).isActive = true
+        if yPosition >= 80 {
+            navigationBarView.viewTitleLabel.text = "알림"
+            navigationBarView.viewTitleLabel.textColor = .black
+        }
+        else {
+            navigationBarView.viewTitleLabel.textColor = .clear
+        }
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if noticeModel.noticeCategory[selectedCategoryIndex].noticeCell.count == 0 {
@@ -79,7 +92,24 @@ extension NoticeViewController: UITableViewDelegate, UITableViewDataSource {
         self.present(vc, animated: false)
     }
     
- }
+}
+
+
+extension NoticeViewController: CategoryKindViewControllerDelegate {
+    func categoryDidTapped(_ viewController: CategoryKindViewController, at: Int?) {
+        tabBarController?.tabBar.isHidden = false
+        viewController.dismiss(animated: true)
+        
+        guard let at = at else { return }
+        selectedCategoryIndex = at
+        for i in 0 ..< noticeModel.noticeCategory.count {
+            noticeModel.noticeCategory[i].isSelected = false
+        }
+        noticeModel.noticeCategory[at].isSelected = true
+        feedView.reloadData()
+    }
+}
+
 
 extension NoticeViewController: MyBlogOfProfileViewControllerDelegate {
     func profileStackViewDidTapped(viewController: MyBlogOfProfileViewController, at: Int?) {
@@ -101,5 +131,24 @@ extension NoticeViewController: MyBlogOfProfileViewControllerDelegate {
                 return
             }
         })
+    }
+}
+
+
+extension NoticeViewController: BlogSearchViewControllerDelegate {
+    func dismissBlogSearchViewController(model: BlogSearchModel) {
+        self.blogSearchModel = model
+    }
+}
+
+extension NoticeViewController: SettingViewControllerDelegate {
+    func getMyBlogOfProfileModel(model: MyBlogOfProfileModel) {
+        self.myBlogOfProfileModel = model
+    }
+}
+
+extension NoticeViewController: AccountSettingViewControllerDelegate {
+    func getProflieName(name: String) {
+        self.myBlogOfProfileModel.profileName = name
     }
 }

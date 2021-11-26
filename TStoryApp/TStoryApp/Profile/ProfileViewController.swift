@@ -21,6 +21,7 @@ class ProfileViewController: UIViewController {
         self.navigationItem.titleView = navigationView
         self.navigationItem.titleView?.tintColor = .clear
         navigationView.blogSearchButton.setTitleColor(.white, for: .normal)
+        navigationView.blogSearchButton.addTarget(self, action: #selector(blogSearchButtonDidTapped), for: .touchUpInside)
         navigationView.blogProfileButton.addTarget(self, action: #selector(blogProfileButtonDidTapped), for: .touchUpInside)
         view.addSubview(navigationView)
         return navigationView
@@ -77,38 +78,44 @@ class ProfileViewController: UIViewController {
                     isSelected: true,
                     categoryCell: [
                         ProfileCategoryCell(
-                            cellTitle: "이번 생은 틀렸다고 느껴질 때를 읽어보았습니다",
+                            cellTitle: "Photoshop으로 할로윈 토끼 그림 그리기",
                             cellImageName: "image1.png",
+                            cellLikeNum: 0,
+                            cellCommentNum: 0,
+                            cellDate: "2021.10.31."),
+                        ProfileCategoryCell(
+                            cellTitle: "이번 생은 틀렸다고 느껴질 때를 읽어보았습니다",
+                            cellImageName: "image2.png",
                             cellLikeNum: 1,
                             cellCommentNum: 0,
-                            cellDate: "2021.9.20"),
+                            cellDate: "2021.9.20."),
                         ProfileCategoryCell(
                             cellTitle: "코로나 백신 1차, 2차 접종완료했습니다",
-                            cellImageName: "image2.png",
+                            cellImageName: "image3.png",
                             cellLikeNum: 0,
                             cellCommentNum: 0,
                             cellDate: "2021.8.14."),
                         ProfileCategoryCell(
                             cellTitle: "일의 기쁨과 슬픔을 읽어보았습니다",
-                            cellImageName: "image3.png",
+                            cellImageName: "image4.png",
                             cellLikeNum: 1,
                             cellCommentNum: 2,
                             cellDate: "2021.8.9."),
                         ProfileCategoryCell(
                             cellTitle: "Photoshop으로 우주의 소녀 그림 그리기",
-                            cellImageName: "image4.png",
+                            cellImageName: "image5.png",
                             cellLikeNum: 1,
                             cellCommentNum: 0,
                             cellDate: "2021.7.25."),
                         ProfileCategoryCell(
                             cellTitle: "보석 느낌 펜던트 만들기",
-                            cellImageName: "image5.png",
+                            cellImageName: "image6.png",
                             cellLikeNum: 1,
                             cellCommentNum: 2,
                             cellDate: "2021.7.11."),
                         ProfileCategoryCell(
                             cellTitle: "화양연화 THE NOTES 1을 읽어보았습니다",
-                            cellImageName: "image6.png",
+                            cellImageName: "image7.png",
                             cellLikeNum: 1,
                             cellCommentNum: 0,
                             cellDate: "2021.7.10.")
@@ -156,6 +163,12 @@ class ProfileViewController: UIViewController {
                     categoryName: "그림",
                     categoryNum: 1,
                     categoryCell: [
+                        ProfileCategoryCell(
+                            cellTitle: "Photoshop으로 할로윈 토끼 그림 그리기",
+                            cellImageName: "image1.png",
+                            cellLikeNum: 0,
+                            cellCommentNum: 0,
+                            cellDate: "2021.10.31."),
                         ProfileCategoryCell(
                             cellTitle: "Photoshop으로 우주의 소녀 그리기",
                             cellImageName: "image4.png",
@@ -285,24 +298,17 @@ class ProfileViewController: UIViewController {
     @objc private func blogProfileButtonDidTapped(button: UIButton) {
         tabBarController?.tabBar.isHidden = true
         let vc = MyBlogOfProfileViewController(myBlogOfProfileModel: self.myBlogOfProfileModel)
-        vc.modalPresentationStyle = .overCurrentContext
         vc.delegate = self
+        vc.modalPresentationStyle = .overCurrentContext
+        self.present(vc, animated: false)
+    }
+    
+    @objc private func blogSearchButtonDidTapped(button: UIButton) {
+        let vc = BlogSearchViewController(blogSearchModel: self.blogSearchModel)
+        vc.delegate = self
+        vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: false)
     }
     
 }
 
-extension ProfileViewController: CategoryKindPopoverViewControllerDelegate {
-    func categoryDidTapped(_ viewController: CategoryKindPopoverViewController, at: Int?) {
-        tabBarController?.tabBar.isHidden = false
-        viewController.dismiss(animated: true)
-        guard let at = at else { return }//at이 null값이 아닐 때만 밑의 로직을 실행
-        selectedCateogoryIndex = at
-        for i in 0 ..< profileModel.category.count {
-            profileModel.category[i].isSelected = false
-        }
-        profileModel.category[at].isSelected = true
-        
-        profileView.reloadData()
-    }
-}

@@ -107,7 +107,7 @@ class ProfileTableViewHeader: UITableViewHeaderFooterView {
             profileImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
             profileImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
             profileImageView.topAnchor.constraint(equalTo: topAnchor),
-            profileImageView.heightAnchor.constraint(equalToConstant: 300)
+            profileImageView.heightAnchor.constraint(equalToConstant: 400)
         ])
         
         NSLayoutConstraint.activate([ //"구독자" 라벨의 위치

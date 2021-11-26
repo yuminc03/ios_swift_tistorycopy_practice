@@ -24,6 +24,23 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
 //        return 0
     }
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let yPosition = scrollView.contentOffset.y
+        navigationBarView.viewTitleLabel.centerYAnchor.constraint(equalTo: navigationBarView.centerYAnchor, constant: 20).isActive = true
+        navigationBarView.viewTitleLabel.centerXAnchor.constraint(equalTo: navigationBarView.centerXAnchor).isActive = true
+        if yPosition >= 350 {
+            navigationBarView.backgroundColor = .white
+            navigationBarView.blogSearchButton.setTitleColor(.black, for: .normal)
+            navigationBarView.viewTitleLabel.text = "천천히 해도 괜찮아"
+            navigationBarView.viewTitleLabel.textColor = .black
+        }
+        else {
+            navigationBarView.backgroundColor = .clear
+            navigationBarView.blogSearchButton.setTitleColor(.white, for: .normal)
+            navigationBarView.viewTitleLabel.textColor = .clear
+        }
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 //        return UITableViewCell()
         let data = profileModel.category[selectedCateogoryIndex].categoryCell[indexPath.row]
@@ -87,6 +104,21 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
 
 }
 
+extension ProfileViewController: CategoryKindPopoverViewControllerDelegate {
+    func categoryDidTapped(_ viewController: CategoryKindPopoverViewController, at: Int?) {
+        tabBarController?.tabBar.isHidden = false
+        viewController.dismiss(animated: true)
+        guard let at = at else { return }//at이 null값이 아닐 때만 밑의 로직을 실행
+        selectedCateogoryIndex = at
+        for i in 0 ..< profileModel.category.count {
+            profileModel.category[i].isSelected = false
+        }
+        profileModel.category[at].isSelected = true
+        
+        profileView.reloadData()
+    }
+}
+
 extension ProfileViewController: MyBlogOfProfileViewControllerDelegate {
     func profileStackViewDidTapped(viewController: MyBlogOfProfileViewController, at: Int?) {
         tabBarController?.tabBar.isHidden = false
@@ -107,5 +139,23 @@ extension ProfileViewController: MyBlogOfProfileViewControllerDelegate {
                 return
             }
         })
+    }
+}
+
+extension ProfileViewController: BlogSearchViewControllerDelegate {
+    func dismissBlogSearchViewController(model: BlogSearchModel) {
+        self.blogSearchModel = model
+    }
+}
+
+extension ProfileViewController: SettingViewControllerDelegate {
+    func getMyBlogOfProfileModel(model: MyBlogOfProfileModel) {
+        self.myBlogOfProfileModel = model
+    }
+}
+
+extension ProfileViewController: AccountSettingViewControllerDelegate {
+    func getProflieName(name: String) {
+        self.myBlogOfProfileModel.profileName = name
     }
 }
