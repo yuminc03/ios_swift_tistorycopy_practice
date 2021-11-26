@@ -99,6 +99,11 @@
 		055EFFFB27439D4700B97614 /* LogSortViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055EFFFA27439D4700B97614 /* LogSortViewController.swift */; };
 		055EFFFD27439DA000B97614 /* LogSortView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055EFFFC27439DA000B97614 /* LogSortView.swift */; };
 		055EFFFF2743A86200B97614 /* LogSortViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055EFFFE2743A86200B97614 /* LogSortViewControllerExtensions.swift */; };
+		057A16B1274F0EC6000275E3 /* VisitNumGraphFullScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057A16B0274F0EC6000275E3 /* VisitNumGraphFullScreenViewController.swift */; };
+		057A16B3274F10B2000275E3 /* VisitNumGraphFullScreenTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057A16B2274F10B2000275E3 /* VisitNumGraphFullScreenTopView.swift */; };
+		057A16B6274F19DD000275E3 /* FullScreenVisitLogWebTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057A16B5274F19DD000275E3 /* FullScreenVisitLogWebTopView.swift */; };
+		057A16BA274F3022000275E3 /* VisitNumberGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057A16B9274F3022000275E3 /* VisitNumberGraphView.swift */; };
+		057A16BC274F311B000275E3 /* VisitStatisticsDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057A16BB274F311B000275E3 /* VisitStatisticsDataView.swift */; };
 		057E27AB272A4899009BE550 /* NoticeViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057E27AA272A4899009BE550 /* NoticeViewControllerExtensions.swift */; };
 		057E27AD272A615F009BE550 /* NoticeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057E27AC272A615F009BE550 /* NoticeTableView.swift */; };
 		057E27B1272A6294009BE550 /* NoticeTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057E27B0272A6294009BE550 /* NoticeTableViewHeader.swift */; };
@@ -300,6 +305,11 @@
 		055EFFFA27439D4700B97614 /* LogSortViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogSortViewController.swift; sourceTree = "<group>"; };
 		055EFFFC27439DA000B97614 /* LogSortView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogSortView.swift; sourceTree = "<group>"; };
 		055EFFFE2743A86200B97614 /* LogSortViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogSortViewControllerExtensions.swift; sourceTree = "<group>"; };
+		057A16B0274F0EC6000275E3 /* VisitNumGraphFullScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitNumGraphFullScreenViewController.swift; sourceTree = "<group>"; };
+		057A16B2274F10B2000275E3 /* VisitNumGraphFullScreenTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitNumGraphFullScreenTopView.swift; sourceTree = "<group>"; };
+		057A16B5274F19DD000275E3 /* FullScreenVisitLogWebTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenVisitLogWebTopView.swift; sourceTree = "<group>"; };
+		057A16B9274F3022000275E3 /* VisitNumberGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitNumberGraphView.swift; sourceTree = "<group>"; };
+		057A16BB274F311B000275E3 /* VisitStatisticsDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitStatisticsDataView.swift; sourceTree = "<group>"; };
 		057E27AA272A4899009BE550 /* NoticeViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewControllerExtensions.swift; sourceTree = "<group>"; };
 		057E27AC272A615F009BE550 /* NoticeTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeTableView.swift; sourceTree = "<group>"; };
 		057E27B0272A6294009BE550 /* NoticeTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeTableViewHeader.swift; sourceTree = "<group>"; };
@@ -456,6 +466,7 @@
 			isa = PBXGroup;
 			children = (
 				051598AE274CC89000299668 /* FullScreenVisitLogWebViewController.swift */,
+				057A16B7274F1B52000275E3 /* Top */,
 			);
 			path = WebView;
 			sourceTree = "<group>";
@@ -612,6 +623,7 @@
 				054FE8502741DEC1001A0AD2 /* VisitNumGraphCollectionView */,
 				054FE8512741DEDE001A0AD2 /* VisitLogCollectionView */,
 				054FE8522741DEEF001A0AD2 /* VisitKeyWordCollectionView */,
+				057A16AF274F0E83000275E3 /* VisitNumGraphFullScreen */,
 				054FE86427420FE4001A0AD2 /* VisitLogFullScreen */,
 				055EFFEA274324D300B97614 /* VisitKeyWordFullScreen */,
 			);
@@ -839,6 +851,41 @@
 			path = LogSortView;
 			sourceTree = "<group>";
 		};
+		057A16AF274F0E83000275E3 /* VisitNumGraphFullScreen */ = {
+			isa = PBXGroup;
+			children = (
+				057A16B0274F0EC6000275E3 /* VisitNumGraphFullScreenViewController.swift */,
+				057A16B4274F10B6000275E3 /* Top */,
+				057A16B8274F2FEB000275E3 /* View */,
+			);
+			path = VisitNumGraphFullScreen;
+			sourceTree = "<group>";
+		};
+		057A16B4274F10B6000275E3 /* Top */ = {
+			isa = PBXGroup;
+			children = (
+				057A16B2274F10B2000275E3 /* VisitNumGraphFullScreenTopView.swift */,
+			);
+			path = Top;
+			sourceTree = "<group>";
+		};
+		057A16B7274F1B52000275E3 /* Top */ = {
+			isa = PBXGroup;
+			children = (
+				057A16B5274F19DD000275E3 /* FullScreenVisitLogWebTopView.swift */,
+			);
+			path = Top;
+			sourceTree = "<group>";
+		};
+		057A16B8274F2FEB000275E3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				057A16B9274F3022000275E3 /* VisitNumberGraphView.swift */,
+				057A16BB274F311B000275E3 /* VisitStatisticsDataView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		057E27A0272A2489009BE550 /* Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -852,6 +899,7 @@
 		057E27A1272A249A009BE550 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				057E27A2272A24AF009BE550 /* TableHeader */,
 				057E27A3272A24B8009BE550 /* TableCell */,
 			);
 			path = Components;
@@ -1055,7 +1103,6 @@
 		05C38666272795940090FDDC /* Writing */ = {
 			isa = PBXGroup;
 			children = (
-				057E27A2272A24AF009BE550 /* TableHeader */,
 				05CDF88D273528CC00F02BBA /* Publish */,
 				05FF7429272BD28000BEE31C /* WritingFormModel.swift */,
 				05FF742B272BD2B100BEE31C /* WritingFormViewController.swift */,
@@ -1450,6 +1497,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D0A17D127301FC900D8F4F4 /* PublishingSettingView.swift in Sources */,
+				057A16BC274F311B000275E3 /* VisitStatisticsDataView.swift in Sources */,
 				054FE87427425567001A0AD2 /* PostWebViewHeader.swift in Sources */,
 				054DCFD5274B22A7007CD0F8 /* NotificationSettingTopView.swift in Sources */,
 				0525005E273A678B00BE457D /* HomeSubjectSelectorViewControllerExtensions.swift in Sources */,
@@ -1462,6 +1510,7 @@
 				8DC15E3727378B700071B999 /* PublishSettingTopView.swift in Sources */,
 				05EB3207273CF6AE0035E45C /* VisitCellComponentsView.swift in Sources */,
 				054FE8542741E2E4001A0AD2 /* VisitLogCollectionViewCellExtensions.swift in Sources */,
+				057A16B3274F10B2000275E3 /* VisitNumGraphFullScreenTopView.swift in Sources */,
 				8D1520892741589600510781 /* PopularityPostSeeAllTableHeaderView.swift in Sources */,
 				050F2FE1273A3CB9007CBC61 /* HomeSubjectSelectorViewContoller.swift in Sources */,
 				0545AEB8273E2AE600458A6E /* SubscriberTableViewCellExtensions.swift in Sources */,
@@ -1573,6 +1622,7 @@
 				052BBC722746138600310EF1 /* SettingTopView.swift in Sources */,
 				052BBC602745C8C100310EF1 /* ProfileInfoStackViewFooter.swift in Sources */,
 				05FF7424272BC75600BEE31C /* CategoryViewExtension.swift in Sources */,
+				057A16B6274F19DD000275E3 /* FullScreenVisitLogWebTopView.swift in Sources */,
 				05F75F612731236B00BF39D2 /* PublishingSettingViewControllerExtension.swift in Sources */,
 				8D321D5F2737F1830036F276 /* PasswordSettingView.swift in Sources */,
 				05AB8D7727473277005D72E0 /* MyBlogOfProflieViewControllerExtensions.swift in Sources */,
@@ -1585,6 +1635,8 @@
 				05CDF88C273528C500F02BBA /* PublishSettingViewController.swift in Sources */,
 				052BBC7E2746275500310EF1 /* SettingStackCellSeparatorView.swift in Sources */,
 				05CDF891273528F900F02BBA /* PublishSettingViewControllerExtensions.swift in Sources */,
+				057A16BA274F3022000275E3 /* VisitNumberGraphView.swift in Sources */,
+				057A16B1274F0EC6000275E3 /* VisitNumGraphFullScreenViewController.swift in Sources */,
 				054DCFD9274B39E0007CD0F8 /* NotificationCellView.swift in Sources */,
 				054DCFE9274B710C007CD0F8 /* AnnouncementCellComponents.swift in Sources */,
 				8DC15E422737C8AC0071B999 /* PublishReservationDateView.swift in Sources */,
