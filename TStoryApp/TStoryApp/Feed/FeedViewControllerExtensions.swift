@@ -65,6 +65,7 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
     }
+
 }
 
 extension FeedViewController: MyBlogOfProfileViewControllerDelegate {

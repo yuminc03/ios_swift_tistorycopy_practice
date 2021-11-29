@@ -95,7 +95,7 @@ class MyContentTableViewCell: UITableViewCell {
     }
     
     func setBackgroundColor(index: Int) {
-        myContentImageView.backgroundColor = .blue.withAlphaComponent(CGFloat(index + 1) * 0.16)
+        myContentImageView.backgroundColor = .systemBlue.withAlphaComponent(CGFloat(index + 1) * 0.1)
     }
     
     private func setConstraints() {
@@ -103,8 +103,8 @@ class MyContentTableViewCell: UITableViewCell {
         NSLayoutConstraint.activate([
             myContentTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             myContentTitleLabel.trailingAnchor.constraint(equalTo: myContentImageView.leadingAnchor, constant: -20),
-            myContentTitleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 8),
-            myContentTitleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -40)
+            myContentTitleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 15),
+            myContentTitleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -50)
         ])
 
         NSLayoutConstraint.activate([
@@ -153,6 +153,13 @@ class MyContentTableViewCell: UITableViewCell {
             cellDividedLine.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
         
+    }
+    
+    func setTableViewCellData(title: String, likeNum: Int, commentNum: Int, date: String) {
+        myContentTitleLabel.text = title
+        myContentLikeLabel.text = String(likeNum)
+        myContentCommentLabel.text = String(commentNum)
+        myContentDateLabel.text = date
     }
     
 }

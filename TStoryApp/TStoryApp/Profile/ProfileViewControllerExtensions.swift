@@ -45,10 +45,7 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
 //        return UITableViewCell()
         let data = profileModel.category[selectedCateogoryIndex].categoryCell[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "my_contents", for: indexPath) as! MyContentTableViewCell
-        cell.myContentTitleLabel.text = data.cellTitle
-        cell.myContentLikeLabel.text = String(data.cellLikeNum)
-        cell.myContentCommentLabel.text = String(data.cellCommentNum)
-        cell.myContentDateLabel.text = data.cellDate
+        cell.setTableViewCellData(title: data.cellTitle, likeNum: data.cellLikeNum, commentNum: data.cellCommentNum, date: data.cellDate)
         cell.setBackgroundColor(index: indexPath.row)
         cell.cellDividedLine.isHidden = indexPath.row == profileModel.category[selectedCateogoryIndex].categoryCell.count - 1
         cell.selectionStyle = .none
@@ -56,8 +53,9 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        if section == 0 { return 10 }
-        else { return 0 }
+//        if section == 0 { return 10 }
+//        else { return 0 }
+        return section == 0 ? 10 : 0
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
