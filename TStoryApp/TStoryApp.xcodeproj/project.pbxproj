@@ -196,6 +196,8 @@
 		8D580148274BE2E300D04AFE /* BlogSearchTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D580147274BE2E300D04AFE /* BlogSearchTopView.swift */; };
 		8D65BDAE274A720300D0A678 /* RepMarkLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D65BDAD274A720300D0A678 /* RepMarkLabel.swift */; };
 		8D65BDB1274A755500D0A678 /* NotificationSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D65BDB0274A755500D0A678 /* NotificationSettingViewController.swift */; };
+		8D67F36F27566908007988B6 /* ComponentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D67F36E27566908007988B6 /* ComponentsView.swift */; };
+		8D67F37127566B9A007988B6 /* ComponentsBetweenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D67F37027566B9A007988B6 /* ComponentsBetweenView.swift */; };
 		8D7321192745385D0029D558 /* ProfileInfoStackViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7321182745385D0029D558 /* ProfileInfoStackViewHeader.swift */; };
 		8D81F7082734213800F23195 /* OpenSettingHomeSubjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D81F7072734213800F23195 /* OpenSettingHomeSubjectView.swift */; };
 		8D81F70B2734241900F23195 /* OpenSettingPublishDateStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D81F70A2734241900F23195 /* OpenSettingPublishDateStackView.swift */; };
@@ -404,6 +406,8 @@
 		8D580147274BE2E300D04AFE /* BlogSearchTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogSearchTopView.swift; sourceTree = "<group>"; };
 		8D65BDAD274A720300D0A678 /* RepMarkLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepMarkLabel.swift; sourceTree = "<group>"; };
 		8D65BDB0274A755500D0A678 /* NotificationSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingViewController.swift; sourceTree = "<group>"; };
+		8D67F36E27566908007988B6 /* ComponentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsView.swift; sourceTree = "<group>"; };
+		8D67F37027566B9A007988B6 /* ComponentsBetweenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsBetweenView.swift; sourceTree = "<group>"; };
 		8D7321182745385D0029D558 /* ProfileInfoStackViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoStackViewHeader.swift; sourceTree = "<group>"; };
 		8D81F7072734213800F23195 /* OpenSettingHomeSubjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSettingHomeSubjectView.swift; sourceTree = "<group>"; };
 		8D81F70A2734241900F23195 /* OpenSettingPublishDateStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSettingPublishDateStackView.swift; sourceTree = "<group>"; };
@@ -918,6 +922,7 @@
 			isa = PBXGroup;
 			children = (
 				05C3866C27279C700090FDDC /* MyContentTableViewCell.swift */,
+				8D67F36D275667C9007988B6 /* View */,
 			);
 			path = TableCell;
 			sourceTree = "<group>";
@@ -1383,6 +1388,15 @@
 			path = StackView;
 			sourceTree = "<group>";
 		};
+		8D67F36D275667C9007988B6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8D67F36E27566908007988B6 /* ComponentsView.swift */,
+				8D67F37027566B9A007988B6 /* ComponentsBetweenView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		8D732117274537E10029D558 /* StackView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1614,7 +1628,9 @@
 				8D321D652737FA500036F276 /* CategorySelectionView.swift in Sources */,
 				052BBC6F274612E900310EF1 /* SettingViewController.swift in Sources */,
 				054FE87127424229001A0AD2 /* VisitGraphDotView.swift in Sources */,
+				8D67F36F27566908007988B6 /* ComponentsView.swift in Sources */,
 				05F75F5F2730FC5B00BF39D2 /* CategoryChoicePopoverViewControllerExtension.swift in Sources */,
+				8D67F37127566B9A007988B6 /* ComponentsBetweenView.swift in Sources */,
 				05EB3201273CECAD0035E45C /* HomeTableView.swift in Sources */,
 				054FE8602741FA8F001A0AD2 /* VisitKeyWordTableHeaderView.swift in Sources */,
 				05590E19273BA876006B65A9 /* FeedViewController.swift in Sources */,
