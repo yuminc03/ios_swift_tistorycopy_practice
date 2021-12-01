@@ -28,7 +28,7 @@ class VisitNumGraphCollectionViewCell: UICollectionViewCell {
         return label
     } ()
     
-    lazy var todayVisitNumLabel: UILabel = {
+    lazy var todayVisitNumLabel: UILabel = {//오늘 방문수
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
@@ -37,10 +37,10 @@ class VisitNumGraphCollectionViewCell: UICollectionViewCell {
         return label
     } ()
     
-    lazy var todayVisitNumIncrement: UILabel = {
+    lazy var todayVisitNumIncrementLabel: UILabel = {//방문수 증가량
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .systemBlue
+        label.textColor = .black
         label.font = .systemFont(ofSize: 12, weight: .light)
         addSubview(label)
         return label
@@ -82,8 +82,8 @@ class VisitNumGraphCollectionViewCell: UICollectionViewCell {
         ])
         
         NSLayoutConstraint.activate([
-            todayVisitNumIncrement.leadingAnchor.constraint(equalTo: todayVisitNumLabel.trailingAnchor, constant: 5),
-            todayVisitNumIncrement.topAnchor.constraint(equalTo: todayVisitLabel.bottomAnchor, constant: 5)
+            todayVisitNumIncrementLabel.leadingAnchor.constraint(equalTo: todayVisitNumLabel.trailingAnchor, constant: 5),
+            todayVisitNumIncrementLabel.topAnchor.constraint(equalTo: todayVisitLabel.bottomAnchor, constant: 5)
         ])
         
         NSLayoutConstraint.activate([
@@ -107,11 +107,18 @@ class VisitNumGraphCollectionViewCell: UICollectionViewCell {
     func setVisitNumberComponents() {
         let visitNumWeekLen = self.visitNumWeek.count
         let visitNumberWeekLastNum = visitNumWeek[visitNumWeekLen - 1].todayVisitCount
-        let visitNumberWeekSecondLast = visitNumWeek[visitNumWeekLen - 2].todayVisitCount
-        let visitNumberIncrement = abs(visitNumberWeekLastNum - visitNumberWeekSecondLast)
-        todayVisitNumIncrement.textColor = visitNumberWeekLastNum >= visitNumberWeekSecondLast ? .systemRed : .systemBlue
-        todayVisitNumIncrement.text = visitNumberWeekLastNum >= visitNumberWeekSecondLast ? "▲ \(visitNumberIncrement)" : "▼ \(visitNumberIncrement)"
-        todayVisitNumLabel.text = "\(visitNumberWeekLastNum)"
+        let visitNumberWeekSecondLastNum = visitNumWeek[visitNumWeekLen - 2].todayVisitCount
+        let visitNumberIncrement = abs(visitNumberWeekLastNum - visitNumberWeekSecondLastNum)
+        if visitNumberWeekLastNum == visitNumberWeekSecondLastNum {
+            todayVisitNumIncrementLabel.text = ""
+            todayVisitNumLabel.text = "\(visitNumberWeekLastNum)"
+        }
+        else {
+            todayVisitNumIncrementLabel.textColor = visitNumberWeekLastNum >= visitNumberWeekSecondLastNum ? .systemRed : .systemBlue
+            todayVisitNumIncrementLabel.text = visitNumberWeekLastNum >= visitNumberWeekSecondLastNum ? "▲ \(visitNumberIncrement)" : "▼ \(visitNumberIncrement)"
+            todayVisitNumLabel.text = "\(visitNumberWeekLastNum)"
+        }
+        
     }
     
     func setVisitNumWeek(model: [VisitNumberWeek]){

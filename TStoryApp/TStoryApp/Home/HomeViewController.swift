@@ -9,7 +9,8 @@
 //2. home화면을 제외한 다른 화면에서 프로필 버튼 액션 (완료!)
 //3. scroll을 일정 이상 내리면 페이지 제목 나타나기 (완료!)
 //4. 뒤로가기 버튼 처럼 공통으로 나오는 부분은 tableviewHeader에 넣는 것보다 따로 뻬는게 좋음
-//5. 프로필 데이터가 tabBar이동해도 유지되려면 어디에 따로 저장하면 될까?
+//5. 프로필 데이터가 tabBar이동해도 유지되려면 어디에 따로 한 곳에 저장하면 될까?
+//6. Home 인기글 상위 3개 글이 나오는 표를 굳이 collectionView로 안해도 됨
 
 import UIKit
 
@@ -59,27 +60,6 @@ class HomeViewController: UIViewController {
                             todayVisitNumber: [
                                 VisitNumber(
                                     visitNumWeek: [
-                                        VisitNumberWeek(
-                                            todayVisitCount: 1
-                                        ),
-                                        VisitNumberWeek(
-                                            todayVisitCount: 1
-                                        ),
-                                        VisitNumberWeek(
-                                            todayVisitCount: 10
-                                        ),
-                                        VisitNumberWeek(
-                                            todayVisitCount: 14
-                                        ),
-                                        VisitNumberWeek(
-                                            todayVisitCount: 1
-                                        ),
-                                        VisitNumberWeek(
-                                            todayVisitCount: 2
-                                        ),
-                                        VisitNumberWeek(
-                                            todayVisitCount: 1
-                                        ),
                                         VisitNumberWeek(
                                             todayVisitCount: 0
                                         ),
@@ -132,7 +112,22 @@ class HomeViewController: UIViewController {
                                             todayVisitCount: 2
                                         ),
                                         VisitNumberWeek(
-                                            todayVisitCount: 12
+                                            todayVisitCount: 14
+                                        ),
+                                        VisitNumberWeek(
+                                            todayVisitCount: 3
+                                        ),
+                                        VisitNumberWeek(
+                                            todayVisitCount: 3
+                                        ),
+                                        VisitNumberWeek(
+                                            todayVisitCount: 2
+                                        ),
+                                        VisitNumberWeek(
+                                            todayVisitCount: 2
+                                        ),
+                                        VisitNumberWeek(
+                                            todayVisitCount: 0
                                         )
                                     ],
                                     visitNum: 2,
