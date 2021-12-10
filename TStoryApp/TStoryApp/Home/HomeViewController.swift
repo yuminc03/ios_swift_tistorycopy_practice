@@ -37,6 +37,9 @@ class HomeViewController: UIViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.delegate = self
         tableView.dataSource = self
+//        let test = UIView(frame: CGRect(origin: .zero, size: CGSize(width: 100, height: 500)))
+//        test.backgroundColor = .lightGray
+//        tableView.tableHeaderView = test
         view.addSubview(tableView)
         return tableView
     } ()
@@ -148,7 +151,10 @@ class HomeViewController: UIViewController {
                                             todayVisitCount: 9
                                         ),
                                         VisitNumberWeek(
-                                            todayVisitCount: 4
+                                            todayVisitCount: 7
+                                        ),
+                                        VisitNumberWeek(
+                                            todayVisitCount: 1
                                         )
                                     ],
                                     visitNum: 2,
