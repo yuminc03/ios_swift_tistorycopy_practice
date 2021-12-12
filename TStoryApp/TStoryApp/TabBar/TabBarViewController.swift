@@ -12,7 +12,6 @@ class TabBarViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        view.backgroundColor = .white
         view.tintColor = .none
         tabBar.backgroundColor = .gray
         tabBar.backgroundImage = nil
@@ -22,14 +21,9 @@ class TabBarViewController: UITabBarController {
 //        tabBar.unselectedItemTintColor = .white
         tabBar.isTranslucent = false
         // ex
-        let vc1 = UIViewController()
-        vc1.view.backgroundColor = .white
-//        let vc2 = UIViewController()
-//        vc2.view.backgroundColor = .green.withAlphaComponent(0.5)
-//        let vc3 = UIViewController()
-//        vc3.view.backgroundColor = .lightGray.withAlphaComponent(0.5)
-        
-        
+//        let vc1 = UIViewController()
+//        vc1.view.backgroundColor = .white
+    
         viewControllers = [
             createTabBarItem(tabBarTitle: "HOME", viewController: HomeViewController(), 0),
             createTabBarItem(tabBarTitle: "FEED", viewController: FeedViewController(), 1),
