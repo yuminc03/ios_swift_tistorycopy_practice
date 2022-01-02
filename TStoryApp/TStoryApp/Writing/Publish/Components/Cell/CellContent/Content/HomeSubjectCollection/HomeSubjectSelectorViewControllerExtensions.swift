@@ -51,7 +51,7 @@ extension HomeSubjectSelectorViewController: UICollectionViewDataSource, UIColle
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectshaItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let cell = collectionView.cellForItem(at: indexPath) as? HomeSubjectSelectorCell else { return }
         guard let name = cell.homeSubjectSelectorLabel.text else { return }
         cell.setHomeSubjectSelectorCell(name: name)
