@@ -2,7 +2,7 @@
 //  ContentTagInputController.swift
 //  TStoryApp
 //
-//  Created by LS-NOTE-00106 on 2021/11/08.
+//  Created by yumin chu on 2021/11/08.
 //
 
 import UIKit

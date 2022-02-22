@@ -2,7 +2,7 @@
 //  ComponentsView.swift
 //  TStoryApp
 //
-//  Created by Chu Yu Min on 2021/11/30.
+//  Created by yumin chu on 2021/11/30.
 //
 
 import UIKit

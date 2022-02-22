@@ -2,7 +2,7 @@
 //  WritingFormViewExtension.swift
 //  TStoryApp
 //
-//  Created by LS-NOTE-00106 on 2021/11/01.
+//  Created by yumin chu on 2021/11/01.
 //
 
 import UIKit

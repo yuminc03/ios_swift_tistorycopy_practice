@@ -2,7 +2,7 @@
 //  BlogSearchViewControllerExtensions.swift
 //  TStoryApp
 //
-//  Created by LS-NOTE-00106 on 2021/11/23.
+//  Created by yumin chu on 2021/11/23.
 //
 
 import UIKit

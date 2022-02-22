@@ -121,7 +121,7 @@
 		05C38652272785DF0090FDDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05C38650272785DF0090FDDC /* LaunchScreen.storyboard */; };
 		05C3865A272786950090FDDC /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C38659272786950090FDDC /* TabBarViewController.swift */; };
 		05C3865E27278A6F0090FDDC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C3865D27278A6F0090FDDC /* ProfileViewController.swift */; };
-		05C3866027278C460090FDDC /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C3865F27278C460090FDDC /* ProfileView.swift */; };
+		05C3866027278C460090FDDC /* ProfileTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C3865F27278C460090FDDC /* ProfileTableView.swift */; };
 		05C3866227278D140090FDDC /* ProfileViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C3866127278D140090FDDC /* ProfileViewControllerExtensions.swift */; };
 		05C3866427278DE60090FDDC /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C3866327278DE60090FDDC /* ProfileModel.swift */; };
 		05C38669272797630090FDDC /* ProfileTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C38668272797630090FDDC /* ProfileTableViewHeader.swift */; };
@@ -159,6 +159,7 @@
 		05FF7433272BE04100BEE31C /* WritingFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FF7432272BE04100BEE31C /* WritingFormView.swift */; };
 		05FF7435272BE61800BEE31C /* WritingFormViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FF7434272BE61800BEE31C /* WritingFormViewControllerExtension.swift */; };
 		05FF7437272BE6AE00BEE31C /* WritingFormHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FF7436272BE6AE00BEE31C /* WritingFormHeaderView.swift */; };
+		8D099B8027C520150045F3E3 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D099B7F27C520150045F3E3 /* ProfileViewModel.swift */; };
 		8D15208027412F1600510781 /* PostWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D15207F27412F1600510781 /* PostWebViewController.swift */; };
 		8D15208227414BEC00510781 /* PopularityPostSeeAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D15208127414BEC00510781 /* PopularityPostSeeAllViewController.swift */; };
 		8D152085274150A500510781 /* PopularityPostSeeAllViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D152084274150A500510781 /* PopularityPostSeeAllViewControllerExtensions.swift */; };
@@ -310,7 +311,7 @@
 		05C38653272785DF0090FDDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05C38659272786950090FDDC /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		05C3865D27278A6F0090FDDC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		05C3865F27278C460090FDDC /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		05C3865F27278C460090FDDC /* ProfileTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableView.swift; sourceTree = "<group>"; };
 		05C3866127278D140090FDDC /* ProfileViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewControllerExtensions.swift; sourceTree = "<group>"; };
 		05C3866327278DE60090FDDC /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		05C38668272797630090FDDC /* ProfileTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewHeader.swift; sourceTree = "<group>"; };
@@ -348,6 +349,7 @@
 		05FF7432272BE04100BEE31C /* WritingFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingFormView.swift; sourceTree = "<group>"; };
 		05FF7434272BE61800BEE31C /* WritingFormViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingFormViewControllerExtension.swift; sourceTree = "<group>"; };
 		05FF7436272BE6AE00BEE31C /* WritingFormHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingFormHeaderView.swift; sourceTree = "<group>"; };
+		8D099B7F27C520150045F3E3 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		8D15207F27412F1600510781 /* PostWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostWebViewController.swift; sourceTree = "<group>"; };
 		8D15208127414BEC00510781 /* PopularityPostSeeAllViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularityPostSeeAllViewController.swift; sourceTree = "<group>"; };
 		8D152084274150A500510781 /* PopularityPostSeeAllViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularityPostSeeAllViewControllerExtensions.swift; sourceTree = "<group>"; };
@@ -986,9 +988,10 @@
 			isa = PBXGroup;
 			children = (
 				05C3866327278DE60090FDDC /* ProfileModel.swift */,
+				8D099B7F27C520150045F3E3 /* ProfileViewModel.swift */,
 				05C3865D27278A6F0090FDDC /* ProfileViewController.swift */,
 				05C3866127278D140090FDDC /* ProfileViewControllerExtensions.swift */,
-				05C3865F27278C460090FDDC /* ProfileView.swift */,
+				05C3865F27278C460090FDDC /* ProfileTableView.swift */,
 				057E27A1272A249A009BE550 /* Components */,
 				057E27A0272A2489009BE550 /* Category */,
 			);
@@ -1384,7 +1387,8 @@
 				8D1520892741589600510781 /* PopularityPostSeeAllTableHeaderView.swift in Sources */,
 				050F2FE1273A3CB9007CBC61 /* HomeSubjectSelectorViewContoller.swift in Sources */,
 				0545AEB8273E2AE600458A6E /* SubscriberTableViewCellExtensions.swift in Sources */,
-				05C3866027278C460090FDDC /* ProfileView.swift in Sources */,
+				05C3866027278C460090FDDC /* ProfileTableView.swift in Sources */,
+				8D099B8027C520150045F3E3 /* ProfileViewModel.swift in Sources */,
 				052BBC652745DF2E00310EF1 /* AccountSettingView.swift in Sources */,
 				051598B3274CDBEF00299668 /* NotificationSettingPushAlarmView.swift in Sources */,
 				054FE8572741E7CE001A0AD2 /* VisitLogTableViewCell.swift in Sources */,

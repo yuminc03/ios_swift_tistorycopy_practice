@@ -2,7 +2,7 @@
 //  PopularityPostCollectionViewCellExtensions.swift
 //  TStoryApp
 //
-//  Created by Chu Yu Min on 2021/11/13.
+//  Created by yumin chu on 2021/11/13.
 //
 
 import UIKit

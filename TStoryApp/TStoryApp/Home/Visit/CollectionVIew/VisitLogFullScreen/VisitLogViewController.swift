@@ -2,7 +2,7 @@
 //  VisitLogViewController.swift
 //  TStoryApp
 //
-//  Created by LS-NOTE-00106 on 2021/11/15.
+//  Created by yumin chu on 2021/11/15.
 //
 
 import UIKit

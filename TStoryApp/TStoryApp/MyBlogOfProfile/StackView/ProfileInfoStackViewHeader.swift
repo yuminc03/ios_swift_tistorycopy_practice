@@ -2,7 +2,7 @@
 //  ProfileInfoTableViewHead.swift
 //  TStoryApp
 //
-//  Created by Chu Yu Min on 2021/11/17.
+//  Created by yumin chu on 2021/11/17.
 //
 
 import UIKit

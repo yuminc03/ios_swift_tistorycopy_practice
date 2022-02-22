@@ -2,7 +2,7 @@
 //  PublishSettingHeaderViewExtensions.swift
 //  TStoryApp
 //
-//  Created by Chu Yu Min on 2021/11/07.
+//  Created by yumin chu on 2021/11/07.
 //
 
 import UIKit

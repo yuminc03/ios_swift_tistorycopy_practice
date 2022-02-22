@@ -2,7 +2,7 @@
 //  repMarkLabel.swift
 //  TStoryApp
 //
-//  Created by Chu Yu Min on 2021/11/21.
+//  Created by yumin chu on 2021/11/21.
 //
 
 import UIKit

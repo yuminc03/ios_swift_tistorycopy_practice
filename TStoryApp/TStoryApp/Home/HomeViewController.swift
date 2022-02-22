@@ -2,7 +2,7 @@
 //  HomeViewController.swift
 //  TStoryApp
 //
-//  Created by LS-NOTE-00106 on 2021/11/11.
+//  Created by yumin chu on 2021/11/11.
 //
 //앱 수정사항
 //1. home: 그래프 전체화면 dismiss 버튼 액션 (완료!)

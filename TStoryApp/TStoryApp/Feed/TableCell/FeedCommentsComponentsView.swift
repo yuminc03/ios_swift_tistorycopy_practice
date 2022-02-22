@@ -2,7 +2,7 @@
 //  FeedCommentsComponentsView.swift
 //  TStoryApp
 //
-//  Created by Chu Yu Min on 2021/11/10.
+//  Created by yumin chu on 2021/11/10.
 //
 
 import UIKit

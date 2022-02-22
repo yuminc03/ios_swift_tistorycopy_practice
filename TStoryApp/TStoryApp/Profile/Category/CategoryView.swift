@@ -2,7 +2,7 @@
 //  CategoryView.swift
 //  TStoryApp
 //
-//  Created by LS-NOTE-00106 on 2021/10/27.
+//  Created by yumin chu on 2021/10/27.
 //
 
 import UIKit

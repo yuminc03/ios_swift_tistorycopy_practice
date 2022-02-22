@@ -2,7 +2,7 @@
 //  PublishingSettingViewcontroller1.swift
 //  TStoryApp
 //
-//  Created by LS-NOTE-00106 on 2021/11/05.
+//  Created by yumin chu on 2021/11/05.
 //
 
 import UIKit

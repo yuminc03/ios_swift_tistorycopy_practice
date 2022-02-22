@@ -2,12 +2,12 @@
 //  ProfileView.swift
 //  TStoryApp
 //
-//  Created by LS-NOTE-00106 on 2021/10/26.
+//  Created by yumin chu on 2021/10/26.
 //
 
 import UIKit
 
-class ProfileView: UITableView {
+class ProfileTableView: UITableView {
     
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: .zero, style: .grouped) //header도 함께 사라지도록!
