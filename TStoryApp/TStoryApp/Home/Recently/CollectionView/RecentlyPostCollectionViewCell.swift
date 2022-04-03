@@ -27,7 +27,12 @@ class RecentlyPostCollectionViewCell: UICollectionViewCell {
         label.textColor = .black
         label.lineBreakMode = .byTruncatingTail
         label.numberOfLines = 2
-        label.lineBreakStrategy = .hangulWordPriority
+        
+        if #available(iOS 14.0, *) {
+            label.lineBreakStrategy = .hangulWordPriority
+        } else {
+            label.lineBreakStrategy = .pushOut
+        }
         addSubview(label)
         return label
     } ()

@@ -16,7 +16,14 @@ class FeedTableViewCell: UITableViewCell {
         label.textColor = .black
         label.font = .systemFont(ofSize: 18, weight: .light)
         label.numberOfLines = 2
-        label.lineBreakStrategy = .hangulWordPriority
+        
+        if #available(iOS 14.0, *) {
+            
+            label.lineBreakStrategy = .hangulWordPriority
+        } else {
+            
+            label.lineBreakStrategy = .pushOut
+        }
         label.lineBreakMode = .byTruncatingTail
         addSubview(label)
         return label
@@ -27,7 +34,12 @@ class FeedTableViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .lightGray
         label.font = .systemFont(ofSize: 15, weight: .light)
-        label.lineBreakStrategy = .hangulWordPriority
+        
+        if #available(iOS 14.0, *) {
+            label.lineBreakStrategy = .hangulWordPriority
+        } else {
+            label.lineBreakStrategy = .pushOut
+        }
         label.lineBreakMode = .byTruncatingTail
         label.numberOfLines = 2
         addSubview(label)

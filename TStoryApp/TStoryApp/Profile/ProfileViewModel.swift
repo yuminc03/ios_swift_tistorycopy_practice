@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class ProfileViewModel {
     
@@ -242,4 +243,30 @@ class ProfileViewModel {
             ]
         )
     }
+    
+    func numberOfSections() -> Int {
+        return 2
+    }
+
+    func numberOfRowsInSection(section: Int) -> Int {
+        if section == 0 {
+            return 0
+        }
+        else {
+            guard profileModel.category.count > selectedCateogoryIndex else { return 0 }
+            return profileModel.category[selectedCateogoryIndex].categoryCell.count
+        }
+    }
+    
+    func heightForFooterInSection(section: Int) -> Int {
+        return section == 0 ? 10 : 0
+    }
+    
+    func viewForFooterInSection(section: Int) -> UIView {
+        let footer = UIView()
+        footer.backgroundColor = .systemGray5
+        return footer
+    }
+    
+    
 }

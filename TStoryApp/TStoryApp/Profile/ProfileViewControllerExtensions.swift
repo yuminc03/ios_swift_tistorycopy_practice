@@ -10,25 +10,19 @@ import UIKit
 extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return viewModel.numberOfSections()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 { return 0 }
-        else {
-//            print(profileModel.category[selectedCateogoryIndex])
-            // edge case
-            guard viewModel.profileModel.category.count > viewModel.selectedCateogoryIndex else { return 0 }
-            return viewModel.profileModel.category[viewModel.selectedCateogoryIndex].categoryCell.count
-        }
-//        return 0
+        
+        return viewModel.numberOfRowsInSection(section: section)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let yPosition = scrollView.contentOffset.y
         navigationBarView.viewTitleLabel.centerYAnchor.constraint(equalTo: navigationBarView.centerYAnchor, constant: 20).isActive = true
         navigationBarView.viewTitleLabel.centerXAnchor.constraint(equalTo: navigationBarView.centerXAnchor).isActive = true
-        if yPosition >= 350 {
+        if yPosition >= 250 {
             navigationBarView.backgroundColor = .white
             navigationBarView.blogSearchButton.setTitleColor(.black, for: .normal)
             navigationBarView.viewTitleLabel.text = "천천히 해도 괜찮아"
@@ -42,7 +36,7 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        return UITableViewCell()
+ 
         let data = viewModel.profileModel.category[viewModel.selectedCateogoryIndex].categoryCell[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "my_contents", for: indexPath) as! MyContentTableViewCell
         cell.setComponentNumberData(likeNum: data.cellLikeNum, commentNum: data.cellCommentNum)
@@ -54,8 +48,7 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-//        if section == 0 { return 10 }
-//        else { return 0 }
+        
         return section == 0 ? 10 : 0
     }
     

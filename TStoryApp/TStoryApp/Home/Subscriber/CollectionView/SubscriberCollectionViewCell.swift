@@ -13,7 +13,12 @@ class SubscriberCollectionViewCell: UICollectionViewCell {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.layer.cornerRadius = 10
-        imageView.backgroundColor = .systemCyan
+        
+        if #available(iOS 15.0, *) {
+            imageView.backgroundColor = .systemCyan
+        } else {
+            imageView.backgroundColor = .cyan
+        }
         addSubview(imageView)
         return imageView
     } ()

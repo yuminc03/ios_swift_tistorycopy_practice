@@ -127,6 +127,18 @@ class MyContentTableViewCell: UITableViewCell {
         myContentImageView.backgroundColor = .systemBlue.withAlphaComponent(CGFloat(index + 1) * 0.1)
     }
     
+    func setTableViewCellData(title: String, date: String) {
+        myContentTitleLabel.text = title
+//        myContentLikeLabel.text = String(likeNum)
+//        myContentCommentLabel.text = String(commentNum)
+        myContentDateLabel.text = date
+    }
+    
+    func setComponentNumberData(likeNum: Int, commentNum: Int) {
+        likeComponentView.setComponentNumber(number: likeNum)
+        commentComponentView.setComponentNumber(number: commentNum)
+    }
+    
     private func setConstraints() {
         
         NSLayoutConstraint.activate([
@@ -208,16 +220,5 @@ class MyContentTableViewCell: UITableViewCell {
         
     }
     
-    func setTableViewCellData(title: String, date: String) {
-        myContentTitleLabel.text = title
-//        myContentLikeLabel.text = String(likeNum)
-//        myContentCommentLabel.text = String(commentNum)
-        myContentDateLabel.text = date
-    }
-    
-    func setComponentNumberData(likeNum: Int, commentNum: Int) {
-        likeComponentView.setComponentNumber(number: likeNum)
-        commentComponentView.setComponentNumber(number: commentNum)
-    }
     
 }

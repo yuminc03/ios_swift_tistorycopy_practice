@@ -13,11 +13,21 @@ class TabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.tintColor = .none
-        tabBar.backgroundColor = .gray
+        tabBar.layer.borderWidth = 0.5
+        tabBar.layer.borderColor = UIColor.lightGray.withAlphaComponent(0.5).cgColor
+        if #available(iOS 15.0, *) {
+            let tabBarAppearance = UITabBarAppearance()
+            tabBarAppearance.backgroundColor = .white
+            tabBar.scrollEdgeAppearance = tabBarAppearance
+            tabBar.standardAppearance = tabBarAppearance
+        }
+        else {
+            tabBar.backgroundColor = .white
+        }
         tabBar.backgroundImage = nil
 //        tabBar.delegate = self
 //        tabBar.isCustomizing = true
-//        tabBar.tintColor = .black
+        tabBar.tintColor = .black
 //        tabBar.unselectedItemTintColor = .white
         tabBar.isTranslucent = false
         // ex
@@ -25,18 +35,18 @@ class TabBarViewController: UITabBarController {
 //        vc1.view.backgroundColor = .white
     
         viewControllers = [
-            createTabBarItem(tabBarTitle: "HOME", viewController: HomeViewController(), 0),
-            createTabBarItem(tabBarTitle: "FEED", viewController: FeedViewController(), 1),
-            createTabBarItem(tabBarTitle: "WRITE", viewController: WritingFormViewController(), 2),
-            createTabBarItem(tabBarTitle: "NOTICE", viewController: NoticeViewController(), 3),
-            createTabBarItem(tabBarTitle: "PROFILE", viewController: ProfileViewController(), 4)]
+            createTabBarItem(tabBarTitle: nil, tabBarImage: "house.fill", viewController: HomeViewController(), 0),//home
+            createTabBarItem(tabBarTitle: nil, tabBarImage: "doc.text", viewController: FeedViewController(), 1),//feed
+            createTabBarItem(tabBarTitle: nil, tabBarImage: "plus.square", viewController: WritingFormViewController(), 2),//write
+            createTabBarItem(tabBarTitle: nil, tabBarImage: "bell", viewController: NoticeViewController(), 3),//notification
+            createTabBarItem(tabBarTitle: nil, tabBarImage: "person.crop.circle", viewController: ProfileViewController(), 4)]//profile
     }
     
-    func createTabBarItem(tabBarTitle: String, tabBarImage: String? = nil, viewController: UIViewController, _ tag: Int) -> UINavigationController {
+    func createTabBarItem(tabBarTitle: String?, tabBarImage: String, viewController: UIViewController, _ tag: Int) -> UINavigationController {
         let navCont = UINavigationController(rootViewController: viewController)
         navCont.view.tag = tag
-        navCont.tabBarItem.title = tabBarTitle
-//        navCont.tabBarItem.image = UIImage(named: tabBarImage)
+        navCont.tabBarItem.title = tabBarTitle ?? nil
+        navCont.tabBarItem.image = UIImage(systemName: tabBarImage)
         navCont.navigationBar.isHidden = true
         
         return navCont

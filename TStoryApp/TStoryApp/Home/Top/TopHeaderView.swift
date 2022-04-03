@@ -12,7 +12,11 @@ class TopHeaderView: UITableViewHeaderFooterView {
     lazy var topContentTitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.lineBreakStrategy = .hangulWordPriority
+        if #available(iOS 14.0, *) {
+            label.lineBreakStrategy = .hangulWordPriority
+        } else {
+            label.lineBreakStrategy = .pushOut
+        }
         label.lineBreakMode = .byWordWrapping
         label.numberOfLines = 3
         label.font = .systemFont(ofSize: 30, weight: .bold)

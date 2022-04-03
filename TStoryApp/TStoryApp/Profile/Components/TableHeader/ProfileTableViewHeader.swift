@@ -13,76 +13,15 @@ class ProfileTableViewHeader: UITableViewHeaderFooterView {
     var subscribeNum = 0
     var profileUrl = ""
     
-    lazy var titleLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 28, weight: .bold)
-        label.textColor = .white
-        label.text = model.profileTitle
-        profileImageView.addSubview(label)
-        return label
-    }()
-    
-    lazy var siteUrlButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle(model.profileUrl, for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 12)
-        button.addTarget(self, action: #selector(siteUrlButtonDidTrapped), for: .touchUpInside)
-        profileImageView.addSubview(button)
-        return button
-    }()
-    
-    lazy var profileImageView: UIImageView = {//class
-        let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        //imageView.image = UIImage(named: "profile_image")//data //image를 넣는다
-        imageView.backgroundColor = .black
-        imageView.clipsToBounds = true //이미지가 화면을 벗어났을 때 표현안함
-        //imageView.layer.masksToBounds = true
-        imageView.layer.maskedCorners = [.layerMaxXMaxYCorner]//image의 x, y 끝 좌표
-        imageView.layer.cornerRadius = 50
-        imageView.isUserInteractionEnabled = true// 투명한 view를 뚫어서 버튼을 누를 수 있게 한다
-        addSubview(imageView)
-        return imageView
-    }()
-    
-    lazy var subscribeLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 12)
-        label.textColor = .lightGray
-        let text = "구독자 " + "\(subscribeNum)"
-        let mutable = NSMutableAttributedString(string: text)//text의 색깔을 바꾼다
-        let range = (text as NSString).range(of: "\(subscribeNum)")
-        mutable.addAttribute(.foregroundColor, value: UIColor.black, range: range)//1개만
-        label.attributedText = mutable
-        addSubview(label)
-        return label
-    }()
-    
-    lazy var settingButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        //border
-        button.layer.borderColor = UIColor.lightGray.withAlphaComponent(0.5).cgColor
-        button.layer.borderWidth = 1
-        // radius
-        button.layer.cornerRadius = 15
-        //button text set
-        button.setTitle("블로그 설정", for: .normal)
-        button.setTitleColor(.black, for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 12)
-        button.contentEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
-        button.addTarget(self, action: #selector(settingButtonDidTrapped), for: .touchUpInside)
-        
-        addSubview(button)
-        return button
-    }()
+    var titleLabel = UILabel()
+    var siteUrlButton = UIButton()
+    var profileImageView = UIImageView()
+    var subscribeLabel = UILabel()
+    var settingButton = UIButton()
     
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
+        setupView()
         setConstraints()
     }
     
@@ -100,6 +39,64 @@ class ProfileTableViewHeader: UITableViewHeaderFooterView {
     
     @objc private func settingButtonDidTrapped(button: UIButton) {
         //print("touched")
+    }
+    
+    private func setupView() {
+        
+        profileImageView.translatesAutoresizingMaskIntoConstraints = false
+        //imageView.image = UIImage(named: "profile_image")//data //image를 넣는다
+        profileImageView.backgroundColor = .black
+        profileImageView.clipsToBounds = true //이미지가 화면을 벗어났을 때 표현안함
+        //imageView.layer.masksToBounds = true
+        profileImageView.layer.maskedCorners = [.layerMaxXMaxYCorner]//image의 x, y 끝 좌표
+        profileImageView.layer.cornerRadius = 50
+        profileImageView.isUserInteractionEnabled = true// 투명한 view를 뚫어서 버튼을 누를 수 있게 한다
+        self.addSubview(profileImageView)
+        
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.font = .systemFont(ofSize: 28)
+        titleLabel.textColor = .white
+        titleLabel.text = model.profileTitle
+        profileImageView.addSubview(titleLabel)
+        
+        siteUrlButton.translatesAutoresizingMaskIntoConstraints = false
+        siteUrlButton.setTitle(model.profileUrl, for: .normal)
+        siteUrlButton.setTitleColor(.white, for: .normal)
+        siteUrlButton.titleLabel?.font = .systemFont(ofSize: 12, weight: .light)
+        siteUrlButton.addTarget(self, action: #selector(siteUrlButtonDidTrapped), for: .touchUpInside)
+        profileImageView.addSubview(siteUrlButton)
+        
+        subscribeLabel.translatesAutoresizingMaskIntoConstraints = false
+        subscribeLabel.font = UIFont.systemFont(ofSize: 10)
+        subscribeLabel.textColor = .lightGray
+        let text = "구독자 " + "\(subscribeNum)"
+        let mutable = NSMutableAttributedString(string: text)//text의 색깔을 바꾼다
+        let range = (text as NSString).range(of: "\(subscribeNum)")
+        mutable.addAttribute(.foregroundColor, value: UIColor.black, range: range)//1개만
+        subscribeLabel.attributedText = mutable
+        self.addSubview(subscribeLabel)
+        
+        settingButton.translatesAutoresizingMaskIntoConstraints = false
+        //border
+        settingButton.layer.borderColor = UIColor.lightGray.withAlphaComponent(0.5).cgColor
+        settingButton.layer.borderWidth = 1
+        // radius
+        settingButton.layer.cornerRadius = 15
+        //button text set
+        settingButton.setTitle("블로그 설정", for: .normal)
+        settingButton.setTitleColor(.black, for: .normal)
+        settingButton.titleLabel?.font = .systemFont(ofSize: 12)
+        
+//        if #available(iOS 15.0, *) {
+//
+//            settingButton.configuration?.titlePadding = 10
+//        } else {
+//
+        settingButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
+//        }
+        settingButton.addTarget(self, action: #selector(settingButtonDidTrapped), for: .touchUpInside)
+        self.addSubview(settingButton)
+        
     }
 
     private func setConstraints() {
