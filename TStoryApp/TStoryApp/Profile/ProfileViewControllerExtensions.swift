@@ -49,29 +49,28 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         
-        return section == 0 ? 10 : 0
+        return CGFloat(viewModel.heightForFooterInSection(section: section))
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let view = UIView()
-        view.backgroundColor = .lightGray.withAlphaComponent(0.3)
-        return view
+        
+        return viewModel.viewForFooterInSection(section: section)
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == 0 {
-            let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "profile_header") as? ProfileTableViewHeader
-            header?.titleLabel.text = viewModel.profileModel.profileTitle
-            header?.siteUrlButton.setTitle(viewModel.profileModel.profileUrl, for: .normal)
-            let text = "구독자 " + "\(viewModel.profileModel.subscribeNum)"
-            let mutable = NSMutableAttributedString(string: text)//text의 색깔을 바꾼다
-            let range = (text as NSString).range(of: "\(viewModel.profileModel.subscribeNum)")
-            mutable.addAttribute(.foregroundColor, value: UIColor.black, range: range)//1개만
-            header?.subscribeLabel.attributedText = mutable
-            header?.profileUrl = "https://dpffldk.tistory.com"
-            return header
-        }
-        else if section == 1 {
+//            let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "profile_header") as? ProfileTableViewHeader
+//            header?.titleLabel.text = viewModel.profileModel.profileTitle
+//            header?.siteUrlButton.setTitle(viewModel.profileModel.profileUrl, for: .normal)
+//            let text = "구독자 " + "\(viewModel.profileModel.subscribeNum)"
+//            let mutable = NSMutableAttributedString(string: text)//text의 색깔을 바꾼다
+//            let range = (text as NSString).range(of: "\(viewModel.profileModel.subscribeNum)")
+//            mutable.addAttribute(.foregroundColor, value: UIColor.black, range: range)//1개만
+//            header?.subscribeLabel.attributedText = mutable
+//            header?.profileUrl = "https://dpffldk.tistory.com"
+//            return header
+//        }
+//        else if section == 1 {
             let myContentHeader = tableView.dequeueReusableHeaderFooterView(withIdentifier: "my_content_header") as? MyContentTableViewHeader
             let gesture = UITapGestureRecognizer(target: self, action: #selector(titleLabelDidTapped))
             myContentHeader?.titleLabel.addGestureRecognizer(gesture)

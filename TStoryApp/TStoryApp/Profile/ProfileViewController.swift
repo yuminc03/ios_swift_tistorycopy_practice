@@ -11,15 +11,14 @@ import UIKit
 class ProfileViewController: UIViewController {
     
     var viewModel = ProfileViewModel()
-    
     var navigationBarView = NavigationBarView()
-    var profileTableView = ProfileTableView()
+    var profileTableView = UITableView(frame: .zero, style: .grouped)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.configulations()
         setupView()
         setConstraints()
-        viewModel.configulations()
     }
     
     //MARK: set UI
@@ -32,6 +31,17 @@ class ProfileViewController: UIViewController {
         profileTableView.translatesAutoresizingMaskIntoConstraints = false
         profileTableView.delegate = self
         profileTableView.dataSource = self
+        profileTableView.contentInsetAdjustmentBehavior = .never
+        profileTableView.separatorStyle = .none
+        profileTableView.backgroundColor = .clear
+//        profileTableView.estimatedSectionHeaderHeight = 480
+        profileTableView.showsVerticalScrollIndicator = false
+        let profileHeader = ProfileTableHeader(model: viewModel.profileModel, frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height / 2 + 50))
+        profileHeader.backgroundColor = .white
+        profileTableView.tableHeaderView = profileHeader
+        profileTableView.register(ProfileTableViewHeader.self, forHeaderFooterViewReuseIdentifier: "profile_header")
+        profileTableView.register(MyContentTableViewHeader.self, forHeaderFooterViewReuseIdentifier: "my_content_header")
+        profileTableView.register(MyContentTableViewCell.self, forCellReuseIdentifier: "my_contents")
         view.addSubview(profileTableView)
         
         navigationBarView.translatesAutoresizingMaskIntoConstraints = false
