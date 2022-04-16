@@ -36,7 +36,7 @@ class ProfileViewController: UIViewController {
         profileTableView.backgroundColor = .clear
 //        profileTableView.estimatedSectionHeaderHeight = 480
         profileTableView.showsVerticalScrollIndicator = false
-        let profileHeader = ProfileTableHeader(model: viewModel.profileModel, frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height / 2 + 50))
+        let profileHeader = ProfileTableHeader(model: viewModel.profileModel, frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 450))
         profileHeader.backgroundColor = .white
         profileTableView.tableHeaderView = profileHeader
         profileTableView.register(ProfileTableViewHeader.self, forHeaderFooterViewReuseIdentifier: "profile_header")

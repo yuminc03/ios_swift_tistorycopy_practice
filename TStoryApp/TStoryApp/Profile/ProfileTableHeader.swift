@@ -55,7 +55,7 @@ class ProfileTableHeader: UIView {
         profileImageView.addSubview(blogUrlButton)
         
         subscribeNumLabel.translatesAutoresizingMaskIntoConstraints = false
-        subscribeNumLabel.font = UIFont.systemFont(ofSize: 10)
+        subscribeNumLabel.font = UIFont.systemFont(ofSize: 12)
         subscribeNumLabel.textColor = .lightGray
         let text = "구독자 " + "\(model.subscribeNum)"
         let mutable = NSMutableAttributedString(string: text)
@@ -70,20 +70,13 @@ class ProfileTableHeader: UIView {
         blogSettingButton.layer.cornerRadius = 15
         blogSettingButton.setTitle("블로그 설정", for: .normal)
         blogSettingButton.setTitleColor(.black, for: .normal)
-        blogSettingButton.titleLabel?.font = .systemFont(ofSize: 12)
-        
-//        if #available(iOS 15.0, *) {
-//
-//            settingButton.configuration?.titlePadding = 10
-//        } else {
-//
+        blogSettingButton.titleLabel?.font = .systemFont(ofSize: 13)
         blogSettingButton.contentEdgeInsets = UIEdgeInsets(top: 5, left: 15, bottom: 5, right: 15)
-//        }
         blogSettingButton.addTarget(self, action: #selector(settingButtonDidTrapped), for: .touchUpInside)
         self.addSubview(blogSettingButton)
         
         separator.translatesAutoresizingMaskIntoConstraints = false
-        separator.backgroundColor = .lightGray.withAlphaComponent(0.5)
+        separator.backgroundColor = .lightGray.withAlphaComponent(0.3)
         self.addSubview(separator)
         
     }
@@ -103,13 +96,13 @@ class ProfileTableHeader: UIView {
         ])
         
         NSLayoutConstraint.activate([ //"구독자" 라벨의 위치
-            subscribeNumLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
-            subscribeNumLabel.topAnchor.constraint(equalTo: blogTitleLabel.bottomAnchor, constant: 50),
-            subscribeNumLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -30)
+            subscribeNumLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
+            subscribeNumLabel.topAnchor.constraint(equalTo: profileImageView.bottomAnchor, constant: 20)
+//            subscribeNumLabel.bottomAnchor.constraint(equalTo: separator.topAnchor, constant: -10)
         ])
         
         NSLayoutConstraint.activate([ //"블로그 설정" 버튼의 위치
-            blogSettingButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
+            blogSettingButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
             blogSettingButton.centerYAnchor.constraint(equalTo: subscribeNumLabel.centerYAnchor),
             blogSettingButton.heightAnchor.constraint(equalToConstant: 30)
         ])
