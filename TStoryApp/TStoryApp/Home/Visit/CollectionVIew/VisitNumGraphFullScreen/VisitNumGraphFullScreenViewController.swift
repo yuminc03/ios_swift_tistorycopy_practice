@@ -63,6 +63,6 @@ class VisitNumGraphFullScreenViewController: UIViewController {
     }
     
     @objc private func dismissVisitNumGraphFullScreenButtonDidTapped(button: UIButton) {
-        self.dismiss(animated: false, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
 }

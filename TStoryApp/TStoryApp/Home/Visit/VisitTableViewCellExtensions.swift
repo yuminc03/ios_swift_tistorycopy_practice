@@ -45,6 +45,7 @@ extension VisitTableViewCell: UICollectionViewDelegateFlowLayout, UICollectionVi
         if indexPath.row == 0 {
             let vc = VisitNumGraphFullScreenViewController(visitCell: visitModel.visitCell)
             vc.modalPresentationStyle = .fullScreen
+            vc.modalTransitionStyle = .coverVertical
             self.window?.rootViewController!.present(vc, animated: true)
         }
         else if indexPath.row == 1 { //유입 로그 모두 보기
