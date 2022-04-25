@@ -40,10 +40,9 @@ class CategoryKindPopoverViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         let gesture = UITapGestureRecognizer(target: self, action: #selector(backgroundDidTapped))
         view.addGestureRecognizer(gesture)
-        view.backgroundColor = .black.withAlphaComponent(0.1)
+        view.backgroundColor = .black.withAlphaComponent(0.8)
 //        view.addSubview(categoryKindView)
         
         setConstraints()

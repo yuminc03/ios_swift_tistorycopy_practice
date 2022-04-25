@@ -90,6 +90,7 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
 //        vc.getData(categories: profileModel.category)
 //        vc.view.layer.zPosition = 0
         vc.modalPresentationStyle = .overCurrentContext
+        vc.modalTransitionStyle = .coverVertical
         self.present(vc, animated: false)
     }
 

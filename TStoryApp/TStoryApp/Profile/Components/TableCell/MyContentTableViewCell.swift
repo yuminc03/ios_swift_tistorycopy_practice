@@ -139,6 +139,11 @@ class MyContentTableViewCell: UITableViewCell {
         commentComponentView.setComponentNumber(number: commentNum)
     }
     
+    private func setupView() {
+        
+        
+    }
+    
     private func setConstraints() {
         
         NSLayoutConstraint.activate([

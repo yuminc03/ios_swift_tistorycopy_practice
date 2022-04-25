@@ -9,17 +9,11 @@ import UIKit
 
 class MyContentTableViewHeader: UITableViewHeaderFooterView {
         
-    lazy var titleLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 18, weight: .medium)
-        label.textColor = .black
-        addSubview(label)
-        return label
-    }()
+    let titleLabel = UILabel()
     
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
+        setupView()
         setConstraints()
     }
     
@@ -29,6 +23,14 @@ class MyContentTableViewHeader: UITableViewHeaderFooterView {
     
     func setTitle(text: String) {
         titleLabel.text = text
+    }
+    
+    private func setupView() {
+        
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.font = .systemFont(ofSize: 18, weight: .medium)
+        titleLabel.textColor = .black
+        self.addSubview(titleLabel)
     }
     
     private func setConstraints() {
