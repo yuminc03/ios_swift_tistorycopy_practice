@@ -108,14 +108,16 @@ class ImageCollectionViewController: UIViewController {
     
     private func setupImage() {
         
+        let manager = PHImageManager.default()
         let requestOption = PHImageRequestOptions()
         requestOption.isSynchronous = true
         requestOption.isNetworkAccessAllowed = true
         
-        self.fetchResult = PHAsset.fetchAssets(with: nil)
+        let fetchOptions = PHFetchOptions()
+        self.fetchResult = PHAsset.fetchAssets(with: fetchOptions)
         if fetchResult.count > 0 {
             self.fetchResult.enumerateObjects { (asset, i, _) in
-                PHImageManager().requestImage(for: asset, targetSize: PHImageManagerMaximumSize, contentMode: .aspectFill, options: requestOption) { (image, info) in
+                manager.requestImage(for: asset, targetSize: PHImageManagerMaximumSize, contentMode: .aspectFill, options: requestOption) { (image, info) in
                     guard let image = image else { return }
                     let fileName = asset.value(forKey: "filename") as! String
                     print("imageName: \(fileName), image: \(image)")

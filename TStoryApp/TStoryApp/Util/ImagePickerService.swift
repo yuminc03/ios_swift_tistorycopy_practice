@@ -68,6 +68,7 @@ class ImagePickerService {
         
         imagePicker.sourceType = .photoLibrary
         let photoStatus: PHAuthorizationStatus = PHPhotoLibrary.authorizationStatus()
+        
         switch photoStatus {
             
         case .authorized:

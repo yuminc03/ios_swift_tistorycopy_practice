@@ -15,6 +15,7 @@ protocol BlogSettingViewControllerDelegate: AnyObject {
 class BlogSettingViewController: UIViewController {
     
     let blogImageView = UIImageView()
+    let imageMultiplyCover = UIView()
     let dismissButton = UIButton()
     let completionButton = UIButton()
     let blogNameDescriptionLabel = UILabel()
@@ -41,12 +42,20 @@ class BlogSettingViewController: UIViewController {
         
         blogImageView.translatesAutoresizingMaskIntoConstraints = false
         blogImageView.backgroundColor = .black
+        let bgImage = UIImage(named: model.profileImageName ?? "")
+        blogImageView.image = bgImage
         blogImageView.layer.cornerRadius = 50
         blogImageView.isUserInteractionEnabled = true
         blogImageView.layer.maskedCorners = .layerMaxXMaxYCorner
         blogImageView.contentMode = .scaleAspectFill
         blogImageView.clipsToBounds = true
         view.addSubview(blogImageView)
+        
+        imageMultiplyCover.translatesAutoresizingMaskIntoConstraints = false
+        imageMultiplyCover.backgroundColor = .black.withAlphaComponent(0.3)
+        imageMultiplyCover.layer.maskedCorners = .layerMaxXMaxYCorner
+        imageMultiplyCover.layer.cornerRadius = 50
+        blogImageView.addSubview(imageMultiplyCover)
         
         dismissButton.translatesAutoresizingMaskIntoConstraints = false
         dismissButton.setTitle("✕", for: .normal)
@@ -105,7 +114,14 @@ class BlogSettingViewController: UIViewController {
             blogImageView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             blogImageView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
             blogImageView.topAnchor.constraint(equalTo: self.view.topAnchor),
-            blogImageView.heightAnchor.constraint(equalToConstant: 350)
+            blogImageView.heightAnchor.constraint(equalToConstant: 400)
+        ])
+        
+        NSLayoutConstraint.activate([
+            imageMultiplyCover.leadingAnchor.constraint(equalTo: blogImageView.leadingAnchor),
+            imageMultiplyCover.trailingAnchor.constraint(equalTo: blogImageView.trailingAnchor),
+            imageMultiplyCover.topAnchor.constraint(equalTo: blogImageView.topAnchor),
+            imageMultiplyCover.bottomAnchor.constraint(equalTo: blogImageView.bottomAnchor)
         ])
         
         NSLayoutConstraint.activate([
