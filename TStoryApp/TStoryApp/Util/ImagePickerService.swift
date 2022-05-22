@@ -108,7 +108,17 @@ class ImagePickerService {
                 // Fallback on earlier versions
                 PHPhotoLibrary.requestAuthorization { state in
                     
-                    
+                    DispatchQueue.main.async {
+                        
+                        if state == .authorized {
+                            self.viewController.present(imagePicker, animated: true)
+                        }
+                        else if state == .denied {
+                            
+                            let alert = self.getPermissionAlert()
+                            self.viewController.present(alert, animated: true)
+                        }
+                    }
                 }
             }
             

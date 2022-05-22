@@ -14,6 +14,7 @@ class ProfileViewModel {
     var blogSearchModel = BlogSearchModel() //블로그 검색 기능
     var myBlogOfProfileModel = MyBlogOfProfileModel() //블로그 상단 프로필
     var selectedCateogoryIndex: Int = 0 // 현재 선택된 category index
+    var images: [UIImage] = []
     
     func configulations() {
         profileModel.profileTitle = "천천히 해도 괜찮아"
@@ -36,7 +37,7 @@ class ProfileViewModel {
         let model = ProfileModel(
             profileTitle: "천천히 해도 괜찮아",
             profileUrl: "https://dpffldk.tistory.com",
-            profileImageName: "backgroundImage1.png",
+            profileImageName: "blog-image.png",
             subscribeNum: 1,
             category: [
                 ProfileCategory(
@@ -268,6 +269,5 @@ class ProfileViewModel {
         footer.backgroundColor = .systemGray5
         return footer
     }
-    
     
 }

@@ -47,6 +47,7 @@ class ProfileViewController: UIViewController {
         view.addSubview(profileTableView)
         
         navigationBarView.translatesAutoresizingMaskIntoConstraints = false
+        navigationBarView.model = viewModel.profileModel
         self.navigationItem.titleView = navigationBarView
         self.navigationItem.titleView?.tintColor = .clear
         navigationBarView.blogSearchButton.setTitleColor(.white, for: .normal)

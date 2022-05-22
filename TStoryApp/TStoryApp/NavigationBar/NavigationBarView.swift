@@ -9,6 +9,8 @@ import UIKit
 
 class NavigationBarView: UIView {
     
+    var model = ProfileModel()
+    
     lazy var viewTitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -32,7 +34,9 @@ class NavigationBarView: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .systemPurple
-        button.setTitle("☕️", for: .normal)
+//        button.setTitle("☕️", for: .normal)
+        button.clipsToBounds = true
+        button.setImage(UIImage(named: model.profileImageName ?? "blog-image.png"), for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.layer.cornerRadius = 15
         button.titleLabel?.font = .systemFont(ofSize: 20, weight: .light)
@@ -61,7 +65,8 @@ class NavigationBarView: UIView {
         NSLayoutConstraint.activate([
             blogProfileButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             blogProfileButton.centerYAnchor.constraint(equalTo: blogSearchButton.centerYAnchor),
-            blogProfileButton.heightAnchor.constraint(equalToConstant: 30)
+            blogProfileButton.heightAnchor.constraint(equalToConstant: 30),
+            blogProfileButton.widthAnchor.constraint(equalToConstant: 30)
         ])
     }
     

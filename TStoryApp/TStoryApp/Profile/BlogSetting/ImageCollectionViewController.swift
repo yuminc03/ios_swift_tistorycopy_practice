@@ -11,14 +11,14 @@ import PhotosUI
 
 class ImageCollectionViewController: UIViewController {
     
+    let viewModel = ProfileViewModel()
     let flowLayout = UICollectionViewFlowLayout()
-    var collectionView: UICollectionView?
     let topView = UIView()
     let dismissButton = UIButton()
     let titleLabel = UILabel()
     let appendButton = UIButton()
-    var images: [UIImage] = []
     var fetchResult = PHFetchResult<PHAsset>()
+    var collectionView: UICollectionView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -119,7 +119,7 @@ class ImageCollectionViewController: UIViewController {
                     guard let image = image else { return }
                     let fileName = asset.value(forKey: "filename") as! String
                     print("imageName: \(fileName), image: \(image)")
-                    self.images.append(image)
+                    self.viewModel.images.append(image)
                 }
             }
             DispatchQueue.main.async {
@@ -137,61 +137,4 @@ class ImageCollectionViewController: UIViewController {
         
         self.dismiss(animated: true, completion: nil)
     }
-}
-
-extension ImageCollectionViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.images.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCollectionViewCell", for: indexPath) as! ImageCollectionViewCell
-        if indexPath.item < images.count {
-            cell.imageView.image = self.images[indexPath.item]
-        }
-        return cell
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: UIScreen.main.bounds.width / 3, height: UIScreen.main.bounds.height / 3)
-    }
-}
-
-class ImageCollectionViewCell: UICollectionViewCell {
-    
-    var imageView = UIImageView()
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupView()
-        setConstraints()
-    }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-    }
-    
-    private func setupView() {
-        
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.backgroundColor = .black
-        imageView.contentMode = .scaleAspectFill
-        self.addSubview(imageView)
-    }
-    
-    private func setConstraints() {
-        
-        NSLayoutConstraint.activate([
-            imageView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            imageView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            imageView.topAnchor.constraint(equalTo: self.topAnchor),
-            imageView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
-        ])
-    }
-    
 }

@@ -2,7 +2,7 @@
 //  ProfileTableViewHeader.swift
 //  TStoryApp
 //
-//  Created by Chu Yu Min on 2022/04/04.
+//  Created by yumin chu on 2022/04/04.
 //
 
 import UIKit
@@ -14,6 +14,7 @@ class ProfileTableHeader: UIView {
 //    var profileUrl = ""
     
     var profileImageView = UIImageView()
+    var imageMultiplyCover = UIView()
     var blogTitleLabel = UILabel()
     var blogUrlButton = UIButton()
     var subscribeNumLabel = UILabel()
@@ -34,7 +35,9 @@ class ProfileTableHeader: UIView {
     private func setupView() {
         
         profileImageView.translatesAutoresizingMaskIntoConstraints = false
-        profileImageView.backgroundColor = .systemBlue
+        profileImageView.backgroundColor = .black
+        let bgImage = UIImage(named: model.profileImageName ?? "")
+        profileImageView.image = bgImage
         profileImageView.clipsToBounds = true
         profileImageView.layer.maskedCorners = [.layerMaxXMaxYCorner]
         profileImageView.layer.cornerRadius = 50
@@ -42,6 +45,12 @@ class ProfileTableHeader: UIView {
         profileImageView.clipsToBounds = true
         profileImageView.contentMode = .scaleAspectFill
         self.addSubview(profileImageView)
+        
+        imageMultiplyCover.translatesAutoresizingMaskIntoConstraints = false
+        imageMultiplyCover.backgroundColor = .black.withAlphaComponent(0.3)
+        imageMultiplyCover.layer.maskedCorners = .layerMaxXMaxYCorner
+        imageMultiplyCover.layer.cornerRadius = 50
+        profileImageView.addSubview(imageMultiplyCover)
         
         blogTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         blogTitleLabel.font = .systemFont(ofSize: 32)
@@ -89,6 +98,13 @@ class ProfileTableHeader: UIView {
             profileImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             profileImageView.topAnchor.constraint(equalTo: self.topAnchor),
             profileImageView.heightAnchor.constraint(equalToConstant: 400)
+        ])
+        
+        NSLayoutConstraint.activate([
+            imageMultiplyCover.leadingAnchor.constraint(equalTo: profileImageView.leadingAnchor),
+            imageMultiplyCover.trailingAnchor.constraint(equalTo: profileImageView.trailingAnchor),
+            imageMultiplyCover.topAnchor.constraint(equalTo: profileImageView.topAnchor),
+            imageMultiplyCover.bottomAnchor.constraint(equalTo: profileImageView.bottomAnchor)
         ])
         
         NSLayoutConstraint.activate([ //"사이트 주소" 버튼의 위치 (프로필 이미지의 위에 배치)
