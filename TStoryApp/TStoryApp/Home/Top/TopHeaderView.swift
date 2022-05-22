@@ -19,7 +19,7 @@ class TopHeaderView: UITableViewHeaderFooterView {
         }
         label.lineBreakMode = .byWordWrapping
         label.numberOfLines = 3
-        label.font = .systemFont(ofSize: 30, weight: .bold)
+        label.font = .systemFont(ofSize: 30, weight: .medium)
         label.textColor = .black
         addSubview(label)
         return label
