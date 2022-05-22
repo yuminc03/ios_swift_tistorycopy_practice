@@ -151,3 +151,12 @@ extension ProfileViewController: AccountSettingViewControllerDelegate {
         viewModel.myBlogOfProfileModel.profileName = name
     }
 }
+
+extension ProfileViewController: BlogSettingViewControllerDelegate {
+    
+    func blogSettingViewControllerDismiss(bgImage: UIImage?) {
+        
+        
+    }
+
+}

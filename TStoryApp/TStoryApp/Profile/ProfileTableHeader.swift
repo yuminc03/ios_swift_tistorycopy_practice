@@ -39,23 +39,26 @@ class ProfileTableHeader: UIView {
         profileImageView.layer.maskedCorners = [.layerMaxXMaxYCorner]
         profileImageView.layer.cornerRadius = 50
         profileImageView.isUserInteractionEnabled = true
+        profileImageView.clipsToBounds = true
+        profileImageView.contentMode = .scaleAspectFill
         self.addSubview(profileImageView)
         
         blogTitleLabel.translatesAutoresizingMaskIntoConstraints = false
-        blogTitleLabel.font = .systemFont(ofSize: 28, weight: .medium)
+        blogTitleLabel.font = .systemFont(ofSize: 32)
         blogTitleLabel.textColor = .white
         blogTitleLabel.text = model.profileTitle
+        blogTitleLabel.sizeToFit()
         profileImageView.addSubview(blogTitleLabel)
         
         blogUrlButton.translatesAutoresizingMaskIntoConstraints = false
-        blogUrlButton.setTitle(model.profileUrl, for: .normal)
+        blogUrlButton.setTitle("dpffldk.tistory.com", for: .normal)
         blogUrlButton.setTitleColor(.white, for: .normal)
-        blogUrlButton.titleLabel?.font = .systemFont(ofSize: 12, weight: .light)
+        blogUrlButton.titleLabel?.font = .systemFont(ofSize: 16, weight: .light)
         blogUrlButton.addTarget(self, action: #selector(siteUrlButtonDidTrapped), for: .touchUpInside)
         profileImageView.addSubview(blogUrlButton)
         
         subscribeNumLabel.translatesAutoresizingMaskIntoConstraints = false
-        subscribeNumLabel.font = UIFont.systemFont(ofSize: 12)
+        subscribeNumLabel.font = UIFont.systemFont(ofSize: 14)
         subscribeNumLabel.textColor = .lightGray
         let text = "구독자 " + "\(model.subscribeNum)"
         let mutable = NSMutableAttributedString(string: text)
@@ -70,46 +73,44 @@ class ProfileTableHeader: UIView {
         blogSettingButton.layer.cornerRadius = 15
         blogSettingButton.setTitle("블로그 설정", for: .normal)
         blogSettingButton.setTitleColor(.black, for: .normal)
-        blogSettingButton.titleLabel?.font = .systemFont(ofSize: 13)
+        blogSettingButton.titleLabel?.font = .systemFont(ofSize: 14)
         blogSettingButton.contentEdgeInsets = UIEdgeInsets(top: 5, left: 15, bottom: 5, right: 15)
-        blogSettingButton.addTarget(self, action: #selector(settingButtonDidTrapped), for: .touchUpInside)
         self.addSubview(blogSettingButton)
         
         separator.translatesAutoresizingMaskIntoConstraints = false
-        separator.backgroundColor = .lightGray.withAlphaComponent(0.3)
+        separator.backgroundColor = .lightGray.withAlphaComponent(0.2)
         self.addSubview(separator)
         
     }
 
     private func setConstraints() {
         NSLayoutConstraint.activate([ //프로필 이미지의 위치
-            profileImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            profileImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            profileImageView.topAnchor.constraint(equalTo: topAnchor),
-            profileImageView.heightAnchor.constraint(equalToConstant: 350)
+            profileImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            profileImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            profileImageView.topAnchor.constraint(equalTo: self.topAnchor),
+            profileImageView.heightAnchor.constraint(equalToConstant: 400)
+        ])
+        
+        NSLayoutConstraint.activate([ //"사이트 주소" 버튼의 위치 (프로필 이미지의 위에 배치)
+            blogUrlButton.leadingAnchor.constraint(equalTo: profileImageView.leadingAnchor, constant: 20),
+            blogUrlButton.bottomAnchor.constraint(equalTo: profileImageView.bottomAnchor, constant: -30)
         ])
         
         NSLayoutConstraint.activate([ //사이트의 제목 라벨의 위치 (프로필 이미지 위에 배치, 사이트 주소 버튼 위쪽에 배치)
             blogTitleLabel.leadingAnchor.constraint(equalTo: profileImageView.leadingAnchor, constant: 20),
             blogTitleLabel.trailingAnchor.constraint(equalTo: profileImageView.trailingAnchor, constant: -20),
-            blogTitleLabel.bottomAnchor.constraint(equalTo: profileImageView.bottomAnchor, constant: -50)
+            blogTitleLabel.bottomAnchor.constraint(equalTo: blogUrlButton.topAnchor, constant: -5)
         ])
         
         NSLayoutConstraint.activate([ //"구독자" 라벨의 위치
             subscribeNumLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
-            subscribeNumLabel.topAnchor.constraint(equalTo: profileImageView.bottomAnchor, constant: 20)
-//            subscribeNumLabel.bottomAnchor.constraint(equalTo: separator.topAnchor, constant: -10)
+            subscribeNumLabel.centerYAnchor.constraint(equalTo: blogSettingButton.centerYAnchor)
         ])
         
         NSLayoutConstraint.activate([ //"블로그 설정" 버튼의 위치
             blogSettingButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
-            blogSettingButton.centerYAnchor.constraint(equalTo: subscribeNumLabel.centerYAnchor),
+            blogSettingButton.topAnchor.constraint(equalTo: profileImageView.bottomAnchor, constant: 30),
             blogSettingButton.heightAnchor.constraint(equalToConstant: 30)
-        ])
-        
-        NSLayoutConstraint.activate([ //"사이트 주소" 버튼의 위치 (프로필 이미지의 위에 배치)
-            blogUrlButton.leadingAnchor.constraint(equalTo: profileImageView.leadingAnchor, constant: 20),
-            blogUrlButton.bottomAnchor.constraint(equalTo: profileImageView.bottomAnchor, constant: -20)
         ])
         
         NSLayoutConstraint.activate([
@@ -126,10 +127,6 @@ class ProfileTableHeader: UIView {
            UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url)
         }
-    }
-    
-    @objc private func settingButtonDidTrapped(button: UIButton) {
-        print("touched")
     }
     
 }

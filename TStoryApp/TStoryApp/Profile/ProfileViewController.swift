@@ -36,10 +36,12 @@ class ProfileViewController: UIViewController {
         profileTableView.backgroundColor = .clear
 //        profileTableView.estimatedSectionHeaderHeight = 480
         profileTableView.showsVerticalScrollIndicator = false
-        let profileHeader = ProfileTableHeader(model: viewModel.profileModel, frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 450))
+        let profileHeader = ProfileTableHeader(model: viewModel.profileModel, frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 500))
         profileHeader.backgroundColor = .white
+        profileHeader.blogSettingButton.addTarget(self, action: #selector(settingButtonDidTrapped), for: .touchUpInside)
+
         profileTableView.tableHeaderView = profileHeader
-        profileTableView.register(ProfileTableViewHeader.self, forHeaderFooterViewReuseIdentifier: "profile_header")
+//        profileTableView.register(ProfileTableViewHeader.self, forHeaderFooterViewReuseIdentifier: "profile_header")
         profileTableView.register(MyContentTableViewHeader.self, forHeaderFooterViewReuseIdentifier: "my_content_header")
         profileTableView.register(MyContentTableViewCell.self, forCellReuseIdentifier: "my_contents")
         view.addSubview(profileTableView)
@@ -86,5 +88,12 @@ class ProfileViewController: UIViewController {
         self.present(vc, animated: false)
     }
     
+    @objc private func settingButtonDidTrapped(button: UIButton) {
+        //print("touched")
+        let vc = BlogSettingViewController()
+        vc.model = viewModel.profileModel
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: true)
+    }
 }
 

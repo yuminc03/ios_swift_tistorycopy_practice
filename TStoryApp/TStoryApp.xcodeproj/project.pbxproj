@@ -185,6 +185,11 @@
 		8D94FEA8273BF7A4005D2F99 /* FeedSubscribeComponentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D94FEA7273BF7A4005D2F99 /* FeedSubscribeComponentsView.swift */; };
 		8D94FEAA273BF8D9005D2F99 /* FeedCommentsComponentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D94FEA9273BF8D9005D2F99 /* FeedCommentsComponentsView.swift */; };
 		8DA3C28227FB25EA00130440 /* ProfileTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA3C28127FB25EA00130440 /* ProfileTableHeader.swift */; };
+		8DAE77812839FAAF006BA531 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAE77802839FAAF006BA531 /* UIApplicationExtension.swift */; };
+		8DAE77842839FABE006BA531 /* ImagePickerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAE77832839FABE006BA531 /* ImagePickerService.swift */; };
+		8DAE77892839FAF3006BA531 /* ImageCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAE77862839FAF3006BA531 /* ImageCollectionViewController.swift */; };
+		8DAE778A2839FAF3006BA531 /* BlogSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAE77872839FAF3006BA531 /* BlogSettingViewController.swift */; };
+		8DAE778B2839FAF3006BA531 /* BlogImageSettingCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAE77882839FAF3006BA531 /* BlogImageSettingCategoryViewController.swift */; };
 		8DC15E3727378B700071B999 /* PublishSettingTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC15E3627378B700071B999 /* PublishSettingTopView.swift */; };
 		8DC15E3A2737A5670071B999 /* HomeSubjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC15E392737A5670071B999 /* HomeSubjectView.swift */; };
 		8DC15E3E2737A8350071B999 /* CommentAllowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC15E3D2737A8350071B999 /* CommentAllowView.swift */; };
@@ -375,6 +380,11 @@
 		8D94FEA7273BF7A4005D2F99 /* FeedSubscribeComponentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSubscribeComponentsView.swift; sourceTree = "<group>"; };
 		8D94FEA9273BF8D9005D2F99 /* FeedCommentsComponentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCommentsComponentsView.swift; sourceTree = "<group>"; };
 		8DA3C28127FB25EA00130440 /* ProfileTableHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableHeader.swift; sourceTree = "<group>"; };
+		8DAE77802839FAAF006BA531 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
+		8DAE77832839FABE006BA531 /* ImagePickerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerService.swift; sourceTree = "<group>"; };
+		8DAE77862839FAF3006BA531 /* ImageCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewController.swift; sourceTree = "<group>"; };
+		8DAE77872839FAF3006BA531 /* BlogSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlogSettingViewController.swift; sourceTree = "<group>"; };
+		8DAE77882839FAF3006BA531 /* BlogImageSettingCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlogImageSettingCategoryViewController.swift; sourceTree = "<group>"; };
 		8DC15E3627378B700071B999 /* PublishSettingTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishSettingTopView.swift; sourceTree = "<group>"; };
 		8DC15E392737A5670071B999 /* HomeSubjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSubjectView.swift; sourceTree = "<group>"; };
 		8DC15E3D2737A8350071B999 /* CommentAllowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentAllowView.swift; sourceTree = "<group>"; };
@@ -969,6 +979,8 @@
 			isa = PBXGroup;
 			children = (
 				05C38645272785DE0090FDDC /* AppDelegate.swift */,
+				8DAE77822839FABE006BA531 /* Util */,
+				8DAE777F2839FAAF006BA531 /* Extensions */,
 				05C3865C27278A5A0090FDDC /* TabBar */,
 				058ECF9D2744F3AA0063B215 /* MyBlogOfProfile */,
 				058ECF9A2744DE000063B215 /* NavigationBar */,
@@ -992,6 +1004,7 @@
 				05C3865D27278A6F0090FDDC /* ProfileViewController.swift */,
 				05C3866127278D140090FDDC /* ProfileViewControllerExtensions.swift */,
 				8DA3C28127FB25EA00130440 /* ProfileTableHeader.swift */,
+				8DAE77852839FAF3006BA531 /* BlogSetting */,
 				057E27A1272A249A009BE550 /* Components */,
 				057E27A0272A2489009BE550 /* Category */,
 			);
@@ -1279,6 +1292,32 @@
 			path = StackView;
 			sourceTree = "<group>";
 		};
+		8DAE777F2839FAAF006BA531 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8DAE77802839FAAF006BA531 /* UIApplicationExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8DAE77822839FABE006BA531 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				8DAE77832839FABE006BA531 /* ImagePickerService.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		8DAE77852839FAF3006BA531 /* BlogSetting */ = {
+			isa = PBXGroup;
+			children = (
+				8DAE77872839FAF3006BA531 /* BlogSettingViewController.swift */,
+				8DAE77882839FAF3006BA531 /* BlogImageSettingCategoryViewController.swift */,
+				8DAE77862839FAF3006BA531 /* ImageCollectionViewController.swift */,
+			);
+			path = BlogSetting;
+			sourceTree = "<group>";
+		};
 		8DC15E3527378B4D0071B999 /* Top */ = {
 			isa = PBXGroup;
 			children = (
@@ -1397,6 +1436,7 @@
 				0545AEC1273E58D700458A6E /* PostComponentView.swift in Sources */,
 				8D580143274BDFCF00D04AFE /* BlogSearchViewController.swift in Sources */,
 				050F2FE9273A4988007CBC61 /* HomeSubjectModel.swift in Sources */,
+				8DAE778A2839FAF3006BA531 /* BlogSettingViewController.swift in Sources */,
 				05AB8D8D2747904B005D72E0 /* RepBlogSettingTableViewCell.swift in Sources */,
 				8D15208227414BEC00510781 /* PopularityPostSeeAllViewController.swift in Sources */,
 				05AB8D7E27476147005D72E0 /* ChangeNicknameTopView.swift in Sources */,
@@ -1442,6 +1482,7 @@
 				058ECF9F2744F6F00063B215 /* MyBlogOfProfileView.swift in Sources */,
 				8D321D67273805550036F276 /* CategorySelectionViewControllerExtensions.swift in Sources */,
 				8D152085274150A500510781 /* PopularityPostSeeAllViewControllerExtensions.swift in Sources */,
+				8DAE778B2839FAF3006BA531 /* BlogImageSettingCategoryViewController.swift in Sources */,
 				8D321D69273812230036F276 /* PublishSettingHeaderViewExtensions.swift in Sources */,
 				05EB3217273D0A670035E45C /* SubscriberTableViewCell.swift in Sources */,
 				05590E23273BB377006B65A9 /* FeedTableViewHeader.swift in Sources */,
@@ -1464,6 +1505,7 @@
 				051598A7274C6F0400299668 /* BlogSearchBottomView.swift in Sources */,
 				054DCFE0274B6BF0007CD0F8 /* AnnouncementViewController.swift in Sources */,
 				05AB8D9027479B72005D72E0 /* SettingViewControllerExtensions.swift in Sources */,
+				8DAE77812839FAAF006BA531 /* UIApplicationExtension.swift in Sources */,
 				0545AEBC273E44BE00458A6E /* VisitGraphView.swift in Sources */,
 				050F2FE3273A3D0B007CBC61 /* HomeSubjectSelectorView.swift in Sources */,
 				05C3866427278DE60090FDDC /* ProfileModel.swift in Sources */,
@@ -1483,7 +1525,9 @@
 				052BBC722746138600310EF1 /* SettingTopView.swift in Sources */,
 				052BBC602745C8C100310EF1 /* ProfileInfoStackViewFooter.swift in Sources */,
 				05FF7424272BC75600BEE31C /* CategoryViewExtension.swift in Sources */,
+				8DAE77892839FAF3006BA531 /* ImageCollectionViewController.swift in Sources */,
 				057A16B6274F19DD000275E3 /* FullScreenVisitLogWebTopView.swift in Sources */,
+				8DAE77842839FABE006BA531 /* ImagePickerService.swift in Sources */,
 				8D321D5F2737F1830036F276 /* PasswordSettingView.swift in Sources */,
 				8DA3C28227FB25EA00130440 /* ProfileTableHeader.swift in Sources */,
 				05AB8D7727473277005D72E0 /* MyBlogOfProflieViewControllerExtensions.swift in Sources */,
