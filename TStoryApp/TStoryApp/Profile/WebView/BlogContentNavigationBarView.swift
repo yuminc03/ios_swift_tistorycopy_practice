@@ -21,7 +21,7 @@ class BlogContentNavigationBarView: UIView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
-    
+     
     private func setupView() {
         
         previousButton.translatesAutoresizingMaskIntoConstraints = false

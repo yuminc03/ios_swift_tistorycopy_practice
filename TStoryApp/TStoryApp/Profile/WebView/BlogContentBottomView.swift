@@ -25,7 +25,7 @@ class BlogContentBottomView: UIView {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-    }
+    } 
     
     private func setupView() {
         

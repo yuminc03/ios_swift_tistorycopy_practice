@@ -47,7 +47,7 @@ class BlogContentWebViewController: UIViewController {
         navigationView.translatesAutoresizingMaskIntoConstraints = false
         navigationView.backgroundColor = .white
         navigationView.previousButton.addTarget(self, action: #selector(previousButtonDidTapped), for: .touchUpInside)
-        self.view.addSubview(navigationView)
+        self.view.addSubview(navigationView) 
 
         loadingView.style = .large
         loadingView.hidesWhenStopped = true
