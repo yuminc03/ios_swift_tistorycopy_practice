@@ -194,6 +194,9 @@
 		8D94FEA8273BF7A4005D2F99 /* FeedSubscribeComponentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D94FEA7273BF7A4005D2F99 /* FeedSubscribeComponentsView.swift */; };
 		8D94FEAA273BF8D9005D2F99 /* FeedCommentsComponentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D94FEA9273BF8D9005D2F99 /* FeedCommentsComponentsView.swift */; };
 		8DA3C28227FB25EA00130440 /* ProfileTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA3C28127FB25EA00130440 /* ProfileTableHeader.swift */; };
+		8DACD20B283C7243008A078B /* BlogContentNavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DACD208283C7243008A078B /* BlogContentNavigationBarView.swift */; };
+		8DACD20C283C7243008A078B /* BlogContentBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DACD209283C7243008A078B /* BlogContentBottomView.swift */; };
+		8DACD20D283C7243008A078B /* BlogContentWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DACD20A283C7243008A078B /* BlogContentWebViewController.swift */; };
 		8DAE77812839FAAF006BA531 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAE77802839FAAF006BA531 /* UIApplicationExtension.swift */; };
 		8DAE77842839FABE006BA531 /* ImagePickerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAE77832839FABE006BA531 /* ImagePickerService.swift */; };
 		8DAE77892839FAF3006BA531 /* ImageCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAE77862839FAF3006BA531 /* ImageCollectionViewController.swift */; };
@@ -394,6 +397,9 @@
 		8D94FEA7273BF7A4005D2F99 /* FeedSubscribeComponentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSubscribeComponentsView.swift; sourceTree = "<group>"; };
 		8D94FEA9273BF8D9005D2F99 /* FeedCommentsComponentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCommentsComponentsView.swift; sourceTree = "<group>"; };
 		8DA3C28127FB25EA00130440 /* ProfileTableHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableHeader.swift; sourceTree = "<group>"; };
+		8DACD208283C7243008A078B /* BlogContentNavigationBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlogContentNavigationBarView.swift; sourceTree = "<group>"; };
+		8DACD209283C7243008A078B /* BlogContentBottomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlogContentBottomView.swift; sourceTree = "<group>"; };
+		8DACD20A283C7243008A078B /* BlogContentWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlogContentWebViewController.swift; sourceTree = "<group>"; };
 		8DAE77802839FAAF006BA531 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
 		8DAE77832839FABE006BA531 /* ImagePickerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerService.swift; sourceTree = "<group>"; };
 		8DAE77862839FAF3006BA531 /* ImageCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewController.swift; sourceTree = "<group>"; };
@@ -1023,6 +1029,7 @@
 				05C3865D27278A6F0090FDDC /* ProfileViewController.swift */,
 				05C3866127278D140090FDDC /* ProfileViewControllerExtensions.swift */,
 				8DA3C28127FB25EA00130440 /* ProfileTableHeader.swift */,
+				8DACD207283C7243008A078B /* WebView */,
 				8DAE77852839FAF3006BA531 /* BlogSetting */,
 				057E27A1272A249A009BE550 /* Components */,
 				057E27A0272A2489009BE550 /* Category */,
@@ -1320,6 +1327,16 @@
 			path = StackView;
 			sourceTree = "<group>";
 		};
+		8DACD207283C7243008A078B /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				8DACD20A283C7243008A078B /* BlogContentWebViewController.swift */,
+				8DACD208283C7243008A078B /* BlogContentNavigationBarView.swift */,
+				8DACD209283C7243008A078B /* BlogContentBottomView.swift */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
 		8DAE777F2839FAAF006BA531 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -1497,6 +1514,7 @@
 				054FE8542741E2E4001A0AD2 /* VisitLogCollectionViewCellExtensions.swift in Sources */,
 				057A16B3274F10B2000275E3 /* VisitNumGraphFullScreenTopView.swift in Sources */,
 				8D1520892741589600510781 /* PopularityPostSeeAllTableHeaderView.swift in Sources */,
+				8DACD20B283C7243008A078B /* BlogContentNavigationBarView.swift in Sources */,
 				050F2FE1273A3CB9007CBC61 /* HomeSubjectSelectorViewContoller.swift in Sources */,
 				0545AEB8273E2AE600458A6E /* SubscriberTableViewCellExtensions.swift in Sources */,
 				8D099B8027C520150045F3E3 /* ProfileViewModel.swift in Sources */,
@@ -1619,7 +1637,9 @@
 				057A16B1274F0EC6000275E3 /* VisitNumGraphFullScreenViewController.swift in Sources */,
 				054DCFD9274B39E0007CD0F8 /* NotificationCellView.swift in Sources */,
 				054DCFE9274B710C007CD0F8 /* AnnouncementCellComponents.swift in Sources */,
+				8DACD20D283C7243008A078B /* BlogContentWebViewController.swift in Sources */,
 				8DC15E422737C8AC0071B999 /* PublishReservationDateView.swift in Sources */,
+				8DACD20C283C7243008A078B /* BlogContentBottomView.swift in Sources */,
 				05590E1D273BA8B0006B65A9 /* FeedViewControllerExtensions.swift in Sources */,
 				05CDF89C27352FA500F02BBA /* PublishSettingCellContentView.swift in Sources */,
 				054DCFE7274B6E1C007CD0F8 /* AnnouncementTableViewCell.swift in Sources */,
