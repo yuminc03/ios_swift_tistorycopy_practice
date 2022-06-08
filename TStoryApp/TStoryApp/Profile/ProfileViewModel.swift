@@ -47,42 +47,49 @@ class ProfileViewModel {
                     categoryCell: [
                         ProfileCategoryCell(
                             cellTitle: "Photoshop으로 할로윈 토끼 그림 그리기",
+                            cellUrl: "",
                             cellImageName: "image1.png",
                             cellLikeNum: 0,
                             cellCommentNum: 0,
                             cellDate: "2021.10.31."),
                         ProfileCategoryCell(
                             cellTitle: "이번 생은 틀렸다고 느껴질 때를 읽어보았습니다",
+                            cellUrl: "",
                             cellImageName: "image2.png",
                             cellLikeNum: 1,
                             cellCommentNum: 0,
                             cellDate: "2021.9.20."),
                         ProfileCategoryCell(
                             cellTitle: "코로나 백신 1차, 2차 접종완료했습니다",
+                            cellUrl: "",
                             cellImageName: "image3.png",
                             cellLikeNum: 0,
                             cellCommentNum: 0,
                             cellDate: "2021.8.14."),
                         ProfileCategoryCell(
                             cellTitle: "일의 기쁨과 슬픔을 읽어보았습니다",
+                            cellUrl: "",
                             cellImageName: "image4.png",
                             cellLikeNum: 1,
                             cellCommentNum: 2,
                             cellDate: "2021.8.9."),
                         ProfileCategoryCell(
                             cellTitle: "Photoshop으로 우주의 소녀 그림 그리기",
+                            cellUrl: "",
                             cellImageName: "image5.png",
                             cellLikeNum: 1,
                             cellCommentNum: 0,
                             cellDate: "2021.7.25."),
                         ProfileCategoryCell(
                             cellTitle: "보석 느낌 펜던트 만들기",
+                            cellUrl: "",
                             cellImageName: "image6.png",
                             cellLikeNum: 1,
                             cellCommentNum: 2,
                             cellDate: "2021.7.11."),
                         ProfileCategoryCell(
                             cellTitle: "화양연화 THE NOTES 1을 읽어보았습니다",
+                            cellUrl: "",
                             cellImageName: "image7.png",
                             cellLikeNum: 1,
                             cellCommentNum: 0,
@@ -95,18 +102,21 @@ class ProfileViewModel {
                     categoryCell: [
                         ProfileCategoryCell(
                             cellTitle: "이번 생은 틀렸다고 느껴질 때",
+                            cellUrl: "",
                             cellImageName: "image1.png",
                             cellLikeNum: 1,
                             cellCommentNum: 0,
                             cellDate: "2021.9.20"),
                         ProfileCategoryCell(
                             cellTitle: "일의 기쁨과 슬픔",
+                            cellUrl: "",
                             cellImageName: "image3.png",
                             cellLikeNum: 1,
                             cellCommentNum: 2,
                             cellDate: "2021.8.9."),
                         ProfileCategoryCell(
                             cellTitle: "화양연화 THE NOTES 1",
+                            cellUrl: "",
                             cellImageName: "image6.png",
                             cellLikeNum: 1,
                             cellCommentNum: 0,
@@ -121,6 +131,7 @@ class ProfileViewModel {
                     categoryCell: [
                         ProfileCategoryCell(
                             cellTitle: "보석 느낌 펜던트 만들기",
+                            cellUrl: "",
                             cellImageName: "image5.png",
                             cellLikeNum: 1,
                             cellCommentNum: 2,
@@ -133,12 +144,14 @@ class ProfileViewModel {
                     categoryCell: [
                         ProfileCategoryCell(
                             cellTitle: "Photoshop으로 할로윈 토끼 그림 그리기",
+                            cellUrl: "",
                             cellImageName: "image1.png",
                             cellLikeNum: 0,
                             cellCommentNum: 0,
                             cellDate: "2021.10.31."),
                         ProfileCategoryCell(
                             cellTitle: "Photoshop으로 우주의 소녀 그리기",
+                            cellUrl: "",
                             cellImageName: "image4.png",
                             cellLikeNum: 1,
                             cellCommentNum: 0,
@@ -151,6 +164,7 @@ class ProfileViewModel {
                     categoryCell: [
                         ProfileCategoryCell(
                             cellTitle: "코로나 1차, 2차 백신 접종 완료!",
+                            cellUrl: "",
                             cellImageName: "image2.png",
                             cellLikeNum: 0,
                             cellCommentNum: 0,

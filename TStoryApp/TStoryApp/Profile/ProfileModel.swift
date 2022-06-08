@@ -1,3 +1,10 @@
+//
+//  ProfileModel.swift
+//  TStoryApp
+//
+//  Created by yumin chu on 2021/10/26.
+//
+
 struct ProfileModel {
     var profileTitle: String = ""
     var profileUrl: String = ""
@@ -16,6 +23,7 @@ struct ProfileCategory {
 
 struct ProfileCategoryCell {
     var cellTitle: String = ""
+    var cellUrl: String = ""
     var cellImageName: String?
     var cellLikeNum: Int = 0
     var cellCommentNum: Int = 0
