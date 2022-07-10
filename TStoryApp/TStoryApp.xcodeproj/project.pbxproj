@@ -207,6 +207,7 @@
 		8DC15E3E2737A8350071B999 /* CommentAllowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC15E3D2737A8350071B999 /* CommentAllowView.swift */; };
 		8DC15E402737C89A0071B999 /* PublishCurrentDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC15E3F2737C89A0071B999 /* PublishCurrentDateView.swift */; };
 		8DC15E422737C8AC0071B999 /* PublishReservationDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC15E412737C8AC0071B999 /* PublishReservationDateView.swift */; };
+		8DCFE7DC287AD07E00A30A28 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCFE7DB287AD07E00A30A28 /* LoginViewController.swift */; };
 		8DF7E884274D28A400D7C03E /* PushAlarmDetailSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF7E883274D28A400D7C03E /* PushAlarmDetailSettingView.swift */; };
 		8DFB6D98274544C400C5533A /* ProfileInfoStackViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFB6D97274544C400C5533A /* ProfileInfoStackViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -410,6 +411,7 @@
 		8DC15E3D2737A8350071B999 /* CommentAllowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentAllowView.swift; sourceTree = "<group>"; };
 		8DC15E3F2737C89A0071B999 /* PublishCurrentDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishCurrentDateView.swift; sourceTree = "<group>"; };
 		8DC15E412737C8AC0071B999 /* PublishReservationDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishReservationDateView.swift; sourceTree = "<group>"; };
+		8DCFE7DB287AD07E00A30A28 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8DF7E883274D28A400D7C03E /* PushAlarmDetailSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushAlarmDetailSettingView.swift; sourceTree = "<group>"; };
 		8DFB6D97274544C400C5533A /* ProfileInfoStackViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoStackViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1008,6 +1010,7 @@
 				05C3865C27278A5A0090FDDC /* TabBar */,
 				058ECF9D2744F3AA0063B215 /* MyBlogOfProfile */,
 				058ECF9A2744DE000063B215 /* NavigationBar */,
+				8DCFE7DA287AD06100A30A28 /* Login */,
 				05EB31F3273CCFED0035E45C /* Home */,
 				05C38667272795E20090FDDC /* Feed */,
 				05C38666272795940090FDDC /* Writing */,
@@ -1387,6 +1390,14 @@
 			path = Content;
 			sourceTree = "<group>";
 		};
+		8DCFE7DA287AD06100A30A28 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				8DCFE7DB287AD07E00A30A28 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -1611,6 +1622,7 @@
 				054FE87127424229001A0AD2 /* VisitGraphDotView.swift in Sources */,
 				8D67F36F27566908007988B6 /* ComponentsView.swift in Sources */,
 				8D67F37127566B9A007988B6 /* ComponentsBetweenView.swift in Sources */,
+				8DCFE7DC287AD07E00A30A28 /* LoginViewController.swift in Sources */,
 				05EB3201273CECAD0035E45C /* HomeTableView.swift in Sources */,
 				054FE8602741FA8F001A0AD2 /* VisitKeyWordTableHeaderView.swift in Sources */,
 				05590E19273BA876006B65A9 /* FeedViewController.swift in Sources */,
@@ -1840,8 +1852,11 @@
 				DEVELOPMENT_TEAM = GMHUACJXLZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TStoryApp/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "프로필 사진 설정을 위해 카메라 접근을 허용해 주세요.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "프로필 사진 설정을 위해 사진 접근을 허용해 주세요.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1868,8 +1883,11 @@
 				DEVELOPMENT_TEAM = GMHUACJXLZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TStoryApp/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "프로필 사진 설정을 위해 카메라 접근을 허용해 주세요.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "프로필 사진 설정을 위해 사진 접근을 허용해 주세요.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
