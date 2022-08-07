@@ -1852,6 +1852,7 @@
 				DEVELOPMENT_TEAM = GMHUACJXLZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TStoryApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "티스토리_Clone";
 				INFOPLIST_KEY_NSCameraUsageDescription = "프로필 사진 설정을 위해 카메라 접근을 허용해 주세요.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "프로필 사진 설정을 위해 사진 접근을 허용해 주세요.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1883,6 +1884,7 @@
 				DEVELOPMENT_TEAM = GMHUACJXLZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TStoryApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "티스토리_Clone";
 				INFOPLIST_KEY_NSCameraUsageDescription = "프로필 사진 설정을 위해 카메라 접근을 허용해 주세요.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "프로필 사진 설정을 위해 사진 접근을 허용해 주세요.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
