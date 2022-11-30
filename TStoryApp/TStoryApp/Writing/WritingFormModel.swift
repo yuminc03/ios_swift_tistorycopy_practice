@@ -2,7 +2,7 @@
 //  WritingFormModel.swift
 //  TStoryApp
 //
-//  Created by yumin chu on 2021/10/29.
+//  Created by Yumin Chu on 2021/10/29.
 //
 
 struct WriteFormModel { //블로그 글쓰기 창

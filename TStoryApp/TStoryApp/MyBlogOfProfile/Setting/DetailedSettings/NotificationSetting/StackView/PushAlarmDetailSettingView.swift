@@ -2,7 +2,7 @@
 //  PushAlarmDetailSettingView.swift
 //  TStoryApp
 //
-//  Created by yumin chu on 2021/11/23.
+//  Created by Yumin Chu on 2021/11/23.
 //
 
 import UIKit

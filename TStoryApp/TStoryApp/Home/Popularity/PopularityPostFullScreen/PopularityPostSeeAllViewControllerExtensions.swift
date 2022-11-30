@@ -2,7 +2,7 @@
 //  PopularityPostSeeAllViewControllerExtensions.swift
 //  TStoryApp
 //
-//  Created by yumin chu on 2021/11/14.
+//  Created by Yumin Chu on 2021/11/14.
 //
 
 import UIKit

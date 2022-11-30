@@ -2,7 +2,7 @@
 //  ImageCollectionViewControllerExtensions.swift
 //  TStoryApp
 //
-//  Created by yumin chu on 2022/05/22.
+//  Created by Yumin Chu on 2022/05/22.
 //
 
 import UIKit

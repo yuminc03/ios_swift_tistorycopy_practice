@@ -2,7 +2,7 @@
 //  VisitNumGraphCollectionViewCell.swift
 //  TStoryApp
 //
-//  Created by yumin chu on 2021/11/15.
+//  Created by Yumin Chu on 2021/11/15.
 //
 
 import UIKit

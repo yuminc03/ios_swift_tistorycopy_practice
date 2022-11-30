@@ -2,7 +2,7 @@
 //  PublishingSettingCellHeaderView.swift
 //  TStoryApp
 //
-//  Created by yumin chu on 2021/11/05.
+//  Created by Yumin Chu on 2021/11/05.
 //
 
 import UIKit

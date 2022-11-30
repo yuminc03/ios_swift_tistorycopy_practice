@@ -2,7 +2,7 @@
 //  RepBlogSettingTableViewCell.swift
 //  TStoryApp
 //
-//  Created by yumin chu on 2021/11/19.
+//  Created by Yumin Chu on 2021/11/19.
 //
 
 import UIKit

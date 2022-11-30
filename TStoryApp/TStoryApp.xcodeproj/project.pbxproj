@@ -208,6 +208,7 @@
 		8DC15E402737C89A0071B999 /* PublishCurrentDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC15E3F2737C89A0071B999 /* PublishCurrentDateView.swift */; };
 		8DC15E422737C8AC0071B999 /* PublishReservationDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC15E412737C8AC0071B999 /* PublishReservationDateView.swift */; };
 		8DCFE7DC287AD07E00A30A28 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCFE7DB287AD07E00A30A28 /* LoginViewController.swift */; };
+		8DF49BA129373B9900D7C8B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF49BA029373B9800D7C8B0 /* SceneDelegate.swift */; };
 		8DF7E884274D28A400D7C03E /* PushAlarmDetailSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF7E883274D28A400D7C03E /* PushAlarmDetailSettingView.swift */; };
 		8DFB6D98274544C400C5533A /* ProfileInfoStackViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFB6D97274544C400C5533A /* ProfileInfoStackViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -412,6 +413,7 @@
 		8DC15E3F2737C89A0071B999 /* PublishCurrentDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishCurrentDateView.swift; sourceTree = "<group>"; };
 		8DC15E412737C8AC0071B999 /* PublishReservationDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishReservationDateView.swift; sourceTree = "<group>"; };
 		8DCFE7DB287AD07E00A30A28 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		8DF49BA029373B9800D7C8B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8DF7E883274D28A400D7C03E /* PushAlarmDetailSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushAlarmDetailSettingView.swift; sourceTree = "<group>"; };
 		8DFB6D97274544C400C5533A /* ProfileInfoStackViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoStackViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1004,7 +1006,6 @@
 		05C38644272785DE0090FDDC /* TStoryApp */ = {
 			isa = PBXGroup;
 			children = (
-				05C38645272785DE0090FDDC /* AppDelegate.swift */,
 				8DAE77822839FABE006BA531 /* Util */,
 				8DAE777F2839FAAF006BA531 /* Extensions */,
 				05C3865C27278A5A0090FDDC /* TabBar */,
@@ -1016,6 +1017,8 @@
 				05C38666272795940090FDDC /* Writing */,
 				05C38665272795770090FDDC /* Notification */,
 				05C3865B27278A500090FDDC /* Profile */,
+				05C38645272785DE0090FDDC /* AppDelegate.swift */,
+				8DF49BA029373B9800D7C8B0 /* SceneDelegate.swift */,
 				05C38650272785DF0090FDDC /* LaunchScreen.storyboard */,
 				8D3D3528283A4FDE00574628 /* Assets.xcassets */,
 				8D3D352A283A564600574628 /* GoogleService-Info.plist */,
@@ -1677,6 +1680,7 @@
 				05CDF8982735295300F02BBA /* PublishSettingHeaderView.swift in Sources */,
 				05FF7437272BE6AE00BEE31C /* WritingFormHeaderView.swift in Sources */,
 				054DCFD7274B2A40007CD0F8 /* NotificationSwitchControl.swift in Sources */,
+				8DF49BA129373B9900D7C8B0 /* SceneDelegate.swift in Sources */,
 				05C3865A272786950090FDDC /* TabBarViewController.swift in Sources */,
 				052BBC672745E18000310EF1 /* TopView.swift in Sources */,
 				8D3D3520283A1A5400574628 /* BlogSettingViewControllerExtensions.swift in Sources */,
@@ -1852,19 +1856,18 @@
 				DEVELOPMENT_TEAM = GMHUACJXLZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TStoryApp/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "티스토리_Clone";
+				INFOPLIST_KEY_CFBundleDisplayName = TistoryClone;
 				INFOPLIST_KEY_NSCameraUsageDescription = "프로필 사진 설정을 위해 카메라 접근을 허용해 주세요.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "프로필 사진 설정을 위해 사진 접근을 허용해 주세요.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = yumin.TStoryApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1884,19 +1887,18 @@
 				DEVELOPMENT_TEAM = GMHUACJXLZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TStoryApp/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "티스토리_Clone";
+				INFOPLIST_KEY_CFBundleDisplayName = TistoryClone;
 				INFOPLIST_KEY_NSCameraUsageDescription = "프로필 사진 설정을 위해 카메라 접근을 허용해 주세요.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "프로필 사진 설정을 위해 사진 접근을 허용해 주세요.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = yumin.TStoryApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

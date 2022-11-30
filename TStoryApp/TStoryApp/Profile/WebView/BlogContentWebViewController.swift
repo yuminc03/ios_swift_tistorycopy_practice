@@ -2,7 +2,7 @@
 //  BlogContentWebViewController.swift
 //  TStoryApp
 //
-//  Created by yumin chu on 2022/05/23.
+//  Created by Yumin Chu on 2022/05/23.
 //
 
 import UIKit

@@ -2,7 +2,7 @@
 //  PopularityPostCollectionViewCell.swift
 //  TStoryApp
 //
-//  Created by yumin chu on 2021/11/12.
+//  Created by Yumin Chu on 2021/11/12.
 //
 
 import UIKit

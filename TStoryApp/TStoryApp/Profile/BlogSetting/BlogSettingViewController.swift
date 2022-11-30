@@ -2,7 +2,7 @@
 //  BlogSettingViewController.swift
 //  TStoryApp
 //
-//  Created by yumin chu on 2022/05/18.
+//  Created by Yumin Chu on 2022/05/18.
 //
 
 import UIKit

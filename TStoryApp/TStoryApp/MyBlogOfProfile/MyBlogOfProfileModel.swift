@@ -2,7 +2,7 @@
 //  MyBlogOfProfileModel.swift
 //  TStoryApp
 //
-//  Created by yumin chu on 2021/11/17.
+//  Created by Yumin Chu on 2021/11/17.
 //
 
 struct MyBlogOfProfileModel {//프로필 정보

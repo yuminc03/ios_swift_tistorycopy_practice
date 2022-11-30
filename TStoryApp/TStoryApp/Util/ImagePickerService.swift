@@ -2,7 +2,7 @@
 //  ImagePickerService.swift
 //  TStoryApp
 //
-//  Created by yumin chu on 2022/05/20.
+//  Created by Yumin Chu on 2022/05/20.
 //
 
 import UIKit

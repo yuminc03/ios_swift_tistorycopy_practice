@@ -2,7 +2,7 @@
 //  SubscriberHeaderView.swift
 //  TStoryApp
 //
-//  Created by yumin chu on 2021/11/11.
+//  Created by Yumin Chu on 2021/11/11.
 //
 
 import UIKit
